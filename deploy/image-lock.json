@@ -1,9 +1,12 @@
 {
-  "recordedOn": "2026-11-08",
+  "recordedOn": "2026-11-09",
   "platform": "linux/amd64",
   "node": "node:24-bookworm-slim@sha256:01d566e8d94d8c619591d78652babfccd3c6992a3dffa9ed5ab39e11cf6c70e9",
   "sqlLocal": "mcr.microsoft.com/mssql/server:2022-latest@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
   "appLocalImageId": "sha256:9b8794caac277d5b43c52510cf8d48795305141a3fdfee58a9add0f10ae83e3c",
-  "appRegistryReference": null,
-  "note": "Local image identity only. No registry push or staging deployment yet. Rebuild/retest and update this record when source or dependencies change."
+  "appRegistryReference": "ghcr.io/vanhien1313/website_apple_v1@sha256:788e0b4bd58b9fbd833bced9facccde04921c2637018b14bac6d72182015345b",
+  "note": "Registry image published and pulled by digest in GitHub Actions. appLocalImageId records the earlier local image, not this release. Staging has not been deployed.",
+  "appRegistryImageId": "sha256:e502d551b7fe04d0e277bfb318451061a2ed9ce65fb4c40667a02536a3114742",
+  "appRegistryCommit": "98a2061a29c895232f83167f68a49f4cf250c1c5",
+  "verificationRun": "https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42640475890"
 }

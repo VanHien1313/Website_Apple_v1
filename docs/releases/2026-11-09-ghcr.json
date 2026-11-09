@@ -1,0 +1,8 @@
+{
+  "image": "ghcr.io/vanhien1313/website_apple_v1@sha256:788e0b4bd58b9fbd833bced9facccde04921c2637018b14bac6d72182015345b",
+  "tag": "ghcr.io/vanhien1313/website_apple_v1:sha-98a2061a29c895232f83167f68a49f4cf250c1c5-run-42640475890-1",
+  "imageId": "sha256:e502d551b7fe04d0e277bfb318451061a2ed9ce65fb4c40667a02536a3114742",
+  "commit": "98a2061a29c895232f83167f68a49f4cf250c1c5",
+  "verificationRun": "https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42640475890",
+  "platform": "linux/amd64"
+}

@@ -1,3 +1,5 @@
+> Phát hành 09/11/2026: main đã cập nhật tới `98a2061`; GHCR verify/publish đạt tại run 42640475890. Digest và manifest: [B5.7](BACKEND_B5_REGISTRY.md). Tiếp theo cần VPS/tên miền, SQL TLS, secrets trên host, preflight và nghiệm thu staging. Các trạng thái chưa publish bên dưới là lịch sử.
+
 > B5.7 — 09/11/2026: [chuẩn bị GHCR](BACKEND_B5_REGISTRY.md) đã có workflow phát hành thủ công sau CI, lưu đúng image đã kiểm thử. CI 42623431005 đạt cả export/upload image; chưa merge main hoặc publish registry.
 
 > Cập nhật 09/11/2026: [B5.6 CI](BACKEND_B5_CI.md) đã chạy đạt toàn bộ GitHub Actions trên Ubuntu tại commit `6c35852`: build Docker, frontend/deployment tests, 74 backend tests, 21 nhóm E2E và recovery. [Kết quả CI](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42620970687). [B5.3](BACKEND_B5_DOCKER.md) có 21 nhóm Docker E2E; [B5.4](BACKEND_B5_RECOVERY.md) đạt restart/backup/restore; [B5.5](BACKEND_B5_STAGING.md) chuẩn bị staging và preflight 6/6 test. Chưa có hạ tầng hosting/registry, chưa nghiệm thu TLS mạng thật hoặc triển khai public.
