@@ -61,6 +61,8 @@ Ghi lại image digest, commit, thời gian, host, kết quả và người th�
 
 ## Kiểm thử công cụ
 
+CI trên Ubuntu đã đạt tại [run 42647811434](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42647811434), commit `06b426e`: deployment tests, backend, E2E, recovery và export/upload image đều success. Đã sửa test E2E tải lại tài khoản để chờ phản hồi API và giá trị form mới, tránh đọc form cũ khi React chưa cập nhật. Job publish skipped; không phát hành image mới cho thay đổi công cụ/runbook này.
+
 `npm run test:deployment`: 11 test; đặt `TEST_STAGING_COMPOSE=true` để bật test Compose CLI thật. Đã đạt 11/11 trên máy phát triển. Năm test host mới dùng Docker output mô phỏng để kiểm chứng từ chối image/host/context sai; không coi đó là nghiệm thu Linux VPS. CLI thật trên Windows trả blocked trước khi gọi Docker, đúng thiết kế.
 
 Nguồn: [docker info](https://docs.docker.com/reference/cli/docker/system/info/), [image inspect](https://docs.docker.com/reference/cli/docker/image/inspect/).
