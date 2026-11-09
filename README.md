@@ -14,6 +14,7 @@ React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · 
 - [Chuẩn bị staging](docs/BACKEND_B5_STAGING.md)
 - [Kiểm thử CI](docs/BACKEND_B5_CI.md)
 - [Image GHCR đã phát hành và digest staging](docs/BACKEND_B5_REGISTRY.md)
+- [Triển khai trên Linux host](docs/STAGING_HOST_RUNBOOK.md)
 
 Các cập nhật bên dưới là lịch sử; ưu tiên trạng thái hiện hành và tài liệu bàn giao khi triển khai.
 

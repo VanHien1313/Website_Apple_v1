@@ -1,6 +1,6 @@
 # B5.5 — Chuẩn bị staging, chưa triển khai công khai
 
-Ngày 08/11/2026. Người dùng chưa có máy chủ/tên miền và chọn chuẩn bị cấu hình trước.
+Cập nhật 09/11/2026: GHCR đã phát hành thành công, xem [B5.7](BACKEND_B5_REGISTRY.md). [B5.8 runbook Linux host](STAGING_HOST_RUNBOOK.md) có công cụ kiểm tra engine/image và quy trình bàn giao. Người dùng chưa có máy chủ/tên miền và chọn chuẩn bị cấu hình trước.
 
 ## Kiến trúc dự kiến
 
@@ -9,7 +9,7 @@ Một Linux host chạy nginx HTTPS và một container app. nginx chuyển ti�
 - `compose.staging.yaml`: file độc lập, không có build hoặc SQL Developer tự động; bắt buộc cung cấp origin, image, DB, secret paths.
 - `deploy/staging.env.example`: placeholder để điền sau khi chọn hạ tầng; không chứa mật khẩu.
 - `deploy/nginx.staging.conf.example`: mẫu vhost HTTPS với certificate paths cần thay thế. nginx ghi đè Forwarded-For/Host/Proto, không nối giá trị người dùng gửi.
-- `deploy/image-lock.json`: digest Node/SQL đã dùng và ID image app local. Chưa push registry; ID local không được coi là địa chỉ pull từ registry.
+- `deploy/image-lock.json`: digest Node/SQL, ID local và tham chiếu image GHCR đã phát hành. Dùng appRegistryReference cho staging; ID local không là địa chỉ pull.
 
 ## Proxy và giới hạn triển khai
 
@@ -70,7 +70,7 @@ Rollback image chỉ an toàn khi schema mới vẫn tương thích. Không sử
 - Compose staging render/parse đạt; đã kiểm tra production mode, verified SQL TLS, loopback port và secret migrator không xuất hiện ở app.
 - Node/SQL base images đã pin digest lấy từ bản build/pull thực tế. Image app đã build lại.
 - Image mới đạt 21/21 nhóm nghiệp vụ Chrome trên Docker, bằng chứng `docs/qa/docker-e2e/results.json`. Đã cập nhật riêng app local bằng --no-deps; HTTP/schema/quyền SQL/WebP đạt, owner còn nguyên (1 admin, 0 sản phẩm/đơn). init local cũ vẫn là bản đã exited 0; lần nâng cấp có migrations mới phải chạy lại init/migrate đúng quy trình, không dựa vào kết quả init cũ.
-- Chưa có máy chủ/tên miền/certificate/registry thực: chưa kiểm tra nginx -t với certificate thật, HTTPS, SQL verified TLS qua mạng hosting, DNS, firewall hoặc cookie Secure qua proxy trên staging. Không coi config parse là nghiệm thu triển khai.
+- Đã có registry/image thật; chưa có máy chủ/tên miền/certificate staging: chưa kiểm tra nginx -t với certificate thật, HTTPS, SQL verified TLS qua mạng hosting, DNS, firewall hoặc cookie Secure qua proxy trên staging. Không coi config parse là nghiệm thu triển khai.
 - Trước public hosting cần backup ngoài máy, lịch lưu giữ, theo dõi health/log/dung lượng và diễn tập phục hồi sang SQL instance khác.
 
 Nguồn: [Express sau reverse proxy](https://expressjs.com/en/guide/behind-proxies/), [nginx proxy_set_header](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_set_header).

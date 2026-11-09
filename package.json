@@ -5,7 +5,8 @@
   "scripts": {
     "test:backend:docker": "node deploy/test-backend-docker.mjs",
     "staging:check": "node deploy/staging-preflight.mjs",
-    "test:deployment": "node --test deploy/staging-preflight.test.mjs",
+    "staging:host-check": "node deploy/staging-host-check.mjs",
+    "test:deployment": "node --test deploy/staging-preflight.test.mjs deploy/staging-host.test.mjs",
     "build:release": "npm --prefix backend run build && npm --prefix frontend run build:api",
     "start:release": "node --env-file-if-exists=backend/.env backend/dist/server.js",
     "dev": "npm --prefix frontend run dev",
