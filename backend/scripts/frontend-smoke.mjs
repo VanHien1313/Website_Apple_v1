@@ -513,14 +513,23 @@ try {
   await page.getByRole('button', { name: 'Tìm kiếm', exact: true }).click();
   await page.getByRole('article', { name: 'Danh mục sort-empty', exact: true }).waitFor();
   assert.equal(new URL(page.url()).searchParams.has('page'), false);
-  assert.equal(await page.getByRole('article').count(), 1);
+  // Native select focus can trigger a refresh after the first row becomes visible.
+  // Check the complete rendered list in one retrying snapshot, not a transient count.
+  await page.waitForFunction(() => {
+    const rows = document.querySelectorAll('article');
+    return rows.length === 1 && rows[0].getAttribute('aria-label') === 'Danh mục sort-empty';
+  });
   await page.reload();
   await page.getByRole('article', { name: 'Danh mục sort-empty', exact: true }).waitFor();
   assert.equal(await page.getByLabel('Sắp xếp', { exact: true }).inputValue(), 'name_desc');
   await page.getByLabel('Sản phẩm trong danh mục').selectOption('used');
   await page.getByRole('button', { name: 'Tìm kiếm', exact: true }).click();
   await page.getByRole('article', { name: 'Danh mục demo-hardware', exact: true }).waitFor();
-  assert.equal(await page.getByRole('article', { name: 'Danh mục sort-empty', exact: true }).count(), 0);
+  await page.waitForFunction(() => {
+    const rows = [...document.querySelectorAll('article')];
+    return rows.some((row) => row.getAttribute('aria-label') === 'Danh mục demo-hardware')
+      && rows.every((row) => row.getAttribute('aria-label') !== 'Danh mục sort-empty');
+  });
   await page.goto(`${origin}/admin/products`);
   await page.getByLabel('Sắp xếp', { exact: true }).selectOption('name_desc');
   await page.getByLabel('Trạng thái', { exact: true }).selectOption('false');
