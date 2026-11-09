@@ -455,8 +455,13 @@ try {
   await fixture.db.query('UPDATE admin_users SET name=@arg1 WHERE email=@arg2', ['Tên từ phiên khác', 'editor-browser@example.test']);
   await staff.getByLabel('Tên editor-browser@example.test').fill('Bản cũ');
   await staff.getByRole('button', { name: 'Lưu tài khoản' }).click();
+  const refreshedUsers = page.waitForResponse((response) => new URL(response.url()).pathname === '/api/v1/admin/users'
+    && response.request().method() === 'GET' && response.status() === 200);
   await page.getByRole('button', { name: 'Tải lại để kiểm tra' }).click();
-  await page.getByLabel('Tên editor-browser@example.test').waitFor();
+  await (await refreshedUsers).finished();
+  // The old input may remain visible until React commits the refreshed row.
+  await page.waitForFunction(() => [...document.querySelectorAll('article[aria-label="Tài khoản editor-browser@example.test"] input')]
+    .some((input) => input.value === 'Tên từ phiên khác'));
   assert.equal(await page.getByLabel('Tên editor-browser@example.test').inputValue(), 'Tên từ phiên khác');
   await staff.getByLabel('Cho phép đăng nhập editor-browser@example.test').uncheck();
   assert.equal(await staff.getByRole('button', { name: 'Lưu tài khoản' }).isDisabled(), true);
