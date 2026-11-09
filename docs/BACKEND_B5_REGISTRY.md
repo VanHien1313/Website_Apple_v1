@@ -22,6 +22,7 @@ Tag có dạng `sha-<commit>-run-<run>-<attempt>`, không dùng latest. Tag vẫ
 
 ## Kiểm chứng và giới hạn
 
+- [CI run 42623431005](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42623431005), commit `14f4d3514e7fe940af64cda38ba743b251e73725`: job verify đạt, gồm backend/E2E/recovery, đối chiếu image ID, xuất image và upload artifact. Job publish skipped đúng thiết kế cho push. Chưa kiểm thử bước download/load trong job publish hoặc registry login/push/pull.
 - Đã kiểm tra YAML, trigger thủ công mặc định tắt, default-branch gate, job dependency, phân quyền, artifact cùng run/attempt, action ghim SHA và cú pháp Bash.
 - Download artifact v7 ghim `37930b1c2abaa49bbe596cd826c3c89aef350131` từ repository chính thức ngày 09/11/2026.
 - Push/PR thông thường không chạy job publish. Chưa xác nhận GHCR login/push/pull thực tế, package access/visibility hoặc pull từ VPS.
