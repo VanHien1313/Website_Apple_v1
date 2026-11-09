@@ -274,8 +274,16 @@ try {
   }
   for (const period of ['week', 'month']) {
     await page.getByLabel('Nhóm theo').selectOption(period);
+    // URL changes before React commits the keyed form and loads the new report.
+    // Wait for this period's request so the next selection cannot hit the old form.
+    const reportResponse = page.waitForResponse((response) => {
+      const url = new URL(response.url());
+      return url.pathname === '/api/v1/admin/reports/revenue'
+        && url.searchParams.get('period') === period && response.status() === 200;
+    });
     await page.getByRole('button', { name: 'Xem báo cáo' }).click();
     await page.waitForURL(new RegExp(`period=${period}`));
+    await (await reportResponse).finished();
     await page.getByTestId('revenue-total').waitFor();
     assert.match(await page.getByTestId('revenue-total').innerText(), /10\.050\.000/);
   }
