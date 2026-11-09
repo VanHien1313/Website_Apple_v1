@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-08T15:32:44.084Z",
+  "at": "2026-11-09T18:03:44.558Z",
   "frontend": "docker-linux-app-and-sql",
   "checks": [
     "SQL Server catalog rendered through Linux Docker app",
@@ -16,6 +16,7 @@
     "Category create/rename/delete reaches SQL and public catalog; duplicate name, stale rowversion, in-use guard, empty search and mobile layout",
     "Admin uploads PNG through built UI; SQL Server serves normalized WebP",
     "Product form creates SQL aggregate with uploaded image; adds configuration/SKU, rejects stale inventory, recovers lost response, archives publicly, filters list and fits mobile",
+    "Owner resets another admin password with confirmation; old sessions/password rejected, new password works, password field clears, mobile fits",
     "Owner creates admin through UI; editor receives 403; stale account blocked; confirmed disable revokes session and rejects login; self protection and mobile layout",
     "Customer search/detail links only account orders; order navigation, missing/empty/error/retry states and mobile layout",
     "Five list filters/sorts reach SQL; URL survives reload, filter submission resets page, owner role/active and customer order-presence work, mobile fits",

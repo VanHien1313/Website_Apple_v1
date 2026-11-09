@@ -24,6 +24,25 @@ function input(raw: unknown) {
 }
 export function adminManagement(db: Database) {
   return {
+    async resetPassword(token: string | undefined, id: string, raw: unknown) {
+      await db.transaction((tx) => owner(tx, token));
+      guid(id);
+      const value = raw as Record<string, unknown> | null;
+      if (!value || Array.isArray(value) || value.confirmed !== true || !validPassword(value.password)) throw new ApiError(422, 'INVALID_PASSWORD', 'Xác nhận đặt lại mật khẩu và nhập mật khẩu mới dài 12–128 ký tự.');
+      if (typeof value.revision !== 'string' || !/^[a-f0-9]{16}$/i.test(value.revision)) throw new ApiError(422, 'INVALID_REVISION', 'Thiếu phiên bản tài khoản.');
+      const hash = await hashPassword(value.password);
+      return db.transaction(async (tx) => {
+        await lockTransaction(tx, 'admin:accounts');
+        const actor = await owner(tx, token);
+        if (actor.id.toLowerCase() === id.toLowerCase()) throw new ApiError(409, 'SELF_PROTECTED', 'Hãy dùng chức năng đổi mật khẩu của tài khoản đang đăng nhập.');
+        const old = (await tx.query<Admin>(`SELECT ${fields} FROM admin_users WITH (UPDLOCK,HOLDLOCK) WHERE id=@arg1`, [id])).rows[0];
+        if (!old) throw new ApiError(404, 'NOT_FOUND', 'Không tìm thấy tài khoản.');
+        if (old.revision !== String(value.revision).toUpperCase()) throw new ApiError(409, 'STALE_ACCOUNT', 'Tài khoản đã thay đổi. Hãy tải lại danh sách.');
+        await tx.query('UPDATE admin_users SET password_hash=@arg1,credential_version=credential_version+1 WHERE id=@arg2', [hash, id]);
+        await tx.query('UPDATE sessions SET revoked_at=SYSUTCDATETIME() WHERE admin_id=@arg1 AND revoked_at IS NULL', [id]);
+        return (await tx.query<Admin>(`SELECT ${fields} FROM admin_users WHERE id=@arg1`, [id])).rows[0]!;
+      });
+    },
     async list(token: string | undefined, query: Record<string, unknown>) {
       const sort = queryChoice(query.sort, namedSorts, 'oldest');
       const role = queryChoice(query.role, { all: '', owner: " AND role='owner'", editor: " AND role='editor'" }, 'all');
@@ -79,5 +98,6 @@ export function adminUsersRouter(db: Database, options: AuthOptions) {
   router.get('/admin/users', async (req, res) => { res.json(await service.list(token(req.headers.cookie), req.query)); });
   router.post('/admin/users', async (req, res) => { res.status(201).json(await service.create(token(req.headers.cookie), req.body)); });
   router.put('/admin/users/:id', async (req, res) => { res.json(await service.update(token(req.headers.cookie), req.params.id, req.body)); });
+  router.post('/admin/users/:id/password', async (req, res) => { res.json(await service.resetPassword(token(req.headers.cookie), req.params.id, req.body)); });
   return router;
 }

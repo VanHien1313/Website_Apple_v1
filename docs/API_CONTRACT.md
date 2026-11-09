@@ -1,3 +1,5 @@
+> Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.
+
 > Cập nhật 02/11/2026: query sort/filter cho danh sách products/categories/customers/users/orders tại [B5.2](BACKEND_B5_LISTS.md). API owner-only GET/POST/PUT /admin/users tại [B4.4.1](BACKEND_B4_ADMIN_USERS.md); GET /admin/customers và /admin/customers/:id dành cho owner/editor tại [B4.4.2](BACKEND_B4_CUSTOMERS.md).
 
 > Cập nhật29/10/2026: API sản phẩm/cấu hình/màu/SKU tại [B4.3.1](BACKEND_B4_PRODUCTS_API.md) và [UI B4.3.2](BACKEND_B4_PRODUCTS_UI.md), CRUD danh mục/rowversion tại [B4.2](BACKEND_B4_CATEGORIES.md), báo cáo tại [B4.1](BACKEND_B4_REPORTS.md). POST/GET orders tại [B3.2](BACKEND_B3_ORDERS.md), retry/receipt tại [B3.3](BACKEND_B3_CHECKOUT.md), account/admin orders tại [B3.4](BACKEND_B3_MANAGEMENT.md). Các đề xuất API phía dưới giữ làm lịch sử khi khác hợp đồng hiện hành.
@@ -100,7 +102,7 @@ GET `/admin/reports/revenue?from=YYYY-MM-DD&to=YYYY-MM-DD&period=day|week|month`
 | PUT `/auth/password` | `{oldPassword,newPassword}`; hủy phiên cũ sau commit |
 | POST `/admin/auth/login` | Đăng nhập thật; thay chọn hồ sơ demo |
 | GET/POST/PUT/DELETE `/admin/users[/:id]` | Owner; hồ sơ `{id,name,email,role,active}` |
-| PUT `/admin/users/:id/password` | Chức năng server mới thay simulatePasswordChange |
+| POST `/admin/users/:id/password` | Owner reset tài khoản khác với `{password,revision,confirmed:true}`; thu hồi mọi phiên |
 | GET `/admin/customers`, `/admin/customers/:id` | Chỉ xem; không CRUD khách |
 
 CustomerProfile hiện `{id,fullName,email,phone,createdAt,credentialVersion}`. credentialVersion nội bộ có thể bỏ khỏi DTO public khi có server. Không gửi hash/verifier/salt hoặc token trong dữ liệu danh sách. Mật khẩu demo khách 12–128 ký tự, email chuẩn hóa, SĐT dạng 0/+84 +9 số; backend cần validation độc lập. Các quy tắc demo không thay thế chính sách auth production.

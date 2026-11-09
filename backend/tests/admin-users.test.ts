@@ -76,9 +76,57 @@ test('HTTP admin users require cookie, same origin and revision', async () => {
     assert.equal((await fetch(base)).status, 401);
     assert.equal((await fetch(base, { method: 'POST', headers: { ...headers, origin: 'https://other.test' }, body: JSON.stringify(body) })).status, 403);
     const response = await fetch(base, { method: 'POST', headers, body: JSON.stringify(body) }); assert.equal(response.status, 201); const row = await response.json();
+    const reset = { password: 'HTTP-reset-password-123', confirmed: true, revision: row.revision };
+    assert.equal((await fetch(`${base}/${row.id}/password`, { method: 'POST', headers: { ...headers, origin: 'https://other.test' }, body: JSON.stringify(reset) })).status, 403);
+    assert.equal((await fetch(`${base}/${row.id}/password`, { method: 'POST', headers, body: JSON.stringify({ ...reset, confirmed: false }) })).status, 422);
     assert.equal((await fetch(`${base}/${row.id}`, { method: 'PUT', headers, body: JSON.stringify(body) })).status, 422);
     assert.equal((await fetch(`${base}/${row.id}`, { method: 'PUT', headers, body: JSON.stringify({ ...row, active: false }) })).status, 200);
   } finally { server.closeAllConnections(); await new Promise<void>((resolve) => server.close(() => resolve())); }
+});
+
+test('owner resets password atomically, revokes every session and never exposes credentials', async () => {
+  const row = await create('reset@example.test'), auth = createAuthService(fixture.db);
+  const a = await auth.login('admin', row.email, password), b = await auth.login('admin', row.email, password);
+  const nextPassword = 'New-admin-password-12345';
+  const updated = await service().resetPassword(token, row.id, { password: nextPassword, revision: row.revision, confirmed: true });
+  assert.notEqual(updated.revision, row.revision);
+  assert.equal(updated.role, row.role); assert.equal(updated.active, row.active);
+  assert.equal(JSON.stringify(updated).includes('password'), false);
+  const stored = (await fixture.db.query<{ password_hash: string; credential_version: number }>('SELECT password_hash,credential_version FROM admin_users WHERE id=@arg1', [row.id])).rows[0]!;
+  assert.notEqual(stored.password_hash, nextPassword);
+  await assert.rejects(auth.me('admin', a.token), /Phiên không hợp lệ/);
+  await assert.rejects(auth.me('admin', b.token), /Phiên không hợp lệ/);
+  await assert.rejects(auth.login('admin', row.email, password), /Email hoặc mật khẩu/);
+  assert.ok((await auth.login('admin', row.email, nextPassword)).token);
+  await assert.rejects(service().resetPassword(token, row.id, { password, revision: row.revision, confirmed: true }), /đã thay đổi/);
+  assert.ok((await auth.login('admin', row.email, nextPassword)).token);
+});
+
+test('reset rejects non-owners, self, missing confirmation and invalid password/revision', async () => {
+  const row = await create('reset-permissions@example.test'), auth = createAuthService(fixture.db);
+  const editor = await auth.login('admin', row.email, password);
+  const body = { password: 'New-password-reset-123', confirmed: true, revision: row.revision };
+  await assert.rejects(service().resetPassword(editor.token, row.id, body), /Chỉ chủ cửa hàng/);
+  await assert.rejects(service().resetPassword(undefined, row.id, body), /đăng nhập/);
+  await auth.logout('admin', editor.token);
+  await assert.rejects(service().resetPassword(editor.token, row.id, body), /Phiên quản trị/);
+  for (const invalid of [{ confirmed: false }, { password: 'short' }, { revision: 'bad' }]) {
+    await assert.rejects(service().resetPassword(token, row.id, { ...body, ...invalid }));
+  }
+  const own = (await service().list(token, { q: 'owner@example.test' })).items[0]!;
+  await assert.rejects(service().resetPassword(token, own.id, { ...body, revision: own.revision }), /chức năng đổi mật khẩu/);
+});
+
+test('concurrent resets have one winner and resetting a locked account does not unlock it', async () => {
+  const row = await create('reset-race@example.test');
+  const locked = await service().update(token, row.id, { ...row, active: false });
+  const body = { password: 'Concurrent-reset-12345', revision: locked.revision, confirmed: true };
+  const results = await Promise.allSettled([service().resetPassword(token, row.id, body), service().resetPassword(token, row.id, body)]);
+  assert.equal(results.filter(r => r.status === 'fulfilled').length, 1);
+  assert.match(String((results.find(r => r.status === 'rejected') as PromiseRejectedResult).reason), /đã thay đổi/);
+  const current = (await service().list(token, { q: row.email })).items[0]!;
+  assert.equal(current.active, false);
+  await assert.rejects(createAuthService(fixture.db).login('admin', row.email, body.password), /Email hoặc mật khẩu/);
 });
 
 test('two owners cannot concurrently remove each other and leave no active owner', async () => {

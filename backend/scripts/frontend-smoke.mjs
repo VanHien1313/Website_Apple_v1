@@ -463,6 +463,21 @@ try {
   await page.waitForFunction(() => [...document.querySelectorAll('article[aria-label="Tài khoản editor-browser@example.test"] input')]
     .some((input) => input.value === 'Tên từ phiên khác'));
   assert.equal(await page.getByLabel('Tên editor-browser@example.test').inputValue(), 'Tên từ phiên khác');
+  await staff.getByText('Đặt lại mật khẩu', { exact: true }).click();
+  await staff.getByLabel('Mật khẩu mới cho editor-browser@example.test').fill('Browser-editor-reset-12345');
+  assert.equal(await staff.getByRole('button', { name: 'Xác nhận đặt lại mật khẩu', exact: true }).isDisabled(), true);
+  await staff.getByLabel('Xác nhận đặt lại mật khẩu cho editor-browser@example.test và đăng xuất mọi phiên', { exact: true }).check();
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: fileURLToPath(new URL('admin-reset-mobile.png', evidence)), fullPage: true });
+  await page.setViewportSize({ width: 1365, height: 950 });
+  await staff.getByRole('button', { name: 'Xác nhận đặt lại mật khẩu', exact: true }).click();
+  await page.getByText('Đã đặt lại mật khẩu và thu hồi các phiên đăng nhập của tài khoản.', { exact: true }).waitFor();
+  assert.equal((await editorContext.request.get(`${origin}/api/v1/admin/auth/me`)).status(), 401);
+  assert.equal((await editorContext.request.post(`${origin}/api/v1/admin/auth/login`, { headers: { Origin: origin, 'X-Aura-Request': '1' }, data: { email: 'editor-browser@example.test', password: 'Browser-editor-12345' } })).status(), 401);
+  assert.equal((await editorContext.request.post(`${origin}/api/v1/admin/auth/login`, { headers: { Origin: origin, 'X-Aura-Request': '1' }, data: { email: 'editor-browser@example.test', password: 'Browser-editor-reset-12345' } })).status(), 200);
+  assert.equal(await staff.getByLabel('Mật khẩu mới cho editor-browser@example.test').inputValue(), '');
+  checks.push('Owner resets another admin password with confirmation; old sessions/password rejected, new password works, password field clears, mobile fits');
   await staff.getByLabel('Cho phép đăng nhập editor-browser@example.test').uncheck();
   assert.equal(await staff.getByRole('button', { name: 'Lưu tài khoản' }).isDisabled(), true);
   await staff.getByLabel('Xác nhận đổi quyền hoặc trạng thái editor-browser@example.test và thu hồi các phiên đăng nhập').check();

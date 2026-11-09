@@ -19,7 +19,7 @@ export default function ApiAdminUsersPage() {
   const mutate: Mutate = async (path, body, method) => {
     if (sending.current || locked) return false;
     sending.current = true; setBusy(true); setIssue(''); setNotice('');
-    try { await request(path, { method, body, signal: AbortSignal.timeout(30000) }); setNotice(method === 'POST' ? 'Đã tạo tài khoản quản trị.' : 'Đã cập nhật tài khoản.'); retry(); return true; }
+    try { await request(path, { method, body, signal: AbortSignal.timeout(30000) }); setNotice(path.endsWith('/password') ? 'Đã đặt lại mật khẩu và thu hồi các phiên đăng nhập của tài khoản.' : method === 'POST' ? 'Đã tạo tài khoản quản trị.' : 'Đã cập nhật tài khoản.'); retry(); return true; }
     catch (cause) {
       if (cause instanceof HttpError && cause.status === 401) setUnauthorized(true);
       if (cause instanceof HttpError && cause.status === 403) setForbidden(true);
@@ -42,5 +42,28 @@ export default function ApiAdminUsersPage() {
 function Account({ account, own, disabled, mutate }: { account: Admin; own: boolean; disabled: boolean; mutate: Mutate }) {
   const [name, setName] = useState(account.name), [role, setRole] = useState(account.role), [active, setActive] = useState(account.active), [confirmed, setConfirmed] = useState(false);
   const sensitive = role !== account.role || active !== account.active;
-  return <article aria-label={`Tài khoản ${account.email}`} className="ui-panel space-y-5 p-5 sm:p-7"><div className="flex flex-wrap justify-between gap-3"><div><h2 className="break-all font-bold">{account.email}</h2><p className="mt-2 text-sm text-secondary">{account.active ? 'Đang hoạt động' : 'Đã khóa'}{own ? ' · Bạn đang đăng nhập' : ''}</p></div><span className="text-sm font-semibold text-accent">{account.role === 'owner' ? 'Chủ cửa hàng' : 'Biên tập viên'}</span></div><form onSubmit={(e) => { e.preventDefault(); if (!sensitive || confirmed) void mutate(`/admin/users/${account.id}`, { name, role, active, revision: account.revision }, 'PUT'); }}><fieldset disabled={disabled} className="space-y-4"><div className="grid gap-4 sm:grid-cols-2"><Input label={`Tên ${account.email}`} required maxLength={120} value={name} onChange={(e) => setName(e.target.value)} /><Select label={`Vai trò ${account.email}`} value={role} disabled={own} onChange={(e) => { setRole(e.target.value as Admin['role']); setConfirmed(false); }}><option value="editor">Biên tập viên</option><option value="owner">Chủ cửa hàng</option></Select></div><Checkbox label={`Cho phép đăng nhập ${account.email}`} disabled={own} checked={active} onChange={(e) => { setActive(e.target.checked); setConfirmed(false); }} />{own && <p className="text-sm text-secondary">Không thể tự khóa hoặc hạ quyền tài khoản hiện tại.</p>}{sensitive && <Checkbox label={`Xác nhận đổi quyền hoặc trạng thái ${account.email} và thu hồi các phiên đăng nhập`} checked={confirmed} onChange={(e) => setConfirmed(e.target.checked)} />}<Button type="submit" variant="outline" disabled={sensitive && !confirmed}>Lưu tài khoản</Button></fieldset></form></article>;
+  return <article aria-label={`Tài khoản ${account.email}`} className="ui-panel space-y-5 p-5 sm:p-7"><div className="flex flex-wrap justify-between gap-3"><div><h2 className="break-all font-bold">{account.email}</h2><p className="mt-2 text-sm text-secondary">{account.active ? 'Đang hoạt động' : 'Đã khóa'}{own ? ' · Bạn đang đăng nhập' : ''}</p></div><span className="text-sm font-semibold text-accent">{account.role === 'owner' ? 'Chủ cửa hàng' : 'Biên tập viên'}</span></div><form onSubmit={(e) => { e.preventDefault(); if (!sensitive || confirmed) void mutate(`/admin/users/${account.id}`, { name, role, active, revision: account.revision }, 'PUT'); }}><fieldset disabled={disabled} className="space-y-4"><div className="grid gap-4 sm:grid-cols-2"><Input label={`Tên ${account.email}`} required maxLength={120} value={name} onChange={(e) => setName(e.target.value)} /><Select label={`Vai trò ${account.email}`} value={role} disabled={own} onChange={(e) => { setRole(e.target.value as Admin['role']); setConfirmed(false); }}><option value="editor">Biên tập viên</option><option value="owner">Chủ cửa hàng</option></Select></div><Checkbox label={`Cho phép đăng nhập ${account.email}`} disabled={own} checked={active} onChange={(e) => { setActive(e.target.checked); setConfirmed(false); }} />{own && <p className="text-sm text-secondary">Không thể tự khóa hoặc hạ quyền tài khoản hiện tại.</p>}{sensitive && <Checkbox label={`Xác nhận đổi quyền hoặc trạng thái ${account.email} và thu hồi các phiên đăng nhập`} checked={confirmed} onChange={(e) => setConfirmed(e.target.checked)} />}<Button type="submit" variant="outline" disabled={sensitive && !confirmed}>Lưu tài khoản</Button></fieldset></form>{!own && <ResetPassword account={account} disabled={disabled} mutate={mutate} />}</article>;
+}
+
+function ResetPassword({ account, disabled, mutate }: { account: Admin; disabled: boolean; mutate: Mutate }) {
+  const [confirmed, setConfirmed] = useState(false);
+  return <details className="border-t border-border pt-5">
+    <summary className="cursor-pointer text-sm font-semibold text-accent">Đặt lại mật khẩu</summary>
+    <form className="mt-4 space-y-4" onSubmit={async (event) => {
+      event.preventDefault();
+      if (!confirmed || disabled) return;
+      const form = event.currentTarget;
+      const password = new FormData(form).get('password');
+      // Clear before awaiting the network, including errors and uncertain responses.
+      form.reset(); setConfirmed(false);
+      await mutate(`/admin/users/${account.id}/password`, { password, revision: account.revision, confirmed: true }, 'POST');
+    }}>
+      <p className="text-sm leading-6 text-secondary">Mật khẩu cũ sẽ ngừng hoạt động và mọi phiên đăng nhập của người này sẽ bị thu hồi. Tài khoản đang khóa vẫn giữ nguyên trạng thái khóa. Chuyển mật khẩu mới trực tiếp cho người nhận qua kênh riêng.</p>
+      <fieldset disabled={disabled} className="space-y-4">
+        <Input label={`Mật khẩu mới cho ${account.email}`} name="password" type="password" required minLength={12} maxLength={128} autoComplete="new-password" />
+        <Checkbox label={`Xác nhận đặt lại mật khẩu cho ${account.email} và đăng xuất mọi phiên`} checked={confirmed} onChange={(event) => setConfirmed(event.target.checked)} />
+        <Button type="submit" variant="outline" disabled={!confirmed}>Xác nhận đặt lại mật khẩu</Button>
+      </fieldset>
+    </form>
+  </details>;
 }

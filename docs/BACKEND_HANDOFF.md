@@ -1,3 +1,5 @@
+> Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.
+
 > B5.8 — 09/11/2026: [runbook Linux host](STAGING_HOST_RUNBOOK.md) và `staging:host-check` đã chuẩn bị; 11/11 deployment tests đạt. Chưa có VPS/tên miền, chưa nghiệm thu hosting.
 
 > Phát hành 09/11/2026: main đã cập nhật tới `98a2061`; GHCR verify/publish đạt tại run 42640475890. Digest và manifest: [B5.7](BACKEND_B5_REGISTRY.md). Tiếp theo cần VPS/tên miền, SQL TLS, secrets trên host, preflight và nghiệm thu staging. Các trạng thái chưa publish bên dưới là lịch sử.

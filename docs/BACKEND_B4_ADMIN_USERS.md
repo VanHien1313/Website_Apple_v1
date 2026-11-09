@@ -1,3 +1,5 @@
+> Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.
+
 # B4.4.1 — Tài khoản quản trị SQL Server
 
 Ngày 30/10/2026. Đã nối API và giao diện `/admin/users` cho tài khoản nội bộ owner/editor. Đây không phải danh sách khách hàng mua hàng; phần khách hàng là bước tiếp theo.
