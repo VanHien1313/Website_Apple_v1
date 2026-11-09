@@ -1,0 +1,28 @@
+# Template for nginx installed on the Linux host; replace hostname/certificate paths.
+# Dedicated vhost. Reject unknown hostnames in the host's separate default server.
+server {
+    listen 80;
+    server_name staging.example.invalid;
+    return 308 https://staging.example.invalid$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name staging.example.invalid;
+    ssl_certificate /etc/letsencrypt/live/staging.example.invalid/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/staging.example.invalid/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    client_max_body_size 6m;
+    location / {
+        proxy_pass http://127.0.0.1:4100;
+        proxy_http_version 1.1;
+        proxy_set_header Host staging.example.invalid;
+        proxy_set_header X-Forwarded-Host staging.example.invalid;
+        proxy_set_header X-Forwarded-Proto https;
+        # Overwrite incoming headers; do not append client-supplied forwarded IPs.
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Connection "";
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 60s;
+    }
+}

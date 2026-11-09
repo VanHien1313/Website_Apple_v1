@@ -1,4 +1,4 @@
-export type ProductCategory = 'iphone' | 'ipad' | 'mac' | 'watch';
+export type ProductCategory = string;
 
 export interface ProductColor {
   id: string;
@@ -9,6 +9,8 @@ export interface ProductColor {
 
 export interface ProductVariant {
   id: string;
+  configurationId?: string;
+  colorId?: string;
   sku: string;
   storage?: string;          // e.g. '128GB', '256GB', '512GB', '1TB'
   screenSize?: string;       // e.g. '11 inch', '13 inch', '42mm', '46mm'

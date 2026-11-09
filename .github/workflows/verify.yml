@@ -1,0 +1,75 @@
+name: Verify application
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-09
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.22.2'
+          package-manager-cache: false
+      - name: Clear previous QA evidence in disposable checkout
+        id: prepare-evidence
+        run: rm -rf -- docs/qa/docker-e2e docs/qa/docker-recovery
+      - name: Install locked dependencies
+        run: |
+          npm ci --prefix frontend
+          npm ci --prefix backend --ignore-scripts
+      - name: Typecheck and frontend tests
+        run: |
+          npm run typecheck --prefix backend
+          npm run build --prefix backend
+          npm test --prefix frontend
+          npm run test:boundary --prefix frontend
+          npm run test:deployment
+        env:
+          TEST_STAGING_COMPOSE: 'true'
+      - name: Build and start disposable Docker stack
+        run: |
+          node deploy/new-local-secrets.mjs
+          # Both SQL (uid 10001) and app (uid 1000) must read bind-mounted files.
+          # The enclosing secrets directory remains 0700 on this ephemeral runner.
+          chmod 0444 deploy/secrets/sql-sa-password.txt deploy/secrets/sql-app-password.txt
+          docker compose build app
+          docker compose up -d --no-build --wait --wait-timeout 240
+          docker compose exec -T app node --input-type=module < deploy/verify-local.mjs
+      - name: Backend tests against Linux SQL Server
+        run: npm run test:backend:docker
+      - name: Install pinned browser tooling
+        run: |
+          npm install --prefix "$RUNNER_TEMP/aura-browser" --no-save --ignore-scripts playwright@1.62.1
+          node "$RUNNER_TEMP/aura-browser/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Browser E2E against Linux application
+        run: |
+          export PLAYWRIGHT_MODULE="$RUNNER_TEMP/aura-browser/node_modules/playwright/index.mjs"
+          npm run test:frontend --prefix backend
+        env:
+          DOCKER_FRONTEND_SMOKE: 'true'
+      - name: Restart and restore rehearsal
+        run: node deploy/recovery-rehearsal.mjs
+      - name: Upload QA evidence only
+        if: always() && steps.prepare-evidence.outcome == 'success'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            docs/qa/docker-e2e/
+            docs/qa/docker-recovery/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Stop disposable stack
+        if: always()
+        # Ephemeral GitHub-hosted runner only. Never use this cleanup on the developer machine.
+        run: docker compose down --volumes --remove-orphans

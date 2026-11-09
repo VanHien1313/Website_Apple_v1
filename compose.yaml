@@ -1,0 +1,81 @@
+name: aura-local
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718
+    platform: linux/amd64
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+    secrets:
+      - sql_sa_password
+    entrypoint: ["/bin/bash", "-c", 'export MSSQL_SA_PASSWORD="$$(cat /run/secrets/sql_sa_password)"; exec /opt/mssql/bin/sqlservr']
+    volumes:
+      - sql_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", 'SQLCMDPASSWORD="$$(cat /run/secrets/sql_sa_password)" /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -C -l 5 -t 5 -Q "SELECT 1" -b -o /dev/null']
+      interval: 10s
+      timeout: 10s
+      start_period: 180s
+      retries: 30
+    restart: unless-stopped
+  init:
+    image: aura-local-app
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      APP_ORIGIN: http://127.0.0.1:4000
+      DB_SERVER: db
+      DB_DATABASE: AuraStoreDocker
+      DB_AUTH: sql
+      DB_USER: sa
+      DB_PASSWORD_FILE: /run/secrets/sql_sa_password
+      DB_ENCRYPT: "true"
+      DB_TRUST_SERVER_CERTIFICATE: "true"
+      AURA_APP_PASSWORD_FILE: /run/secrets/sql_app_password
+    secrets:
+      - sql_sa_password
+      - sql_app_password
+    command: ["node", "deploy/init-local.mjs"]
+    restart: "no"
+  app:
+    image: aura-local-app
+    build: .
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    environment:
+      NODE_ENV: development
+      SERVE_FRONTEND: "true"
+      APP_ORIGIN: http://127.0.0.1:4000
+      DB_SERVER: db
+      DB_DATABASE: AuraStoreDocker
+      DB_AUTH: sql
+      DB_USER: aura_docker_app
+      DB_PASSWORD_FILE: /run/secrets/sql_app_password
+      DB_ENCRYPT: "true"
+      DB_TRUST_SERVER_CERTIFICATE: "true"
+      ALLOW_DEMO_SEED: "false"
+    secrets:
+      - sql_app_password
+    ports:
+      - "127.0.0.1:4000:4000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    init: true
+    stop_grace_period: 15s
+    restart: unless-stopped
+secrets:
+  sql_sa_password:
+    file: ./deploy/secrets/sql-sa-password.txt
+  sql_app_password:
+    file: ./deploy/secrets/sql-app-password.txt
+volumes:
+  sql_data:

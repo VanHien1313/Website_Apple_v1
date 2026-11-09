@@ -1,0 +1,9 @@
+{
+  "recordedOn": "2026-11-08",
+  "platform": "linux/amd64",
+  "node": "node:24-bookworm-slim@sha256:01d566e8d94d8c619591d78652babfccd3c6992a3dffa9ed5ab39e11cf6c70e9",
+  "sqlLocal": "mcr.microsoft.com/mssql/server:2022-latest@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+  "appLocalImageId": "sha256:9b8794caac277d5b43c52510cf8d48795305141a3fdfee58a9add0f10ae83e3c",
+  "appRegistryReference": null,
+  "note": "Local image identity only. No registry push or staging deployment yet. Rebuild/retest and update this record when source or dependencies change."
+}

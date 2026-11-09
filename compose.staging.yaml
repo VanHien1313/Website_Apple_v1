@@ -1,0 +1,59 @@
+# Standalone: never merge with compose.yaml (which is local development only).
+name: aura-staging
+x-environment: &environment
+  NODE_ENV: production
+  HOST: 0.0.0.0
+  PORT: "4000"
+  SERVE_FRONTEND: "true"
+  APP_ORIGIN: ${APP_ORIGIN:?Set the exact HTTPS origin}
+  TRUST_PROXY_IPS: ${TRUST_PROXY_IPS:?Set verified proxy peer IPs}
+  DB_AUTH: sql
+  DB_SERVER: ${DB_SERVER:?Set SQL certificate hostname}
+  DB_PORT: ${DB_PORT:-1433}
+  DB_DATABASE: ${DB_DATABASE:?Set staging database}
+  DB_ENCRYPT: "true"
+  DB_TRUST_SERVER_CERTIFICATE: "false"
+  NODE_EXTRA_CA_CERTS: /run/secrets/sql_ca
+  ALLOW_DEMO_SEED: "false"
+services:
+  app:
+    image: ${AURA_IMAGE:?Set tested app image by digest}
+    environment:
+      <<: *environment
+      DB_USER: ${DB_USER:?Set limited runtime SQL login}
+      DB_PASSWORD_FILE: /run/secrets/sql_app_password
+    secrets: [sql_app_password, sql_ca]
+    ports: ["127.0.0.1:4100:4000"]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    stop_grace_period: 15s
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+  migrate:
+    image: ${AURA_IMAGE:?Set tested app image by digest}
+    profiles: [tools]
+    environment:
+      <<: *environment
+      DB_USER: ${DB_MIGRATION_USER:?Set dedicated migration login}
+      DB_PASSWORD_FILE: /run/secrets/sql_migration_password
+    secrets: [sql_migration_password, sql_ca]
+    command: [node, backend/dist/db/cli.js, migrate]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: "no"
+secrets:
+  sql_app_password:
+    file: ${SQL_APP_PASSWORD_PATH:?Set runtime secret path}
+  sql_migration_password:
+    file: ${SQL_MIGRATION_PASSWORD_PATH:?Set migration secret path}
+  sql_ca:
+    file: ${SQL_CA_PATH:?Set PEM CA bundle path}

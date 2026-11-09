@@ -1,279 +1,50 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-import { SlidersHorizontal, X } from 'lucide-react';
-import { ProductCategory, Product } from '../types/product';
+import { useCallback, useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { SlidersHorizontal } from 'lucide-react';
+import type { ProductCategory } from '../types/product';
 import { productService } from '../services/productService';
 import { ProductGrid } from '../components/product/ProductGrid';
-import { FilterSidebar, FilterState } from '../components/product/FilterSidebar';
-import { FilterDrawer } from '../components/product/FilterDrawer';
+import { FilterSidebar, type FilterState } from '../components/product/FilterSidebar';
+import { parseCatalogParams, PRICE_OPTIONS, type CatalogFilter } from '../domain/catalog';
+import { useAsyncResource } from '../hooks/useAsyncResource';
+import { AsyncState } from '../components/common/AsyncState';
+import { Drawer } from '../components/common/Overlay';
 import { Button } from '../components/common/Button';
-
-interface CategoryPageProps {
-  category: ProductCategory;
-  title: string;
-  description: string;
+import { Select } from '../components/common/FormControls';
+import { Pagination } from '../components/common/Pagination';
+interface Props { category?: ProductCategory; title: string; description: string }
+export function CategoryPage({ category, title, description }: Props) {
+  const [params, setParams] = useSearchParams();
+  const [drawer, setDrawer] = useState(false);
+  const queryString = params.toString();
+  const filters = parseCatalogParams(params);
+  const load = useCallback((signal: AbortSignal) => {
+    const query = parseCatalogParams(new URLSearchParams(queryString));
+    return productService.getCatalog({ ...query, category: category ?? query.category, pageSize: 6 }, { signal });
+  }, [category, queryString]);
+  const { data, loading, error, retry } = useAsyncResource(load);
+  useEffect(() => {
+    if (data && !loading && Number(params.get('page') || 1) !== data.page) {
+      setParams((previous) => { const next = new URLSearchParams(previous); next.set('page', String(data.page)); return next; }, { replace: true });
+    }
+  }, [data, loading, params, setParams]);
+  function setFilters(next: FilterState) {
+    setParams((previous) => {
+      const result = new URLSearchParams(previous);
+      for (const key of ['category', 'subCategory', 'priceRange', 'sort'] as const) {
+        if (next[key]) result.set(key, next[key]); else result.delete(key);
+      }
+      result.delete('page');
+      return result;
+    });
+  }
+  const reset = () => setFilters({ sort: filters.sort });
+  const sidebar = { subCategories: data?.subCategories ?? [], filters, onChange: setFilters, onReset: reset, showCategories: !category };
+  const active = [!category && filters.category, filters.subCategory, PRICE_OPTIONS.find((option) => option.id === filters.priceRange)?.label].filter(Boolean);
+  return <div className="ui-container py-10 sm:py-14"><div className="border-b border-border-subtle pb-8"><p className="mb-3 text-sm text-accent">Bộ sưu tập Aura</p><h1 className="ui-page-title">{title}</h1><p className="mt-4 max-w-2xl text-sm leading-7 text-secondary">{description}</p>{filters.searchQuery && <p className="mt-4 text-sm">Kết quả cho <strong>“{filters.searchQuery}”</strong></p>}</div>
+    <div className="my-6 flex flex-wrap items-end justify-between gap-4"><div className="flex items-center gap-4"><Button variant="outline" className="lg:hidden" onClick={() => setDrawer(true)} icon={<SlidersHorizontal size={17} />}>Bộ lọc</Button><p className="text-sm text-secondary" role="status">{loading ? 'Đang tìm…' : `${data?.total ?? 0} sản phẩm`}</p></div><div className="w-48"><Select label="Sắp xếp" value={filters.sort} onChange={(event) => setFilters({ ...filters, sort: event.target.value as CatalogFilter['sort'] })}><option value="featured">Đề xuất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="newest">Mới nhất</option></Select></div></div>
+    {active.length > 0 && <div className="mb-6 flex flex-wrap items-center gap-3 rounded-lg bg-surface-subtle p-3"><p className="text-xs text-secondary">Đang lọc: {active.join(' · ')}</p><button type="button" className="min-h-9 text-xs font-semibold text-accent" onClick={reset}>Xóa bộ lọc</button></div>}
+    <div className="grid items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]"><aside className="ui-panel hidden p-5 lg:block"><FilterSidebar {...sidebar} /></aside><section aria-label="Danh sách sản phẩm" className="min-w-0">{loading || error ? <AsyncState error={error} onRetry={retry} /> : <><ProductGrid products={data?.items ?? []} />{data?.total === 0 && <div className="text-center"><Button variant="outline" onClick={() => setParams({})}>Xem lại toàn bộ danh mục</Button></div>}{data && <div className="mt-8"><Pagination label="Phân trang sản phẩm" page={data.page} pageSize={data.pageSize} total={data.total} onChange={(page) => setParams((previous) => { const next = new URLSearchParams(previous); next.set('page', String(page)); return next; })} /></div>}</>}</section></div>
+    <Drawer open={drawer} onClose={() => setDrawer(false)} title="Bộ lọc tìm kiếm" footer={<Button fullWidth onClick={() => setDrawer(false)}>Xem {data?.total ?? 0} sản phẩm</Button>}><FilterSidebar {...sidebar} /></Drawer>
+  </div>;
 }
-
-export const CategoryPage: React.FC<CategoryPageProps> = ({
-  category,
-  title,
-  description,
-}) => {
-  const location = useLocation();
-  const [allProducts, setAllProducts] = useState<Product[]>([]);
-  const [, setLoading] = useState(true);
-  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
-
-  const [filters, setFilters] = useState<FilterState>({
-    sort: 'featured',
-  });
-
-  // Extract query params (e.g. from search bar ?q=...)
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const q = params.get('q');
-    if (q) {
-      // If search query is present, we filter by searchQuery
-    }
-  }, [location.search]);
-
-  // Load products when category changes
-  useEffect(() => {
-    async function loadCategoryProducts() {
-      setLoading(true);
-      try {
-        const list = await productService.getProductsByCategory(category);
-        setAllProducts(list);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadCategoryProducts();
-    // Reset filters on category switch
-    setFilters({ sort: 'featured' });
-  }, [category]);
-
-  // Unique subcategories for this category
-  const subCategories = useMemo(() => {
-    const set = new Set<string>();
-    for (const p of allProducts) {
-      if (p.subCategory) set.add(p.subCategory);
-    }
-    return Array.from(set);
-  }, [allProducts]);
-
-  // Filtered & sorted products
-  const filteredProducts = useMemo(() => {
-    let result = [...allProducts];
-
-    // Subcategory filter
-    if (filters.subCategory) {
-      result = result.filter(
-        (p) => p.subCategory?.toLowerCase() === filters.subCategory?.toLowerCase()
-      );
-    }
-
-    // Price bracket filter
-    if (filters.priceRange) {
-      switch (filters.priceRange) {
-        case 'under15':
-          result = result.filter((p) => p.basePrice < 15000000);
-          break;
-        case '15to25':
-          result = result.filter((p) => p.basePrice >= 15000000 && p.basePrice <= 25000000);
-          break;
-        case '25to35':
-          result = result.filter((p) => p.basePrice > 25000000 && p.basePrice <= 35000000);
-          break;
-        case 'above35':
-          result = result.filter((p) => p.basePrice > 35000000);
-          break;
-      }
-    }
-
-    // Sorting
-    switch (filters.sort) {
-      case 'price_asc':
-        result.sort((a, b) => a.basePrice - b.basePrice);
-        break;
-      case 'price_desc':
-        result.sort((a, b) => b.basePrice - a.basePrice);
-        break;
-      case 'newest':
-        result.sort((a, b) => (b.badge === 'Mới' ? 1 : 0) - (a.badge === 'Mới' ? 1 : 0));
-        break;
-      case 'featured':
-      default:
-        break;
-    }
-
-    return result;
-  }, [allProducts, filters]);
-
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      {/* Category Header with TopZone-style Sub-series Quick Pills */}
-      <div className="mb-8 pb-6 border-b border-border-subtle">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-xl font-bold text-primary"></span>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-secondary">
-            Apple Authorised Store
-          </span>
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
-          {title}
-        </h1>
-        <p className="text-sm sm:text-base text-secondary mt-1.5 max-w-2xl">
-          {description}
-        </p>
-
-        {/* Quick Series Quick Links */}
-        {subCategories.length > 0 && (
-          <div className="flex items-center gap-2 mt-5 flex-wrap">
-            <button
-              type="button"
-              onClick={() => setFilters((prev) => ({ ...prev, subCategory: undefined }))}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                !filters.subCategory
-                  ? 'bg-primary text-background shadow-2xs'
-                  : 'bg-surface-subtle text-secondary hover:text-primary hover:bg-gray-200 dark:hover:bg-white/10'
-              }`}
-            >
-              Tất cả ({allProducts.length})
-            </button>
-            {subCategories.map((sub) => {
-              const isActive = filters.subCategory?.toLowerCase() === sub.toLowerCase();
-              return (
-                <button
-                  key={sub}
-                  type="button"
-                  onClick={() => setFilters((prev) => ({ ...prev, subCategory: sub }))}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                    isActive
-                      ? 'bg-primary text-background shadow-2xs'
-                      : 'bg-surface-subtle text-secondary hover:text-primary hover:bg-gray-200 dark:hover:bg-white/10'
-                  }`}
-                >
-                  {sub}
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* Control Bar: Filter toggle on mobile + Sorting dropdown */}
-      <div className="flex items-center justify-between gap-4 mb-4">
-        {/* Mobile Filter Button */}
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setIsFilterDrawerOpen(true)}
-          className="lg:hidden flex items-center gap-2"
-        >
-          <SlidersHorizontal className="w-3.5 h-3.5" />
-          <span>Bộ lọc</span>
-          {(filters.subCategory || filters.priceRange) && (
-            <span className="w-2 h-2 rounded-full bg-accent" />
-          )}
-        </Button>
-
-        <div className="text-xs text-secondary hidden sm:block">
-          Hiển thị <strong className="text-primary font-semibold">{filteredProducts.length}</strong> sản phẩm
-        </div>
-
-        {/* Sort Select */}
-        <div className="flex items-center gap-2 ml-auto">
-          <span className="text-xs text-secondary hidden md:inline">Sắp xếp theo:</span>
-          <select
-            value={filters.sort || 'featured'}
-            onChange={(e) =>
-              setFilters((prev) => ({
-                ...prev,
-                sort: e.target.value as FilterState['sort'],
-              }))
-            }
-            className="text-xs font-semibold text-primary bg-surface-subtle hover:bg-gray-100 dark:hover:bg-white/10 dark:bg-[#161618] border border-border-subtle rounded-lg px-3 py-2 focus:outline-none focus:border-accent cursor-pointer transition-colors"
-          >
-            <option value="featured">Nổi bật nhất</option>
-            <option value="price_asc">Giá: Thấp đến Cao</option>
-            <option value="price_desc">Giá: Cao đến Thấp</option>
-            <option value="newest">Mới ra mắt</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Active Filter Chips */}
-      {(filters.subCategory || filters.priceRange) && (
-        <div className="flex flex-wrap items-center gap-2 mb-6 p-2.5 rounded-xl bg-surface-subtle border border-border-subtle">
-          <span className="text-[11px] font-semibold text-secondary uppercase tracking-wider pl-1">
-            Đang lọc:
-          </span>
-
-          {filters.subCategory && (
-            <button
-              onClick={() => setFilters((prev) => ({ ...prev, subCategory: undefined }))}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-[#161618] border border-border-subtle text-xs font-medium text-primary hover:border-border-hover hover:bg-gray-50 dark:hover:bg-[#1c1c1e] transition-all shadow-2xs"
-            >
-              <span>Dòng: {filters.subCategory}</span>
-              <X className="w-3 h-3 text-secondary" />
-            </button>
-          )}
-
-          {filters.priceRange && (
-            <button
-              onClick={() => setFilters((prev) => ({ ...prev, priceRange: undefined }))}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-[#161618] border border-border-subtle text-xs font-medium text-primary hover:border-border-hover hover:bg-gray-50 dark:hover:bg-[#1c1c1e] transition-all shadow-2xs"
-            >
-              <span>
-                {filters.priceRange === 'under15' && 'Dưới 15 triệu'}
-                {filters.priceRange === '15to25' && '15 - 25 triệu'}
-                {filters.priceRange === '25to35' && '25 - 35 triệu'}
-                {filters.priceRange === 'above35' && 'Trên 35 triệu'}
-              </span>
-              <X className="w-3 h-3 text-secondary" />
-            </button>
-          )}
-
-          <button
-            onClick={() => setFilters({ sort: filters.sort || 'featured' })}
-            className="text-xs text-secondary hover:text-primary underline ml-auto pr-1"
-          >
-            Xóa tất cả
-          </button>
-        </div>
-      )}
-
-      {/* Main Grid + Sidebar Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Desktop Sidebar (1 Column) */}
-        <div className="hidden lg:block lg:col-span-1">
-          <div className="sticky top-24 bg-white dark:bg-[#161618] rounded-xl border border-border-subtle p-5">
-            <FilterSidebar
-              subCategories={subCategories}
-              filters={filters}
-              onChange={(newFilters) => setFilters(newFilters)}
-              onReset={() => setFilters({ sort: 'featured' })}
-            />
-          </div>
-        </div>
-
-        {/* Product Grid Area (3 Columns) */}
-        <div className="lg:col-span-3">
-          <ProductGrid products={filteredProducts} />
-        </div>
-      </div>
-
-      {/* Mobile/Tablet Filter Drawer */}
-      <FilterDrawer
-        isOpen={isFilterDrawerOpen}
-        onClose={() => setIsFilterDrawerOpen(false)}
-        subCategories={subCategories}
-        filters={filters}
-        onChange={(newFilters) => setFilters(newFilters)}
-        onReset={() => setFilters({ sort: 'featured' })}
-        totalResults={filteredProducts.length}
-      />
-    </div>
-  );
-};

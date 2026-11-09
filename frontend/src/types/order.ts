@@ -1,11 +1,12 @@
-export type OrderStatus = 'PENDING' | 'CONFIRMED' | 'PAID' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED';
+export type OrderStatus = 'PENDING' | 'CONFIRMED' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'COMPLETED' | 'CANCELLED';
+export interface OrderEvent { id: string; at: string; actor: string; kind: 'status' | 'payment'; from: string; to: string; note: string }
 export type PaymentStatus = 'PENDING' | 'PAID' | 'FAILED' | 'REFUNDED';
 export type PaymentMethod = 'cod' | 'vnpay' | 'momo';
 export type ShippingMethod = 'standard' | 'express';
 
 export interface CustomerInfo {
   fullName: string;
-  email: string;
+  email?: string;
   phone: string;
 }
 
@@ -30,6 +31,10 @@ export interface OrderItem {
 }
 
 export interface Order {
+  customerId?: string;
+  revision?: number;
+  completedAt?: string;
+  history?: OrderEvent[];
   id: string;
   orderCode: string;
   customer: CustomerInfo;
@@ -47,6 +52,10 @@ export interface Order {
 }
 
 export interface CreateOrderInput {
+  customerId?: string;
+  requestId?: string;
+  expectedTotal?: number;
+  items: { productId: string; variantId: string; colorId: string; quantity: number }[];
   customer: CustomerInfo;
   shippingAddress: ShippingAddress;
   shippingMethod: ShippingMethod;

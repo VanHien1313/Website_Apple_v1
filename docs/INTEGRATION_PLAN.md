@@ -1,3 +1,5 @@
+> Tài liệu lịch sử trước kế hoạch frontend 6 giai đoạn. Trạng thái hiện hành: [FRONTEND_ACCEPTANCE.md](FRONTEND_ACCEPTANCE.md); tích hợp mới: [BACKEND_HANDOFF.md](BACKEND_HANDOFF.md). Các tuyên bố hoàn thành dưới đây không là bằng chứng nghiệm thu hiện tại.
+
 # EXTERNAL INTEGRATION PLAN
 
 ## 1. Authentication Integration Plan

@@ -1,0 +1,12 @@
+{
+  "engine": "SQL Server 2022 Express",
+  "instance": ".\\SQLEXPRESS",
+  "database": "AuraStore",
+  "date": "2026-10-24",
+  "health": {
+    "status": "ready"
+  },
+  "catalogTotal": 1,
+  "sampleName": "Thiết bị mẫu B1",
+  "basePrice": 10000000
+}

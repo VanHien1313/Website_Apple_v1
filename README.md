@@ -1,165 +1,84 @@
-# 🍎 Aura — Website Thương Mại Điện Tử Đại Lý Ủy Quyền Apple Cao Cấp
+> Cập nhật24/10: đã chuyển nền backend sang **SQL Server** theo quyết định của người dùng. [Trạng thái và hướng dẫn hiện hành](docs/SQL_SERVER_MIGRATION.md). Các mô tả PostgreSQL trong lịch sử B1 đã được thay thế.
 
-![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+# Aura — website thương mại điện tử
 
-Hệ thống website thương mại điện tử chuyên biệt dành cho các sản phẩm công nghệ Apple chính hãng (Aura Apple Authorized Reseller). Giao diện được thiết kế theo tiêu chuẩn hiện đại cao cấp (*Direction C — Modern Apple Commerce*), lấy cảm hứng từ Apple Store, TopZone, Thế Giới Di Động và CellphoneS, mang đến trải nghiệm mua sắm trực quan, mượt mà và đẳng cấp.
+React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · Docker. Dự án học tập theo Đề tài số 3, gồm cửa hàng và quản trị trong một ứng dụng.
 
----
+## Trạng thái
 
-## 📑 Mục Lục
-- [1. Tính Năng Nổi Bật](#1-tính-năng-nổi-bật)
-- [2. Cấu Trúc Dự Án](#2-cấu-trúc-dự-án)
-- [3. Công Nghệ Sử Dụng](#3-công-nghệ-sử-dụng)
-- [4. Hướng Dẫn Cài Đặt & Chạy](#4-hướng-dẫn-cài-đặt--chạy)
-- [5. Luồng Mua Sắm & Trải Nghiệm](#5-luồng-mua-sắm--trải-nghiệm)
-- [6. Tài Liệu Hệ Thống & Kế Hoạch Tích Hợp](#6-tài-liệu-hệ-thống--kế-hoạch-tích-hợp)
+**Hiện hành 09/11/2026:** đã chạy frontend/API/SQL Server bằng Docker local, có owner thật và dữ liệu cửa hàng riêng. 74/74 test backend đạt trên Linux/SQL Server Docker; 21 nhóm E2E Docker và diễn tập restart/backup/restore đạt. Staging có cấu hình riêng, công cụ preflight và CI workflow đã chuẩn bị; chưa chạy GitHub Actions trên dịch vụ thật hoặc triển khai hosting công khai.
 
----
+- [Bàn giao và việc còn lại](docs/BACKEND_HANDOFF.md)
+- [Chạy Docker local](docs/BACKEND_B5_DOCKER.md)
+- [Backup/restore](docs/BACKEND_B5_RECOVERY.md)
+- [Chuẩn bị staging](docs/BACKEND_B5_STAGING.md)
+- [Kiểm thử CI](docs/BACKEND_B5_CI.md)
 
-## 1. Tính Năng Nổi Bật
+Các cập nhật bên dưới là lịch sử; ưu tiên trạng thái hiện hành và tài liệu bàn giao khi triển khai.
 
-### 🖥️ Giao diện & Trải nghiệm Người Dùng (UI/UX)
-- **Thiết kế chuẩn Apple Commerce:** Tông màu sang trọng (90% nền xám mềm/trắng, 8% đen tối giản, 2% xanh cobalt nhận diện thương hiệu).
-- **Dark Mode & Light Mode:** Chuyển đổi chủ đề sáng/tối tức thì với bộ tokens màu sắc chuyên sâu.
-- **Hoàn toàn Responsive:** Tối ưu hiển thị mượt mà trên mọi thiết bị: Desktop, Tablet và Mobile.
-- **Micro-interactions:** Hiệu ứng hover sản phẩm, animation chuyển cảnh, thanh thông báo trượt và toast notification mượt mà.
+Cập nhật 02/11 — [B5.3 cấu hình Docker](docs/BACKEND_B5_DOCKER.md): có Dockerfile nhiều stage, Compose db/init/app, secret file và hướng dẫn bootstrap. **Chưa build/chạy container vì máy chưa có Docker**; không coi Docker/hosting đã nghiệm thu. Xem tài liệu trước khi chạy để tách database Docker khỏi SQL Server Windows.
 
-### 📱 Danh mục & Khám phá Sản phẩm
-- **4 Ngành hàng cốt lõi:** iPhone, iPad, Mac và Apple Watch.
-- **Bộ lọc đa tiêu chí:** Lọc sản phẩm theo phân khúc dòng máy (Pro Series, Standard, Air, Ultra...), lọc theo khoảng giá, và sắp xếp linh hoạt (Giá tăng/giảm, Mới nhất, Bán chạy).
-- **Thẻ sản phẩm chuẩn TopZone:** Hiển thị nhãn trả góp 0%, tag công nghệ màn hình, pill chọn dung lượng, chấm đổi màu xem nhanh ảnh sản phẩm, huy hiệu giảm giá.
+Cập nhật 02/11 — [B5.2 sắp xếp/lọc danh sách](docs/BACKEND_B5_LISTS.md): năm danh sách chính có lựa chọn sắp xếp, bộ lọc nghiệp vụ và URL lưu lựa chọn; truy vấn/đếm/phân trang tại SQL Server bằng allowlist. Tiếp theo Docker toàn ứng dụng; giới hạn các bảng phụ được ghi trong tài liệu.
 
-### 🔍 Trang Chi Tiết Sản Phẩm (PDP)
-- **Thư viện ảnh studio cân đối:** Hình ảnh sản phẩm chất lượng cao (650x650px PNG nền trong suốt) được căn chỉnh tỷ lệ chuẩn xác, không bị phóng to hay cắt xén.
-- **Lightbox phóng to chi tiết:** Cho phép click phóng to toàn màn hình để soi cận cảnh từng góc máy và màu sắc.
-- **Cấu hình đa dạng:** Chọn biến thể dung lượng (128GB, 256GB, 512GB, 1TB...) và màu sắc kèm cập nhật giá tiền tự động.
-- **Bảng thông số kỹ thuật đa tầng:** Tóm tắt thông số chính và modal xem chi tiết đầy đủ (Chip, RAM, Camera, Màn hình, Pin, Cổng kết nối...).
+Cập nhật 02/11 — [B5.1 rà soát và bản đóng gói](docs/BACKEND_B5_RELEASE.md): Express có thể phục vụ frontend API đã build cùng địa chỉ bằng `SERVE_FRONTEND=true`. Có lệnh `npm run build:release` và `npm run start:release`; xem hướng dẫn APP_ORIGIN trước khi chạy. Chưa triển khai hosting; còn thiếu sorting/filter một số danh sách và Docker toàn ứng dụng.
 
-### 🛒 Giỏ Hàng & Quy Trình Thanh Toán (Cart & Checkout)
-- **Quản lý giỏ hàng thông minh:** Thêm, bớt, tăng giảm số lượng, tự động tính tổng tiền, chiết khấu và miễn phí ship; lưu trữ trạng thái bền vững qua `localStorage`.
-- **Form thanh toán chuẩn hóa:** Điền thông tin giao hàng, validation số điện thoại/email, lựa chọn phương thức thanh toán (COD, VNPay Sandbox, MoMo Sandbox).
-- **Xác nhận đơn hàng:** Xuất mã đơn hàng định danh (`APL-2026-XXXX`) và làm mới giỏ hàng sau khi đặt thành công.
+Cập nhật 30/10 — [B4.4.2 tra cứu khách hàng](docs/BACKEND_B4_CUSTOMERS.md): danh sách tìm kiếm/phân trang, hồ sơ và đơn gắn đúng tài khoản đã nối SQL Server tại `/admin/customers`. 66 test backend,41 test frontend và20 nhóm browser đạt. Tiếp theo rà soát yêu cầu và chuẩn bị vận hành/triển khai.
 
----
+Cập nhật 30/10 — [B4.4.1 tài khoản quản trị](docs/BACKEND_B4_ADMIN_USERS.md): owner tạo tài khoản, sửa tên/quyền, khóa/mở khóa; thu hồi phiên và bảo vệ tài khoản hiện tại. Đã nối UI `/admin/users`, migration007 và kiểm thử SQL/Chrome. Bước tiếp theo là quản trị khách hàng; các mốc phía dưới giữ lịch sử triển khai.
 
-## 2. Cấu Trúc Dự Án
+Cập nhật 29/10 — [B4.3.2 quản trị sản phẩm](docs/BACKEND_B4_PRODUCTS_UI.md): danh sách tìm/lọc/phân trang và form tạo/sửa sản phẩm, ảnh, thông số, cấu hình/màu/SKU đã nối SQL Server. Có kiểm tra bản máy chủ khi xung đột hoặc mất phản hồi. Nền API tại [B4.3.1](docs/BACKEND_B4_PRODUCTS_API.md). Tiếp theo là quản trị tài khoản/người dùng.
 
-Dự án được cấu trúc rõ ràng theo mô hình phân tách Frontend và Tài liệu thiết kế hệ thống:
+Cập nhật29/10 — [B4.2 quản lý danh mục](docs/BACKEND_B4_CATEGORIES.md): tạo, đổi tên, xóa danh mục rỗng; kiểm tra trùng tên/mã, rowversion chống ghi đè và bảo vệ danh mục có sản phẩm. Bước tiếp theo là CRUD sản phẩm/SKU, sau đó tài khoản quản trị.
 
-```text
-Apple_Web/
-├── frontend/                       # Toàn bộ mã nguồn giao diện người dùng
-│   ├── src/
-│   │   ├── assets/                 # Hình ảnh, biểu tượng tĩnh
-│   │   ├── components/             # Reusable UI components
-│   │   │   ├── common/             # Button, PriceDisplay, ThemeToggle, EmptyState...
-│   │   │   ├── layout/             # Header, Navbar, Footer, AnnouncementBar...
-│   │   │   └── product/            # ProductCard, ProductGrid, FilterSidebar, FilterDrawer...
-│   │   ├── data/                   # Dữ liệu chuẩn hóa (mockProducts, specifications)
-│   │   ├── pages/                  # Trang chính (Home, Category, ProductDetail, Cart, Checkout)
-│   │   ├── services/               # Lớp trừu tượng dịch vụ (productService, orderService)
-│   │   ├── store/                  # Quản lý trạng thái toàn cục (CartContext)
-│   │   ├── styles/                 # Tailwind design tokens & CSS biến
-│   │   ├── types/                  # Định nghĩa TypeScript Domain Models
-│   │   └── utils/                  # Format tiền tệ, định dạng ngày, thông số kỹ thuật
-│   ├── public/                     # Static public assets
-│   ├── index.html                  # File HTML entry point
-│   ├── vite.config.ts              # Cấu hình Vite
-│   ├── tailwind.config.js          # Cấu hình Tailwind CSS
-│   ├── tsconfig.json               # Cấu hình TypeScript
-│   └── package.json                # Dependencies của Frontend
-│
-├── docs/                           # Tài liệu kỹ thuật kiến trúc & tích hợp
-│   ├── ARCHITECTURE.md             # Kiến trúc hệ thống tổng thể & phân tầng
-│   ├── API_CONTRACT.md             # Đặc tả hợp đồng API RESTful (chuẩn bị kết nối Backend)
-│   ├── INTEGRATION_PLAN.md         # Kế hoạch tích hợp OAuth (Google) & Cổng thanh toán
-│   └── PHASE_1_TO_8_COMPLETION_REPORT.md  # Báo cáo kết quả kiểm thử E2E Frontend
-│
-├── .gitignore                      # Cấu hình loại trừ file khi đẩy lên GitHub
-├── package.json                    # Root scripts chuyển tiếp (npm run dev, build)
-└── README.md                       # Tài liệu hướng dẫn dự án (file này)
-```
+Cập nhật29/10 — [B4.1 báo cáo doanh thu](docs/BACKEND_B4_REPORTS.md): `/admin/reports` lấy số tổng hợp từ SQL Server, lọc ngày Việt Nam, nhóm ngày/tuần/tháng và chỉ tính đơn hoàn thành đã thu tiền. Phần B4 còn lại là CRUD quản trị.
 
----
+Cập nhật29/10: [B3.4 vận hành đơn](docs/BACKEND_B3_MANAGEMENT.md) đã nối SQL Server: lịch sử đơn tài khoản, khách hủy đơn chờ, quản trị xử lý COD, lịch sử thao tác và kiểm tra revision. Giao hàng tiêu thụ tồn giữ; hủy/expiry giải phóng đúng một lần. Bước tiếp theo là B4 báo cáo và CRUD quản trị.
 
-## 3. Công Nghệ Sử Dụng
+Đã nối [checkout COD B3.3](docs/BACKEND_B3_CHECKOUT.md) với SQL Server: Mua ngay/giỏ hàng → form nhận hàng → tạo đơn → xác nhận. Có chống trùng khi retry, giữ tồn, phục hồi yêu cầu trong phiên tab và bảo vệ quyền đọc đơn guest/tài khoản.
 
-| Lớp kiến trúc | Công nghệ / Thư viện | Mục đích |
-| :--- | :--- | :--- |
-| **Framework UI** | `React 19` | Xây dựng giao diện Single Page Application (SPA) hiệu năng cao |
-| **Ngôn ngữ** | `TypeScript 5.7` | Định kiểu tĩnh chặt chẽ, an toàn dữ liệu cho toàn bộ domain models |
-| **Build Tool** | `Vite 6` | Bundler siêu tốc, Hot Module Replacement (HMR) tức thì |
-| **Định tuyến** | `React Router v7` | Điều hướng trang mượt mà không tải lại trang |
-| **Styling** | `Tailwind CSS 3.4` + `PostCSS` | Hệ thống atomic CSS, responsive utility và tokens tùy chỉnh |
-| **Biểu tượng** | `Lucide React` | Bộ icon SVG hiện đại, tinh gọn chuẩn giao diện công nghệ |
-| **Trạng thái** | `React Context` + `useReducer` | Quản lý giỏ hàng toàn cục, đồng bộ dữ liệu `localStorage` |
+Cập nhật28/10: chế độ API đã mở thêm/xóa/sửa giỏ hàng và báo giá theo giá/tồn SQL Server. Xem [B3.1](docs/BACKEND_B3_QUOTE.md) và [API tạo đơn B3.2](docs/BACKEND_B3_ORDERS.md).
 
----
+Đã triển khai luồng frontend bằng dữ liệu demo trên trình duyệt: danh mục/tìm kiếm, chi tiết sản phẩm, giỏ hàng, đặt nhanh COD, quản trị sản phẩm/danh mục/tài khoản, vận hành đơn và báo cáo, tài khoản khách và lịch sử đơn. Xem [nghiệm thu giai đoạn 6](docs/FRONTEND_ACCEPTANCE.md).
 
-## 4. Hướng Dẫn Cài Đặt & Chạy
+Backend hiện có Express, schema/migration SQL Server, seed, healthcheck, API catalog và xác thực bằng phiên server. Frontend có chế độ API cho catalog và xác thực khách/admin bằng cookie server: chạy `npm run dev:api`. Đã có upload ảnh admin lưu SQL Server và checkout COD; thanh toán online và email chưa triển khai. Xem [B2 media](docs/BACKEND_B2_MEDIA.md). Chế độ mặc định `npm run dev` vẫn dùng tài khoản/dữ liệu demo. Xem [mốc B2 frontend](docs/BACKEND_B2_FRONTEND.md). Không nhập thông tin thật. Đây không phải website đại lý Apple được xác nhận.
 
-### Yêu cầu môi trường
-- **Node.js:** Phiên bản `18.x` trở lên (Khuyến nghị `20.x` hoặc `22.x` / `24.x`).
-- **Trình quản lý gói:** `npm`, `yarn` hoặc `pnpm`.
+Backend: xem [hướng dẫn chạy](backend/README.md) và [bàn giao SQL Server](docs/SQL_SERVER_MIGRATION.md). Từ gốc có `npm run backend:typecheck`, `npm run backend:test`, `npm run backend:build`, `npm run backend:dev`, `npm run db:migrate`. Lệnh frontend hiện có giữ nguyên.
 
-### Bước 1: Clone kho mã nguồn về máy
-```bash
-git clone https://github.com/<tai-khoan-cua-ban>/Apple_Web.git
-cd Apple_Web
-```
+## Chạy project
 
-### Bước 2: Cài đặt Dependencies
-Bạn có thể cài đặt trực tiếp từ thư mục `frontend`:
-```bash
-cd frontend
-npm install
-```
+Cài Node.js và npm, sau đó tại thư mục gốc:
 
-### Bước 3: Khởi chạy môi trường phát triển (Development)
-Tại thư mục gốc `Apple_Web` (hoặc bên trong `frontend`):
-```bash
+```powershell
+npm --prefix frontend ci
 npm run dev
 ```
 
-Mở trình duyệt và truy cập:
-👉 **`http://localhost:3000/`**
-
-### Bước 4: Biên dịch sản xuất (Production Build)
-```bash
+```powershell
+npm test
+npm run typecheck
 npm run build
-```
-Bản build tối ưu hóa sẽ được tạo trong thư mục `frontend/dist/`.
-
-Để xem thử bản build sản xuất:
-```bash
 npm run preview
 ```
 
----
+Vite hiển thị địa chỉ/port thực tế. Backend hosting sau này cần fallback SPA về `index.html` cho các route frontend và tách riêng `/api`.
 
-## 5. Luồng Mua Sắm & Trải Nghiệm
+## Các màn hình
 
-1. **Khám phá:** Khách hàng vào trang chủ xem các bộ sưu tập flagship Apple hoặc bấm chọn ngành hàng trên thanh Menu (`iPhone`, `iPad`, `Mac`, `Watch`).
-2. **Lọc & Tìm kiếm:** Lọc sản phẩm theo dòng sản phẩm và mức giá phù hợp.
-3. **Cấu hình thiết bị:** Bấm xem trực tiếp một sản phẩm để chọn màu sắc, dung lượng lưu trữ, xem ảnh phóng to và thông số kỹ thuật.
-4. **Giỏ hàng:** Nhấn *"Thêm vào giỏ"*, điều chỉnh số lượng hoặc kiểm tra lại tổng tiền tại trang `/cart`.
-5. **Thanh toán:** Nhấn *"Mua ngay"* hoặc *"Tiến hành thanh toán"*, điền thông tin người nhận và chọn phương thức thanh toán.
-6. **Xác nhận:** Nhận thông báo xác nhận đơn hàng thành công kèm mã tra cứu đơn hàng riêng biệt.
+- Cửa hàng: `/`, `/search`, `/iphone`, `/ipad`, `/mac`, `/watch`, `/product/:slug`, `/cart`, `/checkout`, `/order-confirmation/:id`.
+- Khách hàng: `/register`, `/login`, `/account/orders`, `/account/orders/:id`, `/account/security`.
+- Quản trị: `/admin/login`, `/admin`, `/admin/products`, `/admin/categories`, `/admin/admin-users`, `/admin/orders`, `/admin/reports`, `/admin/customers`.
+- Component mẫu: `/admin/design-system`, sau khi đăng nhập demo.
 
----
+Dữ liệu demo lưu tại trình duyệt/origin đang chạy. Port 3000 và 4173 có dữ liệu riêng. Reset catalog trên dashboard chỉ khôi phục sản phẩm, danh mục và hồ sơ admin; không xóa giỏ hàng, khách hàng hay đơn đã lưu. Không dùng dữ liệu mẫu làm migration production.
 
-## 6. Tài Liệu Hệ Thống & Kế Hoạch Tích Hợp
+## Cấu trúc và bàn giao
 
-Dự án được thiết kế theo phương pháp **Frontend-First, Integration-Ready**. Lớp giao tiếp dữ liệu đã được trừu tượng hóa qua các Service (`productService`, `orderService`):
-- Khi tích hợp Backend thực tế (Node.js/Express, NestJS, Spring Boot hoặc Go), chỉ cần chuyển đổi endpoint trong thư mục `src/services/` mà không cần thay đổi bất kỳ component UI nào.
-- Tham khảo thêm tài liệu chi tiết trong thư mục `docs/`:
-  - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): Kiến trúc phân tầng và luồng dữ liệu.
-  - [`docs/API_CONTRACT.md`](docs/API_CONTRACT.md): Hợp đồng đặc tả các endpoint REST API.
-  - [`docs/INTEGRATION_PLAN.md`](docs/INTEGRATION_PLAN.md): Kế hoạch tích hợp Google OAuth 2.0 & cổng VNPay / MoMo.
+- `frontend/src/pages`, `components`: màn hình, layout và thành phần UI.
+- `frontend/src/domain`: quy tắc giỏ hàng, tìm kiếm, checkout, đơn và doanh thu.
+- `frontend/src/services/contracts.ts`: interface hiện tại; `services/mock` chứa repository demo.
+- `frontend/tests`: test nghiệp vụ; `frontend/scripts/*-smoke.mjs`: kiểm thử trình duyệt cô lập.
+- [API contract](docs/API_CONTRACT.md): ánh xạ adapter hiện tại với HTTP dự kiến.
+- [Bàn giao backend/database](docs/BACKEND_HANDOFF.md): mô hình quan hệ, thứ tự triển khai và tiêu chí tích hợp.
+- [Kế hoạch frontend](docs/FRONTEND_COMPLETION_PLAN.md), [nghiệm thu](docs/FRONTEND_ACCEPTANCE.md), [design system](docs/DESIGN_SYSTEM.md).
 
----
-
-© 2026 **Aura Apple Authorized Reseller**. All rights reserved.
+Ảnh và thông số đang là fixture; cần duyệt nguồn/quyền sử dụng và độ chính xác trước khi công khai. Các tài liệu khảo sát ngày 15/10 được giữ làm lịch sử, không thay thế bàn giao hiện tại.

@@ -45,7 +45,7 @@ export const ColorSwatches: React.FC<ColorSwatchesProps> = ({
             }}
             onMouseEnter={() => onHoverColor?.(color)}
             onMouseLeave={() => onHoverEnd?.()}
-            className={`group relative rounded-full p-0.5 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+            className={`group relative rounded-full p-0.5 transition-[color,background-color,transform,opacity] duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
               isSelected
                 ? 'ring-2 ring-primary ring-offset-1 scale-110'
                 : 'hover:scale-110 ring-1 ring-black/10'

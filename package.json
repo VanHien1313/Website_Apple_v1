@@ -3,8 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "test:backend:docker": "node deploy/test-backend-docker.mjs",
+    "staging:check": "node deploy/staging-preflight.mjs",
+    "test:deployment": "node --test deploy/staging-preflight.test.mjs",
+    "build:release": "npm --prefix backend run build && npm --prefix frontend run build:api",
+    "start:release": "node --env-file-if-exists=backend/.env backend/dist/server.js",
     "dev": "npm --prefix frontend run dev",
+    "dev:api": "npm --prefix frontend run dev:api",
+    "build:api": "npm --prefix frontend run build:api",
     "build": "npm --prefix frontend run build",
-    "preview": "npm --prefix frontend run preview"
+    "preview": "npm --prefix frontend run preview",
+    "test": "npm --prefix frontend test",
+    "typecheck": "npm --prefix frontend run typecheck",
+    "backend:dev": "npm --prefix backend run dev",
+    "backend:build": "npm --prefix backend run build",
+    "backend:test": "npm --prefix backend test",
+    "backend:typecheck": "npm --prefix backend run typecheck",
+    "db:migrate": "npm --prefix backend run db:migrate",
+    "db:seed": "npm --prefix backend run db:seed"
   }
 }

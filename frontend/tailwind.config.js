@@ -12,6 +12,11 @@ export default {
         secondary: 'var(--color-secondary)',
         muted: 'var(--color-muted)',
         background: 'var(--color-background)',
+        'on-accent': 'var(--color-on-accent)',
+        'on-danger': 'var(--color-on-danger)',
+        success: { DEFAULT: 'var(--color-success)', soft: 'var(--color-success-soft)' },
+        warning: { DEFAULT: 'var(--color-warning)', soft: 'var(--color-warning-soft)' },
+        danger: { DEFAULT: 'var(--color-danger)', soft: 'var(--color-danger-soft)' },
         surface: {
           subtle: 'var(--color-surface-subtle)',
           elevated: 'var(--color-surface-elevated)',

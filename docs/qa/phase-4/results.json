@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-17T08:58:14.415Z",
+  "checks": [
+    "Checkout orders appear in admin list and recipient search",
+    "Storage failure preserves order state and retry succeeds",
+    "Order lifecycle separates delivery/payment, logs history and updates customer confirmation",
+    "Cancellation is terminal and excluded from revenue",
+    "Stale revision is rejected and reload recovers",
+    "Invalid report range has a recoverable error",
+    "/admin/orders fits 360px light",
+    "order-detail fits 360px light",
+    "/admin/reports fits 360px light",
+    "/admin/orders fits 768px light",
+    "order-detail fits 768px light",
+    "/admin/reports fits 768px light",
+    "/admin/orders fits 1440px light",
+    "order-detail fits 1440px light",
+    "/admin/reports fits 1440px light",
+    "/admin/orders fits 360px dark",
+    "order-detail fits 360px dark",
+    "/admin/reports fits 360px dark",
+    "/admin/orders fits 768px dark",
+    "order-detail fits 768px dark",
+    "/admin/reports fits 768px dark",
+    "/admin/orders fits 1440px dark",
+    "order-detail fits 1440px dark",
+    "/admin/reports fits 1440px dark",
+    "Missing order and empty list recover without crashing"
+  ],
+  "runtimeErrors": []
+}

@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-30T09:24:13.934Z",
+  "frontend": "built-api-preview",
+  "checks": [
+    "SQL Server catalog rendered through same-origin proxy",
+    "Color-specific price, availability and purchase boundary",
+    "API cart persists separately; quote refreshes server price and blocks insufficient reserved inventory",
+    "Blocked session storage prevents submission; stock conflict never creates an order",
+    "COD price conflict requires reconfirmation; lost response + reload + retry creates one SQL order/hold; guest receipt protects reload; cart clears only after success; desktop/mobile checkout",
+    "Registration, login, reload and HttpOnly cookie; no demo persistence",
+    "Authenticated checkout binds order to SQL customer and reads it via HttpOnly session",
+    "Customer sees only owned orders, filters history and cancels pending order with one inventory release",
+    "Password change revokes session; old password rejected; logout and route guard",
+    "Admin fulfills COD through built UI, stale revision is rejected, shipping consumes inventory once; mobile detail has no overflow",
+    "SQL revenue matches fulfilled COD, excludes cancelled order, day/week/month and pagination preserve totals; empty/invalid/error states and mobile layout",
+    "Category create/rename/delete reaches SQL and public catalog; duplicate name, stale rowversion, in-use guard, empty search and mobile layout",
+    "Admin uploads PNG through built UI; SQL Server serves normalized WebP",
+    "Product form creates SQL aggregate with uploaded image; adds configuration/SKU, rejects stale inventory, recovers lost response, archives publicly, filters list and fits mobile",
+    "Owner creates admin through UI; editor receives 403; stale account blocked; confirmed disable revokes session and rejects login; self protection and mobile layout",
+    "Customer search/detail links only account orders; order navigation, missing/empty/error/retry states and mobile layout",
+    "Admin server login; unsupported CRUD does not access demo",
+    "Admin logout in one tab invalidates another tab on focus",
+    "Revenue report redirects revoked admin session to login",
+    "Mobile login without overflow; API failure never falls back to mock"
+  ],
+  "pageErrors": []
+}

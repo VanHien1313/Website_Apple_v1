@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "route": "/admin/login",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "route": "/admin/login",
+      "width": 390,
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-17T08:56:45.371Z",
+  "checks": [
+    "Dialog traps focus, Escape closes, focus returns",
+    "Drawer closes and restores focus",
+    "Tabs support arrows, Home and End",
+    "Form connects validation errors and preserves input",
+    "Pagination updates records and boundary buttons",
+    "Dialog keyboard works in light theme",
+    "Design system fits 360px light",
+    "Design system fits 390px light",
+    "Design system fits 768px light",
+    "Design system fits 1024px light",
+    "Design system fits 1440px light",
+    "Dialog keyboard works in dark theme",
+    "Design system fits 360px dark",
+    "Design system fits 390px dark",
+    "Design system fits 768px dark",
+    "Design system fits 1024px dark",
+    "Design system fits 1440px dark",
+    "Admin mobile navigation works",
+    "Store mobile menu and search navigate",
+    "Extracted product dialogs and checkout summary still work",
+    "Home links to the full catalog",
+    "404 retains URL and 403 has a clear recovery link"
+  ],
+  "runtimeErrors": []
+}

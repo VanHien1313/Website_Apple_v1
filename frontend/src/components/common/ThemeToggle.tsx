@@ -17,17 +17,17 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
 
   return (
     <button
-      id={id || 'theme-toggle-btn'}
+      id={id}
       type="button"
       onClick={toggleTheme}
-      className={`relative p-2 rounded-full text-secondary hover:text-primary hover:bg-surface-subtle dark:hover:bg-white/10 transition-colors focus:outline-none flex items-center gap-2 group cursor-pointer ${className}`}
+      className={`relative min-h-11 min-w-11 p-3 rounded-full text-secondary hover:text-primary hover:bg-surface-subtle transition-colors flex items-center justify-center gap-2 group cursor-pointer ${className}`}
       aria-label={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
       title={isDark ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
     >
       <div className="relative w-4 h-4 flex items-center justify-center">
         {/* Sun Icon (Visible in Dark Mode) */}
         <Sun
-          className={`w-4 h-4 text-amber-400 absolute transition-all duration-300 transform ${
+          className={`w-4 h-4 text-amber-400 absolute transition-[color,background-color,transform,opacity] duration-300 transform ${
             isDark
               ? 'rotate-0 scale-100 opacity-100'
               : '-rotate-90 scale-0 opacity-0'
@@ -35,7 +35,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         />
         {/* Moon Icon (Visible in Light Mode) */}
         <Moon
-          className={`w-4 h-4 text-secondary group-hover:text-primary absolute transition-all duration-300 transform ${
+          className={`w-4 h-4 text-secondary group-hover:text-primary absolute transition-[color,background-color,transform,opacity] duration-300 transform ${
             isDark
               ? 'rotate-90 scale-0 opacity-0'
               : 'rotate-0 scale-100 opacity-100'

@@ -1,8 +1,8 @@
 import { Product, ProductColor, ProductVariant } from './product';
 
 export interface CartItem {
-  id: string; // composite key: `${productId}_${variantId}_${colorId}`
-  product: Product;
+  id: string; // JSON tuple [productId, variantId, colorId] avoids delimiter collisions.
+  product: Pick<Product, 'id' | 'slug' | 'name' | 'thumbnail'>;
   variant: ProductVariant;
   color: ProductColor;
   quantity: number;

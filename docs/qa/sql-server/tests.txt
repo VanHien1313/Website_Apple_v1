@@ -1,0 +1,28 @@
+
+> aura-backend@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+✔ customer registration, duplicate email, cookie login and logout use database sessions (1985.6548ms)
+✔ password change revokes every old session; old password cannot log in (2020.8927ms)
+✔ origin/custom header checks, malformed JSON and bounded throttling reject unsafe requests (77.3645ms)
+✔ owner bootstrap refuses existing admins; disabled admin and expired sessions lose access (1805.1081ms)
+✔ configuration validates port/database without exposing supplied secrets (354.1571ms)
+✔ readiness is unavailable before migrations and live endpoint remains available (130.5825ms)
+✔ migrations apply once, report ready, reject changed history and roll back partial DDL (243.202ms)
+✔ seed is opt-in, refuses production, repeatable and preserves edits (304.7114ms)
+✔ foreign keys, normalized unique keys, prices and stock constraints reject invalid data (93.9499ms)
+✔ transaction failure restores stock and removes partial writes (22.2574ms)
+✔ normalized customer email and session principal constraints (62.9507ms)
+✔ SKU uniqueness ignores case/whitespace and preserves stock on conflicting inserts (40.2765ms)
+✔ order totals, completed payment, snapshot retention, events and idempotency constraints (132.7068ms)
+✔ readiness returns 200 with applied schema and safe JSON headers (16.1575ms)
+✔ concurrent SQL Server transactions cannot reserve the last item twice (39.8703ms)
+✔ catalog HTTP queries SQL Server with validated search, price, pagination and safe errors (405.1827ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9933.8946

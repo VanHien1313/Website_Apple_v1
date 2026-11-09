@@ -1,0 +1,47 @@
+{
+  "event": "docker_local_verified",
+  "migrations": [
+    {
+      "name": "001_initial.sql",
+      "checksum": "d8034afce14c09578cb00b86b5cfb468b4e7f36cb9f88933736cd36ac98facd5"
+    },
+    {
+      "name": "002_media.sql",
+      "checksum": "e567065bbdc8cce623d729e5dee890a5fd7db156947f0c6bb0a6fbb44609741c"
+    },
+    {
+      "name": "003_order_receipts.sql",
+      "checksum": "d20305ae29c13f4d3011b06edebcc14c854c92936573734d119de694347b2705"
+    },
+    {
+      "name": "004_order_request_lookup.sql",
+      "checksum": "9b1b77d59a341c447147bc2976eb92bf5b84b1624a4ef4e1a1d15d2648142b14"
+    },
+    {
+      "name": "005_category_version.sql",
+      "checksum": "46b08f00ac7ec9eb084c92ab2161c524599662257cbc4df3d2d73500529d3623"
+    },
+    {
+      "name": "006_product_version.sql",
+      "checksum": "17c8f9638a91f0398c98647023977b32c3a41cc28bb75d6300417857ee8b89f2"
+    },
+    {
+      "name": "007_admin_version.sql",
+      "checksum": "4a2caf29b4120a5360712b4fe5abdfae0e60c3896f453f18de8cf41eccb2ab97"
+    }
+  ],
+  "counts": {
+    "admins": 1,
+    "products": 0,
+    "orders": 0
+  },
+  "permissions": {
+    "sysadmin": 0,
+    "create_table": 0,
+    "insert_category": 1,
+    "update_migrations": 0
+  },
+  "uid": 1000,
+  "sharp": "webp",
+  "http": "passed"
+}

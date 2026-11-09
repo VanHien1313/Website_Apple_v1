@@ -33,6 +33,7 @@ const applyDomTheme = (resolved: 'light' | 'dark') => {
   if (typeof document === 'undefined') return;
   const root = document.documentElement;
   const body = document.body;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', resolved === 'dark' ? '#000000' : '#FFFFFF');
 
   if (resolved === 'dark') {
     root.classList.add('dark');

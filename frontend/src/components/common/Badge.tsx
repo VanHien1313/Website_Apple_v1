@@ -8,9 +8,9 @@ export interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ label, variant = 'neutral', className = '' }) => {
   const variantStyles = {
-    new: 'bg-emerald-50 text-emerald-700 border-emerald-200/60',
-    hot: 'bg-rose-50 text-rose-700 border-rose-200/60',
-    sale: 'bg-amber-50 text-amber-800 border-amber-200/60',
+    new: 'bg-success-soft text-success border-transparent',
+    hot: 'bg-danger-soft text-danger border-transparent',
+    sale: 'bg-warning-soft text-warning border-transparent',
     neutral: 'bg-surface-subtle text-secondary border-border-subtle',
   }[variant];
 

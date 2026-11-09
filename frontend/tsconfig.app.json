@@ -24,6 +24,8 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
+      "@runtime/routes": ["src/routes/ApiRoutes.tsx"],
+      "@runtime/products": ["src/services/api/productEntry.ts"],
       "@/*": ["src/*"]
     }
   },

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z'/><path d='M10 2c1 .5 2 2 2 5'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aura — Đại lý Ủy quyền Apple Cao cấp</title>
-    <meta name="description" content="Trải nghiệm không gian mua sắm iPhone, iPad, Mac, Apple Watch chính hãng chuẩn mực với dịch vụ bảo hành và chăm sóc chuẩn Apple." />
+    <title>Aura — Không gian công nghệ</title>
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="description" content="Khám phá iPhone, iPad, Mac và Apple Watch tại Aura. Website thương mại điện tử mô phỏng phục vụ học tập." />
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
       (function() {
         try {
           var saved = localStorage.getItem('aura_store_theme');
-          var isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var isDark = saved === 'dark' || (saved === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
           if (isDark) {
             document.documentElement.classList.add('dark');
             document.documentElement.style.colorScheme = 'dark';

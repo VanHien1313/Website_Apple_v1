@@ -1,0 +1,16 @@
+import { useState, type FormEvent } from 'react';
+import { adminService, type Category } from '../../services/adminService';
+import { useAsyncResource } from '../../hooks/useAsyncResource';
+import { AdminList } from '../../components/admin/AdminList';
+import { AsyncState } from '../../components/common/AsyncState';
+import { Input } from '../../components/common/FormControls';
+import { Button } from '../../components/common/Button';
+import { Dialog } from '../../components/common/Overlay';
+import { Alert } from '../../components/common/Alert';
+const load = () => adminService.read();
+export default function AdminCategoriesPage() {
+  const { data, error, retry } = useAsyncResource(load); const [edit, setEdit] = useState<Category | null>(null); const [original, setOriginal] = useState<string>(); const [deleting, setDeleting] = useState<Category | null>(null); const [failure, setFailure] = useState(''); const [busy, setBusy] = useState(false);
+  async function save(e: FormEvent) { e.preventDefault(); if (busy) return; setBusy(true); try { await adminService.saveCategory(edit!, original); setEdit(null); retry(); } catch (e) { setFailure((e as Error).message); } finally { setBusy(false); } }
+  if (!data) return <AsyncState error={error} onRetry={retry} />;
+  return <div className="space-y-7"><div className="flex flex-wrap items-center justify-between gap-4"><h1 className="ui-page-title">Danh mục</h1><Button onClick={() => { setFailure(''); setOriginal(undefined); setEdit({ id: '', name: '' }); }}>Thêm danh mục</Button></div><p className="text-sm text-secondary">Danh mục mới xuất hiện trong bộ lọc tìm kiếm của cửa hàng. Mã danh mục không đổi sau khi tạo.</p><AdminList items={data.categories} render={(c) => <article className="ui-panel flex flex-wrap items-center justify-between gap-4 p-5"><div><h2 className="font-bold">{c.name}</h2><p className="mt-2 text-sm text-secondary">{c.id} · {data.products.filter((p) => p.category === c.id).length} sản phẩm</p></div><div className="flex gap-3"><Button variant="secondary" onClick={() => { setFailure(''); setOriginal(c.id); setEdit({ ...c }); }}>Sửa</Button><Button variant="secondary" onClick={() => { setFailure(''); setDeleting(c); }}>Xóa</Button></div></article>} /><Dialog open={!!edit} onClose={() => !busy && setEdit(null)} title={original ? 'Sửa danh mục' : 'Thêm danh mục'}>{edit && <form onSubmit={save} className="space-y-5">{failure && <Alert tone="danger" title="Chưa lưu được">{failure}</Alert>}<Input label="Tên danh mục" required value={edit.name} onChange={(e) => setEdit({ ...edit, name: e.target.value })} /><Input label="Mã danh mục" required disabled={!!original} value={edit.id} onChange={(e) => setEdit({ ...edit, id: e.target.value })} /><Button type="submit" loading={busy}>Lưu danh mục</Button></form>}</Dialog><Dialog open={!!deleting} onClose={() => !busy && setDeleting(null)} title="Xóa danh mục?" footer={<Button loading={busy} onClick={async () => { setBusy(true); try { await adminService.deleteCategory(deleting!.id); setDeleting(null); retry(); } catch (e) { setFailure((e as Error).message); } finally { setBusy(false); } }}>Xác nhận xóa</Button>}><p>Chỉ xóa được danh mục không còn sản phẩm.</p>{failure && <Alert tone="danger" title="Chưa xóa được">{failure}</Alert>}</Dialog></div>;
+}

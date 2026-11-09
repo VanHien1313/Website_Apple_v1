@@ -1,124 +1,17 @@
-import React from 'react';
-import { RotateCcw, Check } from 'lucide-react';
-
-export interface FilterState {
-  subCategory?: string;
-  priceRange?: string; // 'under15' | '15to25' | '25to35' | 'above35'
-  sort?: 'featured' | 'price_asc' | 'price_desc' | 'newest';
+import { useId } from 'react';
+import { PRICE_OPTIONS, type CatalogFilter } from '../../domain/catalog';
+import { Radio } from '../common/FormControls';
+import { productService } from '../../services/productService';
+import { useAsyncResource } from '../../hooks/useAsyncResource';
+const loadCategories = (signal: AbortSignal) => productService.getCategories({ signal });
+export type FilterState = Pick<CatalogFilter, 'category' | 'subCategory' | 'priceRange' | 'sort'>;
+interface Props { subCategories: string[]; filters: FilterState; onChange: (filters: FilterState) => void; onReset: () => void; showCategories?: boolean }
+export function FilterSidebar({ subCategories, filters, onChange, onReset, showCategories = false }: Props) {
+  const id = useId();
+  const { data: categories, error, retry } = useAsyncResource(loadCategories);
+  return <div className="space-y-6"><div className="flex items-center justify-between gap-3"><h2 className="font-bold">Bộ lọc</h2><button type="button" className="min-h-11 text-xs font-semibold text-accent" onClick={onReset}>Đặt lại</button></div>
+    {showCategories && <fieldset><legend className="mb-2 text-sm font-semibold">Danh mục</legend>{error && <button type="button" onClick={retry} className="min-h-11 text-sm text-danger">Tải lại danh mục</button>}{[{ id: '', name: 'Tất cả' }, ...(categories ?? [])].map(({ id: value, name: label }) => <Radio key={value} name={`${id}-category`} label={label} checked={(filters.category ?? '') === value} onChange={() => onChange({ ...filters, category: value || undefined, subCategory: undefined })} />)}</fieldset>}
+    <fieldset className="border-t border-border-subtle pt-5"><legend className="text-sm font-semibold">Mức giá</legend><Radio name={`${id}-price`} label="Tất cả mức giá" checked={!filters.priceRange} onChange={() => onChange({ ...filters, priceRange: undefined })} />{PRICE_OPTIONS.map((option) => <Radio key={option.id} name={`${id}-price`} label={option.label} checked={filters.priceRange === option.id} onChange={() => onChange({ ...filters, priceRange: option.id })} />)}</fieldset>
+    {subCategories.length > 0 && <fieldset className="border-t border-border-subtle pt-5"><legend className="text-sm font-semibold">Dòng sản phẩm</legend><Radio name={`${id}-series`} label="Tất cả dòng" checked={!filters.subCategory} onChange={() => onChange({ ...filters, subCategory: undefined })} />{subCategories.map((sub) => <Radio key={sub} name={`${id}-series`} label={sub} checked={filters.subCategory === sub} onChange={() => onChange({ ...filters, subCategory: sub })} />)}</fieldset>}
+  </div>;
 }
-
-interface FilterSidebarProps {
-  subCategories: string[];
-  filters: FilterState;
-  onChange: (newFilters: FilterState) => void;
-  onReset: () => void;
-}
-
-export const FilterSidebar: React.FC<FilterSidebarProps> = ({
-  subCategories,
-  filters,
-  onChange,
-  onReset,
-}) => {
-  const priceOptions = [
-    { id: 'under15', label: 'Dưới 15.000.000₫' },
-    { id: '15to25', label: '15.000.000₫ – 25.000.000₫' },
-    { id: '25to35', label: '25.000.000₫ – 35.000.000₫' },
-    { id: 'above35', label: 'Trên 35.000.000₫' },
-  ];
-
-  const hasActiveFilters = Boolean(filters.subCategory || filters.priceRange);
-
-  return (
-    <div className="space-y-6">
-      {/* Header & Reset */}
-      <div className="flex items-center justify-between pb-3 border-b border-black/[0.06]">
-        <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Bộ lọc sản phẩm</h3>
-        {hasActiveFilters && (
-          <button
-            type="button"
-            onClick={onReset}
-            className="flex items-center gap-1 text-[11px] text-accent hover:text-accent-hover font-medium transition-colors"
-          >
-            <RotateCcw className="w-3 h-3" />
-            <span>Thiết lập lại</span>
-          </button>
-        )}
-      </div>
-
-      {/* Subcategory Filter */}
-      {subCategories.length > 0 && (
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-bold text-secondary uppercase tracking-wider">Dòng sản phẩm</h4>
-          <div className="space-y-1">
-            {subCategories.map((sub) => {
-              const isSelected = filters.subCategory === sub;
-              return (
-                <button
-                  key={sub}
-                  type="button"
-                  onClick={() =>
-                    onChange({
-                      ...filters,
-                      subCategory: isSelected ? undefined : sub,
-                    })
-                  }
-                  className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center justify-between group hover:bg-surface-subtle"
-                >
-                  <span className={isSelected ? 'text-primary font-bold' : 'text-secondary group-hover:text-primary'}>
-                    {sub}
-                  </span>
-                  <div
-                    className={`w-4 h-4 rounded-md border flex items-center justify-center transition-colors ${
-                      isSelected
-                        ? 'bg-primary border-primary text-white'
-                        : 'border-black/20 group-hover:border-black/40'
-                    }`}
-                  >
-                    {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* Price Range Filter */}
-      <div className="space-y-3 pt-2 border-t border-black/[0.04]">
-        <h4 className="text-[11px] font-bold text-secondary uppercase tracking-wider">Mức giá</h4>
-        <div className="space-y-1">
-          {priceOptions.map((opt) => {
-            const isSelected = filters.priceRange === opt.id;
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() =>
-                  onChange({
-                    ...filters,
-                    priceRange: isSelected ? undefined : opt.id,
-                  })
-                }
-                className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center justify-between group hover:bg-surface-subtle"
-              >
-                <span className={isSelected ? 'text-primary font-bold' : 'text-secondary group-hover:text-primary'}>
-                  {opt.label}
-                </span>
-                <div
-                  className={`w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${
-                    isSelected
-                      ? 'border-primary'
-                      : 'border-black/20 group-hover:border-black/40'
-                  }`}
-                >
-                  {isSelected && <span className="w-2 h-2 rounded-full bg-primary" />}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};

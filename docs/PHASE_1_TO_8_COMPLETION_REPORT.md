@@ -1,3 +1,5 @@
+> Tài liệu lịch sử trước kế hoạch frontend 6 giai đoạn. Trạng thái hiện hành: [FRONTEND_ACCEPTANCE.md](FRONTEND_ACCEPTANCE.md); tích hợp mới: [BACKEND_HANDOFF.md](BACKEND_HANDOFF.md). Các tuyên bố hoàn thành dưới đây không là bằng chứng nghiệm thu hiện tại.
+
 # BÁO CÁO HOÀN THÀNH GIAI ĐOẠN FRONTEND (PHASE 0 → PHASE 8)
 **Dự án:** Aura Apple Store E-Commerce (University Web Programming Project)  
 **Định hướng thị giác phê duyệt:** **Direction C — Modern Apple Commerce**  
