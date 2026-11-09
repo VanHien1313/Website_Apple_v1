@@ -6,7 +6,7 @@ React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · 
 
 ## Trạng thái
 
-**Hiện hành 09/11/2026:** đã chạy frontend/API/SQL Server bằng Docker local, có owner thật và dữ liệu cửa hàng riêng. 74/74 test backend đạt trên Linux/SQL Server Docker; 21 nhóm E2E Docker và diễn tập restart/backup/restore đạt. Staging có cấu hình riêng, công cụ preflight và CI workflow đã chuẩn bị; chưa chạy GitHub Actions trên dịch vụ thật hoặc triển khai hosting công khai.
+**Hiện hành 09/11/2026:** đã chạy frontend/API/SQL Server bằng Docker local, có owner thật và dữ liệu cửa hàng riêng. 74/74 test backend đạt trên Linux/SQL Server Docker; 21 nhóm E2E Docker và diễn tập restart/backup/restore đạt. Staging có cấu hình riêng và công cụ preflight. GitHub Actions đã đạt toàn bộ build/test/E2E/recovery trên Ubuntu tại commit `6c35852`; xem [lần CI đạt](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42620970687). Chưa triển khai hosting công khai.
 
 - [Bàn giao và việc còn lại](docs/BACKEND_HANDOFF.md)
 - [Chạy Docker local](docs/BACKEND_B5_DOCKER.md)

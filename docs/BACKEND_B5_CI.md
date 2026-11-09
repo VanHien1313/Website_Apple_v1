@@ -1,6 +1,6 @@
 # B5.6 — Kiểm thử tự động trước phát hành
 
-Ngày 09/11/2026. Đã chuẩn bị `.github/workflows/verify.yml`; chưa push repository hoặc chạy GitHub Actions trên dịch vụ thật.
+Ngày 09/11/2026. Đã đẩy nhánh `codex/sql-server-docker-release` lên GitHub và chạy `.github/workflows/verify.yml` trên Ubuntu runner thật. Kết quả mới nhất được ghi bên dưới.
 
 ## Quy trình
 
@@ -36,8 +36,14 @@ Kết quả thực tế: **74/74 backend test đạt trên Linux/SQL Server Dock
 
 - Đã parse YAML và kiểm tra triggers, permissions, full SHA actions, không tham chiếu GitHub secrets, cleanup always.
 - Đã thực thi toàn bộ 74 test backend bằng lệnh Docker mới trên máy hiện tại.
-- Những luồng 21 E2E và recovery đã chạy ở B5.3–B5.4; workflow tái sử dụng các runner đó. Chưa chạy trọn workflow trên một Ubuntu GitHub runner mới, chưa xác nhận provisioning Chromium/nguồn tải mạng trong CI.
-- Chưa push code, kích hoạt workflow, cấu hình branch protection, registry push hay deployment. Sau khi repository được đưa lên GitHub theo quyết định của người dùng, cần quan sát lần chạy đầu và đặt job verify làm required check nếu phù hợp.
+- CI đã xác nhận cài dependencies, build/start Docker, backend SQL Server và provisioning Chromium trên Ubuntu runner. Hai lần chạy đầu phát hiện race trong E2E: đếm danh mục khi focus refresh và chọn kỳ báo cáo trước khi React thay form theo URL. Test đã chuyển sang chờ toàn bộ danh sách trong một snapshot và phản hồi API đúng kỳ; không bỏ assertion nghiệp vụ hoặc thêm sleep cố định.
+- Code và workflow đã push lên nhánh riêng; chưa merge main, cấu hình branch protection, registry push hay deployment. Có thể đặt job verify làm required check khi chốt quy trình review.
 - CI chỉ kiểm thử, không tự deploy. Staging vẫn cần máy chủ/tên miền/registry/chứng chỉ và nghiệm thu mạng/TLS thật.
 
 Nguồn: [checkout](https://github.com/actions/checkout), [setup-node](https://github.com/actions/setup-node), [Playwright CI](https://playwright.dev/docs/ci).
+
+## Kết quả GitHub Actions thực tế
+
+Ngày 09/11/2026: [run 42620970687](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42620970687), commit `6c35852d10933c76fd21962a76bdb6a76b4a4ece`, job verify **success**. Toàn bộ bước build/start Docker, frontend/deployment tests, backend Linux SQL Server, browser E2E, restart/restore, upload evidence và cleanup đều success. Artifact QA thuộc lần chạy này được giữ 7 ngày; các ảnh QA đã có trong repository là bằng chứng local trước đó, không tự thay bằng ảnh CI.
+
+Nhánh đã push: `codex/sql-server-docker-release`; main chưa merge. Bước tiếp theo trước staging: chốt registry/image phát hành, sau đó cấp VPS/tên miền, cấu hình SQL TLS và secrets trên host đích, chạy preflight và nghiệm thu HTTPS/proxy/backup ngoài máy. Hiện chưa có hạ tầng thật nên không đánh dấu hoàn thành triển khai public.
