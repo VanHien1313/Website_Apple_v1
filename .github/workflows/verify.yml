@@ -106,8 +106,9 @@ jobs:
       packages: write
     env:
       EXPECTED_IMAGE_ID: ${{ needs.verify.outputs.image_id }}
-      DOCKER_CONFIG: ${{ runner.temp }}/aura-docker-auth
     steps:
+      - name: Isolate registry credentials in runner temporary directory
+        run: echo "DOCKER_CONFIG=$RUNNER_TEMP/aura-docker-auth" >> "$GITHUB_ENV"
       - name: Download image from this verified run
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
         with:
