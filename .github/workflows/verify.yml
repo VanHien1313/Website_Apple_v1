@@ -3,6 +3,11 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_image:
+        description: Publish the verified image to GHCR (default branch only)
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -12,6 +17,8 @@ jobs:
   verify:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
+    outputs:
+      image_id: ${{ steps.release-image.outputs.image_id }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, verified 2026-11-09
         with:
@@ -59,6 +66,22 @@ jobs:
           DOCKER_FRONTEND_SMOKE: 'true'
       - name: Restart and restore rehearsal
         run: node deploy/recovery-rehearsal.mjs
+      - name: Export the tested image without rebuilding
+        id: release-image
+        run: |
+          image_id=$(docker image inspect aura-local-app --format '{{.Id}}')
+          test "$(docker inspect aura-local-app-1 --format '{{.Image}}')" = "$image_id"
+          echo "image_id=$image_id" >> "$GITHUB_OUTPUT"
+          mkdir -p "$RUNNER_TEMP/aura-release"
+          docker save aura-local-app | gzip > "$RUNNER_TEMP/aura-release/image.tar.gz"
+      - name: Preserve tested image for publishing
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: tested-image-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/aura-release/image.tar.gz
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
       - name: Upload QA evidence only
         if: always() && steps.prepare-evidence.outcome == 'success'
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
@@ -73,3 +96,53 @@ jobs:
         if: always()
         # Ephemeral GitHub-hosted runner only. Never use this cleanup on the developer machine.
         run: docker compose down --volumes --remove-orphans
+  publish:
+    needs: verify
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_image && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    env:
+      EXPECTED_IMAGE_ID: ${{ needs.verify.outputs.image_id }}
+      DOCKER_CONFIG: ${{ runner.temp }}/aura-docker-auth
+    steps:
+      - name: Download image from this verified run
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: tested-image-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/aura-release
+      - name: Load and verify image identity
+        run: |
+          gunzip -c "$RUNNER_TEMP/aura-release/image.tar.gz" | docker load
+          test "$(docker image inspect aura-local-app --format '{{.Id}}')" = "$EXPECTED_IMAGE_ID"
+          test "$(docker image inspect aura-local-app --format '{{.Os}}/{{.Architecture}}')" = linux/amd64
+      - name: Authenticate to GHCR
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - name: Push and verify immutable reference
+        run: |
+          repository="ghcr.io/${GITHUB_REPOSITORY,,}"
+          tag="$repository:sha-$GITHUB_SHA-run-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          docker tag "$EXPECTED_IMAGE_ID" "$tag"
+          docker push "$tag"
+          reference=$(docker image inspect "$tag" --format '{{json .RepoDigests}}' | jq -er --arg prefix "$repository@sha256:" '.[] | select(startswith($prefix))')
+          [[ "$reference" =~ ^ghcr\.io/[a-z0-9_./-]+@sha256:[a-f0-9]{64}$ ]]
+          docker pull "$reference"
+          test "$(docker image inspect "$reference" --format '{{.Id}}')" = "$EXPECTED_IMAGE_ID"
+          mkdir -p "$RUNNER_TEMP/aura-manifest"
+          jq -n --arg image "$reference" --arg tag "$tag" --arg imageId "$EXPECTED_IMAGE_ID" --arg commit "$GITHUB_SHA" --arg run "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            '{image:$image, tag:$tag, imageId:$imageId, commit:$commit, verificationRun:$run, platform:"linux/amd64"}' > "$RUNNER_TEMP/aura-manifest/release.json"
+          printf '### Verified image\n\n`AURA_IMAGE=%s`\n\nCommit: `%s`\n' "$reference" "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload release manifest
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/aura-manifest/release.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Remove registry session
+        if: always()
+        run: docker logout ghcr.io
