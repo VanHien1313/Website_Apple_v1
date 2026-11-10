@@ -82,4 +82,6 @@ R1–R5 là các nhóm công việc cần hoàn tất hoặc làm rõ để nghi
 
 ## Bước tiếp theo đề xuất
 
+Trước khi triển khai thêm, người dùng tự kiểm thử theo [MANUAL_TEST_GUIDE.md](MANUAL_TEST_GUIDE.md), ghi PASS/FAIL/BLOCKED và phản hồi lỗi. Hướng dẫn không đồng nghĩa đã chạy/đạt kiểm thử tay.
+
 Tiếp tục **R1: trang giới thiệu nhóm, liên hệ và hiển thị profile**, đồng thời chuẩn bị đề cương R5. Gom các câu hỏi R2 để người dùng trao đổi giảng viên. Chưa yêu cầu mua VPS ngay và chưa triển khai Premium/OAuth/role động. Phiên cập nhật kế hoạch này chỉ sửa tài liệu, không thay source ứng dụng, database hoặc phát hành image.

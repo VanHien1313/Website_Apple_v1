@@ -6,6 +6,8 @@ React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · 
 
 ## Trạng thái
 
+[Hướng dẫn tự test tay chức năng và nghiệp vụ local](docs/MANUAL_TEST_GUIDE.md) — dữ liệu mẫu, từng bước và kết quả mong đợi.
+
 [Kế hoạch còn lại theo yêu cầu giảng viên](docs/REMAINING_WORK_PLAN.md) · [Ma trận đối chiếu hai tài liệu yêu cầu](docs/LECTURER_REQUIREMENTS_MAPPING.md) — cập nhật 10/11/2026.
 
 **10/11/2026 — tiếp tục local:** đã thêm [owner đặt lại mật khẩu quản trị](docs/ADMIN_PASSWORD_RESET.md), cập nhật app Docker tại http://127.0.0.1:4000. 77 backend tests, 41 frontend tests và 22 nhóm Docker E2E đạt. GHCR vẫn là bản 09/11; chưa phát hành lại tính năng này.
