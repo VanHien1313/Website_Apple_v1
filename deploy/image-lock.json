@@ -3,9 +3,9 @@
   "platform": "linux/amd64",
   "node": "node:24-bookworm-slim@sha256:01d566e8d94d8c619591d78652babfccd3c6992a3dffa9ed5ab39e11cf6c70e9",
   "sqlLocal": "mcr.microsoft.com/mssql/server:2022-latest@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
-  "appLocalImageId": "sha256:e61686278b9410822949e2ac21ad7abc295006595e35c88eb7c1ecf50ab0a2b9",
+  "appLocalImageId": "sha256:67a17166aee0f8343aaff55d0094604e67b08d11ae7ff45c4d166b7bc0472f6f",
   "appRegistryReference": "ghcr.io/vanhien1313/website_apple_v1@sha256:788e0b4bd58b9fbd833bced9facccde04921c2637018b14bac6d72182015345b",
-  "note": "Local image updated with admin password reset after 22 Docker E2E groups passed. Registry reference remains the 2026-11-09 release and does not contain this local feature. Staging not deployed.",
+  "note": "Local image includes login role choice, API admin layout, account navigation/profile, public team/contact and route corrections. API build, 41 frontend tests, boundary check and 24 Docker E2E groups passed. Registry remains the 2026-11-09 release, without these local updates or admin password reset. Staging not deployed.",
   "appRegistryImageId": "sha256:e502d551b7fe04d0e277bfb318451061a2ed9ce65fb4c40667a02536a3114742",
   "appRegistryCommit": "98a2061a29c895232f83167f68a49f4cf250c1c5",
   "verificationRun": "https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42640475890"

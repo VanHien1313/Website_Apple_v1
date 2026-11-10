@@ -8,6 +8,7 @@ export function Footer() {
       <nav aria-label="Sản phẩm ở chân trang"><h2 className="mb-4 text-sm font-semibold">Khám phá</h2><ul className="space-y-1">{storeNavigation.map((item) => <li key={item.to}><Link to={item.to} className="inline-block py-2 text-sm text-secondary hover:text-accent">{item.label}</Link></li>)}</ul></nav>
       <div><h2 className="mb-4 text-sm font-semibold">Về Aura</h2><p className="text-sm leading-relaxed text-secondary">{isApiMode ? "Dự án thương mại điện tử phục vụ học tập. Danh mục, tài khoản và đặt hàng COD đã kết nối dịch vụ." : "Dự án thương mại điện tử phục vụ học tập. Sản phẩm, giá và thao tác đặt hàng đang được mô phỏng."}</p><Link to="/admin" className="mt-4 inline-block py-2 text-sm font-semibold text-accent">{isApiMode ? "Không gian quản trị" : "Không gian quản trị demo"}</Link></div>
     </div>
+    <nav aria-label="Thông tin Aura" className="ui-container flex flex-wrap gap-6 pb-8 text-sm font-semibold"><Link to="/about" className="py-2 hover:text-accent">Giới thiệu & đội ngũ</Link><Link to="/contact" className="py-2 hover:text-accent">Liên hệ</Link><Link to="/login" className="py-2 hover:text-accent">Đăng nhập</Link></nav>
     <div className="ui-container border-t border-border-subtle py-6 text-xs leading-relaxed text-secondary">© {new Date().getFullYear()} Aura. Apple và các tên sản phẩm là nhãn hiệu của Apple Inc.</div>
   </footer>;
 }

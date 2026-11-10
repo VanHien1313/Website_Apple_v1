@@ -4,6 +4,10 @@ Ngày 10/11/2026. Đối chiếu bản ứng dụng local có reset mật khẩu
 
 ## 1 Chuẩn bị môi trường và cách ghi kết quả
 
+**Bổ sung nghiệm thu giao diện 10/11:** mở `/about` kiểm tra hai thành viên/MSSV; `/contact` kiểm tra email công khai. Từ hồ sơ thử menu Hồ sơ/Đơn hàng/Đổi mật khẩu, đối chiếu SĐT và ngày tham gia. Trong admin, dùng sidebar desktop hoặc nút Mở menu quản trị trên mobile để chuyển nghiệp vụ; editor không thấy Đội ngũ quản trị và vẫn bị backend từ chối nếu nhập URL. Thử `/account/not-a-page` và `/admin/not-a-page` (đã đăng nhập admin): phải báo trang không tồn tại. Các trường hợp này cần ghi kết quả test tay riêng dù E2E đã có kiểm tra.
+
+Cập nhật luồng đăng nhập: tại `/login`, chọn **Khách hàng** hoặc **Quản trị viên**. Lựa chọn quản trị mở `/admin/login`, chỉ dùng tài khoản quản trị được cấp; đăng nhập thành công vào `/admin`. Khách hàng có liên kết đăng ký và vào `/account` sau đăng nhập. Kiểm tra chuyển lựa chọn xóa nội dung form cũ, không có đăng ký admin, và tài khoản khách không được dùng để cấp quyền quản trị. Google/Facebook chưa triển khai.
+
 Mở Docker Desktop, chờ Engine chạy. Dùng **http://127.0.0.1:4000** cho mọi cửa sổ; không xen `localhost:4000` hoặc bản demo Vite port3000 vì cookie/storage/origin khác nhau. Vào `/health/ready`: phải trả HTTP200 trước khi test nghiệp vụ. Nếu lỗi Docker, dừng tại bước môi trường; không reset factory defaults hoặc xóa volume.
 
 Có thể kiểm tra trạng thái từ PowerShell tại `D:\Apple_Web`:

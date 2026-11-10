@@ -16,7 +16,7 @@ export function Header({ onOpenMobileMenu }: { onOpenMobileMenu: () => void }) {
     </div>
     <div className="hidden border-t border-border-subtle lg:block"><div className="ui-container flex items-center justify-between">
       <nav aria-label="Danh mục sản phẩm" className="flex gap-8">{storeNavigation.map((item) => <NavLink key={item.to} to={item.to} className={({ isActive }) => `border-b-2 py-3.5 text-sm font-semibold ${isActive ? 'border-accent text-accent' : 'border-transparent text-secondary hover:text-primary'}`}>{item.label}</NavLink>)}</nav>
-      <span className="text-xs text-secondary">Không gian cho điều bạn yêu thích.</span>
+      <nav aria-label="Thông tin cửa hàng" className="flex gap-6 text-sm text-secondary"><Link to="/about" className="py-3 hover:text-accent">Về Aura</Link><Link to="/contact" className="py-3 hover:text-accent">Liên hệ</Link></nav>
     </div></div>
   </header>;
 }

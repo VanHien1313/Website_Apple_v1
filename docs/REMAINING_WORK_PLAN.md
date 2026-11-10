@@ -1,5 +1,18 @@
 # Kế hoạch phần còn lại của Aura theo đề tài và lưu ý giảng viên
 
+## Tiến độ mới nhất — 10/11/2026
+
+Hạn nhóm xác nhận: **thứ Sáu 13/11/2026**. Ưu tiên nghiệm thu local và hồ sơ bảo vệ trước tính năng nâng cao.
+
+- **R1 đã triển khai:** `/about` có Nguyễn Văn Hiền (N23DCAT023), Khuất Nguyễn Bảo Hiếu (N23DCAT026), cùng thiết kế/phát triển; `/contact` có email công khai nguyenvanhien1313.tv@gmail.com; header/footer/mobile có liên kết. Profile hiển thị SĐT/ngày tham gia, có điều hướng hồ sơ/đơn/mật khẩu. Đăng nhập chọn khách/quản trị; admin có sidebar/drawer chung theo quyền. URL sai báo 404, URL demo cũ được chuyển cho users/product edit/security.
+- **R2 đã rà phạm vi:** [ACCEPTANCE_SCOPE.md](ACCEPTANCE_SCOPE.md) ghi ma trận quyền, danh sách và các điểm cần chốt với giảng viên. Chưa tự mở rộng customer lock, role động, hủy đơn hoặc xóa cứng.
+- **R3 kiểm thử kỹ thuật đạt:** 41 frontend tests, API/demo boundary và 24 nhóm Docker E2E (luồng thật với database cô lập). Có lần chạy trước thất bại và ảnh lỗi timeout che nguyên nhân; đã sửa logging và lượt chạy lại đạt. Test tay của nhóm và bộ dữ liệu trình diễn vẫn cần hoàn tất.
+- **R4:** cập nhật image/container local sau kiểm thử; chưa đồng bộ lên registry/hosting. VPS/domain vẫn chưa có.
+- **R5 đã có bản thảo:** [REPORT_DRAFT.md](REPORT_DRAFT.md) chứa khung báo cáo, sơ đồ kiến trúc/ERD/checkout/trạng thái; [DEMO_AND_DEFENSE.md](DEMO_AND_DEFENSE.md) chứa kịch bản demo, khung slide/video và mốc 10–13/11. Chưa có cuốn báo cáo định dạng theo mẫu lớp, slide/video thành phẩm hay kết quả bảo vệ cá nhân.
+- **R6:** để sau nghiệm thu cốt lõi; Google/Facebook chưa triển khai.
+
+Các mục bên dưới là mô tả nền và tiêu chí đầy đủ; dùng cập nhật trên khi xác định việc còn lại.
+
 Cập nhật 10/11/2026, sau commit local `dfb5593`. Dùng tài liệu này làm thứ tự công việc hiện hành; các kế hoạch frontend 15–17/10 và B1–B5 cũ giữ vai trò lịch sử. [Ma trận đối chiếu giảng viên](LECTURER_REQUIREMENTS_MAPPING.md) giải thích nguồn, mức áp dụng và các điểm chưa rõ.
 
 ## Đã có nền tảng nào

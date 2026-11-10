@@ -1,7 +1,8 @@
 {
-  "at": "2026-11-09T18:03:44.558Z",
+  "at": "2026-11-10T07:35:40.315Z",
   "frontend": "docker-linux-app-and-sql",
   "checks": [
+    "Public team/contact pages, account 404, explicit login role choice clears credentials and has no admin registration",
     "SQL Server catalog rendered through Linux Docker app",
     "Color-specific price, availability and purchase boundary",
     "API cart persists separately; quote refreshes server price and blocks insufficient reserved inventory",
@@ -11,6 +12,7 @@
     "Authenticated checkout binds order to SQL customer and reads it via HttpOnly session",
     "Customer sees only owned orders, filters history and cancels pending order with one inventory release",
     "Password change revokes session; old password rejected; logout and route guard",
+    "SQL profile phone, account navigation, owner navigation, mobile admin drawer closes after navigation, unknown admin path returns 404",
     "Admin fulfills COD through built UI, stale revision is rejected, shipping consumes inventory once; mobile detail has no overflow",
     "SQL revenue matches fulfilled COD, excludes cancelled order, day/week/month and pagination preserve totals; empty/invalid/error states and mobile layout",
     "Category create/rename/delete reaches SQL and public catalog; duplicate name, stale rowversion, in-use guard, empty search and mobile layout",

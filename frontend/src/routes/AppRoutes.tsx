@@ -21,6 +21,7 @@ const AdminUsersPage = lazy(() => import('../pages/admin/AdminUsersPage'));
 const AdminOverviewPage = lazy(() => import('../pages/admin/AdminOverviewPage'));
 const DesignSystemPage = lazy(() => import('../pages/admin/DesignSystemPage'));
 const StatusPage = lazy(() => import('../pages/StatusPage'));
+const StoreInformationPage = lazy(() => import('../pages/StoreInformationPage'));
 const OrderConfirmationPage = lazy(() => import('../pages/OrderConfirmationPage'));
 const HomePage = lazy(() => import('../pages/HomePage').then((module) => ({ default: module.HomePage })));
 const CategoryPage = lazy(() => import('../pages/CategoryPage').then((module) => ({ default: module.CategoryPage })));
@@ -51,6 +52,8 @@ export const AppRoutes: React.FC = () => {
       </Route>
       </Route>
       <Route path="/" element={<Layout />}>
+        <Route path="about" element={<StoreInformationPage />} />
+        <Route path="contact" element={<StoreInformationPage contact />} />
         <Route path="login" element={<CustomerAuthPage key="login" />} />
         <Route path="register" element={<CustomerAuthPage key="register" register />} />
         <Route path="account" element={<AccountLayout />}>

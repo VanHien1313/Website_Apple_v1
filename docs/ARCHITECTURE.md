@@ -1,4 +1,4 @@
-> Cập nhật24/10: đã chuyển nền backend sang **SQL Server** theo quyết định của người dùng. [Trạng thái và hướng dẫn hiện hành](SQL_SERVER_MIGRATION.md). Các mô tả PostgreSQL trong lịch sử B1 đã được thay thế.
+> Trạng thái 10/11/2026: bản Docker dùng React API + Express + **SQL Server**, xác thực server và checkout COD thật trong database local. Sơ đồ kiến trúc/ERD hiện hành tại [REPORT_DRAFT.md](REPORT_DRAFT.md), quyền và giới hạn tại [ACCEPTANCE_SCOPE.md](ACCEPTANCE_SCOPE.md), tiến độ tại [REMAINING_WORK_PLAN.md](REMAINING_WORK_PLAN.md). Phần dưới giữ lịch sử thiết kế frontend; các câu “backend chưa triển khai” hoặc “dữ liệu demo” không mô tả bản Docker hiện tại.
 
 # Kiến trúc Aura Apple Store
 

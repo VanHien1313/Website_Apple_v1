@@ -53,6 +53,22 @@ try {
   page.setDefaultTimeout(15000);
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto(`${origin}/about`);
+  await page.getByRole('heading', { name: 'Nguyễn Văn Hiền', exact: true }).waitFor();
+  await page.getByText('MSSV: N23DCAT026', { exact: true }).waitFor();
+  await page.getByRole('link', { name: 'Thông tin liên hệ', exact: true }).click();
+  await page.locator('a[href="mailto:nguyenvanhien1313.tv@gmail.com"]').waitFor();
+  await page.goto(`${origin}/account/not-a-page`);
+  await page.getByRole('heading', { name: 'Trang này không tồn tại' }).waitFor();
+  await page.goto(`${origin}/login`);
+  await page.getByLabel(/^Mật khẩu\s*\*?$/).fill('Discard-this-12345');
+  await page.getByRole('button', { name: 'Quản trị viên', exact: true }).click();
+  await page.getByRole('heading', { name: 'Đăng nhập quản trị', exact: true }).waitFor();
+  assert.equal(await page.locator('input[name=password]').inputValue(), '');
+  assert.equal(await page.locator('a[href="/register"]').count(), 0);
+  await page.getByRole('button', { name: 'Khách hàng', exact: true }).click();
+  await page.getByRole('heading', { name: 'Chào mừng trở lại', exact: true }).waitFor();
+  checks.push('Public team/contact pages, account 404, explicit login role choice clears credentials and has no admin registration');
   await page.goto(`${origin}/search?q=Thiết%20bị`);
   await page.getByRole('heading', { name: 'Thiết bị mẫu B1', exact: true }).waitFor();
   assert.equal(await page.getByRole('article').count(), 1);
@@ -173,6 +189,11 @@ try {
   await page.getByRole('heading', { name: 'Tài khoản của bạn' }).waitFor();
   await page.reload();
   await page.getByText('browser@example.test', { exact: true }).waitFor();
+  await page.getByText('0987654321', { exact: true }).waitFor();
+  await page.getByRole('navigation', { name: 'Điều hướng tài khoản' }).getByRole('link', { name: 'Đơn hàng', exact: true }).click();
+  await page.getByRole('heading', { name: 'Đơn hàng của bạn', exact: true }).waitFor();
+  await page.getByRole('navigation', { name: 'Điều hướng tài khoản' }).getByRole('link', { name: 'Hồ sơ của tôi', exact: true }).click();
+  await page.getByText('browser@example.test', { exact: true }).waitFor();
   const cookies = await context.cookies();
   assert.equal(cookies.find((cookie) => cookie.name === 'aura_customer')?.httpOnly, true);
   assert.equal(await page.evaluate(() => document.cookie.includes('aura_customer')), false);
@@ -223,6 +244,20 @@ try {
   await page.waitForURL(`${origin}/admin/login`);
   await login('owner@example.test', 'Only-for-test-12345');
   await page.getByText('owner@example.test', { exact: true }).waitFor();
+  await page.getByRole('navigation', { name: 'Điều hướng quản trị' }).getByRole('link', { name: 'Đội ngũ quản trị', exact: true }).waitFor();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole('button', { name: 'Mở menu quản trị', exact: true }).click();
+  await page.getByRole('dialog', { name: 'Quản trị Aura', exact: true }).getByRole('link', { name: 'Sản phẩm', exact: true }).click();
+  await page.getByRole('heading', { name: 'Quản lý sản phẩm', exact: true }).waitFor();
+  assert.equal(await page.getByRole('dialog', { name: 'Quản trị Aura', exact: true }).count(), 0);
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.screenshot({ path: fileURLToPath(new URL('admin-navigation-mobile.png', evidence)), fullPage: true });
+  await page.setViewportSize({ width: 1365, height: 950 });
+  await page.goto(`${origin}/admin/not-a-page`);
+  await page.getByRole('heading', { name: 'Trang này không tồn tại' }).waitFor();
+  await page.goto(`${origin}/admin`);
+  await page.getByText('owner@example.test', { exact: true }).waitFor();
+  checks.push('SQL profile phone, account navigation, owner navigation, mobile admin drawer closes after navigation, unknown admin path returns 404');
   await page.getByRole('link', { name: 'Quản lý đơn hàng →' }).click();
   await page.getByRole('heading', { name: 'Quản lý đơn hàng' }).waitFor();
   await page.locator(`a[href="/admin/orders/${guestId}"]`).click();
@@ -624,10 +659,11 @@ try {
   await writeFile(new URL('results.json', evidence), JSON.stringify({ at: new Date().toISOString(), frontend: dockerMode ? 'docker-linux-app-and-sql' : packaged ? 'compiled-express-built-api' : process.env.FRONTEND_PREVIEW === 'true' ? 'built-api-preview' : 'vite-api-dev', checks, pageErrors: errors }, null, 2));
   console.log(JSON.stringify({ passed: checks.length, checks }));
 } catch (error) {
+  console.error('Frontend smoke failed:', error);
   await mkdir(evidence, { recursive: true });
   if (page) {
-    await page.screenshot({ path: fileURLToPath(new URL('failure.png', evidence)), fullPage: true });
-    console.error(JSON.stringify({ url: page.url(), text: await page.locator('body').innerText(), responses }));
+    await page.screenshot({ path: fileURLToPath(new URL('failure.png', evidence)), fullPage: true, timeout: 5000 }).catch(() => {});
+    console.error(JSON.stringify({ url: page.url(), text: await page.locator('body').innerText({ timeout: 5000 }).catch(() => 'Page unavailable'), responses }));
   }
   throw error;
 } finally {

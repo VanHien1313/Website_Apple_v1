@@ -1,5 +1,7 @@
 > Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
 
+> Bàn giao mới nhất 10/11: R1 đã có giới thiệu hai thành viên/email công khai, profile SĐT/ngày tham gia, điều hướng tài khoản/admin, chọn vai trò đăng nhập và 404/redirect URL cũ. 41 frontend tests + boundary + 24 nhóm Docker E2E đạt; app local đã cập nhật, healthy, SQL migrations/permissions verified. Dữ liệu thực kiểm tra sau triển khai: 1 admin, 0 sản phẩm, 0 đơn. Chưa tự thêm dữ liệu demo. [Phạm vi R2](ACCEPTANCE_SCOPE.md), [bản thảo báo cáo](REPORT_DRAFT.md), [demo và mốc trước hạn 13/11](DEMO_AND_DEFENSE.md). Chưa push/registry mới/hosting; nhóm còn test tay và làm bộ nộp cuối.
+
 > Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.
 
 > B5.8 — 09/11/2026: [runbook Linux host](STAGING_HOST_RUNBOOK.md) và `staging:host-check` đã chuẩn bị; 11/11 deployment tests đạt. Chưa có VPS/tên miền, chưa nghiệm thu hosting.

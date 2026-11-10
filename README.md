@@ -10,6 +10,8 @@ React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · 
 
 [Kế hoạch còn lại theo yêu cầu giảng viên](docs/REMAINING_WORK_PLAN.md) · [Ma trận đối chiếu hai tài liệu yêu cầu](docs/LECTURER_REQUIREMENTS_MAPPING.md) — cập nhật 10/11/2026.
 
+**Cập nhật mới nhất 10/11 — hạn hoàn tất 13/11:** đã triển khai local trang giới thiệu nhóm/liên hệ, profile khách, chọn loại đăng nhập, sidebar/drawer quản trị và sửa điều hướng/404. 41 frontend tests, kiểm tra ranh giới API/demo và **24 nhóm Docker E2E đạt**. [Phạm vi nghiệm thu](docs/ACCEPTANCE_SCOPE.md) · [Bản thảo báo cáo và sơ đồ](docs/REPORT_DRAFT.md) · [Kịch bản demo/bảo vệ](docs/DEMO_AND_DEFENSE.md). Báo cáo định dạng, slide/video, test tay và hosting vẫn còn việc; chưa push/phát hành lại registry.
+
 **10/11/2026 — tiếp tục local:** đã thêm [owner đặt lại mật khẩu quản trị](docs/ADMIN_PASSWORD_RESET.md), cập nhật app Docker tại http://127.0.0.1:4000. 77 backend tests, 41 frontend tests và 22 nhóm Docker E2E đạt. GHCR vẫn là bản 09/11; chưa phát hành lại tính năng này.
 
 **Hiện hành 09/11/2026:** đã chạy frontend/API/SQL Server bằng Docker local, có owner thật và dữ liệu cửa hàng riêng. 74/74 test backend đạt trên Linux/SQL Server Docker; 21 nhóm E2E Docker và diễn tập restart/backup/restore đạt. Staging có cấu hình riêng và công cụ preflight. GitHub Actions đã đạt toàn bộ build/test/E2E/recovery trên Ubuntu tại commit `6c35852`; xem [lần CI đạt](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42620970687). Chưa triển khai hosting công khai.
