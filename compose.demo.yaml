@@ -1,0 +1,29 @@
+# Merge with compose.yaml. Shares SQL engine, uses a separate database/login.
+services:
+  demo-app:
+    image: aura-local-app
+    environment:
+      NODE_ENV: development
+      SERVE_FRONTEND: "true"
+      APP_ORIGIN: http://localhost:4001
+      DB_SERVER: db
+      DB_DATABASE: AuraDemoDocker
+      DB_AUTH: sql
+      DB_USER: aura_demo_app
+      DB_PASSWORD_FILE: /run/secrets/sql_demo_password
+      DB_ENCRYPT: "true"
+      DB_TRUST_SERVER_CERTIFICATE: "true"
+      ALLOW_DEMO_SEED: "false"
+    secrets:
+      - sql_demo_password
+    ports:
+      - "127.0.0.1:4001:4000"
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    init: true
+    restart: unless-stopped
+secrets:
+  sql_demo_password:
+    file: ./deploy/secrets/sql-demo-password.txt

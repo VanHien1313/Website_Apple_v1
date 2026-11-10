@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "demo:start": "node deploy/demo-local.mjs start",
+    "demo:stop": "node deploy/demo-local.mjs stop",
+    "demo:status": "node deploy/demo-local.mjs status",
+    "test:demo": "node --experimental-strip-types --test deploy/demo/catalog.test.mjs",
+    "demo:verify": "node deploy/demo-verify.mjs",
     "test:backend:docker": "node deploy/test-backend-docker.mjs",
     "staging:check": "node deploy/staging-preflight.mjs",
     "staging:host-check": "node deploy/staging-host-check.mjs",

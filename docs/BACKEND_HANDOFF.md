@@ -1,5 +1,7 @@
 > Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
 
+> R3 mới nhất: demo http://localhost:4001 / AuraDemoDocker đã có 8 sản phẩm, 24 SKU, 6 đơn và 3 tài khoản thử. Khởi tạo lại giữ nguyên dữ liệu; 2 dataset tests + 6 browser checks đạt, quyền SQL không truy cập main DB. Main http://127.0.0.1:4000 vẫn 1 admin/0 sản phẩm/0 đơn. [Cách dùng và giới hạn](LOCAL_DEMO.md). Không rebuild image ứng dụng trong phiên này; dùng image đã đạt 24 nhóm E2E ở phiên trước. Không push/hosting.
+
 > Bàn giao mới nhất 10/11: R1 đã có giới thiệu hai thành viên/email công khai, profile SĐT/ngày tham gia, điều hướng tài khoản/admin, chọn vai trò đăng nhập và 404/redirect URL cũ. 41 frontend tests + boundary + 24 nhóm Docker E2E đạt; app local đã cập nhật, healthy, SQL migrations/permissions verified. Dữ liệu thực kiểm tra sau triển khai: 1 admin, 0 sản phẩm, 0 đơn. Chưa tự thêm dữ liệu demo. [Phạm vi R2](ACCEPTANCE_SCOPE.md), [bản thảo báo cáo](REPORT_DRAFT.md), [demo và mốc trước hạn 13/11](DEMO_AND_DEFENSE.md). Chưa push/registry mới/hosting; nhóm còn test tay và làm bộ nộp cuối.
 
 > Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.

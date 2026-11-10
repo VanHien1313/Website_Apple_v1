@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-10T08:36:35.857Z",
+  "database": "AuraDemoDocker",
+  "permissions": { "sysadmin": 0, "mainDatabaseAccess": 0, "createTable": 0, "updateMigrations": 0 },
+  "counts": { "products": 8, "skus": 24, "orders": 6, "admins": 2, "customers": 1 },
+  "stockAssertions": "passed",
+  "completedPaidRevenue": 25000000,
+  "secondStart": "demo_preserved",
+  "mainDatabaseCountsAfter": { "admins": 1, "products": 0, "orders": 0 },
+  "mainVerification": "migrations, restricted permissions and HTTP passed"
+}

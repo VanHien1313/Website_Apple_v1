@@ -10,6 +10,8 @@ React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · 
 
 [Kế hoạch còn lại theo yêu cầu giảng viên](docs/REMAINING_WORK_PLAN.md) · [Ma trận đối chiếu hai tài liệu yêu cầu](docs/LECTURER_REQUIREMENTS_MAPPING.md) — cập nhật 10/11/2026.
 
+**Bản demo có dữ liệu:** http://localhost:4001 — database riêng, 8 sản phẩm/24 SKU, 3 tài khoản và 6 đơn minh họa. `npm run demo:start`; xem tài khoản bằng `./deploy/Show-DemoAccounts.ps1`. [Hướng dẫn demo](docs/LOCAL_DEMO.md). Bản chính http://127.0.0.1:4000 giữ nguyên; dùng đúng hostname để tách cookie.
+
 **Cập nhật mới nhất 10/11 — hạn hoàn tất 13/11:** đã triển khai local trang giới thiệu nhóm/liên hệ, profile khách, chọn loại đăng nhập, sidebar/drawer quản trị và sửa điều hướng/404. 41 frontend tests, kiểm tra ranh giới API/demo và **24 nhóm Docker E2E đạt**. [Phạm vi nghiệm thu](docs/ACCEPTANCE_SCOPE.md) · [Bản thảo báo cáo và sơ đồ](docs/REPORT_DRAFT.md) · [Kịch bản demo/bảo vệ](docs/DEMO_AND_DEFENSE.md). Báo cáo định dạng, slide/video, test tay và hosting vẫn còn việc; chưa push/phát hành lại registry.
 
 **10/11/2026 — tiếp tục local:** đã thêm [owner đặt lại mật khẩu quản trị](docs/ADMIN_PASSWORD_RESET.md), cập nhật app Docker tại http://127.0.0.1:4000. 77 backend tests, 41 frontend tests và 22 nhóm Docker E2E đạt. GHCR vẫn là bản 09/11; chưa phát hành lại tính năng này.

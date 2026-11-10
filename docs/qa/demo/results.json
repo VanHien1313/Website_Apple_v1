@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-10T08:36:36.182Z",
+  "origin": "http://localhost:4001",
+  "checks": [
+    "8 visible demo products and all local images decode",
+    "Out-of-stock color cannot be purchased",
+    "Owner UI login, six order states and 25 million VND completed/paid revenue",
+    "Editor cannot manage admin accounts",
+    "Demo customer sees six own orders",
+    "Mobile storefront fits and no browser page errors"
+  ]
+}

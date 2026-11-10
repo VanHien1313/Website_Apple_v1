@@ -4,6 +4,8 @@
 
 Hạn nhóm xác nhận: **thứ Sáu 13/11/2026**. Ưu tiên nghiệm thu local và hồ sơ bảo vệ trước tính năng nâng cao.
 
+**R3 bổ sung trong phiên tiếp theo:** bản trình diễn riêng đã chạy tại **http://localhost:4001**, DB `AuraDemoDocker`, có 8 sản phẩm/24 SKU, ảnh WebP nội bộ, 2 admin/1 customer và 6 đơn tạo qua service. 2 kiểm thử dataset và 6 kiểm tra trình duyệt đạt; SQL xác nhận quyền tách database, tồn kho và doanh thu 25 triệu đúng. Chạy `demo:start` lần hai giữ nguyên dữ liệu. Main DB vẫn 1 admin/0 sản phẩm/0 đơn. Xem [LOCAL_DEMO.md](LOCAL_DEMO.md). Nhóm còn nghiệm thu tay và quay demo; số liệu ban đầu sẽ thay đổi khi thao tác hoặc đơn PENDING hết hạn sau 24 giờ.
+
 - **R1 đã triển khai:** `/about` có Nguyễn Văn Hiền (N23DCAT023), Khuất Nguyễn Bảo Hiếu (N23DCAT026), cùng thiết kế/phát triển; `/contact` có email công khai nguyenvanhien1313.tv@gmail.com; header/footer/mobile có liên kết. Profile hiển thị SĐT/ngày tham gia, có điều hướng hồ sơ/đơn/mật khẩu. Đăng nhập chọn khách/quản trị; admin có sidebar/drawer chung theo quyền. URL sai báo 404, URL demo cũ được chuyển cho users/product edit/security.
 - **R2 đã rà phạm vi:** [ACCEPTANCE_SCOPE.md](ACCEPTANCE_SCOPE.md) ghi ma trận quyền, danh sách và các điểm cần chốt với giảng viên. Chưa tự mở rộng customer lock, role động, hủy đơn hoặc xóa cứng.
 - **R3 kiểm thử kỹ thuật đạt:** 41 frontend tests, API/demo boundary và 24 nhóm Docker E2E (luồng thật với database cô lập). Có lần chạy trước thất bại và ảnh lỗi timeout che nguyên nhân; đã sửa logging và lượt chạy lại đạt. Test tay của nhóm và bộ dữ liệu trình diễn vẫn cần hoàn tất.

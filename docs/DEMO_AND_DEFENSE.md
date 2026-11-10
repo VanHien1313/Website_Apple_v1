@@ -22,6 +22,8 @@ Các mốc là thứ tự ưu tiên, không phải cam kết mọi mục đã xo
 
 ## Chuẩn bị dữ liệu và môi trường
 
+**Đã có bộ dữ liệu sẵn:** ưu tiên dùng [bản trình diễn riêng](LOCAL_DEMO.md) tại http://localhost:4001. Tài khoản demo xem bằng `deploy/Show-DemoAccounts.ps1`, không dùng owner thật ở cổng 4000. Bản này có 8 sản phẩm/6 đơn và báo cáo mẫu; có thể bỏ bước tự nhập toàn bộ dữ liệu từ đầu. Hướng dẫn dưới đây vẫn áp dụng nếu nhóm muốn tự chuẩn bị bộ TEST-TAY trên bản chính.
+
 1. Docker app/db healthy; truy cập đúng http://127.0.0.1:4000. Không dùng bản Vite demo để minh họa dữ liệu SQL Server.
 2. Dùng profile trình duyệt riêng cho owner/editor/customer. Không chiếu mật khẩu, cookie, token, secrets hoặc thông tin khách thật.
 3. Theo mục 2 của MANUAL_TEST_GUIDE tạo sản phẩm TEST-TAY, SKU có hàng/hết hàng, danh mục, editor và khách thử. Không reset volume hoặc seed đè dữ liệu hiện có.
