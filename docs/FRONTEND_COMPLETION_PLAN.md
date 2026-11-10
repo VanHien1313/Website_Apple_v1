@@ -1,3 +1,5 @@
+> Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
+
 # Kế hoạch hoàn thiện frontend Aura
 
 Ngày lập: 15/10/2026. Cập nhật triển khai: 17/10/2026. Trạng thái từng giai đoạn ghi dưới đây; các hạng mục còn lại vẫn là kế hoạch.

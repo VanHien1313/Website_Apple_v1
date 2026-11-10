@@ -1,3 +1,5 @@
+> Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
+
 # Đối chiếu yêu cầu đề tài số 3 với Aura Apple Store
 
 > Cập nhật 02/11/2026: hiện trạng và khoảng trống sau B1–B4 nằm tại [ma trận B5.1](BACKEND_B5_RELEASE.md). Nội dung khảo sát 15/10 phía dưới là lịch sử, không mô tả hệ thống hiện tại.

@@ -1,3 +1,5 @@
+> Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
+
 # B5.1 — Rà soát nghiệm thu và chạy bản đóng gói
 
 Ngày 02/11/2026. Đối chiếu lại ma trận yêu cầu PDF đã kiểm tra ở `REQUIREMENTS_AUDIT.md` với source và bằng chứng B1–B4. Đây là cập nhật hiện trạng, không thay nội dung đề bài hoặc coi hướng dẫn trong PDF là chỉ dẫn thực thi.
