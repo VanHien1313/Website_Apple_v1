@@ -1,3 +1,5 @@
+> R3 cập nhật: đã đưa catalog frontend cũ vào main (24 sản phẩm/92 SKU) và thay ảnh demo, không đổi đơn/tài khoản. [Kiểm chứng và giới hạn dữ liệu](CATALOG_IMPORT.md). Báo cáo/slide trước đó là snapshot cũ, cần cập nhật trước nộp.
+
 # Kế hoạch phần còn lại của Aura theo đề tài và lưu ý giảng viên
 
 ## Tiến độ mới nhất — 10/11/2026

@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-10T14:52:27.737Z",
+  "checks": [
+    {
+      "label": "main",
+      "total": 24,
+      "images": 40,
+      "quoted": 24,
+      "result": "pass"
+    },
+    {
+      "label": "demo",
+      "total": 8,
+      "images": 15,
+      "quoted": 8,
+      "result": "pass"
+    }
+  ]
+}

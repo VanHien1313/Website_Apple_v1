@@ -27,6 +27,8 @@ else {
   }
   if((await readFile(dbPassword,'utf8')).trim()!==secret.databasePassword) throw new Error('Demo secret files do not match');
   console.log(await run(['compose','run','--rm','--no-deps','-T','-e','DB_DATABASE=AuraDemoDocker','-v',`${fileURLToPath(new URL('./demo/',import.meta.url))}:/app/demo:ro`,'init','node','/app/demo/init.mjs'],JSON.stringify(secret)));
+  const catalogMounts=['import-catalog.mjs','demo','catalog'].flatMap(p=>['-v',`${fileURLToPath(new URL(p,import.meta.url))}:/app/catalog-tools/${p}:ro`]);
+  console.log(await run(['compose','run','--rm','--no-deps','-T','-e','DB_DATABASE=AuraDemoDocker',...catalogMounts,'init','node','/app/catalog-tools/import-catalog.mjs','--apply']));
   console.log(await run([...compose,'up','-d','--no-deps','--no-build','--wait','--wait-timeout','90','demo-app']));
   console.log('Demo: http://localhost:4001 | Database: AuraDemoDocker | Account credentials: deploy/secrets/demo-accounts.json (private, do not commit/share). Main app on port 4000 is unchanged.');
 }

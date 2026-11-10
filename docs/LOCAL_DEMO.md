@@ -1,3 +1,5 @@
+> Cập nhật ảnh 10/11: 8 sản phẩm demo hiện dùng ảnh sản phẩm từ catalog frontend cũ lưu SQL, giữ nguyên giá thử và tồn/đơn. Main cổng 4000 đã có 24 sản phẩm/92 SKU. Những mô tả ảnh hình học phía dưới là dữ liệu khởi tạo trước cập nhật. [Chi tiết](CATALOG_IMPORT.md).
+
 # Bản trình diễn SQL Server riêng
 
 Chuẩn bị ngày 10/11/2026 để nhóm demo trước hạn 13/11. Đây là ứng dụng API/SQL thật với **dữ liệu giả**, không phải frontend dùng localStorage mock.

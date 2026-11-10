@@ -1,0 +1,10 @@
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const target=process.argv.includes('--demo')?'AuraDemoDocker':'AuraStoreDocker';
+if(process.argv.slice(2).some(a=>!['--demo','--apply'].includes(a)))throw Error('Use --demo and/or --apply; without --apply preview only');
+const docker=process.env.DOCKER_PATH||(process.platform==='win32'?'C:/Program Files/Docker/Docker/resources/bin/docker.exe':'docker');
+const mounts=['import-catalog.mjs','demo','catalog'].flatMap(p=>['-v',`${fileURLToPath(new URL(p,import.meta.url))}:/app/catalog-tools/${p}:ro`]);
+const result=spawnSync(docker,['compose','run','--rm','--no-deps','-T','-e',`DB_DATABASE=${target}`,...mounts,'init','node','/app/catalog-tools/import-catalog.mjs',...(process.argv.includes('--apply')?['--apply']:[])],{cwd:root,stdio:'inherit',windowsHide:true});
+if(result.error)throw result.error;
+process.exitCode=result.status??1;

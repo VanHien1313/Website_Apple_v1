@@ -1,3 +1,5 @@
+> Catalog mới nhất: main có 24 sản phẩm/92 SKU, 40 ảnh WebP nội bộ; demo đã thay ảnh cho 8 sản phẩm, giữ tồn/đơn/tài khoản. [Bàn giao](CATALOG_IMPORT.md). Các mốc 0 sản phẩm và ảnh hình học phía dưới là lịch sử.
+
 > Hồ sơ R5 mới nhất: [Word 13 trang và PowerPoint 12 slide](submission/README.md) đã tạo và kiểm tra trực quan. Còn mẫu lớp, test tay, video và luyện bảo vệ. Không thay đổi app/database trong phiên hồ sơ.
 
 > Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.

@@ -1,0 +1,3135 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "iphone",
+      "name": "iPhone"
+    },
+    {
+      "id": "ipad",
+      "name": "iPad"
+    },
+    {
+      "id": "mac",
+      "name": "Mac"
+    },
+    {
+      "id": "watch",
+      "name": "Apple Watch"
+    }
+  ],
+  "media": [
+    {
+      "id": "491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329149/s16/iphone-16-pro-max-titan-sa-mac-thumbnew-650x650.png",
+      "file": "images/491ade05-caae-4d9f-ac9d-3a8fbd8f4347.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "0b8c8509b1e2cf494c6d30915b96bd08e2d12d837e7cb0147a674b35e5e145d0"
+    },
+    {
+      "id": "d84c73c3-ea6a-42d2-a4b2-d508fdc54897",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329149/s16/iphone-16-pro-max-titan-den-thumbnew-650x650.png",
+      "file": "images/d84c73c3-ea6a-42d2-a4b2-d508fdc54897.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "487b9134ef2bac8d40fa0c032bd47afe2b02c97e2c9038a74747d2658e5bd5d5"
+    },
+    {
+      "id": "876f8084-39b5-44eb-a573-466f44a28082",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329138/s16/iphone-16-plus-xanh-luu-ly-thumbnew-650x650.png",
+      "file": "images/876f8084-39b5-44eb-a573-466f44a28082.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "a34e2dbcf8233e6be817b299216c928bb61d04927f9f9991384efd16545bc89b"
+    },
+    {
+      "id": "b7864320-1b57-4ffe-ad6d-09c96c201487",
+      "source": "https://cdn.tgdd.vn/Products/Images/42/329138/iphone-16-plus-den-thumb.jpg",
+      "file": "images/b7864320-1b57-4ffe-ad6d-09c96c201487.webp",
+      "width": 600,
+      "height": 600,
+      "sha256": "58f088969d2619fe7138b7ed0aa2effb586ed8c3fb5f16f7fb4d883c6f796f61"
+    },
+    {
+      "id": "13009b2b-49ce-4efc-a1ca-64412bdbffed",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329135/s16/iphone-16-hong-1-650x650.png",
+      "file": "images/13009b2b-49ce-4efc-a1ca-64412bdbffed.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "0af01f7438de35bd2a1fc3ba4c5197a5e119f6c17c8ec1c59662756cd7c751bb"
+    },
+    {
+      "id": "5b9c32c7-edbb-408f-ac3f-27ff02acb2bd",
+      "source": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-black.png",
+      "file": "images/5b9c32c7-edbb-408f-ac3f-27ff02acb2bd.webp",
+      "width": 600,
+      "height": 600,
+      "sha256": "635183bcf7e411486ad4a55384a8f5d2afa9ac1f0c95b1acbfa096b2f92248aa"
+    },
+    {
+      "id": "3cb6f975-ba7d-407b-a9ad-a0ba61c2e288",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-gold-1-2-650x650.png",
+      "file": "images/3cb6f975-ba7d-407b-a9ad-a0ba61c2e288.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "219bcb6fc7a0d87a3821cba70680ceabfcbf7f3206c981e7237b66378ef00271"
+    },
+    {
+      "id": "01d1ccbf-e4d4-4872-aa32-96fcc790ca6e",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-1-2-650x650.png",
+      "file": "images/01d1ccbf-e4d4-4872-aa32-96fcc790ca6e.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "b75063619407a7c995e3db68f052afede4e58886d8aaef1f87f7732e8f84a16e"
+    },
+    {
+      "id": "54b38870-c5e6-4b89-a068-12cf1652f27d",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-black-1-2-650x650.png",
+      "file": "images/54b38870-c5e6-4b89-a068-12cf1652f27d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9fb3ef78f5275a23b0dca93bab379355c8e6642bdc029a23d4a36abae58ac990"
+    },
+    {
+      "id": "9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-white-1-2-650x650.png",
+      "file": "images/9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9494d8255fc57b9ca3ed33c957eaf4170df30019d52a5885102647bb2c38dae3"
+    },
+    {
+      "id": "a544e139-86e2-4032-ab14-e2c3690c9a4d",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-gold-1-2-650x650.png",
+      "file": "images/a544e139-86e2-4032-ab14-e2c3690c9a4d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "8e77694850f6272eccb830416253d8baa7e0809c4bb3efaacc0ac98cb32a113c"
+    },
+    {
+      "id": "f9ce4664-fa6d-4cb2-a5f4-4084d003df08",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-blue-1-2-650x650.png",
+      "file": "images/f9ce4664-fa6d-4cb2-a5f4-4084d003df08.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "1b2f9b498bd3c4e8f85cf0a297b87e29dd8b819cda7b8f82f9b2287a2e62f74c"
+    },
+    {
+      "id": "6558ddde-4716-4f5f-aaa2-c689d9377727",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-black-1-2-650x650.png",
+      "file": "images/6558ddde-4716-4f5f-aaa2-c689d9377727.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "01e29a5af97a03f4a148f47013a0366de80de9242b61d0f9b38457dd1308508d"
+    },
+    {
+      "id": "d51996e4-af5a-406d-a7e1-8350e25179ac",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-white-1-2-650x650.png",
+      "file": "images/d51996e4-af5a-406d-a7e1-8350e25179ac.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e9366067614f79c06423e8cdfb8a3360a6405384cb67c54ebb55994661435832"
+    },
+    {
+      "id": "00029cd9-34f0-4f52-af3c-55ef18564326",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-pink-1-2-650x650.png",
+      "file": "images/00029cd9-34f0-4f52-af3c-55ef18564326.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "4fe6f2939a670535910aa66153f9e6946ab8f23edde8a5ab1e2a568db7aeee18"
+    },
+    {
+      "id": "8f09f334-8a97-40cf-a30f-dcf304c36b43",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-blue-1-2-650x650.png",
+      "file": "images/8f09f334-8a97-40cf-a30f-dcf304c36b43.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "98628b67243f06d5d8f474e445163d2c98f769753d364f8ac78b16d5cc434956"
+    },
+    {
+      "id": "1542bed7-ded7-4347-adfe-f519ed11d2de",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-black-1-2-650x650.png",
+      "file": "images/1542bed7-ded7-4347-adfe-f519ed11d2de.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6198334a9c56be9b8cfd316392aff13080e511560b8c7ecd27aebd161a2da221"
+    },
+    {
+      "id": "7d8e2109-eabc-41d7-a659-92e1a30fb89f",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-green-1-2-650x650.png",
+      "file": "images/7d8e2109-eabc-41d7-a659-92e1a30fb89f.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "38f98df60b9bd69506d699545b9f49c92d85fcb54eb942c3904aeda12a3c2235"
+    },
+    {
+      "id": "b5cf6b8e-1189-4ff7-a4e1-554c52b17641",
+      "source": "https://cdn.topzone.vn/Products/Images/42/240259/s16/iphone-14-blue-1-2-650x650.png",
+      "file": "images/b5cf6b8e-1189-4ff7-a4e1-554c52b17641.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "8a4ca8e9a468359ac1608e145e6a8f4eb66c60248b548658d7aa4332803f2e00"
+    },
+    {
+      "id": "db1fed06-17ce-4ad1-a733-aa16cc7c1607",
+      "source": "https://cdn.topzone.vn/Products/Images/42/223602/s16/iphone-13-blue-1-2-650x650.png",
+      "file": "images/db1fed06-17ce-4ad1-a733-aa16cc7c1607.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "76e8447fbf16666839ddecbe8d62363985b3993e17de7c458cf415f59c1f77d8"
+    },
+    {
+      "id": "d64ea05c-9882-4c65-ac55-57f6698c72ca",
+      "source": "https://cdn.topzone.vn/Products/Images/522/358082/s16/ipad-pro-m5-wifi-11-inch-black-thumbtz-650x650.png",
+      "file": "images/d64ea05c-9882-4c65-ac55-57f6698c72ca.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "c58b71fdb0f7b8da0de6f9f72d7565f8e1418c009a253fdd81cead614bdf154c"
+    },
+    {
+      "id": "ed9c88b1-971b-454b-a9d0-5667cbdefaae",
+      "source": "https://cdn.topzone.vn/Products/Images/522/358098/s16/ipad-pro-m5-wifi-11-inch-sliver-thumbtz-650x650.png",
+      "file": "images/ed9c88b1-971b-454b-a9d0-5667cbdefaae.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e96ef6acb764c977f7df442d630d31806166b80ba24cb8bd3cd55d43f82e8d41"
+    },
+    {
+      "id": "3a468610-71a0-4c67-a73f-8505c7e159a5",
+      "source": "https://cdn.topzone.vn/Products/Images/522/363417/s16/ipad-air-m4-11-inch-wifi-128gb-xam-thumb-650x650.png",
+      "file": "images/3a468610-71a0-4c67-a73f-8505c7e159a5.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "c053574f053582d17e66f51e4b94287a27bfdbee8015edf2b4d01a50feba03f5"
+    },
+    {
+      "id": "01ccbdcf-760b-4e48-a576-377bc076867a",
+      "source": "https://cdn.topzone.vn/Products/Images/522/335308/s16/ipad-11-wifi-yellow-thumb-650x650.png",
+      "file": "images/01ccbdcf-760b-4e48-a576-377bc076867a.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "32a798b3e40d8dd1be84f2f33492f5e2b807a6905a57c864de01313a79046cb6"
+    },
+    {
+      "id": "d3901037-bf61-4a1b-ac48-c307c16d2923",
+      "source": "https://cdn.topzone.vn/Products/Images/522/331229/s16/ipad-mini-7-wifi-purple-thumbtz-650x650.png",
+      "file": "images/d3901037-bf61-4a1b-ac48-c307c16d2923.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6f5f7815eb5e9d9fee21f54ad5f260d0c893ce9cdbe5e8f6b7c807773f240e59"
+    },
+    {
+      "id": "fbea2543-58de-4f15-ad28-3deae12b1f16",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363474/s16/macbook-air-13-inch-m5-16gb-512gb-vang-thumb-650x650.png",
+      "file": "images/fbea2543-58de-4f15-ad28-3deae12b1f16.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "909f6157d27499e5955171b16d83c13413c03c252b0fabea0c9fb948e377a010"
+    },
+    {
+      "id": "590fbb2d-9cb8-4c8e-ade2-bff5d510521e",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363503/s16/macbook-air-13-inch-m5-24gb-512gb-xanh-thumb-650x650.png",
+      "file": "images/590fbb2d-9cb8-4c8e-ade2-bff5d510521e.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6a4e02717ab934bc079529fddd522765a71fff92adb1f42674e57fdd261109fc"
+    },
+    {
+      "id": "6fd646c2-8104-4274-ae74-15e45b8d6bac",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363477/s16/macbook-air-15-inch-m5-16gb-512gb-vang-thumb-650x650.png",
+      "file": "images/6fd646c2-8104-4274-ae74-15e45b8d6bac.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e6ad45be999814f9ed4eed51928284bc7d77a6e9d22716825607a5dafb805cf3"
+    },
+    {
+      "id": "1d841ebf-6567-472b-af8d-44c633b291ef",
+      "source": "https://cdn.topzone.vn/Products/Images/44/358089/s16/macbook-pro-14-inch-m5-24gb-1tb-den-thumb-650x650.png",
+      "file": "images/1d841ebf-6567-472b-af8d-44c633b291ef.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "019b68be9b23e0ae67be338571fdcd90c3d8dd04922424e3fc07ac1fa1b492c1"
+    },
+    {
+      "id": "30499eb7-df52-4e94-ac7d-bfbc57f21475",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363488/s16/macbook-pro-14-inch-m5-pro-24gb-1tb-bac-thumb-650x650.png",
+      "file": "images/30499eb7-df52-4e94-ac7d-bfbc57f21475.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ce70421c91ca98dd7639369e61d80b11f24c122c79e052049ff0e97c0c8e02bf"
+    },
+    {
+      "id": "459c3010-564a-4374-a752-58ef9d24a364",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363493/s16/macbook-pro-16-inch-m5-max-36gb-2tb-den-thumb-650x650.png",
+      "file": "images/459c3010-564a-4374-a752-58ef9d24a364.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9ab89a088723d00c9aa0494ba47df2174fda90eb3b3aba3bcddb80dbda7ef520"
+    },
+    {
+      "id": "3a5d1045-3a6f-4af7-ad38-496c490cfcae",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-24-blue-selection-hero-202310?wid=1000",
+      "file": "images/3a5d1045-3a6f-4af7-ad38-496c490cfcae.webp",
+      "width": 1000,
+      "height": 840,
+      "sha256": "11580b68ec5cf1966588b3903c9888dde1715ea7af0fe76c6797bb4601c3d430"
+    },
+    {
+      "id": "f809b953-b466-4d25-aa33-a3fa6b571914",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-mini-select-202410?wid=1000",
+      "file": "images/f809b953-b466-4d25-aa33-a3fa6b571914.webp",
+      "width": 1000,
+      "height": 840,
+      "sha256": "d9e068f376c4d588175e9dd0f1b771c3c05ad596bcf66dc68f8ffb8bd820d0bd"
+    },
+    {
+      "id": "7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-studio-select-202306?wid=1000",
+      "file": "images/7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3.webp",
+      "width": 1000,
+      "height": 371,
+      "sha256": "dbee8d8e6926062a975eafd650dae37ebfbf44b322abf829ed4ca019e678c3e4"
+    },
+    {
+      "id": "798ec892-def1-45e6-a3a3-00fddcbca067",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344764/s16/apple-watch-ultra-3-gps-cellular-49mm-vien-titanium-day-ocean-den-thumb-1-650x650.png",
+      "file": "images/798ec892-def1-45e6-a3a3-00fddcbca067.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ae45723d56d5015c7059d6e30cff6ad70df72b7e51d7392019af46f0d579530e"
+    },
+    {
+      "id": "d43f0c9d-f1b4-45e7-aded-432bcfe740ec",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344765/s16/apple-watch-ultra-3-gps-cellular-49mm-vien-titanium-day-trail-den-thumb-650x650.png",
+      "file": "images/d43f0c9d-f1b4-45e7-aded-432bcfe740ec.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "893be82f09e34fff5ff6332b1d283ab70f3e21b84969136b1735163ef8c922ca"
+    },
+    {
+      "id": "b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344750/s16/apple-watch-series-11-42mm-vien-nhom-day-the-thao-xam-thumb-650x650.png",
+      "file": "images/b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e9b1cffbd1665a5d351744ec49f43780a364721bd6040b0e0a8239333282d9ac"
+    },
+    {
+      "id": "c7629098-3c8b-46cb-a14d-feed7f1c892d",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344752/s16/apple-watch-series-11-gps-cellular-42mm-vien-nhom-day-the-thao-den-thumb-650x650.png",
+      "file": "images/c7629098-3c8b-46cb-a14d-feed7f1c892d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "087094e033fa3942e9abf61f3786bab7a65175291701212640719937e332eb52"
+    },
+    {
+      "id": "43d00ff3-178a-4045-a70b-a41693fcf9d8",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/371335/s16/apple-watch-se-3-gps-44mm-vien-nhom-day-the-thao-2026-navy-thumbtz-650x650.png",
+      "file": "images/43d00ff3-178a-4045-a70b-a41693fcf9d8.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "7bcee5e07aa986a71843725edd4fe16965da5d85f17fd20db75cf5e31f8d2aa3"
+    },
+    {
+      "id": "25cb1c23-7106-4c63-acfa-283aa40d8fae",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/371333/s16/apple-watch-se-3-gps-cellular-40mm-vien-nhom-day-the-thao-2026-starlight-thumbtz-650x650.png",
+      "file": "images/25cb1c23-7106-4c63-acfa-283aa40d8fae.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ecc1ae92bfc98971c9f18231ee5daab9839bb48849b010557d3dd70b255763a3"
+    }
+  ],
+  "products": [
+    {
+      "id": "9c66cccc-6503-4000-a532-d39507426ce0",
+      "slug": "iphone-16-pro-max",
+      "name": "iPhone 16 Pro Max",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Titanium cấp hàng không vũ trụ. Nút Điều khiển Camera đột phá.",
+      "badge": "Mới",
+      "subCategory": "Pro Series",
+      "thumbnail": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+      "gallery": [
+        "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+        "/api/v1/media/d84c73c3-ea6a-42d2-a4b2-d508fdc54897"
+      ],
+      "description": [
+        "iPhone 16 Pro Max sở hữu màn hình 6.9 inch viền mỏng nhất từ trước tới nay của Apple, mang đến không gian trải nghiệm vô cùng ấn tượng.",
+        "Khung titan Cấp 5 bền bỉ và nhẹ với cấu trúc tỏa nhiệt tối ưu hơn, giúp hiệu năng đồ họa mượt mà trong các tác vụ AI và gaming cao cấp.",
+        "Nút Điều khiển Camera mới giúp bạn chụp ảnh và quay phim 4K 120 fps Dolby Vision một cách chuyên nghiệp chỉ bằng một chạm."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A18 Pro 6 nhân (3nm thế hệ 2)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.9\" Super Retina XDR OLED, 120Hz ProMotion"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 256GB / 512GB / 1TB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP & Phụ 48MP, 12MP (Tele 5x quang học)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth, quay 4K 120 fps"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 33 giờ • Sạc MagSafe 25W"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "Type-C chuẩn USB 3 (tốc độ đến 10Gb/s)"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung Titan Cấp 5 • Kháng nước IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "551cb4d8-58a5-4e3f-a2ae-6eaa22915f9f",
+          "storage": "256GB",
+          "chip": "A18 Pro"
+        },
+        {
+          "id": "68427e18-3311-486f-ad10-dbc5492c48d3",
+          "storage": "512GB",
+          "chip": "A18 Pro"
+        },
+        {
+          "id": "28a0a405-85f7-43c5-af7b-7c9c1f6a9191",
+          "storage": "1TB",
+          "chip": "A18 Pro"
+        }
+      ],
+      "colors": [
+        {
+          "id": "17f9b5ce-0c44-4328-a697-7eba5dc5861c",
+          "name": "Titan Sa Mạc",
+          "hex": "#C5A880",
+          "image": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347"
+        },
+        {
+          "id": "2e7e1124-9ca2-4a0c-aac1-6840785b5b71",
+          "name": "Titan Tự Nhiên",
+          "hex": "#9E9A94",
+          "image": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347"
+        },
+        {
+          "id": "ac2bcae4-a5c2-45ab-a82c-9653ea52190e",
+          "name": "Titan Trắng",
+          "hex": "#F2F2F2",
+          "image": "/api/v1/media/d84c73c3-ea6a-42d2-a4b2-d508fdc54897"
+        },
+        {
+          "id": "796a7993-36b4-4567-af06-c068e51a3fc9",
+          "name": "Titan Đen",
+          "hex": "#3C3B3D",
+          "image": "/api/v1/media/d84c73c3-ea6a-42d2-a4b2-d508fdc54897"
+        }
+      ],
+      "skus": [
+        {
+          "id": "537fbbba-ac81-49e8-a614-bec51590e98a",
+          "configurationId": "551cb4d8-58a5-4e3f-a2ae-6eaa22915f9f",
+          "colorId": "17f9b5ce-0c44-4328-a697-7eba5dc5861c",
+          "sku": "IP16PM-256-C1",
+          "price": 34990000,
+          "originalPrice": 37990000,
+          "onHand": 10
+        },
+        {
+          "id": "3b39211e-b59f-46a0-adc4-e30f504ebe93",
+          "configurationId": "551cb4d8-58a5-4e3f-a2ae-6eaa22915f9f",
+          "colorId": "2e7e1124-9ca2-4a0c-aac1-6840785b5b71",
+          "sku": "IP16PM-256-C2",
+          "price": 34990000,
+          "originalPrice": 37990000,
+          "onHand": 10
+        },
+        {
+          "id": "d6170185-b0b7-466f-ab71-76cdd4917c4f",
+          "configurationId": "551cb4d8-58a5-4e3f-a2ae-6eaa22915f9f",
+          "colorId": "ac2bcae4-a5c2-45ab-a82c-9653ea52190e",
+          "sku": "IP16PM-256-C3",
+          "price": 34990000,
+          "originalPrice": 37990000,
+          "onHand": 10
+        },
+        {
+          "id": "38b1a5ed-b92f-4f28-abee-449e1124570b",
+          "configurationId": "551cb4d8-58a5-4e3f-a2ae-6eaa22915f9f",
+          "colorId": "796a7993-36b4-4567-af06-c068e51a3fc9",
+          "sku": "IP16PM-256-C4",
+          "price": 34990000,
+          "originalPrice": 37990000,
+          "onHand": 10
+        },
+        {
+          "id": "1f2c69b7-9d69-4d07-a37a-f12f2da6edb6",
+          "configurationId": "68427e18-3311-486f-ad10-dbc5492c48d3",
+          "colorId": "17f9b5ce-0c44-4328-a697-7eba5dc5861c",
+          "sku": "IP16PM-512-C1",
+          "price": 40990000,
+          "originalPrice": 43990000,
+          "onHand": 10
+        },
+        {
+          "id": "177b6772-58b5-4673-a9d4-16e763e1575f",
+          "configurationId": "68427e18-3311-486f-ad10-dbc5492c48d3",
+          "colorId": "2e7e1124-9ca2-4a0c-aac1-6840785b5b71",
+          "sku": "IP16PM-512-C2",
+          "price": 40990000,
+          "originalPrice": 43990000,
+          "onHand": 10
+        },
+        {
+          "id": "92f852f2-df5a-412d-a28d-021eda3a8c26",
+          "configurationId": "68427e18-3311-486f-ad10-dbc5492c48d3",
+          "colorId": "ac2bcae4-a5c2-45ab-a82c-9653ea52190e",
+          "sku": "IP16PM-512-C3",
+          "price": 40990000,
+          "originalPrice": 43990000,
+          "onHand": 10
+        },
+        {
+          "id": "1610cbb8-221d-49eb-af54-bcad0992b4ad",
+          "configurationId": "68427e18-3311-486f-ad10-dbc5492c48d3",
+          "colorId": "796a7993-36b4-4567-af06-c068e51a3fc9",
+          "sku": "IP16PM-512-C4",
+          "price": 40990000,
+          "originalPrice": 43990000,
+          "onHand": 10
+        },
+        {
+          "id": "8dc8ea05-ceb7-4eca-a988-79fbd6e2c1a8",
+          "configurationId": "28a0a405-85f7-43c5-af7b-7c9c1f6a9191",
+          "colorId": "17f9b5ce-0c44-4328-a697-7eba5dc5861c",
+          "sku": "IP16PM-1TB-C1",
+          "price": 46990000,
+          "originalPrice": 49990000,
+          "onHand": 10
+        },
+        {
+          "id": "0d251286-f718-4fd6-aceb-ce3f3059631f",
+          "configurationId": "28a0a405-85f7-43c5-af7b-7c9c1f6a9191",
+          "colorId": "2e7e1124-9ca2-4a0c-aac1-6840785b5b71",
+          "sku": "IP16PM-1TB-C2",
+          "price": 46990000,
+          "originalPrice": 49990000,
+          "onHand": 10
+        },
+        {
+          "id": "218d4bda-db0f-4596-ad30-baec07be3ab2",
+          "configurationId": "28a0a405-85f7-43c5-af7b-7c9c1f6a9191",
+          "colorId": "ac2bcae4-a5c2-45ab-a82c-9653ea52190e",
+          "sku": "IP16PM-1TB-C3",
+          "price": 46990000,
+          "originalPrice": 49990000,
+          "onHand": 10
+        },
+        {
+          "id": "749e0ad4-7cdc-4342-a584-0894ff3562a9",
+          "configurationId": "28a0a405-85f7-43c5-af7b-7c9c1f6a9191",
+          "colorId": "796a7993-36b4-4567-af06-c068e51a3fc9",
+          "sku": "IP16PM-1TB-C4",
+          "price": 46990000,
+          "originalPrice": 49990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "5f721394-006f-4830-a66a-dd2a21922e85",
+      "slug": "iphone-16-pro",
+      "name": "iPhone 16 Pro",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Sức mạnh Pro trong kích thước 6.3 inch nhỏ gọn lý tưởng.",
+      "badge": "Bán chạy",
+      "subCategory": "Pro Series",
+      "thumbnail": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+      "gallery": [
+        "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+        "/api/v1/media/d84c73c3-ea6a-42d2-a4b2-d508fdc54897"
+      ],
+      "description": [
+        "Trang bị đầy đủ hệ thống camera telephoto 5x quang học chuẩn flagship cùng chip A18 Pro mạnh mẽ."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A18 Pro 6 nhân (3nm thế hệ 2)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.3\" Super Retina XDR OLED, 120Hz ProMotion"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 128GB / 256GB / 512GB / 1TB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP & Phụ 48MP, 12MP (Tele 5x quang học)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth, Face ID"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 27 giờ • Sạc nhanh 50% trong 30 phút"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "Type-C chuẩn USB 3 (10Gb/s)"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung Titan Cấp 5 • IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "f87644a4-4ec3-434c-ac6f-3ff1e683698d",
+          "storage": "128GB",
+          "chip": "A18 Pro"
+        },
+        {
+          "id": "175b6c31-e5b6-421f-a811-14b85b14810a",
+          "storage": "256GB",
+          "chip": "A18 Pro"
+        },
+        {
+          "id": "741887e8-b237-40d0-a78f-9e19e8d3864c",
+          "storage": "512GB",
+          "chip": "A18 Pro"
+        }
+      ],
+      "colors": [
+        {
+          "id": "d4ca6e18-5bd3-4c8c-a51e-cc31c45b2639",
+          "name": "Titan Sa Mạc",
+          "hex": "#C5A880",
+          "image": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347"
+        },
+        {
+          "id": "0324cced-c457-4c4d-a7df-c53a0a98b5c1",
+          "name": "Titan Tự Nhiên",
+          "hex": "#9E9A94",
+          "image": "/api/v1/media/491ade05-caae-4d9f-ac9d-3a8fbd8f4347"
+        },
+        {
+          "id": "ab4bf743-daf5-409e-a8bb-7649e3479f80",
+          "name": "Titan Đen",
+          "hex": "#3C3B3D",
+          "image": "/api/v1/media/d84c73c3-ea6a-42d2-a4b2-d508fdc54897"
+        }
+      ],
+      "skus": [
+        {
+          "id": "2dc6f0fc-5610-4d98-a140-84b9e2a713b9",
+          "configurationId": "f87644a4-4ec3-434c-ac6f-3ff1e683698d",
+          "colorId": "d4ca6e18-5bd3-4c8c-a51e-cc31c45b2639",
+          "sku": "IP16P-128-C1",
+          "price": 28990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "1d5481b9-fcbf-4d84-a285-e3e6508cd066",
+          "configurationId": "f87644a4-4ec3-434c-ac6f-3ff1e683698d",
+          "colorId": "0324cced-c457-4c4d-a7df-c53a0a98b5c1",
+          "sku": "IP16P-128-C2",
+          "price": 28990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "bf4fdef6-1bf9-48f5-a775-72583eb7338a",
+          "configurationId": "f87644a4-4ec3-434c-ac6f-3ff1e683698d",
+          "colorId": "ab4bf743-daf5-409e-a8bb-7649e3479f80",
+          "sku": "IP16P-128-C3",
+          "price": 28990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "e20bcf1c-e841-4f2c-a0b6-8a7664371d47",
+          "configurationId": "175b6c31-e5b6-421f-a811-14b85b14810a",
+          "colorId": "d4ca6e18-5bd3-4c8c-a51e-cc31c45b2639",
+          "sku": "IP16P-256-C1",
+          "price": 31990000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "eed65643-689f-4359-a6c6-fe832c16ae2b",
+          "configurationId": "175b6c31-e5b6-421f-a811-14b85b14810a",
+          "colorId": "0324cced-c457-4c4d-a7df-c53a0a98b5c1",
+          "sku": "IP16P-256-C2",
+          "price": 31990000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "f10a7f98-3a0c-4ba1-a407-e008e62d09bd",
+          "configurationId": "175b6c31-e5b6-421f-a811-14b85b14810a",
+          "colorId": "ab4bf743-daf5-409e-a8bb-7649e3479f80",
+          "sku": "IP16P-256-C3",
+          "price": 31990000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "0022b693-23c0-4f13-aa23-205bb9f5e030",
+          "configurationId": "741887e8-b237-40d0-a78f-9e19e8d3864c",
+          "colorId": "d4ca6e18-5bd3-4c8c-a51e-cc31c45b2639",
+          "sku": "IP16P-512-C1",
+          "price": 37990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        },
+        {
+          "id": "b2656ae2-9790-45c2-a95f-e93768da66f4",
+          "configurationId": "741887e8-b237-40d0-a78f-9e19e8d3864c",
+          "colorId": "0324cced-c457-4c4d-a7df-c53a0a98b5c1",
+          "sku": "IP16P-512-C2",
+          "price": 37990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        },
+        {
+          "id": "39643671-f674-4d9c-a012-d8352d8576c0",
+          "configurationId": "741887e8-b237-40d0-a78f-9e19e8d3864c",
+          "colorId": "ab4bf743-daf5-409e-a8bb-7649e3479f80",
+          "sku": "IP16P-512-C3",
+          "price": 37990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "b947b56f-24ce-4ace-a056-7c02bea9facb",
+      "slug": "iphone-16-plus",
+      "name": "iPhone 16 Plus",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Màn hình 6.7 inch rộng lớn. Thời lượng pin dài nhất.",
+      "badge": "Mới",
+      "subCategory": "Standard Series",
+      "thumbnail": "/api/v1/media/876f8084-39b5-44eb-a573-466f44a28082",
+      "gallery": [
+        "/api/v1/media/876f8084-39b5-44eb-a573-466f44a28082",
+        "/api/v1/media/b7864320-1b57-4ffe-ad6d-09c96c201487"
+      ],
+      "description": [
+        "iPhone 16 Plus mang lại trải nghiệm màn hình lớn 6.7 inch sắc nét và thời lượng pin xuất sắc hàng đầu thị trường."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A18 6 nhân"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.7\" Super Retina XDR OLED, 2000 nits"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 128GB / 256GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP Fusion & Phụ 12MP Ultra Wide"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 27 giờ • Sạc MagSafe 25W"
+        },
+        {
+          "label": "Tính năng mới",
+          "value": "Nút Điều khiển Camera & Nút Tác Vụ"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung nhôm hàng không vũ trụ • IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "de9b8fdb-b912-421e-a032-9c17d4d33dfd",
+          "storage": "128GB",
+          "chip": "A18"
+        },
+        {
+          "id": "dc9c31e3-663d-4fcd-a276-81d4b553e1a5",
+          "storage": "256GB",
+          "chip": "A18"
+        }
+      ],
+      "colors": [
+        {
+          "id": "e78f224e-533c-435c-ab38-eab3fb1ac883",
+          "name": "Xanh Lưu Ly",
+          "hex": "#637996",
+          "image": "/api/v1/media/876f8084-39b5-44eb-a573-466f44a28082"
+        },
+        {
+          "id": "f5bef3ec-3982-40ba-aeab-5d7f5b0a21f6",
+          "name": "Xanh Mòng Két",
+          "hex": "#95A6A2",
+          "image": "/api/v1/media/b7864320-1b57-4ffe-ad6d-09c96c201487"
+        }
+      ],
+      "skus": [
+        {
+          "id": "52446514-ada2-4447-a2a1-c9c49e5ebe5d",
+          "configurationId": "de9b8fdb-b912-421e-a032-9c17d4d33dfd",
+          "colorId": "e78f224e-533c-435c-ab38-eab3fb1ac883",
+          "sku": "IP16PLUS-128-C1",
+          "price": 25490000,
+          "originalPrice": 27990000,
+          "onHand": 10
+        },
+        {
+          "id": "2981ac7f-2939-471e-a980-d298935be887",
+          "configurationId": "de9b8fdb-b912-421e-a032-9c17d4d33dfd",
+          "colorId": "f5bef3ec-3982-40ba-aeab-5d7f5b0a21f6",
+          "sku": "IP16PLUS-128-C2",
+          "price": 25490000,
+          "originalPrice": 27990000,
+          "onHand": 10
+        },
+        {
+          "id": "1dadfeb5-ed62-40ab-af15-709647de7266",
+          "configurationId": "dc9c31e3-663d-4fcd-a276-81d4b553e1a5",
+          "colorId": "e78f224e-533c-435c-ab38-eab3fb1ac883",
+          "sku": "IP16PLUS-256-C1",
+          "price": 28490000,
+          "originalPrice": 30990000,
+          "onHand": 10
+        },
+        {
+          "id": "51ec06ba-6626-45fb-ac60-6eb40bcf1e18",
+          "configurationId": "dc9c31e3-663d-4fcd-a276-81d4b553e1a5",
+          "colorId": "f5bef3ec-3982-40ba-aeab-5d7f5b0a21f6",
+          "sku": "IP16PLUS-256-C2",
+          "price": 28490000,
+          "originalPrice": 30990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "59b08eb3-33a4-4524-ac60-91d21b1d2110",
+      "slug": "iphone-16",
+      "name": "iPhone 16",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Sắc màu rực rỡ. Nút tác vụ thông minh & Chip A18.",
+      "badge": "Ưu đãi",
+      "subCategory": "Standard Series",
+      "thumbnail": "/api/v1/media/13009b2b-49ce-4efc-a1ca-64412bdbffed",
+      "gallery": [
+        "/api/v1/media/13009b2b-49ce-4efc-a1ca-64412bdbffed",
+        "/api/v1/media/5b9c32c7-edbb-408f-ac3f-27ff02acb2bd",
+        "/api/v1/media/876f8084-39b5-44eb-a573-466f44a28082"
+      ],
+      "description": [
+        "iPhone 16 mang đến thiết kế camera đặt dọc hiện đại hỗ trợ quay video không gian Spatial Video cho Apple Vision Pro."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A18 6 nhân (Hỗ trợ Apple Intelligence)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.1\" Super Retina XDR OLED, 2000 nits"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 128GB / 256GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP Fusion & Phụ 12MP Ultra Wide"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 22 giờ • Sạc Type-C & MagSafe"
+        },
+        {
+          "label": "Tính năng mới",
+          "value": "Nút Camera Control & Action Button"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Kính Ceramic Shield thế hệ mới • IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "76f9273a-45a4-4585-ab43-035b1a7cf10a",
+          "storage": "128GB",
+          "chip": "A18"
+        },
+        {
+          "id": "981f0f21-af9b-4940-af05-273b728f064f",
+          "storage": "256GB",
+          "chip": "A18"
+        }
+      ],
+      "colors": [
+        {
+          "id": "51f61163-584c-4120-afc1-80679aeb3178",
+          "name": "Xanh Lưu Ly",
+          "hex": "#637996",
+          "image": "/api/v1/media/876f8084-39b5-44eb-a573-466f44a28082"
+        },
+        {
+          "id": "3be06d28-dca1-4c7b-a977-0fd44cc9d6ce",
+          "name": "Xanh Mòng Két",
+          "hex": "#95A6A2",
+          "image": "/api/v1/media/5b9c32c7-edbb-408f-ac3f-27ff02acb2bd"
+        },
+        {
+          "id": "7c579df8-e745-4183-a6af-b4b4d09e0d87",
+          "name": "Hồng Phấn",
+          "hex": "#DDB6BD",
+          "image": "/api/v1/media/13009b2b-49ce-4efc-a1ca-64412bdbffed"
+        }
+      ],
+      "skus": [
+        {
+          "id": "d7b20056-c14a-4b90-a568-d7fc60550a07",
+          "configurationId": "76f9273a-45a4-4585-ab43-035b1a7cf10a",
+          "colorId": "51f61163-584c-4120-afc1-80679aeb3178",
+          "sku": "IP16-128-C1",
+          "price": 22490000,
+          "originalPrice": 24990000,
+          "onHand": 10
+        },
+        {
+          "id": "8c8eff2b-098e-4682-a482-a33e3a7d9703",
+          "configurationId": "76f9273a-45a4-4585-ab43-035b1a7cf10a",
+          "colorId": "3be06d28-dca1-4c7b-a977-0fd44cc9d6ce",
+          "sku": "IP16-128-C2",
+          "price": 22490000,
+          "originalPrice": 24990000,
+          "onHand": 10
+        },
+        {
+          "id": "ac596243-1b1f-4c79-aefc-c78ae241072e",
+          "configurationId": "76f9273a-45a4-4585-ab43-035b1a7cf10a",
+          "colorId": "7c579df8-e745-4183-a6af-b4b4d09e0d87",
+          "sku": "IP16-128-C3",
+          "price": 22490000,
+          "originalPrice": 24990000,
+          "onHand": 10
+        },
+        {
+          "id": "6c46aff4-3750-429b-a076-11d1788d68af",
+          "configurationId": "981f0f21-af9b-4940-af05-273b728f064f",
+          "colorId": "51f61163-584c-4120-afc1-80679aeb3178",
+          "sku": "IP16-256-C1",
+          "price": 25490000,
+          "originalPrice": 27990000,
+          "onHand": 10
+        },
+        {
+          "id": "f62c314a-9109-42ed-a203-1eb09389baa5",
+          "configurationId": "981f0f21-af9b-4940-af05-273b728f064f",
+          "colorId": "3be06d28-dca1-4c7b-a977-0fd44cc9d6ce",
+          "sku": "IP16-256-C2",
+          "price": 25490000,
+          "originalPrice": 27990000,
+          "onHand": 10
+        },
+        {
+          "id": "7ca3e00c-ab51-4c83-adb8-8496147f0496",
+          "configurationId": "981f0f21-af9b-4940-af05-273b728f064f",
+          "colorId": "7c579df8-e745-4183-a6af-b4b4d09e0d87",
+          "sku": "IP16-256-C3",
+          "price": 25490000,
+          "originalPrice": 27990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "9bc43fb8-70ce-4c04-aca0-68b48002580b",
+      "slug": "iphone-15-pro-max",
+      "name": "iPhone 15 Pro Max",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Titan tự nhiên huyền thoại. Ống kính tiềm vọng 5x.",
+      "badge": "Bán chạy",
+      "subCategory": "Pro Series",
+      "thumbnail": "/api/v1/media/3cb6f975-ba7d-407b-a9ad-a0ba61c2e288",
+      "gallery": [
+        "/api/v1/media/3cb6f975-ba7d-407b-a9ad-a0ba61c2e288",
+        "/api/v1/media/01d1ccbf-e4d4-4872-aa32-96fcc790ca6e",
+        "/api/v1/media/54b38870-c5e6-4b89-a068-12cf1652f27d",
+        "/api/v1/media/9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5"
+      ],
+      "description": [
+        "Mẫu flagship bán chạy nhất với khung viền titanium cao cấp và ống kính telephoto 5x sắc nét."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A17 Pro 6 nhân (3nm)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.7\" Super Retina XDR OLED, 120Hz ProMotion"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 256GB / 512GB / 1TB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP & Phụ 12MP, 12MP (Tele 5x tiềm vọng)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 29 giờ • Sạc Type-C chuẩn USB 3"
+        },
+        {
+          "label": "Tiện ích",
+          "value": "Action Button thay thế gạt rung • Face ID"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung Titan Cấp 5 siêu bền • IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "e809b999-6ba4-4725-af0a-bba279bf7aff",
+          "storage": "256GB",
+          "chip": "A17 Pro"
+        },
+        {
+          "id": "cb4479b3-157b-4e52-a0b2-2ff914009161",
+          "storage": "512GB",
+          "chip": "A17 Pro"
+        }
+      ],
+      "colors": [
+        {
+          "id": "ca103c72-96d3-4e08-a865-e8f1793fc0d9",
+          "name": "Titan Tự Nhiên",
+          "hex": "#9E9A94",
+          "image": "/api/v1/media/3cb6f975-ba7d-407b-a9ad-a0ba61c2e288"
+        },
+        {
+          "id": "0834df60-6e3b-4427-a7e8-46c710da0036",
+          "name": "Titan Xanh",
+          "hex": "#2F3843",
+          "image": "/api/v1/media/01d1ccbf-e4d4-4872-aa32-96fcc790ca6e"
+        },
+        {
+          "id": "7cff533a-8fd0-4240-a1b9-6625350105f9",
+          "name": "Titan Đen",
+          "hex": "#373A3C",
+          "image": "/api/v1/media/54b38870-c5e6-4b89-a068-12cf1652f27d"
+        },
+        {
+          "id": "631ba863-0911-48f8-a089-39ae2707656c",
+          "name": "Titan Trắng",
+          "hex": "#F2F2F2",
+          "image": "/api/v1/media/9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5"
+        }
+      ],
+      "skus": [
+        {
+          "id": "2fbe6395-9f41-4ddb-acc3-26a514ba5e15",
+          "configurationId": "e809b999-6ba4-4725-af0a-bba279bf7aff",
+          "colorId": "ca103c72-96d3-4e08-a865-e8f1793fc0d9",
+          "sku": "IP15PM-256-C1",
+          "price": 29490000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "deb8666a-35ac-4c9c-aec5-076e26e4520a",
+          "configurationId": "e809b999-6ba4-4725-af0a-bba279bf7aff",
+          "colorId": "0834df60-6e3b-4427-a7e8-46c710da0036",
+          "sku": "IP15PM-256-C2",
+          "price": 29490000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "e9f482fc-9f8c-4e72-ad7f-7c6ebc288975",
+          "configurationId": "e809b999-6ba4-4725-af0a-bba279bf7aff",
+          "colorId": "7cff533a-8fd0-4240-a1b9-6625350105f9",
+          "sku": "IP15PM-256-C3",
+          "price": 29490000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "a8b144f1-bdca-4fc1-a095-70aff9c357f4",
+          "configurationId": "e809b999-6ba4-4725-af0a-bba279bf7aff",
+          "colorId": "631ba863-0911-48f8-a089-39ae2707656c",
+          "sku": "IP15PM-256-C4",
+          "price": 29490000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        },
+        {
+          "id": "3e2c4df9-8a54-49ac-a42a-9dee9376ec53",
+          "configurationId": "cb4479b3-157b-4e52-a0b2-2ff914009161",
+          "colorId": "ca103c72-96d3-4e08-a865-e8f1793fc0d9",
+          "sku": "IP15PM-512-C1",
+          "price": 34990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        },
+        {
+          "id": "3fbe4fe6-766c-4042-a436-96be716f2481",
+          "configurationId": "cb4479b3-157b-4e52-a0b2-2ff914009161",
+          "colorId": "0834df60-6e3b-4427-a7e8-46c710da0036",
+          "sku": "IP15PM-512-C2",
+          "price": 34990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        },
+        {
+          "id": "7f30a751-f065-40b0-a05c-a4b2a3c76da9",
+          "configurationId": "cb4479b3-157b-4e52-a0b2-2ff914009161",
+          "colorId": "7cff533a-8fd0-4240-a1b9-6625350105f9",
+          "sku": "IP15PM-512-C3",
+          "price": 34990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        },
+        {
+          "id": "1790d3b8-8c8c-48e0-a144-6e3643931958",
+          "configurationId": "cb4479b3-157b-4e52-a0b2-2ff914009161",
+          "colorId": "631ba863-0911-48f8-a089-39ae2707656c",
+          "sku": "IP15PM-512-C4",
+          "price": 34990000,
+          "originalPrice": 40990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "6147173e-bf91-4676-ab90-a8335f44c69e",
+      "slug": "iphone-15-pro",
+      "name": "iPhone 15 Pro",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Sức mạnh A17 Pro trong thân máy Titan 6.1 inch.",
+      "badge": "Ưu đãi",
+      "subCategory": "Pro Series",
+      "thumbnail": "/api/v1/media/a544e139-86e2-4032-ab14-e2c3690c9a4d",
+      "gallery": [
+        "/api/v1/media/a544e139-86e2-4032-ab14-e2c3690c9a4d",
+        "/api/v1/media/f9ce4664-fa6d-4cb2-a5f4-4084d003df08",
+        "/api/v1/media/6558ddde-4716-4f5f-aaa2-c689d9377727",
+        "/api/v1/media/d51996e4-af5a-406d-a7e1-8350e25179ac"
+      ],
+      "description": [
+        "Chiếc iPhone Pro gọn nhẹ nhất với khung titanium sang trọng và hiệu năng chơi game Ray Tracing đỉnh cao."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A17 Pro 6 nhân (3nm)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.1\" Super Retina XDR OLED, 120Hz ProMotion"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB • 128GB / 256GB / 512GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP & Phụ 12MP, 12MP (Tele 3x)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 23 giờ • Sạc nhanh Type-C"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "187 gram siêu nhẹ"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung Titan Cấp 5 • IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "dc66f728-d44b-47f6-a3b8-ef9f7882ce06",
+          "storage": "128GB",
+          "chip": "A17 Pro"
+        },
+        {
+          "id": "367fb00b-045a-450a-aa85-82433272cfda",
+          "storage": "256GB",
+          "chip": "A17 Pro"
+        }
+      ],
+      "colors": [
+        {
+          "id": "df296c6f-6121-4105-a8ef-da959412736e",
+          "name": "Titan Tự Nhiên",
+          "hex": "#9E9A94",
+          "image": "/api/v1/media/a544e139-86e2-4032-ab14-e2c3690c9a4d"
+        },
+        {
+          "id": "dc9194da-517d-42c0-a2f8-725617251a46",
+          "name": "Titan Xanh",
+          "hex": "#2F3843",
+          "image": "/api/v1/media/f9ce4664-fa6d-4cb2-a5f4-4084d003df08"
+        },
+        {
+          "id": "91b019cf-09ea-4032-adff-67c4cae64a71",
+          "name": "Titan Đen",
+          "hex": "#373A3C",
+          "image": "/api/v1/media/6558ddde-4716-4f5f-aaa2-c689d9377727"
+        },
+        {
+          "id": "32f16977-0696-4339-a532-45ea6a28b619",
+          "name": "Titan Trắng",
+          "hex": "#F2F2F2",
+          "image": "/api/v1/media/d51996e4-af5a-406d-a7e1-8350e25179ac"
+        }
+      ],
+      "skus": [
+        {
+          "id": "b4554773-e54a-4f21-a499-2c4e9c950016",
+          "configurationId": "dc66f728-d44b-47f6-a3b8-ef9f7882ce06",
+          "colorId": "df296c6f-6121-4105-a8ef-da959412736e",
+          "sku": "IP15P-128-C1",
+          "price": 24990000,
+          "originalPrice": 28990000,
+          "onHand": 10
+        },
+        {
+          "id": "8c6c394f-0197-43d0-ae72-8259e5df639c",
+          "configurationId": "dc66f728-d44b-47f6-a3b8-ef9f7882ce06",
+          "colorId": "dc9194da-517d-42c0-a2f8-725617251a46",
+          "sku": "IP15P-128-C2",
+          "price": 24990000,
+          "originalPrice": 28990000,
+          "onHand": 10
+        },
+        {
+          "id": "6958cd24-9bcf-4aaa-a06d-581f746cdb82",
+          "configurationId": "dc66f728-d44b-47f6-a3b8-ef9f7882ce06",
+          "colorId": "91b019cf-09ea-4032-adff-67c4cae64a71",
+          "sku": "IP15P-128-C3",
+          "price": 24990000,
+          "originalPrice": 28990000,
+          "onHand": 10
+        },
+        {
+          "id": "58ab4678-0036-41ba-ade0-d26912a3b7bf",
+          "configurationId": "dc66f728-d44b-47f6-a3b8-ef9f7882ce06",
+          "colorId": "32f16977-0696-4339-a532-45ea6a28b619",
+          "sku": "IP15P-128-C4",
+          "price": 24990000,
+          "originalPrice": 28990000,
+          "onHand": 10
+        },
+        {
+          "id": "e0f8a699-0cf8-4bad-afa3-5536993aa2ac",
+          "configurationId": "367fb00b-045a-450a-aa85-82433272cfda",
+          "colorId": "df296c6f-6121-4105-a8ef-da959412736e",
+          "sku": "IP15P-256-C1",
+          "price": 27990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "020dad38-ffd4-4301-ad02-91c386b57786",
+          "configurationId": "367fb00b-045a-450a-aa85-82433272cfda",
+          "colorId": "dc9194da-517d-42c0-a2f8-725617251a46",
+          "sku": "IP15P-256-C2",
+          "price": 27990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "b4a46561-43ae-4664-ad02-34f15eee589b",
+          "configurationId": "367fb00b-045a-450a-aa85-82433272cfda",
+          "colorId": "91b019cf-09ea-4032-adff-67c4cae64a71",
+          "sku": "IP15P-256-C3",
+          "price": 27990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        },
+        {
+          "id": "ac6c0cb0-af01-4d0f-aa4d-a06762f7baaf",
+          "configurationId": "367fb00b-045a-450a-aa85-82433272cfda",
+          "colorId": "32f16977-0696-4339-a532-45ea6a28b619",
+          "sku": "IP15P-256-C4",
+          "price": 27990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "294ed491-f3f2-4451-a901-9a7597f7b7d0",
+      "slug": "iphone-15",
+      "name": "iPhone 15",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Dynamic Island kỳ diệu. Camera 48MP sắc nét.",
+      "badge": "Bán chạy",
+      "subCategory": "Standard Series",
+      "thumbnail": "/api/v1/media/00029cd9-34f0-4f52-af3c-55ef18564326",
+      "gallery": [
+        "/api/v1/media/00029cd9-34f0-4f52-af3c-55ef18564326",
+        "/api/v1/media/8f09f334-8a97-40cf-a30f-dcf304c36b43",
+        "/api/v1/media/1542bed7-ded7-4347-adfe-f519ed11d2de",
+        "/api/v1/media/7d8e2109-eabc-41d7-a659-92e1a30fb89f"
+      ],
+      "description": [
+        "iPhone 15 sở hữu Dynamic Island cùng mặt lưng kính pha màu nhám mịn tinh tế."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A16 Bionic 6 nhân"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.1\" Super Retina XDR OLED, Dynamic Island"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "6 GB • 128GB / 256GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính 48MP & Phụ 12MP (Zoom 2x quang học)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 20 giờ • Cổng sạc Type-C"
+        },
+        {
+          "label": "Thiết kế",
+          "value": "Mặt lưng kính pha màu mờ sang trọng"
+        },
+        {
+          "label": "Kháng nước",
+          "value": "Chuẩn IP68 (chịu nước sâu 6m)"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "6997426c-382f-455a-adba-55333dc1b3ca",
+          "storage": "128GB",
+          "chip": "A16 Bionic"
+        },
+        {
+          "id": "210e7625-a966-457e-a891-ba9ec25b3ee1",
+          "storage": "256GB",
+          "chip": "A16 Bionic"
+        }
+      ],
+      "colors": [
+        {
+          "id": "3d0b8d18-754c-40c0-a6a2-7001a141149d",
+          "name": "Hồng Phấn",
+          "hex": "#E8D2CF",
+          "image": "/api/v1/media/00029cd9-34f0-4f52-af3c-55ef18564326"
+        },
+        {
+          "id": "62dcf86a-7603-48a3-ac17-9a3655be0a78",
+          "name": "Xanh Lam",
+          "hex": "#C5D4DE",
+          "image": "/api/v1/media/8f09f334-8a97-40cf-a30f-dcf304c36b43"
+        },
+        {
+          "id": "d65f6dbc-f623-4388-a4b4-e5ee3cff3994",
+          "name": "Đen",
+          "hex": "#373A3C",
+          "image": "/api/v1/media/1542bed7-ded7-4347-adfe-f519ed11d2de"
+        },
+        {
+          "id": "3a415bf5-b29c-4acf-a3f4-1b95ac077d35",
+          "name": "Xanh Lá",
+          "hex": "#D2DEC6",
+          "image": "/api/v1/media/7d8e2109-eabc-41d7-a659-92e1a30fb89f"
+        }
+      ],
+      "skus": [
+        {
+          "id": "8c27d983-321f-4c11-ab0c-f419ba9839ac",
+          "configurationId": "6997426c-382f-455a-adba-55333dc1b3ca",
+          "colorId": "3d0b8d18-754c-40c0-a6a2-7001a141149d",
+          "sku": "IP15-128-C1",
+          "price": 19490000,
+          "originalPrice": 22990000,
+          "onHand": 10
+        },
+        {
+          "id": "64a84fa5-3e14-46e8-a569-73d7577b54cc",
+          "configurationId": "6997426c-382f-455a-adba-55333dc1b3ca",
+          "colorId": "62dcf86a-7603-48a3-ac17-9a3655be0a78",
+          "sku": "IP15-128-C2",
+          "price": 19490000,
+          "originalPrice": 22990000,
+          "onHand": 10
+        },
+        {
+          "id": "48ebd9b8-2a5a-4997-a644-3421c1fa2ed2",
+          "configurationId": "6997426c-382f-455a-adba-55333dc1b3ca",
+          "colorId": "d65f6dbc-f623-4388-a4b4-e5ee3cff3994",
+          "sku": "IP15-128-C3",
+          "price": 19490000,
+          "originalPrice": 22990000,
+          "onHand": 10
+        },
+        {
+          "id": "0ad4e9ed-9627-480d-a3e2-d716728a8026",
+          "configurationId": "6997426c-382f-455a-adba-55333dc1b3ca",
+          "colorId": "3a415bf5-b29c-4acf-a3f4-1b95ac077d35",
+          "sku": "IP15-128-C4",
+          "price": 19490000,
+          "originalPrice": 22990000,
+          "onHand": 10
+        },
+        {
+          "id": "9adfc936-ef7c-400c-abd5-8ca983354cef",
+          "configurationId": "210e7625-a966-457e-a891-ba9ec25b3ee1",
+          "colorId": "3d0b8d18-754c-40c0-a6a2-7001a141149d",
+          "sku": "IP15-256-C1",
+          "price": 22490000,
+          "originalPrice": 25990000,
+          "onHand": 10
+        },
+        {
+          "id": "b906eba7-8c63-4df0-a13b-1f6718fd6b48",
+          "configurationId": "210e7625-a966-457e-a891-ba9ec25b3ee1",
+          "colorId": "62dcf86a-7603-48a3-ac17-9a3655be0a78",
+          "sku": "IP15-256-C2",
+          "price": 22490000,
+          "originalPrice": 25990000,
+          "onHand": 10
+        },
+        {
+          "id": "2519e600-3378-4273-a64d-22752433a0ce",
+          "configurationId": "210e7625-a966-457e-a891-ba9ec25b3ee1",
+          "colorId": "d65f6dbc-f623-4388-a4b4-e5ee3cff3994",
+          "sku": "IP15-256-C3",
+          "price": 22490000,
+          "originalPrice": 25990000,
+          "onHand": 10
+        },
+        {
+          "id": "acbd53c2-b191-4b17-a156-d43ac85ca384",
+          "configurationId": "210e7625-a966-457e-a891-ba9ec25b3ee1",
+          "colorId": "3a415bf5-b29c-4acf-a3f4-1b95ac077d35",
+          "sku": "IP15-256-C4",
+          "price": 22490000,
+          "originalPrice": 25990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "9ddd07e6-7645-43fc-a5ee-3b8ef575b68b",
+      "slug": "iphone-14",
+      "name": "iPhone 14",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Hiệu năng bền bỉ. Mức giá tối ưu cho người dùng thông thái.",
+      "badge": "Ưu đãi",
+      "subCategory": "Standard Series",
+      "thumbnail": "/api/v1/media/b5cf6b8e-1189-4ff7-a4e1-554c52b17641",
+      "gallery": [
+        "/api/v1/media/b5cf6b8e-1189-4ff7-a4e1-554c52b17641"
+      ],
+      "description": [
+        "Sự lựa chọn ổn định, bền bỉ và kinh tế hàng đầu trong hệ sinh thái iOS."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A15 Bionic (5 nhân GPU đồ họa)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.1\" Super Retina XDR OLED sắc nét"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "6 GB • 128GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Kép 12MP • Chế độ Action Mode chống rung"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth tự động lấy nét"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 20 giờ • Sạc MagSafe"
+        },
+        {
+          "label": "An toàn",
+          "value": "Phát hiện va chạm xe Crash Detection"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Kính Ceramic Shield • Chuẩn IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "6e4f496a-2410-4cd8-a335-f7e3eee65c93",
+          "storage": "128GB",
+          "chip": "A15 Bionic"
+        }
+      ],
+      "colors": [
+        {
+          "id": "f8ce4c74-7b53-4a58-afe7-2822428e4e37",
+          "name": "Ánh Sao",
+          "hex": "#FAF7F2",
+          "image": "/api/v1/media/b5cf6b8e-1189-4ff7-a4e1-554c52b17641"
+        }
+      ],
+      "skus": [
+        {
+          "id": "923ac4c4-3ad6-4886-aa5a-fcea110a6ca4",
+          "configurationId": "6e4f496a-2410-4cd8-a335-f7e3eee65c93",
+          "colorId": "f8ce4c74-7b53-4a58-afe7-2822428e4e37",
+          "sku": "IP14-128-C1",
+          "price": 16990000,
+          "originalPrice": 19990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "0e5f5a79-b9c2-43c4-a35d-e7593ae59d6e",
+      "slug": "iphone-13",
+      "name": "iPhone 13",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Chiếc smartphone quốc dân. Giá trị vượt thời gian.",
+      "badge": "Bán chạy",
+      "subCategory": "Standard Series",
+      "thumbnail": "/api/v1/media/db1fed06-17ce-4ad1-a733-aa16cc7c1607",
+      "gallery": [
+        "/api/v1/media/db1fed06-17ce-4ad1-a733-aa16cc7c1607"
+      ],
+      "description": [
+        "iPhone 13 luôn là mẫu máy được ưa chuộng nhờ mức giá hợp lý và thời lượng pin cực kỳ ấn tượng."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A15 Bionic 6 nhân mạnh mẽ"
+        },
+        {
+          "label": "Màn hình",
+          "value": "6.1\" Super Retina XDR OLED rực rỡ"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "4 GB • 128GB"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Kép 12MP đặt chéo • Chế độ Điện ảnh (Cinematic)"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12 MP TrueDepth"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Xem video đến 19 giờ • Sạc nhanh 20W"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Nhận diện khuôn mặt Face ID"
+        },
+        {
+          "label": "Chất liệu & Kháng nước",
+          "value": "Khung nhôm cao cấp • Kháng nước IP68"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "edcd2089-8983-4204-a199-154dd0354e9f",
+          "storage": "128GB",
+          "chip": "A15 Bionic"
+        }
+      ],
+      "colors": [
+        {
+          "id": "680e3930-9f83-4133-aa67-54af31088760",
+          "name": "Đen Midnight",
+          "hex": "#1F242B",
+          "image": "/api/v1/media/db1fed06-17ce-4ad1-a733-aa16cc7c1607"
+        }
+      ],
+      "skus": [
+        {
+          "id": "c14bc002-9ba5-4c83-a8aa-f661149d5804",
+          "configurationId": "edcd2089-8983-4204-a199-154dd0354e9f",
+          "colorId": "680e3930-9f83-4133-aa67-54af31088760",
+          "sku": "IP13-128-C1",
+          "price": 13490000,
+          "originalPrice": 16490000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "2bf7f320-4769-4c05-af79-6a19e601a190",
+      "slug": "ipad-pro-m4",
+      "name": "iPad Pro 11 inch & 13 inch (M4)",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Mỏng không tưởng. Sức mạnh đột phá từ chip M4.",
+      "badge": "Mới",
+      "subCategory": "iPad Pro",
+      "thumbnail": "/api/v1/media/d64ea05c-9882-4c65-ac55-57f6698c72ca",
+      "gallery": [
+        "/api/v1/media/d64ea05c-9882-4c65-ac55-57f6698c72ca",
+        "/api/v1/media/ed9c88b1-971b-454b-a9d0-5667cbdefaae"
+      ],
+      "description": [
+        "iPad Pro với chip Apple M4 đem đến hiệu năng đồ họa dò tia tốc độ cao phần cứng và khả năng xử lý AI vượt trội.",
+        "Màn hình Ultra Retina XDR sử dụng công nghệ hai lớp OLED đột phá cho độ sáng toàn màn hình 1000 nit."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M4 (Lên đến 10 nhân CPU, 10 nhân GPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "Ultra Retina XDR Tandem OLED, 120Hz ProMotion"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8GB / 16GB RAM • 256GB / 512GB / 1TB / 2TB"
+        },
+        {
+          "label": "Độ mỏng & Trọng lượng",
+          "value": "5.1 mm (Mỏng nhất lịch sử Apple) • 444 g"
+        },
+        {
+          "label": "Camera & LiDAR",
+          "value": "12MP Sau • Máy quét LiDAR • 12MP Trước ngang"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "Thunderbolt / USB 4 (Băng thông đến 40Gb/s)"
+        },
+        {
+          "label": "Phụ kiện tương thích",
+          "value": "Apple Pencil Pro • Magic Keyboard M4"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Hệ thống 4 loa studio • 4 micro phòng thu"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "220ff129-cfb1-43dd-a4f8-6d072459ad11",
+          "storage": "256GB",
+          "screenSize": "11 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "M4"
+        },
+        {
+          "id": "2a41a4ed-8b9c-402e-a9f1-f24f32eebfa8",
+          "storage": "512GB",
+          "screenSize": "11 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "M4"
+        },
+        {
+          "id": "fb8aff91-e26a-48b6-ab9d-ba43ae4f0e13",
+          "storage": "256GB",
+          "screenSize": "13 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "M4"
+        }
+      ],
+      "colors": [
+        {
+          "id": "7640de29-ec28-4eee-a2c9-fbd874cde2f1",
+          "name": "Đen Không Gian",
+          "hex": "#2E2F32",
+          "image": "/api/v1/media/d64ea05c-9882-4c65-ac55-57f6698c72ca"
+        },
+        {
+          "id": "0e677db2-8545-47a6-a120-158ce3ee3bc3",
+          "name": "Bạc",
+          "hex": "#E3E4E5",
+          "image": "/api/v1/media/ed9c88b1-971b-454b-a9d0-5667cbdefaae"
+        }
+      ],
+      "skus": [
+        {
+          "id": "210779ee-ddaa-4f19-a478-3d17c082f83f",
+          "configurationId": "220ff129-cfb1-43dd-a4f8-6d072459ad11",
+          "colorId": "7640de29-ec28-4eee-a2c9-fbd874cde2f1",
+          "sku": "IPD-M4-256-C1",
+          "price": 27990000,
+          "originalPrice": 29990000,
+          "onHand": 10
+        },
+        {
+          "id": "2d118f89-9825-4448-aac6-9e46d5d827af",
+          "configurationId": "220ff129-cfb1-43dd-a4f8-6d072459ad11",
+          "colorId": "0e677db2-8545-47a6-a120-158ce3ee3bc3",
+          "sku": "IPD-M4-256-C2",
+          "price": 27990000,
+          "originalPrice": 29990000,
+          "onHand": 10
+        },
+        {
+          "id": "e7fc47a4-29de-4075-a6a6-3f912ee37cc3",
+          "configurationId": "2a41a4ed-8b9c-402e-a9f1-f24f32eebfa8",
+          "colorId": "7640de29-ec28-4eee-a2c9-fbd874cde2f1",
+          "sku": "IPD-M4-512-C1",
+          "price": 33490000,
+          "originalPrice": 35490000,
+          "onHand": 10
+        },
+        {
+          "id": "538635c5-68ed-46f2-a1f7-edd5683d0575",
+          "configurationId": "2a41a4ed-8b9c-402e-a9f1-f24f32eebfa8",
+          "colorId": "0e677db2-8545-47a6-a120-158ce3ee3bc3",
+          "sku": "IPD-M4-512-C2",
+          "price": 33490000,
+          "originalPrice": 35490000,
+          "onHand": 10
+        },
+        {
+          "id": "3a1762f2-67e3-40ca-ad50-33424f218774",
+          "configurationId": "fb8aff91-e26a-48b6-ab9d-ba43ae4f0e13",
+          "colorId": "7640de29-ec28-4eee-a2c9-fbd874cde2f1",
+          "sku": "IPD-M4-13-256-C1",
+          "price": 36990000,
+          "originalPrice": 38990000,
+          "onHand": 10
+        },
+        {
+          "id": "837fc751-63c2-437e-a9c3-ca6149065fb3",
+          "configurationId": "fb8aff91-e26a-48b6-ab9d-ba43ae4f0e13",
+          "colorId": "0e677db2-8545-47a6-a120-158ce3ee3bc3",
+          "sku": "IPD-M4-13-256-C2",
+          "price": 36990000,
+          "originalPrice": 38990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "59597c72-ee49-436d-a004-117683fba145",
+      "slug": "ipad-air-m2",
+      "name": "iPad Air 11 inch & 13 inch (M2)",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Mạnh mẽ linh hoạt. Nay có thêm phiên bản 13 inch.",
+      "badge": "Bán chạy",
+      "subCategory": "iPad Air",
+      "thumbnail": "/api/v1/media/3a468610-71a0-4c67-a73f-8505c7e159a5",
+      "gallery": [
+        "/api/v1/media/3a468610-71a0-4c67-a73f-8505c7e159a5"
+      ],
+      "description": [
+        "iPad Air mới với chip M2 cung cấp hiệu năng vượt bậc cho sinh viên, học tập, sáng tạo và giải trí."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M2 (8 nhân CPU, 9 nhân GPU, Neural Engine 16 lõi)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "11\" / 13\" Liquid Retina, dải màu P3, True Tone"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB RAM • 128GB / 256GB / 512GB"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP Wide • Trước 12MP Ultra Wide đặt ở cạnh ngang"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C tốc độ cao (10Gb/s)"
+        },
+        {
+          "label": "Phụ kiện tương thích",
+          "value": "Apple Pencil Pro • Magic Keyboard"
+        },
+        {
+          "label": "Pin & Sử dụng",
+          "value": "Lướt web Wi-Fi lên đến 10 giờ liên tục"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Cảm biến vân tay Touch ID tích hợp nút nguồn"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "9d9415c2-8215-4f20-a194-3f8e85ac76c9",
+          "storage": "128GB",
+          "screenSize": "11 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "M2"
+        },
+        {
+          "id": "61d11a6f-7d32-49e7-a88a-8b632a632067",
+          "storage": "256GB",
+          "screenSize": "11 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "M2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "ada3b36b-a986-4b34-a8f1-65f179e2caca",
+          "name": "Xanh Dương",
+          "hex": "#C5D4DE",
+          "image": "/api/v1/media/3a468610-71a0-4c67-a73f-8505c7e159a5"
+        }
+      ],
+      "skus": [
+        {
+          "id": "b02ac3cb-f62f-47a6-ae52-fce7fa136dc0",
+          "configurationId": "9d9415c2-8215-4f20-a194-3f8e85ac76c9",
+          "colorId": "ada3b36b-a986-4b34-a8f1-65f179e2caca",
+          "sku": "AIR-128-C1",
+          "price": 16490000,
+          "originalPrice": 17990000,
+          "onHand": 10
+        },
+        {
+          "id": "6ecc84ed-874e-49ce-a85a-95612b3daf0c",
+          "configurationId": "61d11a6f-7d32-49e7-a88a-8b632a632067",
+          "colorId": "ada3b36b-a986-4b34-a8f1-65f179e2caca",
+          "sku": "AIR-256-C1",
+          "price": 19490000,
+          "originalPrice": 20990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "9817b247-66f3-4685-af71-15767a32589f",
+      "slug": "ipad-gen-10",
+      "name": "iPad (Thế hệ 10) 10.9 inch",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Sắc màu tươi mới. Hoàn hảo cho học tập và gia đình.",
+      "badge": "Bán chạy",
+      "subCategory": "iPad Standard",
+      "thumbnail": "/api/v1/media/01ccbdcf-760b-4e48-a576-377bc076867a",
+      "gallery": [
+        "/api/v1/media/01ccbdcf-760b-4e48-a576-377bc076867a"
+      ],
+      "description": [
+        "iPad Gen 10 mang lại không gian giải trí và học tập sống động với thiết kế vuông vắn hiện đại và cổng kết nối USB-C tiện ích."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A14 Bionic 6 nhân"
+        },
+        {
+          "label": "Màn hình",
+          "value": "10.9\" Liquid Retina tràn viền (2360 x 1640 Pixels)"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "4 GB RAM • 64GB / 256GB"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP Wide • Trước 12MP Ultra Wide ngang (Center Stage)"
+        },
+        {
+          "label": "Cổng sạc & Kết nối",
+          "value": "USB-C đa năng • Wi-Fi 6 siêu tốc"
+        },
+        {
+          "label": "Phụ kiện hỗ trợ",
+          "value": "Apple Pencil (USB-C), Magic Keyboard Folio"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Cảm biến Touch ID ở nút nguồn"
+        },
+        {
+          "label": "Loa & Âm thanh",
+          "value": "Loa âm thanh nổi ngang (Stereo speakers)"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "ba192e14-ec61-4a91-acc6-ce0a4b4af3cb",
+          "storage": "64GB",
+          "screenSize": "10.9 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "A14 Bionic"
+        },
+        {
+          "id": "fd6e297a-99e4-4017-a5ec-42ed3379c57d",
+          "storage": "256GB",
+          "screenSize": "10.9 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "A14 Bionic"
+        }
+      ],
+      "colors": [
+        {
+          "id": "55246ef5-5935-4f70-a1cb-99fe636558fc",
+          "name": "Xanh Lam",
+          "hex": "#6888A1",
+          "image": "/api/v1/media/01ccbdcf-760b-4e48-a576-377bc076867a"
+        }
+      ],
+      "skus": [
+        {
+          "id": "1a5813b7-5115-471f-a6ec-31e896442f01",
+          "configurationId": "ba192e14-ec61-4a91-acc6-ce0a4b4af3cb",
+          "colorId": "55246ef5-5935-4f70-a1cb-99fe636558fc",
+          "sku": "IPD-G10-64-C1",
+          "price": 9490000,
+          "originalPrice": 10990000,
+          "onHand": 10
+        },
+        {
+          "id": "e917fe51-291a-417b-aff4-1dee452c121c",
+          "configurationId": "fd6e297a-99e4-4017-a5ec-42ed3379c57d",
+          "colorId": "55246ef5-5935-4f70-a1cb-99fe636558fc",
+          "sku": "IPD-G10-256-C1",
+          "price": 13490000,
+          "originalPrice": 14990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "a36fff58-b05f-47e3-aa05-747c461b4d67",
+      "slug": "ipad-mini-a17-pro",
+      "name": "iPad mini 8.3 inch (A17 Pro)",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Nhỏ gọn phi thường. Sẵn sàng cho Apple Intelligence.",
+      "badge": "Mới",
+      "subCategory": "iPad mini",
+      "thumbnail": "/api/v1/media/d3901037-bf61-4a1b-ac48-c307c16d2923",
+      "gallery": [
+        "/api/v1/media/d3901037-bf61-4a1b-ac48-c307c16d2923"
+      ],
+      "description": [
+        "Chiếc máy tính bảng siêu nhỏ gọn mạnh mẽ nhất thế giới với chip A17 Pro và Wi-Fi 6E siêu nhanh."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple A17 Pro (Hỗ trợ Apple Intelligence)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "8.3\" Liquid Retina phủ lớp chống phản chiếu"
+        },
+        {
+          "label": "RAM & Lưu trữ",
+          "value": "8 GB RAM • 128GB / 256GB / 512GB"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP Smart HDR 4 • Trước 12MP Ultra Wide"
+        },
+        {
+          "label": "Bút cảm ứng",
+          "value": "Hỗ trợ Apple Pencil Pro & Apple Pencil USB-C"
+        },
+        {
+          "label": "Kết nối",
+          "value": "Wi-Fi 6E (802.11ax) • Type-C chuẩn USB 3 (10Gb/s)"
+        },
+        {
+          "label": "Trọng lượng & Kích thước",
+          "value": "Chỉ 293 g • Độ mỏng 6.3 mm"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Touch ID trên nút nguồn"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "3239ee9a-a675-444d-a0a9-1e2ae807ce26",
+          "storage": "128GB",
+          "screenSize": "8.3 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "A17 Pro"
+        },
+        {
+          "id": "6d3d3783-a59b-4a33-aca7-1499112a0fc5",
+          "storage": "256GB",
+          "screenSize": "8.3 inch",
+          "connectivity": "Wi-Fi",
+          "chip": "A17 Pro"
+        }
+      ],
+      "colors": [
+        {
+          "id": "6c373840-b466-40f6-a41d-bd101e4b4369",
+          "name": "Xám Không Gian",
+          "hex": "#68676C",
+          "image": "/api/v1/media/d3901037-bf61-4a1b-ac48-c307c16d2923"
+        }
+      ],
+      "skus": [
+        {
+          "id": "8edacc6a-f821-4266-ae80-868f7f74d711",
+          "configurationId": "3239ee9a-a675-444d-a0a9-1e2ae807ce26",
+          "colorId": "6c373840-b466-40f6-a41d-bd101e4b4369",
+          "sku": "MINI-128-C1",
+          "price": 13990000,
+          "originalPrice": 14990000,
+          "onHand": 10
+        },
+        {
+          "id": "8c2ad6ad-8761-41dc-ad58-b64ac01080fe",
+          "configurationId": "6d3d3783-a59b-4a33-aca7-1499112a0fc5",
+          "colorId": "6c373840-b466-40f6-a41d-bd101e4b4369",
+          "sku": "MINI-256-C1",
+          "price": 16990000,
+          "originalPrice": 17990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "3c36c23e-1d00-436c-abcb-5ff7592b6b0b",
+      "slug": "macbook-air-13-m3",
+      "name": "MacBook Air 13 inch (M3)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Gọn gàng mảnh mai. Sức mạnh bứt phá từ Apple M3.",
+      "badge": "Bán chạy",
+      "subCategory": "MacBook Air",
+      "thumbnail": "/api/v1/media/fbea2543-58de-4f15-ad28-3deae12b1f16",
+      "gallery": [
+        "/api/v1/media/fbea2543-58de-4f15-ad28-3deae12b1f16",
+        "/api/v1/media/590fbb2d-9cb8-4c8e-ade2-bff5d510521e"
+      ],
+      "description": [
+        "Chiếc laptop mỏng nhẹ được yêu thích nhất thế giới nay sở hữu chip M3 mạnh mẽ."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M3 (8-core CPU, 8-10 core GPU, 16-core NPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "13.6\" Liquid Retina (2560 x 1664), 500 nits, 1 tỷ màu"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "16 GB Unified Memory (Băng thông 100GB/s)"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "256GB / 512GB PCIe siêu tốc"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "Lên đến 18 giờ xem video Apple TV • Sạc MagSafe 3"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "2x Thunderbolt / USB 4 • Giắc tai nghe 3.5mm"
+        },
+        {
+          "label": "Xuất màn hình ngoài",
+          "value": "Hỗ trợ xuất đến 2 màn hình ngoài khi gập máy"
+        },
+        {
+          "label": "Trọng lượng & Độ dày",
+          "value": "1.24 kg • Dày chỉ 11.3 mm"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "4eca29f4-56ea-4b0a-aea0-2ee1c9511e04",
+          "storage": "256GB SSD",
+          "chip": "M3 (8-core CPU / 8-core GPU)"
+        },
+        {
+          "id": "52e16b28-a125-4ef4-aae9-82d3c29d1bc9",
+          "storage": "512GB SSD",
+          "chip": "M3 (8-core CPU / 10-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "c21eb999-749d-4e77-a9bc-f9f9f1274927",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#2E3641",
+          "image": "/api/v1/media/fbea2543-58de-4f15-ad28-3deae12b1f16"
+        }
+      ],
+      "skus": [
+        {
+          "id": "a2b1e809-b5da-4981-a871-ac7c79956175",
+          "configurationId": "4eca29f4-56ea-4b0a-aea0-2ee1c9511e04",
+          "colorId": "c21eb999-749d-4e77-a9bc-f9f9f1274927",
+          "sku": "MBA-M3-16-256-C1",
+          "price": 26990000,
+          "originalPrice": 28990000,
+          "onHand": 10
+        },
+        {
+          "id": "82a01123-c6dd-4496-a6d3-4c58f7ad8b30",
+          "configurationId": "52e16b28-a125-4ef4-aae9-82d3c29d1bc9",
+          "colorId": "c21eb999-749d-4e77-a9bc-f9f9f1274927",
+          "sku": "MBA-M3-16-512-C1",
+          "price": 32490000,
+          "originalPrice": 34490000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "62fc2b74-2148-4c69-a897-861bd9a04743",
+      "slug": "macbook-air-15-m3",
+      "name": "MacBook Air 15 inch (M3)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Màn hình 15.3 inch rộng rãi. Thiết kế mỏng chỉ 11.5mm.",
+      "badge": "Mới",
+      "subCategory": "MacBook Air",
+      "thumbnail": "/api/v1/media/6fd646c2-8104-4274-ae74-15e45b8d6bac",
+      "gallery": [
+        "/api/v1/media/6fd646c2-8104-4274-ae74-15e45b8d6bac"
+      ],
+      "description": [
+        "MacBook Air 15 inch mang đến không gian làm việc bao la mà vẫn giữ nguyên độ mỏng nhẹ kinh ngạc."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M3 (8-core CPU, 10-core GPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "15.3\" Liquid Retina (2880 x 1864), 500 nits"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "16 GB Unified Memory (Băng thông 100GB/s)"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "256GB / 512GB PCIe"
+        },
+        {
+          "label": "Hệ thống âm thanh",
+          "value": "6 loa với loa trầm khử lực và Spatial Audio"
+        },
+        {
+          "label": "Pin & Sạc",
+          "value": "Lên đến 18 giờ • Sạc nhanh qua cổng MagSafe 3"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "2x Thunderbolt / USB 4 • MagSafe 3 • Giắc 3.5mm"
+        },
+        {
+          "label": "Trọng lượng & Độ dày",
+          "value": "1.51 kg • Dày chỉ 11.5 mm"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "660790d0-99ce-4e9e-a1db-b480edfd7490",
+          "storage": "256GB SSD",
+          "chip": "M3 (8-core CPU / 10-core GPU)"
+        },
+        {
+          "id": "2ca2b287-e001-4439-a201-e031df970401",
+          "storage": "512GB SSD",
+          "chip": "M3 (8-core CPU / 10-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "3380ea64-e0fe-4ed1-af27-0ca6284118b9",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#2E3641",
+          "image": "/api/v1/media/6fd646c2-8104-4274-ae74-15e45b8d6bac"
+        }
+      ],
+      "skus": [
+        {
+          "id": "e7773e4f-6985-4d0b-a1c1-25c645a40739",
+          "configurationId": "660790d0-99ce-4e9e-a1db-b480edfd7490",
+          "colorId": "3380ea64-e0fe-4ed1-af27-0ca6284118b9",
+          "sku": "MBA15-16-256-C1",
+          "price": 31990000,
+          "originalPrice": 33990000,
+          "onHand": 10
+        },
+        {
+          "id": "e12226e4-4b47-432a-a9ea-eb95aa469dc4",
+          "configurationId": "2ca2b287-e001-4439-a201-e031df970401",
+          "colorId": "3380ea64-e0fe-4ed1-af27-0ca6284118b9",
+          "sku": "MBA15-16-512-C1",
+          "price": 36990000,
+          "originalPrice": 38990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "87d40493-2e41-4322-aeb4-1429ff59a007",
+      "slug": "macbook-pro-14-m4",
+      "name": "MacBook Pro 14 inch (M4 / M4 Pro)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Chuẩn mực hiệu năng máy tính chuyên nghiệp hàng đầu.",
+      "badge": "Mới",
+      "subCategory": "MacBook Pro",
+      "thumbnail": "/api/v1/media/1d841ebf-6567-472b-af8d-44c633b291ef",
+      "gallery": [
+        "/api/v1/media/1d841ebf-6567-472b-af8d-44c633b291ef",
+        "/api/v1/media/30499eb7-df52-4e94-ac7d-bfbc57f21475"
+      ],
+      "description": [
+        "Dành riêng cho kỹ sư phần mềm, nhà sáng tạo nội dung và nhà thiết kế chuyên nghiệp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M4 / M4 Pro (Lên đến 14 CPU, 20 GPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "14.2\" Liquid Retina XDR (3024 x 1964), 120Hz ProMotion, 1600 nits"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "16 GB / 24 GB Unified Memory"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "512GB / 1TB SSD tốc độ cao"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "Kỷ lục lên đến 24 giờ sử dụng liên tục"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "3x Thunderbolt 4/5 • HDMI 8K • Khe thẻ SDXC • MagSafe 3"
+        },
+        {
+          "label": "Camera & Âm thanh",
+          "value": "12MP Center Stage Desk View • 6 loa chất lượng phòng thu"
+        },
+        {
+          "label": "Bàn phím & Bảo mật",
+          "value": "Magic Keyboard có đèn nền • Touch ID"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "25c6e63b-60ff-4cda-a1b0-5f696c2eb3f8",
+          "storage": "512GB SSD",
+          "chip": "M4 (10-core CPU / 10-core GPU)"
+        },
+        {
+          "id": "dbd418aa-5042-4071-a5aa-da0e1ea790d9",
+          "storage": "512GB SSD",
+          "chip": "M4 Pro (12-core CPU / 16-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "1cf784f7-0712-4a0a-a12f-90e489a498c6",
+          "name": "Đen Không Gian",
+          "hex": "#2E2F32",
+          "image": "/api/v1/media/1d841ebf-6567-472b-af8d-44c633b291ef"
+        }
+      ],
+      "skus": [
+        {
+          "id": "21e68943-3fef-4c3c-afb7-5161d3e4990d",
+          "configurationId": "25c6e63b-60ff-4cda-a1b0-5f696c2eb3f8",
+          "colorId": "1cf784f7-0712-4a0a-a12f-90e489a498c6",
+          "sku": "MBP-M4-16-512-C1",
+          "price": 39990000,
+          "originalPrice": 42990000,
+          "onHand": 10
+        },
+        {
+          "id": "708bfcc6-7588-4cc1-a89b-8241ffad8004",
+          "configurationId": "dbd418aa-5042-4071-a5aa-da0e1ea790d9",
+          "colorId": "1cf784f7-0712-4a0a-a12f-90e489a498c6",
+          "sku": "MBP-M4PRO-24-512-C1",
+          "price": 49990000,
+          "originalPrice": 53990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "ddb89343-9e21-4a8b-a664-9a2a69e26869",
+      "slug": "macbook-pro-16-m4",
+      "name": "MacBook Pro 16 inch (M4 Pro / M4 Max)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Quái vật đồ họa. Đỉnh cao sáng tạo studio di động.",
+      "badge": "Mới",
+      "subCategory": "MacBook Pro",
+      "thumbnail": "/api/v1/media/459c3010-564a-4374-a752-58ef9d24a364",
+      "gallery": [
+        "/api/v1/media/459c3010-564a-4374-a752-58ef9d24a364"
+      ],
+      "description": [
+        "Máy trạm di động mạnh nhất lịch sử Apple, sẵn sàng kết xuất 3D phức tạp và dựng phim 8K đa luồng."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M4 Pro / M4 Max (Lên đến 16 CPU, 40 GPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "16.2\" Liquid Retina XDR (3456 x 2234), 120Hz ProMotion"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "24 GB / 36 GB / 48 GB Unified Memory"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "512GB / 1TB / 2TB SSD"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "Lên đến 24 giờ • Củ sạc nhanh USB-C 140W MagSafe 3"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "3x Thunderbolt 5 (120Gb/s) • HDMI • SDXC"
+        },
+        {
+          "label": "Tản nhiệt & Hiệu năng",
+          "value": "Hệ thống tản nhiệt tiên tiến duy trì hiệu năng cực đại"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "2.14 kg (khung nhôm nguyên khối vững chắc)"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "6111981b-856b-48b9-ad29-a1c4985d929c",
+          "storage": "512GB SSD",
+          "chip": "M4 Pro (14-core CPU / 20-core GPU)"
+        },
+        {
+          "id": "5415cba4-73a4-41f8-a23e-e2252bc772ba",
+          "storage": "1TB SSD",
+          "chip": "M4 Max (14-core CPU / 32-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "e0068914-921f-4870-adef-f1215c1c05e4",
+          "name": "Đen Không Gian",
+          "hex": "#2E2F32",
+          "image": "/api/v1/media/459c3010-564a-4374-a752-58ef9d24a364"
+        }
+      ],
+      "skus": [
+        {
+          "id": "11bf86d1-6a95-47d5-a003-34bebc79a7ab",
+          "configurationId": "6111981b-856b-48b9-ad29-a1c4985d929c",
+          "colorId": "e0068914-921f-4870-adef-f1215c1c05e4",
+          "sku": "MBP16-M4PRO-24-512-C1",
+          "price": 64990000,
+          "originalPrice": 68990000,
+          "onHand": 10
+        },
+        {
+          "id": "5deea728-4c92-4c4d-ad77-a0246869d52a",
+          "configurationId": "5415cba4-73a4-41f8-a23e-e2252bc772ba",
+          "colorId": "e0068914-921f-4870-adef-f1215c1c05e4",
+          "sku": "MBP16-M4MAX-36-1TB-C1",
+          "price": 89990000,
+          "originalPrice": 94990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "633ab3e6-0c44-468f-a4d1-2ca83977baec",
+      "slug": "imac-24-m4",
+      "name": "iMac 24 inch (M4)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Tuyệt tác All-In-One. Sắc màu sống động cho không gian.",
+      "badge": "Mới",
+      "subCategory": "Desktop",
+      "thumbnail": "/api/v1/media/3a5d1045-3a6f-4af7-ad38-496c490cfcae",
+      "gallery": [
+        "/api/v1/media/3a5d1045-3a6f-4af7-ad38-496c490cfcae"
+      ],
+      "description": [
+        "Máy tính để bàn tất cả trong một mỏng nhất thế giới, biến mọi góc làm việc thành studio nghệ thuật."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M4 (Lên đến 10 nhân CPU, 10 nhân GPU)"
+        },
+        {
+          "label": "Màn hình",
+          "value": "24\" 4.5K Retina (4480 x 2520), 500 nits, Dải màu P3"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "16 GB Unified Memory (Nâng cấp tối đa 32GB)"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "256GB / 512GB SSD"
+        },
+        {
+          "label": "Camera & Mic",
+          "value": "12MP Center Stage với Desk View • 3 mic chuẩn studio"
+        },
+        {
+          "label": "Loa & Âm thanh",
+          "value": "6 loa với loa trầm triệt tiêu lực, Dolby Atmos"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "4x Thunderbolt 4 / USB-C • Gigabit Ethernet • Giắc 3.5mm"
+        },
+        {
+          "label": "Phụ kiện đi kèm",
+          "value": "Magic Keyboard có Touch ID & Magic Mouse (Type-C)"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "5fbbd150-062c-4a8f-ade1-1164a8fcac8f",
+          "storage": "256GB SSD",
+          "chip": "M4 (8-core CPU / 8-core GPU)"
+        },
+        {
+          "id": "90ae144e-01df-4449-a777-57aadee22adf",
+          "storage": "512GB SSD",
+          "chip": "M4 (10-core CPU / 10-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "e041473e-3955-43be-ae37-4a567d46f06e",
+          "name": "Xanh Lam",
+          "hex": "#457B9D",
+          "image": "/api/v1/media/3a5d1045-3a6f-4af7-ad38-496c490cfcae"
+        }
+      ],
+      "skus": [
+        {
+          "id": "892295d5-ed0c-4850-a8d5-e5fe99611234",
+          "configurationId": "5fbbd150-062c-4a8f-ade1-1164a8fcac8f",
+          "colorId": "e041473e-3955-43be-ae37-4a567d46f06e",
+          "sku": "IMAC-M4-16-256-C1",
+          "price": 34990000,
+          "originalPrice": 36990000,
+          "onHand": 10
+        },
+        {
+          "id": "9a108b31-13d4-4c23-a29f-89c74a279e63",
+          "configurationId": "90ae144e-01df-4449-a777-57aadee22adf",
+          "colorId": "e041473e-3955-43be-ae37-4a567d46f06e",
+          "sku": "IMAC-M4-16-512-C1",
+          "price": 39990000,
+          "originalPrice": 42990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "04548809-7795-4855-a661-f2218885a83b",
+      "slug": "mac-mini-m4",
+      "name": "Mac mini (M4 / M4 Pro)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Kích thước siêu nhỏ 12.7cm. Sức mạnh khổng lồ.",
+      "badge": "Mới",
+      "subCategory": "Desktop",
+      "thumbnail": "/api/v1/media/f809b953-b466-4d25-aa33-a3fa6b571914",
+      "gallery": [
+        "/api/v1/media/f809b953-b466-4d25-aa33-a3fa6b571914"
+      ],
+      "description": [
+        "Mac mini hoàn toàn mới tái định nghĩa máy tính để bàn nhỏ gọn với hiệu năng vượt trội."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M4 / M4 Pro (10-14 nhân CPU, 10-20 nhân GPU)"
+        },
+        {
+          "label": "Kích thước thiết kế",
+          "value": "12.7 x 12.7 x 5.0 cm • Trọng lượng chỉ 0.67 kg"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "16 GB / 24 GB Unified Memory tiêu chuẩn"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "256GB / 512GB SSD"
+        },
+        {
+          "label": "Cổng mặt trước",
+          "value": "2x USB-C (chuẩn USB 3 10Gb/s) • Giắc tai nghe 3.5mm"
+        },
+        {
+          "label": "Cổng mặt sau",
+          "value": "3x Thunderbolt 4 / 5 • HDMI • Gigabit Ethernet"
+        },
+        {
+          "label": "Xuất màn hình",
+          "value": "Hỗ trợ xuất đồng thời lên đến 3 màn hình"
+        },
+        {
+          "label": "Mạng & Không dây",
+          "value": "Wi-Fi 6E (802.11ax) • Bluetooth 5.3"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "1f3b08b7-e1e5-4d2d-a998-7fc965416116",
+          "storage": "256GB SSD",
+          "chip": "M4 (10-core CPU)"
+        },
+        {
+          "id": "4e9e5d20-0843-4b1b-aa1c-d8a27d46bb39",
+          "storage": "512GB SSD",
+          "chip": "M4 (10-core CPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "6bd21bd2-56b1-4d03-a302-fd5a908f9b22",
+          "name": "Bạc",
+          "hex": "#E3E4E5",
+          "image": "/api/v1/media/f809b953-b466-4d25-aa33-a3fa6b571914"
+        }
+      ],
+      "skus": [
+        {
+          "id": "a5d44f8e-e488-4808-a3ac-5ec997e9bc7d",
+          "configurationId": "1f3b08b7-e1e5-4d2d-a998-7fc965416116",
+          "colorId": "6bd21bd2-56b1-4d03-a302-fd5a908f9b22",
+          "sku": "MINI-M4-16-256-C1",
+          "price": 14990000,
+          "originalPrice": 16990000,
+          "onHand": 10
+        },
+        {
+          "id": "693f1a84-3a6c-491a-abb2-0ece3b052840",
+          "configurationId": "4e9e5d20-0843-4b1b-aa1c-d8a27d46bb39",
+          "colorId": "6bd21bd2-56b1-4d03-a302-fd5a908f9b22",
+          "sku": "MINI-M4-16-512-C1",
+          "price": 19990000,
+          "originalPrice": 21990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "5c27ef51-6948-4e2b-ac42-88d659092ec1",
+      "slug": "mac-studio-m2",
+      "name": "Mac Studio (M2 Max / M2 Ultra)",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Trung tâm sức mạnh studio sáng tạo chuyên nghiệp.",
+      "badge": "Ưu đãi",
+      "subCategory": "Desktop",
+      "thumbnail": "/api/v1/media/7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3",
+      "gallery": [
+        "/api/v1/media/7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3"
+      ],
+      "description": [
+        "Mac Studio cung cấp hiệu năng khổng lồ cho các nhà làm phim, kiến trúc sư và phòng thu chuyên nghiệp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Chip",
+          "value": "Apple M2 Max (12 nhân CPU, 30 hoặc 38 nhân GPU)"
+        },
+        {
+          "label": "Bộ nhớ RAM",
+          "value": "32 GB Unified Memory (Băng thông khủng 400GB/s)"
+        },
+        {
+          "label": "Ổ cứng SSD",
+          "value": "512GB / 1TB SSD tốc độ đọc 7.4GB/s"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "4x Thunderbolt 4 • 2x USB-A • HDMI • 10Gb Ethernet • SDXC"
+        },
+        {
+          "label": "Xuất màn hình",
+          "value": "Hỗ trợ xuất đồng thời đến 5 màn hình hiển thị"
+        },
+        {
+          "label": "Tản nhiệt",
+          "value": "Quạt hút tản nhiệt đôi độc lập, vận hành siêu tĩnh lặng"
+        },
+        {
+          "label": "Mạng & Kết nối",
+          "value": "Wi-Fi 6E • Bluetooth 5.3 • Ethernet 10Gb"
+        },
+        {
+          "label": "Kích thước",
+          "value": "19.7 x 19.7 x 9.5 cm • Khung nhôm nguyên khối 2.7 kg"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "9f84f5b2-3b86-42c0-a027-9cf2bdbf224d",
+          "storage": "512GB SSD",
+          "chip": "M2 Max (12-core CPU / 30-core GPU)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "5d93d108-2428-475b-af5f-3952d23a4ac8",
+          "name": "Bạc",
+          "hex": "#E3E4E5",
+          "image": "/api/v1/media/7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3"
+        }
+      ],
+      "skus": [
+        {
+          "id": "6f6b7819-cada-41c5-a3e5-c0c8a23fc99b",
+          "configurationId": "9f84f5b2-3b86-42c0-a027-9cf2bdbf224d",
+          "colorId": "5d93d108-2428-475b-af5f-3952d23a4ac8",
+          "sku": "STUDIO-M2MAX-32-512-C1",
+          "price": 54990000,
+          "originalPrice": 59990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "5a70325a-be23-48aa-a4bd-e3bd8e9005eb",
+      "slug": "apple-watch-ultra-2",
+      "name": "Apple Watch Ultra 2 (Titanium)",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Chinh phục mọi giới hạn. Đỉnh cao thể thao mạo hiểm.",
+      "badge": "Mới",
+      "subCategory": "Ultra",
+      "thumbnail": "/api/v1/media/798ec892-def1-45e6-a3a3-00fddcbca067",
+      "gallery": [
+        "/api/v1/media/798ec892-def1-45e6-a3a3-00fddcbca067",
+        "/api/v1/media/d43f0c9d-f1b4-45e7-aded-432bcfe740ec"
+      ],
+      "description": [
+        "Được thiết kế cho vận động viên sức bền, nhà thám hiểm ngoài trời và người lặn chuyên nghiệp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Vỏ máy & Thiết kế",
+          "value": "Titanium 49mm chống ăn mòn • Kính Sapphire phẳng"
+        },
+        {
+          "label": "Màn hình",
+          "value": "Always-On Retina OLED độ sáng cực đại 3000 nits"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple S9 SiP (Hỗ trợ chạm đúp Double Tap)"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "36 giờ sử dụng bình thường • 72 giờ chế độ tiết kiệm"
+        },
+        {
+          "label": "Kháng nước & Lặn",
+          "value": "Chống nước 100m • Đạt chuẩn lặn giải trí EN13319 (40m)"
+        },
+        {
+          "label": "Cảm biến sức khỏe",
+          "value": "Điện tâm đồ ECG, SpO2, Đo nhiệt độ cơ thể, Cảnh báo nhịp tim"
+        },
+        {
+          "label": "Tính năng an toàn",
+          "value": "GPS tần số kép L1 & L5 chuẩn xác, Còi báo động 86dB"
+        },
+        {
+          "label": "Kết nối",
+          "value": "Hỗ trợ eSIM LTE độc lập • Wi-Fi • Bluetooth 5.3"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "9c2d4ecc-ee10-4de5-ae02-0ce8eddd8ef1",
+          "screenSize": "49mm",
+          "connectivity": "GPS + Cellular",
+          "chip": "S9 SiP"
+        },
+        {
+          "id": "e5e41500-0a4c-4f99-aaa9-72011dbea142",
+          "screenSize": "49mm",
+          "connectivity": "GPS + Cellular",
+          "chip": "S9 SiP"
+        }
+      ],
+      "colors": [
+        {
+          "id": "1728dc66-14fd-4eea-aabb-fde9ad042cd6",
+          "name": "Titan Đen",
+          "hex": "#373A3C",
+          "image": "/api/v1/media/798ec892-def1-45e6-a3a3-00fddcbca067"
+        },
+        {
+          "id": "fdb952dc-8c76-49c7-aa3f-58b8e172ee31",
+          "name": "Titan Tự Nhiên",
+          "hex": "#C2BEB7",
+          "image": "/api/v1/media/d43f0c9d-f1b4-45e7-aded-432bcfe740ec"
+        }
+      ],
+      "skus": [
+        {
+          "id": "23278c22-6368-48da-af79-cdf5508b79a4",
+          "configurationId": "9c2d4ecc-ee10-4de5-ae02-0ce8eddd8ef1",
+          "colorId": "1728dc66-14fd-4eea-aabb-fde9ad042cd6",
+          "sku": "AWU2-49-TRAIL-C1",
+          "price": 21990000,
+          "originalPrice": 23990000,
+          "onHand": 10
+        },
+        {
+          "id": "13a2dc09-9b56-410e-a6b8-9b73abb42eab",
+          "configurationId": "9c2d4ecc-ee10-4de5-ae02-0ce8eddd8ef1",
+          "colorId": "fdb952dc-8c76-49c7-aa3f-58b8e172ee31",
+          "sku": "AWU2-49-TRAIL-C2",
+          "price": 21990000,
+          "originalPrice": 23990000,
+          "onHand": 10
+        },
+        {
+          "id": "c6c3bd1c-cb79-45e8-af7b-ec187f9bcd28",
+          "configurationId": "e5e41500-0a4c-4f99-aaa9-72011dbea142",
+          "colorId": "1728dc66-14fd-4eea-aabb-fde9ad042cd6",
+          "sku": "AWU2-49-OCEAN-C1",
+          "price": 21990000,
+          "originalPrice": 23990000,
+          "onHand": 10
+        },
+        {
+          "id": "c26d2d2e-f9e2-48c6-a490-e2521701e825",
+          "configurationId": "e5e41500-0a4c-4f99-aaa9-72011dbea142",
+          "colorId": "fdb952dc-8c76-49c7-aa3f-58b8e172ee31",
+          "sku": "AWU2-49-OCEAN-C2",
+          "price": 21990000,
+          "originalPrice": 23990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "e5cde380-edce-4f33-a098-e9eff1219ff9",
+      "slug": "apple-watch-series-10",
+      "name": "Apple Watch Series 10",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Mỏng nhất từ trước đến nay. Màn hình lớn nhất trong lịch sử.",
+      "badge": "Bán chạy",
+      "subCategory": "Series",
+      "thumbnail": "/api/v1/media/b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b",
+      "gallery": [
+        "/api/v1/media/b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b"
+      ],
+      "description": [
+        "Series 10 là bước nhảy vọt về màn hình hiển thị và độ mỏng, mang lại cảm giác đeo nhẹ êm tối đa."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kích thước & Thiết kế",
+          "value": "42mm hoặc 46mm • Độ mỏng chỉ 9.7 mm (mỏng hơn 10%)"
+        },
+        {
+          "label": "Công nghệ màn hình",
+          "value": "Màn hình OLED góc nhìn rộng (Wide-Angle OLED) sáng hơn 40%"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple S10 SiP 64-bit 2 lõi"
+        },
+        {
+          "label": "Thời lượng pin & Sạc",
+          "value": "Pin 18 giờ • Sạc nhanh 80% trong 30 phút"
+        },
+        {
+          "label": "Cảm biến sức khỏe mới",
+          "value": "Thông báo ngưng thở khi ngủ, Đo nhiệt độ nước, Đo độ sâu 6m"
+        },
+        {
+          "label": "Tính năng an toàn",
+          "value": "Phát hiện ngã, Phát hiện va chạm xe, SOS khẩn cấp"
+        },
+        {
+          "label": "Chống nước",
+          "value": "Chuẩn chống nước 50m khi bơi lội (WR50)"
+        },
+        {
+          "label": "Tiện ích âm thanh",
+          "value": "Phát nhạc và podcast trực tiếp qua loa đồng hồ"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "5ce9fb1a-431d-45d4-a4b1-9a8e0a03f344",
+          "screenSize": "42mm",
+          "connectivity": "GPS",
+          "chip": "S10 SiP"
+        },
+        {
+          "id": "a460cb7c-36c3-406c-aba6-8622ff02cb15",
+          "screenSize": "46mm",
+          "connectivity": "GPS",
+          "chip": "S10 SiP"
+        }
+      ],
+      "colors": [
+        {
+          "id": "ca823fa7-0ba5-41cb-a00a-942fa1d70644",
+          "name": "Đen Bóng Jet Black",
+          "hex": "#1C1C1E",
+          "image": "/api/v1/media/b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b"
+        }
+      ],
+      "skus": [
+        {
+          "id": "5cef9471-96df-41a9-a0f8-e07783ce9a56",
+          "configurationId": "5ce9fb1a-431d-45d4-a4b1-9a8e0a03f344",
+          "colorId": "ca823fa7-0ba5-41cb-a00a-942fa1d70644",
+          "sku": "S10-42-GPS-C1",
+          "price": 10790000,
+          "originalPrice": 11490000,
+          "onHand": 10
+        },
+        {
+          "id": "500c1cdb-c846-4d8e-aaac-0efe8c7ce62a",
+          "configurationId": "a460cb7c-36c3-406c-aba6-8622ff02cb15",
+          "colorId": "ca823fa7-0ba5-41cb-a00a-942fa1d70644",
+          "sku": "S10-46-GPS-C1",
+          "price": 11590000,
+          "originalPrice": 12290000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "57913344-689d-4ffb-aed4-e9e355803653",
+      "slug": "apple-watch-series-9",
+      "name": "Apple Watch Series 9",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Thao tác Chạm Hai Lần đột phá. Màn hình sáng gấp đôi.",
+      "badge": "Ưu đãi",
+      "subCategory": "Series",
+      "thumbnail": "/api/v1/media/c7629098-3c8b-46cb-a14d-feed7f1c892d",
+      "gallery": [
+        "/api/v1/media/c7629098-3c8b-46cb-a14d-feed7f1c892d"
+      ],
+      "description": [
+        "Cung cấp trải nghiệm thông minh không cần chạm tay vào màn hình nhờ thao tác Double Tap ma thuật."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kích thước vỏ máy",
+          "value": "41mm hoặc 45mm • Khung nhôm cao cấp"
+        },
+        {
+          "label": "Màn hình hiển thị",
+          "value": "Retina Always-On OLED độ sáng lên đến 2000 nits"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple S9 SiP với Neural Engine 4 lõi"
+        },
+        {
+          "label": "Thao tác cử chỉ",
+          "value": "Chạm hai lần (Double Tap) điều khiển bằng một tay"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "Lên đến 18 giờ • 36 giờ ở chế độ Tiết kiệm pin"
+        },
+        {
+          "label": "Theo dõi sức khỏe",
+          "value": "Đo điện tâm đồ ECG, nồng độ oxy trong máu SpO2, giấc ngủ sâu"
+        },
+        {
+          "label": "Kháng nước",
+          "value": "Độ sâu 50m (WR50 theo chuẩn ISO 22810:2010)"
+        },
+        {
+          "label": "Định vị & Kết nối",
+          "value": "GPS chuẩn xác, La bàn số, Đo độ cao luôn bật"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "25e526f4-edd9-48ca-ad35-3e6dcc806f29",
+          "screenSize": "41mm",
+          "connectivity": "GPS",
+          "chip": "S9 SiP"
+        },
+        {
+          "id": "c9aa36c2-a6ba-44b7-a4b3-216769fc44a0",
+          "screenSize": "45mm",
+          "connectivity": "GPS",
+          "chip": "S9 SiP"
+        }
+      ],
+      "colors": [
+        {
+          "id": "01aa53e5-8ae7-4905-acbc-645abe19526f",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#232931",
+          "image": "/api/v1/media/c7629098-3c8b-46cb-a14d-feed7f1c892d"
+        }
+      ],
+      "skus": [
+        {
+          "id": "380b1076-626c-40c8-a8e3-8663bf240c00",
+          "configurationId": "25e526f4-edd9-48ca-ad35-3e6dcc806f29",
+          "colorId": "01aa53e5-8ae7-4905-acbc-645abe19526f",
+          "sku": "S9-41-GPS-C1",
+          "price": 8990000,
+          "originalPrice": 10490000,
+          "onHand": 10
+        },
+        {
+          "id": "aa921178-7f48-4bf7-afce-c5ced32af239",
+          "configurationId": "c9aa36c2-a6ba-44b7-a4b3-216769fc44a0",
+          "colorId": "01aa53e5-8ae7-4905-acbc-645abe19526f",
+          "sku": "S9-45-GPS-C1",
+          "price": 9690000,
+          "originalPrice": 11190000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "37deafff-9fd5-4986-a8e2-b9525c240498",
+      "slug": "apple-watch-se",
+      "name": "Apple Watch SE (Thế hệ 2)",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Rất nhiều tính năng yêu thích. Mức giá phải chăng.",
+      "badge": "Bán chạy",
+      "subCategory": "SE",
+      "thumbnail": "/api/v1/media/43d00ff3-178a-4045-a70b-a41693fcf9d8",
+      "gallery": [
+        "/api/v1/media/43d00ff3-178a-4045-a70b-a41693fcf9d8",
+        "/api/v1/media/25cb1c23-7106-4c63-acfa-283aa40d8fae"
+      ],
+      "description": [
+        "Chiếc Apple Watch hoàn hảo cho học sinh, sinh viên và người bắt đầu bước vào hệ sinh thái sức khỏe của Apple."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kích thước mặt",
+          "value": "40mm hoặc 44mm • Vỏ nhôm tái chế thân thiện môi trường"
+        },
+        {
+          "label": "Màn hình",
+          "value": "Retina LTPO OLED độ sáng lên đến 1000 nits"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple S8 SiP (Nhanh hơn 20% so với thế hệ trước)"
+        },
+        {
+          "label": "Thời lượng pin",
+          "value": "18 giờ sử dụng cả ngày • Chế độ Tiết kiệm pin"
+        },
+        {
+          "label": "Theo dõi sức khỏe",
+          "value": "Cảm biến nhịp tim quang học thế hệ 2, Giai đoạn giấc ngủ"
+        },
+        {
+          "label": "Tính năng an toàn",
+          "value": "Phát hiện va chạm xe (Crash Detection), Phát hiện té ngã"
+        },
+        {
+          "label": "Chống nước",
+          "value": "Kháng nước ở độ sâu 50 mét khi bơi lội (WR50)"
+        },
+        {
+          "label": "Thiết lập gia đình",
+          "value": "Hỗ trợ Family Setup cho trẻ nhỏ và người lớn tuổi"
+        }
+      ],
+      "detailedSpecs": [],
+      "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
+      "configurations": [
+        {
+          "id": "eb7bdfa3-4f45-41e2-a76d-4de3fd8eb8aa",
+          "screenSize": "40mm",
+          "connectivity": "GPS",
+          "chip": "S8 SiP"
+        },
+        {
+          "id": "831cb7f1-d89f-4fc7-aa00-f4f7fbebb23b",
+          "screenSize": "44mm",
+          "connectivity": "GPS",
+          "chip": "S8 SiP"
+        }
+      ],
+      "colors": [
+        {
+          "id": "bd202373-bb97-415e-ab59-fae470b981df",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#2E3641",
+          "image": "/api/v1/media/43d00ff3-178a-4045-a70b-a41693fcf9d8"
+        }
+      ],
+      "skus": [
+        {
+          "id": "08982705-5132-40f7-a7ce-950a9c091010",
+          "configurationId": "eb7bdfa3-4f45-41e2-a76d-4de3fd8eb8aa",
+          "colorId": "bd202373-bb97-415e-ab59-fae470b981df",
+          "sku": "SE-40-GPS-C1",
+          "price": 5990000,
+          "originalPrice": 6690000,
+          "onHand": 10
+        },
+        {
+          "id": "befe0d7e-b0a1-41e9-adfa-1204233d26d0",
+          "configurationId": "831cb7f1-d89f-4fc7-aa00-f4f7fbebb23b",
+          "colorId": "bd202373-bb97-415e-ab59-fae470b981df",
+          "sku": "SE-44-GPS-C1",
+          "price": 6890000,
+          "originalPrice": 7590000,
+          "onHand": 10
+        }
+      ]
+    }
+  ]
+}

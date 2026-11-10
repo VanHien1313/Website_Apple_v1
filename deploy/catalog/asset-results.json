@@ -1,0 +1,325 @@
+{
+  "media": [
+    {
+      "id": "491ade05-caae-4d9f-ac9d-3a8fbd8f4347",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329149/s16/iphone-16-pro-max-titan-sa-mac-thumbnew-650x650.png",
+      "file": "images/491ade05-caae-4d9f-ac9d-3a8fbd8f4347.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "0b8c8509b1e2cf494c6d30915b96bd08e2d12d837e7cb0147a674b35e5e145d0"
+    },
+    {
+      "id": "d84c73c3-ea6a-42d2-a4b2-d508fdc54897",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329149/s16/iphone-16-pro-max-titan-den-thumbnew-650x650.png",
+      "file": "images/d84c73c3-ea6a-42d2-a4b2-d508fdc54897.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "487b9134ef2bac8d40fa0c032bd47afe2b02c97e2c9038a74747d2658e5bd5d5"
+    },
+    {
+      "id": "876f8084-39b5-44eb-a573-466f44a28082",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329138/s16/iphone-16-plus-xanh-luu-ly-thumbnew-650x650.png",
+      "file": "images/876f8084-39b5-44eb-a573-466f44a28082.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "a34e2dbcf8233e6be817b299216c928bb61d04927f9f9991384efd16545bc89b"
+    },
+    {
+      "id": "b7864320-1b57-4ffe-ad6d-09c96c201487",
+      "source": "https://cdn.tgdd.vn/Products/Images/42/329138/iphone-16-plus-den-thumb.jpg",
+      "file": "images/b7864320-1b57-4ffe-ad6d-09c96c201487.webp",
+      "width": 600,
+      "height": 600,
+      "sha256": "58f088969d2619fe7138b7ed0aa2effb586ed8c3fb5f16f7fb4d883c6f796f61"
+    },
+    {
+      "id": "13009b2b-49ce-4efc-a1ca-64412bdbffed",
+      "source": "https://cdn.topzone.vn/Products/Images/42/329135/s16/iphone-16-hong-1-650x650.png",
+      "file": "images/13009b2b-49ce-4efc-a1ca-64412bdbffed.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "0af01f7438de35bd2a1fc3ba4c5197a5e119f6c17c8ec1c59662756cd7c751bb"
+    },
+    {
+      "id": "5b9c32c7-edbb-408f-ac3f-27ff02acb2bd",
+      "source": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-black.png",
+      "file": "images/5b9c32c7-edbb-408f-ac3f-27ff02acb2bd.webp",
+      "width": 600,
+      "height": 600,
+      "sha256": "635183bcf7e411486ad4a55384a8f5d2afa9ac1f0c95b1acbfa096b2f92248aa"
+    },
+    {
+      "id": "3cb6f975-ba7d-407b-a9ad-a0ba61c2e288",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-gold-1-2-650x650.png",
+      "file": "images/3cb6f975-ba7d-407b-a9ad-a0ba61c2e288.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "219bcb6fc7a0d87a3821cba70680ceabfcbf7f3206c981e7237b66378ef00271"
+    },
+    {
+      "id": "01d1ccbf-e4d4-4872-aa32-96fcc790ca6e",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-1-2-650x650.png",
+      "file": "images/01d1ccbf-e4d4-4872-aa32-96fcc790ca6e.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "b75063619407a7c995e3db68f052afede4e58886d8aaef1f87f7732e8f84a16e"
+    },
+    {
+      "id": "54b38870-c5e6-4b89-a068-12cf1652f27d",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-black-1-2-650x650.png",
+      "file": "images/54b38870-c5e6-4b89-a068-12cf1652f27d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9fb3ef78f5275a23b0dca93bab379355c8e6642bdc029a23d4a36abae58ac990"
+    },
+    {
+      "id": "9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5",
+      "source": "https://cdn.topzone.vn/Products/Images/42/305658/s16/iphone-15-pro-max-white-1-2-650x650.png",
+      "file": "images/9fbfaa4f-ba3c-47b1-ab9f-4523a3a86ae5.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9494d8255fc57b9ca3ed33c957eaf4170df30019d52a5885102647bb2c38dae3"
+    },
+    {
+      "id": "a544e139-86e2-4032-ab14-e2c3690c9a4d",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-gold-1-2-650x650.png",
+      "file": "images/a544e139-86e2-4032-ab14-e2c3690c9a4d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "8e77694850f6272eccb830416253d8baa7e0809c4bb3efaacc0ac98cb32a113c"
+    },
+    {
+      "id": "f9ce4664-fa6d-4cb2-a5f4-4084d003df08",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-blue-1-2-650x650.png",
+      "file": "images/f9ce4664-fa6d-4cb2-a5f4-4084d003df08.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "1b2f9b498bd3c4e8f85cf0a297b87e29dd8b819cda7b8f82f9b2287a2e62f74c"
+    },
+    {
+      "id": "6558ddde-4716-4f5f-aaa2-c689d9377727",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-black-1-2-650x650.png",
+      "file": "images/6558ddde-4716-4f5f-aaa2-c689d9377727.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "01e29a5af97a03f4a148f47013a0366de80de9242b61d0f9b38457dd1308508d"
+    },
+    {
+      "id": "d51996e4-af5a-406d-a7e1-8350e25179ac",
+      "source": "https://cdn.topzone.vn/Products/Images/42/299033/s16/iphone-15-pro-white-1-2-650x650.png",
+      "file": "images/d51996e4-af5a-406d-a7e1-8350e25179ac.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e9366067614f79c06423e8cdfb8a3360a6405384cb67c54ebb55994661435832"
+    },
+    {
+      "id": "00029cd9-34f0-4f52-af3c-55ef18564326",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-pink-1-2-650x650.png",
+      "file": "images/00029cd9-34f0-4f52-af3c-55ef18564326.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "4fe6f2939a670535910aa66153f9e6946ab8f23edde8a5ab1e2a568db7aeee18"
+    },
+    {
+      "id": "8f09f334-8a97-40cf-a30f-dcf304c36b43",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-blue-1-2-650x650.png",
+      "file": "images/8f09f334-8a97-40cf-a30f-dcf304c36b43.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "98628b67243f06d5d8f474e445163d2c98f769753d364f8ac78b16d5cc434956"
+    },
+    {
+      "id": "1542bed7-ded7-4347-adfe-f519ed11d2de",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-black-1-2-650x650.png",
+      "file": "images/1542bed7-ded7-4347-adfe-f519ed11d2de.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6198334a9c56be9b8cfd316392aff13080e511560b8c7ecd27aebd161a2da221"
+    },
+    {
+      "id": "7d8e2109-eabc-41d7-a659-92e1a30fb89f",
+      "source": "https://cdn.topzone.vn/Products/Images/42/281570/s16/iphone-15-green-1-2-650x650.png",
+      "file": "images/7d8e2109-eabc-41d7-a659-92e1a30fb89f.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "38f98df60b9bd69506d699545b9f49c92d85fcb54eb942c3904aeda12a3c2235"
+    },
+    {
+      "id": "b5cf6b8e-1189-4ff7-a4e1-554c52b17641",
+      "source": "https://cdn.topzone.vn/Products/Images/42/240259/s16/iphone-14-blue-1-2-650x650.png",
+      "file": "images/b5cf6b8e-1189-4ff7-a4e1-554c52b17641.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "8a4ca8e9a468359ac1608e145e6a8f4eb66c60248b548658d7aa4332803f2e00"
+    },
+    {
+      "id": "db1fed06-17ce-4ad1-a733-aa16cc7c1607",
+      "source": "https://cdn.topzone.vn/Products/Images/42/223602/s16/iphone-13-blue-1-2-650x650.png",
+      "file": "images/db1fed06-17ce-4ad1-a733-aa16cc7c1607.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "76e8447fbf16666839ddecbe8d62363985b3993e17de7c458cf415f59c1f77d8"
+    },
+    {
+      "id": "d64ea05c-9882-4c65-ac55-57f6698c72ca",
+      "source": "https://cdn.topzone.vn/Products/Images/522/358082/s16/ipad-pro-m5-wifi-11-inch-black-thumbtz-650x650.png",
+      "file": "images/d64ea05c-9882-4c65-ac55-57f6698c72ca.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "c58b71fdb0f7b8da0de6f9f72d7565f8e1418c009a253fdd81cead614bdf154c"
+    },
+    {
+      "id": "ed9c88b1-971b-454b-a9d0-5667cbdefaae",
+      "source": "https://cdn.topzone.vn/Products/Images/522/358098/s16/ipad-pro-m5-wifi-11-inch-sliver-thumbtz-650x650.png",
+      "file": "images/ed9c88b1-971b-454b-a9d0-5667cbdefaae.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e96ef6acb764c977f7df442d630d31806166b80ba24cb8bd3cd55d43f82e8d41"
+    },
+    {
+      "id": "3a468610-71a0-4c67-a73f-8505c7e159a5",
+      "source": "https://cdn.topzone.vn/Products/Images/522/363417/s16/ipad-air-m4-11-inch-wifi-128gb-xam-thumb-650x650.png",
+      "file": "images/3a468610-71a0-4c67-a73f-8505c7e159a5.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "c053574f053582d17e66f51e4b94287a27bfdbee8015edf2b4d01a50feba03f5"
+    },
+    {
+      "id": "01ccbdcf-760b-4e48-a576-377bc076867a",
+      "source": "https://cdn.topzone.vn/Products/Images/522/335308/s16/ipad-11-wifi-yellow-thumb-650x650.png",
+      "file": "images/01ccbdcf-760b-4e48-a576-377bc076867a.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "32a798b3e40d8dd1be84f2f33492f5e2b807a6905a57c864de01313a79046cb6"
+    },
+    {
+      "id": "d3901037-bf61-4a1b-ac48-c307c16d2923",
+      "source": "https://cdn.topzone.vn/Products/Images/522/331229/s16/ipad-mini-7-wifi-purple-thumbtz-650x650.png",
+      "file": "images/d3901037-bf61-4a1b-ac48-c307c16d2923.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6f5f7815eb5e9d9fee21f54ad5f260d0c893ce9cdbe5e8f6b7c807773f240e59"
+    },
+    {
+      "id": "fbea2543-58de-4f15-ad28-3deae12b1f16",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363474/s16/macbook-air-13-inch-m5-16gb-512gb-vang-thumb-650x650.png",
+      "file": "images/fbea2543-58de-4f15-ad28-3deae12b1f16.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "909f6157d27499e5955171b16d83c13413c03c252b0fabea0c9fb948e377a010"
+    },
+    {
+      "id": "590fbb2d-9cb8-4c8e-ade2-bff5d510521e",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363503/s16/macbook-air-13-inch-m5-24gb-512gb-xanh-thumb-650x650.png",
+      "file": "images/590fbb2d-9cb8-4c8e-ade2-bff5d510521e.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6a4e02717ab934bc079529fddd522765a71fff92adb1f42674e57fdd261109fc"
+    },
+    {
+      "id": "6fd646c2-8104-4274-ae74-15e45b8d6bac",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363477/s16/macbook-air-15-inch-m5-16gb-512gb-vang-thumb-650x650.png",
+      "file": "images/6fd646c2-8104-4274-ae74-15e45b8d6bac.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e6ad45be999814f9ed4eed51928284bc7d77a6e9d22716825607a5dafb805cf3"
+    },
+    {
+      "id": "1d841ebf-6567-472b-af8d-44c633b291ef",
+      "source": "https://cdn.topzone.vn/Products/Images/44/358089/s16/macbook-pro-14-inch-m5-24gb-1tb-den-thumb-650x650.png",
+      "file": "images/1d841ebf-6567-472b-af8d-44c633b291ef.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "019b68be9b23e0ae67be338571fdcd90c3d8dd04922424e3fc07ac1fa1b492c1"
+    },
+    {
+      "id": "30499eb7-df52-4e94-ac7d-bfbc57f21475",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363488/s16/macbook-pro-14-inch-m5-pro-24gb-1tb-bac-thumb-650x650.png",
+      "file": "images/30499eb7-df52-4e94-ac7d-bfbc57f21475.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ce70421c91ca98dd7639369e61d80b11f24c122c79e052049ff0e97c0c8e02bf"
+    },
+    {
+      "id": "459c3010-564a-4374-a752-58ef9d24a364",
+      "source": "https://cdn.topzone.vn/Products/Images/44/363493/s16/macbook-pro-16-inch-m5-max-36gb-2tb-den-thumb-650x650.png",
+      "file": "images/459c3010-564a-4374-a752-58ef9d24a364.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "9ab89a088723d00c9aa0494ba47df2174fda90eb3b3aba3bcddb80dbda7ef520"
+    },
+    {
+      "id": "3a5d1045-3a6f-4af7-ad38-496c490cfcae",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-24-blue-selection-hero-202310?wid=1000",
+      "file": "images/3a5d1045-3a6f-4af7-ad38-496c490cfcae.webp",
+      "width": 1000,
+      "height": 840,
+      "sha256": "11580b68ec5cf1966588b3903c9888dde1715ea7af0fe76c6797bb4601c3d430"
+    },
+    {
+      "id": "f809b953-b466-4d25-aa33-a3fa6b571914",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-mini-select-202410?wid=1000",
+      "file": "images/f809b953-b466-4d25-aa33-a3fa6b571914.webp",
+      "width": 1000,
+      "height": 840,
+      "sha256": "d9e068f376c4d588175e9dd0f1b771c3c05ad596bcf66dc68f8ffb8bd820d0bd"
+    },
+    {
+      "id": "7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3",
+      "source": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-studio-select-202306?wid=1000",
+      "file": "images/7f75cdd5-4016-4a52-ab1f-f10fd70aa8b3.webp",
+      "width": 1000,
+      "height": 371,
+      "sha256": "dbee8d8e6926062a975eafd650dae37ebfbf44b322abf829ed4ca019e678c3e4"
+    },
+    {
+      "id": "798ec892-def1-45e6-a3a3-00fddcbca067",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344764/s16/apple-watch-ultra-3-gps-cellular-49mm-vien-titanium-day-ocean-den-thumb-1-650x650.png",
+      "file": "images/798ec892-def1-45e6-a3a3-00fddcbca067.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ae45723d56d5015c7059d6e30cff6ad70df72b7e51d7392019af46f0d579530e"
+    },
+    {
+      "id": "d43f0c9d-f1b4-45e7-aded-432bcfe740ec",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344765/s16/apple-watch-ultra-3-gps-cellular-49mm-vien-titanium-day-trail-den-thumb-650x650.png",
+      "file": "images/d43f0c9d-f1b4-45e7-aded-432bcfe740ec.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "893be82f09e34fff5ff6332b1d283ab70f3e21b84969136b1735163ef8c922ca"
+    },
+    {
+      "id": "b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344750/s16/apple-watch-series-11-42mm-vien-nhom-day-the-thao-xam-thumb-650x650.png",
+      "file": "images/b9bb54d3-c7e6-42fe-a2fd-8ac7c4ab091b.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "e9b1cffbd1665a5d351744ec49f43780a364721bd6040b0e0a8239333282d9ac"
+    },
+    {
+      "id": "c7629098-3c8b-46cb-a14d-feed7f1c892d",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344752/s16/apple-watch-series-11-gps-cellular-42mm-vien-nhom-day-the-thao-den-thumb-650x650.png",
+      "file": "images/c7629098-3c8b-46cb-a14d-feed7f1c892d.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "087094e033fa3942e9abf61f3786bab7a65175291701212640719937e332eb52"
+    },
+    {
+      "id": "43d00ff3-178a-4045-a70b-a41693fcf9d8",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/371335/s16/apple-watch-se-3-gps-44mm-vien-nhom-day-the-thao-2026-navy-thumbtz-650x650.png",
+      "file": "images/43d00ff3-178a-4045-a70b-a41693fcf9d8.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "7bcee5e07aa986a71843725edd4fe16965da5d85f17fd20db75cf5e31f8d2aa3"
+    },
+    {
+      "id": "25cb1c23-7106-4c63-acfa-283aa40d8fae",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/371333/s16/apple-watch-se-3-gps-cellular-40mm-vien-nhom-day-the-thao-2026-starlight-thumbtz-650x650.png",
+      "file": "images/25cb1c23-7106-4c63-acfa-283aa40d8fae.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "ecc1ae92bfc98971c9f18231ee5daab9839bb48849b010557d3dd70b255763a3"
+    }
+  ],
+  "failures": []
+}
