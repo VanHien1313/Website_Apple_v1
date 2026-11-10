@@ -2,6 +2,8 @@
 
 ## Tiến độ mới nhất — 10/11/2026
 
+**R5 cập nhật hồ sơ:** đã tạo [báo cáo Word 13 trang](submission/Aura_Report.docx) và [PowerPoint 12 slide](submission/Aura_Defense.pptx), kiểm tra ảnh từng trang/slide. Báo cáo xuất bằng Word; renderer LibreOffice chưa khả dụng. [Bàn giao hồ sơ](submission/README.md). Còn mẫu bìa/lớp/giảng viên, test tay cuối, video và bảo vệ cá nhân. Các mô tả R5 phía dưới phản ánh mốc trước khi tạo hai tệp này.
+
 Hạn nhóm xác nhận: **thứ Sáu 13/11/2026**. Ưu tiên nghiệm thu local và hồ sơ bảo vệ trước tính năng nâng cao.
 
 **R3 bổ sung trong phiên tiếp theo:** bản trình diễn riêng đã chạy tại **http://localhost:4001**, DB `AuraDemoDocker`, có 8 sản phẩm/24 SKU, ảnh WebP nội bộ, 2 admin/1 customer và 6 đơn tạo qua service. 2 kiểm thử dataset và 6 kiểm tra trình duyệt đạt; SQL xác nhận quyền tách database, tồn kho và doanh thu 25 triệu đúng. Chạy `demo:start` lần hai giữ nguyên dữ liệu. Main DB vẫn 1 admin/0 sản phẩm/0 đơn. Xem [LOCAL_DEMO.md](LOCAL_DEMO.md). Nhóm còn nghiệm thu tay và quay demo; số liệu ban đầu sẽ thay đổi khi thao tác hoặc đơn PENDING hết hạn sau 24 giờ.

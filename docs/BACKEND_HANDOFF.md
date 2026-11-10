@@ -1,3 +1,5 @@
+> Hồ sơ R5 mới nhất: [Word 13 trang và PowerPoint 12 slide](submission/README.md) đã tạo và kiểm tra trực quan. Còn mẫu lớp, test tay, video và luyện bảo vệ. Không thay đổi app/database trong phiên hồ sơ.
+
 > Kế hoạch hiện hành 10/11/2026: [phần việc còn lại R1–R6](REMAINING_WORK_PLAN.md), đã đối chiếu thêm [lưu ý giảng viên](LECTURER_REQUIREMENTS_MAPPING.md). Ưu tiên hai tài liệu này khi xác định phạm vi và bước tiếp theo; tiến độ cũ phía dưới giữ làm lịch sử.
 
 > R3 mới nhất: demo http://localhost:4001 / AuraDemoDocker đã có 8 sản phẩm, 24 SKU, 6 đơn và 3 tài khoản thử. Khởi tạo lại giữ nguyên dữ liệu; 2 dataset tests + 6 browser checks đạt, quyền SQL không truy cập main DB. Main http://127.0.0.1:4000 vẫn 1 admin/0 sản phẩm/0 đơn. [Cách dùng và giới hạn](LOCAL_DEMO.md). Không rebuild image ứng dụng trong phiên này; dùng image đã đạt 24 nhóm E2E ở phiên trước. Không push/hosting.
