@@ -34,6 +34,8 @@ export interface SpecGroup {
 export interface Product {
   id: string;
   slug: string;
+  /** ISO 8601 (UTC). API: products.created_at. Demo: ngày ra mắt mẫu; sản phẩm cũ trong localStorage có thể chưa có. */
+  createdAt?: string;
   name: string;
   category: ProductCategory;
   subCategory?: string;      // e.g. 'Pro Series', 'Air', 'Standard', 'Ultra'

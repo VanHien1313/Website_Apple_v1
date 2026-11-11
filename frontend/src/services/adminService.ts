@@ -51,8 +51,9 @@ export function createAdminService(repository = catalogRepository, session = get
     async saveProduct(product: Product) {
       authorize(); const db = repository.read(); validateProduct(product, db);
       const cheapest = product.variants.reduce((a, b) => a.price < b.price ? a : b);
-      const normalized = { ...product, name: product.name.trim(), variants: product.variants.map((v) => ({ ...v, sku: v.sku.trim() })), basePrice: cheapest.price, originalPrice: cheapest.originalPrice };
-      db.products = [...db.products.filter((p) => p.id !== product.id), normalized]; repository.write(db);
+      const existing = db.products.find((p) => p.id === product.id);
+      const normalized = { ...product, createdAt: existing?.createdAt ?? product.createdAt ?? new Date().toISOString(), name: product.name.trim(), variants: product.variants.map((v) => ({ ...v, sku: v.sku.trim() })), basePrice: cheapest.price, originalPrice: cheapest.originalPrice };
+      db.products = existing ? db.products.map((p) => p.id === product.id ? normalized : p) : [...db.products, normalized]; repository.write(db);
     },
     async deleteProduct(id: string) { authorize(); const db = repository.read(); db.products = db.products.filter((p) => p.id !== id); repository.write(db); },
     async saveCategory(category: Category, originalId?: string) {

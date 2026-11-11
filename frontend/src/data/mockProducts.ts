@@ -5,6 +5,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip16pm',
     slug: 'iphone-16-pro-max',
+    createdAt: '2024-09-20T00:00:00.000Z',
     name: 'iPhone 16 Pro Max',
     category: 'iphone',
     subCategory: 'Pro Series',
@@ -50,6 +51,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip16p',
     slug: 'iphone-16-pro',
+    createdAt: '2024-09-20T00:00:00.000Z',
     name: 'iPhone 16 Pro',
     category: 'iphone',
     subCategory: 'Pro Series',
@@ -92,6 +94,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip16plus',
     slug: 'iphone-16-plus',
+    createdAt: '2024-09-20T00:00:00.000Z',
     name: 'iPhone 16 Plus',
     category: 'iphone',
     subCategory: 'Standard Series',
@@ -132,6 +135,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip16',
     slug: 'iphone-16',
+    createdAt: '2024-09-20T00:00:00.000Z',
     name: 'iPhone 16',
     category: 'iphone',
     subCategory: 'Standard Series',
@@ -174,6 +178,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip15pm',
     slug: 'iphone-15-pro-max',
+    createdAt: '2023-09-22T00:00:00.000Z',
     name: 'iPhone 15 Pro Max',
     category: 'iphone',
     subCategory: 'Pro Series',
@@ -218,6 +223,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip15p',
     slug: 'iphone-15-pro',
+    createdAt: '2023-09-22T00:00:00.000Z',
     name: 'iPhone 15 Pro',
     category: 'iphone',
     subCategory: 'Pro Series',
@@ -262,6 +268,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip15',
     slug: 'iphone-15',
+    createdAt: '2023-09-22T00:00:00.000Z',
     name: 'iPhone 15',
     category: 'iphone',
     subCategory: 'Standard Series',
@@ -306,6 +313,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip14',
     slug: 'iphone-14',
+    createdAt: '2022-09-16T00:00:00.000Z',
     name: 'iPhone 14',
     category: 'iphone',
     subCategory: 'Standard Series',
@@ -343,6 +351,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ip13',
     slug: 'iphone-13',
+    createdAt: '2021-09-24T00:00:00.000Z',
     name: 'iPhone 13',
     category: 'iphone',
     subCategory: 'Standard Series',
@@ -382,6 +391,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ipad_pro_m4',
     slug: 'ipad-pro-m4',
+    createdAt: '2024-05-15T00:00:00.000Z',
     name: 'iPad Pro 11 inch & 13 inch (M4)',
     category: 'ipad',
     subCategory: 'iPad Pro',
@@ -424,6 +434,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ipad_air_m2',
     slug: 'ipad-air-m2',
+    createdAt: '2024-05-15T00:00:00.000Z',
     name: 'iPad Air 11 inch & 13 inch (M2)',
     category: 'ipad',
     subCategory: 'iPad Air',
@@ -462,6 +473,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ipad_gen_10',
     slug: 'ipad-gen-10',
+    createdAt: '2022-10-26T00:00:00.000Z',
     name: 'iPad (Thế hệ 10) 10.9 inch',
     category: 'ipad',
     subCategory: 'iPad Standard',
@@ -500,6 +512,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_ipad_mini_a17',
     slug: 'ipad-mini-a17-pro',
+    createdAt: '2024-10-23T00:00:00.000Z',
     name: 'iPad mini 8.3 inch (A17 Pro)',
     category: 'ipad',
     subCategory: 'iPad mini',
@@ -540,6 +553,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_macbook_air_13_m3',
     slug: 'macbook-air-13-m3',
+    createdAt: '2024-03-08T00:00:00.000Z',
     name: 'MacBook Air 13 inch (M3)',
     category: 'mac',
     subCategory: 'MacBook Air',
@@ -579,6 +593,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_macbook_air_15_m3',
     slug: 'macbook-air-15-m3',
+    createdAt: '2024-03-08T00:00:00.000Z',
     name: 'MacBook Air 15 inch (M3)',
     category: 'mac',
     subCategory: 'MacBook Air',
@@ -617,6 +632,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_macbook_pro_14_m4',
     slug: 'macbook-pro-14-m4',
+    createdAt: '2024-11-08T00:00:00.000Z',
     name: 'MacBook Pro 14 inch (M4 / M4 Pro)',
     category: 'mac',
     subCategory: 'MacBook Pro',
@@ -656,6 +672,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_macbook_pro_16_m4',
     slug: 'macbook-pro-16-m4',
+    createdAt: '2024-11-08T00:00:00.000Z',
     name: 'MacBook Pro 16 inch (M4 Pro / M4 Max)',
     category: 'mac',
     subCategory: 'MacBook Pro',
@@ -694,6 +711,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_imac_24_m4',
     slug: 'imac-24-m4',
+    createdAt: '2024-11-08T00:00:00.000Z',
     name: 'iMac 24 inch (M4)',
     category: 'mac',
     subCategory: 'Desktop',
@@ -732,6 +750,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_mac_mini_m4',
     slug: 'mac-mini-m4',
+    createdAt: '2024-11-08T00:00:00.000Z',
     name: 'Mac mini (M4 / M4 Pro)',
     category: 'mac',
     subCategory: 'Desktop',
@@ -770,6 +789,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_mac_studio_m2',
     slug: 'mac-studio-m2',
+    createdAt: '2023-06-13T00:00:00.000Z',
     name: 'Mac Studio (M2 Max / M2 Ultra)',
     category: 'mac',
     subCategory: 'Desktop',
@@ -809,6 +829,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_watch_ultra_2',
     slug: 'apple-watch-ultra-2',
+    createdAt: '2023-09-22T00:00:00.000Z',
     name: 'Apple Watch Ultra 2 (Titanium)',
     category: 'watch',
     subCategory: 'Ultra',
@@ -849,6 +870,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_watch_series_10',
     slug: 'apple-watch-series-10',
+    createdAt: '2024-09-20T00:00:00.000Z',
     name: 'Apple Watch Series 10',
     category: 'watch',
     subCategory: 'Series',
@@ -887,6 +909,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_watch_s9',
     slug: 'apple-watch-series-9',
+    createdAt: '2023-09-22T00:00:00.000Z',
     name: 'Apple Watch Series 9',
     category: 'watch',
     subCategory: 'Series',
@@ -925,6 +948,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod_watch_se_2',
     slug: 'apple-watch-se',
+    createdAt: '2022-09-16T00:00:00.000Z',
     name: 'Apple Watch SE (Thế hệ 2)',
     category: 'watch',
     subCategory: 'SE',

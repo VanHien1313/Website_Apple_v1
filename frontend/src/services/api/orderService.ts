@@ -28,6 +28,6 @@ export function readPending(): OrderRequest | null {
 }
 export function savePending(value: OrderRequest) { sessionStorage.setItem(pendingKey, JSON.stringify(value)); }
 export function clearPending() { sessionStorage.removeItem(pendingKey); }
-export function saveReceipt(id: string, token: string) { sessionStorage.setItem(`aura_receipt_v1:${id.toLowerCase()}`, token); }
-export function readReceipt(id: string) { return sessionStorage.getItem(`aura_receipt_v1:${id.toLowerCase()}`) ?? undefined; }
+export function saveReceipt(id: string, token: string, storage: Pick<Storage, 'setItem'> = sessionStorage) { storage.setItem(`aura_receipt_v1:${id.toLowerCase()}`, token); }
+export function readReceipt(id: string, storage: Pick<Storage, 'getItem'> = sessionStorage) { return storage.getItem(`aura_receipt_v1:${id.toLowerCase()}`) ?? undefined; }
 export function newReceiptToken() { return Array.from(crypto.getRandomValues(new Uint8Array(32)), (byte) => byte.toString(16).padStart(2, '0')).join(''); }

@@ -60,3 +60,17 @@ test('catalog reset restores seed profiles and products and is owner-only', asyn
   await service.deleteProduct(repo.read().products[0].id);
   await service.resetCatalog(); assert.equal(repo.read().products.length, count);
 });
+
+test('demo catalog stamps createdAt on new products and keeps date and position when editing', async () => {
+  const { repo, service } = setup(); const before = repo.read().products; const first = before[0];
+  await service.saveProduct({ ...first, name: 'Renamed' });
+  const after = repo.read().products;
+  assert.equal(after[0].id, first.id); assert.equal(after[0].name, 'Renamed'); assert.equal(after[0].createdAt, first.createdAt);
+  const clone = structuredClone(first);
+  const fresh = { ...clone, id: 'prod_new', slug: 'fresh-item', createdAt: undefined,
+    variants: clone.variants.map((v, i) => ({ ...v, id: `fresh-${i}`, sku: `FRESH-${i}` })) };
+  const started = Date.now(); await service.saveProduct(fresh);
+  const saved = repo.read().products.find((p) => p.id === 'prod_new')!;
+  assert.ok(Date.parse(saved.createdAt!) >= started - 1000);
+  assert.equal(repo.read().products.at(-1)!.id, 'prod_new');
+});

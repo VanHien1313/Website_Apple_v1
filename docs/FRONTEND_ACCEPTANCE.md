@@ -62,7 +62,7 @@ Rà theo [Vercel Web Interface Guidelines](https://raw.githubusercontent.com/ver
 - Browser suite xác nhận các hành trình đã nêu, không phải quét mọi link/console/network hoặc mọi tổ hợp dữ liệu. Không có uncaught pageerror trong các suite đạt. Không đo tất cả console warning/request ảnh ngoài.
 - Chưa thử Safari/Firefox, screen reader, browser zoom thật, audit tương phản toàn trang, hiệu năng thiết bị thấp. Không chứng nhận WCAG2.2AA từ các check cấu trúc.
 - Nguồn/quyền ảnh và tính chính xác thông số chưa duyệt. Một số ảnh fixture cắt sẵn hoặc khác mẫu cần thay trước công khai.
-- Product sort “Gắn nhãn mới” theo badge; chưa có createdAt sản phẩm. Admin lists còn xử lý tại client; chưa phù hợp database lớn.
+- Admin lists còn xử lý tại client; chưa phù hợp database lớn. (Đã xử lý 11/11/2026: sort “Mới nhất” dùng `createdAt` thật, xem CHANGELOG.)
 - Admin credential, session/authorization, upload, inventory, concurrency đa tab, thanh toán và email chưa phải tính năng server.
 - Quy tắc ship/doanh thu là hiện trạng demo; xác nhận với chủ sản phẩm trước triển khai thật.
 
