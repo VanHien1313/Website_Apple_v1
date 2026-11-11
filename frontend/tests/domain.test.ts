@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { MOCK_PRODUCTS } from '../src/data/mockProducts';
-import { filterProducts, queryCatalog, parseCatalogParams } from '../src/domain/catalog';
+import { filterProducts, queryCatalog, parseCatalogParams, compareNewest } from '../src/domain/catalog';
 import { calculateTotals, createCartItem, cartReducer, MAX_QUANTITY } from '../src/domain/cart';
 import { decodeCart, loadCart, saveCart, CART_STORAGE_KEY } from '../src/store/cartStorage';
 import { mockOrderService } from '../src/services/mock/orderService';
@@ -118,4 +118,16 @@ test('service adapters honor aborted requests and can be called without this bin
   await assert.rejects(mockOrderService.createOrder(input, { signal: controller.signal }), { name: 'AbortError' });
   const { getProductsByCategory } = mockProductService;
   assert.ok((await getProductsByCategory('mac')).length > 0);
+});
+
+test('newest sort follows createdAt like the backend, with missing dates last and a stable tie-break', () => {
+  const base = MOCK_PRODUCTS[0];
+  const make = (id: string, createdAt?: string, badge?: typeof base.badge) => ({ ...base, id, createdAt, badge });
+  const products = [make('d'), make('b', '2024-01-01T00:00:00.000Z'), make('c', '2025-01-01T00:00:00.000Z'), make('a', '2024-01-01T00:00:00.000Z', 'Mới'), make('e', 'not-a-date', 'Mới')];
+  const ids = filterProducts(products, { sort: 'newest' }).map((p) => p.id);
+  assert.deepEqual(ids, ['c', 'a', 'b', 'e', 'd']);
+  assert.equal(compareNewest(products[1], products[1]), 0);
+  assert.ok(MOCK_PRODUCTS.every((p) => Number.isFinite(Date.parse(p.createdAt ?? ''))));
+  const newest = filterProducts(MOCK_PRODUCTS, { sort: 'newest' });
+  for (let i = 1; i < newest.length; i++) assert.ok(Date.parse(newest[i - 1].createdAt!) >= Date.parse(newest[i].createdAt!));
 });

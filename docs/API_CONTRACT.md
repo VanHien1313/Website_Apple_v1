@@ -48,7 +48,7 @@ Product gồm id, slug, name, category, subCategory?, tagline, badge?, rating, r
 
 Color `{id,name,hex,image}`; Variant `{id,sku,storage?,screenSize?,connectivity?,chip?,price,originalPrice,inStock}`. Hiện màu và cấu hình độc lập; backend cần chốt SKU theo tổ hợp màu/cấu hình trước migration. Không ngầm coi variant hiện tại là SKU tồn kho theo màu.
 
-Giá nhỏ nhất của biến thể làm basePrice; giá gốc không thấp hơn giá bán. Slug/SKU duy nhất, SKU so sánh trim không phân biệt hoa thường. `sort=newest` hiện **ưu tiên badge “Mới”**, UI ghi “Gắn nhãn mới”; muốn sắp xếp theo thời gian phải bổ sung createdAt thật. Danh mục mở rộng là string; bốn liên kết header là merchandising cố định.
+Giá nhỏ nhất của biến thể làm basePrice; giá gốc không thấp hơn giá bán. Slug/SKU duy nhất, SKU so sánh trim không phân biệt hoa thường. `sort=newest` sắp xếp theo `createdAt` giảm dần, hòa thì theo `id` (backend: `products.created_at DESC, id`; demo: `Product.createdAt` cùng quy tắc, thiếu ngày xếp cuối, rồi nhãn “Mới”). `createdAt` do server đặt, không nhận từ payload tạo/sửa sản phẩm. Danh mục mở rộng là string; bốn liên kết header là merchandising cố định.
 
 ## 4. Giỏ hàng và đặt đơn
 
@@ -74,7 +74,7 @@ Server đọc lại giá/tồn kho và ghi đơn/items/reservation/idempotency t
 
 Order trả id, orderCode, customerId?, customer/address snapshot, shippingMethod, paymentMethod, status, paymentStatus, items[], subtotal, discount, shippingFee, total, createdAt, revision?, completedAt?, history?. OrderItem gồm productId, productName, productImage, variantId, colorName, storage?, quantity, unitPrice, totalPrice. Giữ snapshot khi catalog đổi/xóa. HTTP mới nên luôn trả revision=0+, history=[]; optional chỉ để đọc dữ liệu demo cũ.
 
-GET `/orders/:id`: không cho guest tra chỉ bằng ID/mã đoán được; triển khai guest receipt session hoặc opaque capability có thời hạn. Demo hiện chỉ lưu và tra trong cùng browser, chưa có cơ chế bảo vệ guest receipt server.
+GET `/orders/:id`: không cho guest tra chỉ bằng ID/mã đoán được; triển khai guest receipt session hoặc opaque capability có thời hạn. Backend đã bảo vệ bằng header `X-Aura-Receipt` (server chỉ lưu hash). Khách mở lại đơn sau khi đóng tab bằng *liên kết khôi phục* `/order-confirmation/:id#receipt=<token>` (xem BACKEND_B3_CHECKOUT.md); chưa có email hoặc OTP.
 
 ## 5. Vận hành đơn và báo cáo
 

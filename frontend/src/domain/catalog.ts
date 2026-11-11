@@ -40,9 +40,15 @@ export function filterProducts(products: readonly Product[], filter: CatalogFilt
   switch (filter.sort) {
     case 'price_asc': result.sort((a, b) => a.basePrice - b.basePrice); break;
     case 'price_desc': result.sort((a, b) => b.basePrice - a.basePrice); break;
-    case 'newest': result.sort((a, b) => Number(b.badge === 'Mới') - Number(a.badge === 'Mới')); break;
+    case 'newest': result.sort(compareNewest); break;
   }
   return result;
+}
+/** Mới nhất trước, cùng quy tắc backend (`created_at DESC, id`). Thiếu ngày tạo → xếp sau; còn hòa → nhãn "Mới" rồi id. */
+export function compareNewest(a: Product, b: Product): number {
+  const time = (product: Product) => { const value = Date.parse(product.createdAt ?? ''); return Number.isFinite(value) ? value : -Infinity; };
+  const byTime = time(b) === time(a) ? 0 : time(b) > time(a) ? 1 : -1;
+  return byTime || Number(b.badge === 'Mới') - Number(a.badge === 'Mới') || a.id.localeCompare(b.id);
 }
 export function queryCatalog(products: readonly Product[], filter: CatalogFilter = {}): CatalogResult {
   const categoryProducts = filterProducts(products, { category: filter.category });

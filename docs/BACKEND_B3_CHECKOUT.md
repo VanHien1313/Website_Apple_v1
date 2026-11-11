@@ -15,7 +15,7 @@ Ngày 28/10/2026. Chế độ API đã mở Mua ngay → checkout và Giỏ hàn
 
 ## Giới hạn hiện tại
 
-Đóng tab/xóa dữ liệu phiên có thể mất quyền đọc guest và yêu cầu phục hồi; UI có thông báo giữ tab mở đến khi biết kết quả. Chưa có email gửi biên nhận hoặc khôi phục receipt qua OTP. SessionStorage vẫn có thể được đọc bởi script cùng origin, nên receipt cần được coi là bí mật. Không lưu session đăng nhập vào storage.
+Đóng tab/xóa dữ liệu phiên có thể mất quyền đọc guest và yêu cầu phục hồi; UI có thông báo giữ tab mở đến khi biết kết quả. Trang xác nhận có *liên kết khôi phục* `/order-confirmation/:id#receipt=<token>`: token nằm trong fragment nên không gửi tới server và không vào Referer; trang lưu token vào phiên tab rồi xóa fragment khỏi thanh địa chỉ. Khi không tải được đơn, khách dán liên kết hoặc mã 64 hex vào form để mở lại. Ai có liên kết đều xem được đơn nên phải coi như bí mật. Chưa có email gửi biên nhận hoặc khôi phục receipt qua OTP. SessionStorage vẫn có thể được đọc bởi script cùng origin, nên receipt cần được coi là bí mật. Không lưu session đăng nhập vào storage.
 
 Không tự bỏ yêu cầu đang chờ khi gặp lỗi không xác định, đổi phiên hoặc xung đột idempotency. Người dùng cần trở về tài khoản gốc để retry. Chưa có màn hình hỗ trợ đối soát các trường hợp mất toàn bộ dữ liệu trình duyệt.
 
