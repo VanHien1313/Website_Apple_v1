@@ -40,5 +40,5 @@ export const apiProductService: ProductService = {
   async getRelatedProducts(id, category, limit = 4, options) {
     return (await getCatalog({ category, pageSize: Math.min(100, limit + 1) }, options)).items.filter((item) => item.id !== id).slice(0, limit);
   },
-  async getFeaturedProducts(limit = 8, options) { return (await getCatalog({ sort: 'featured', pageSize: limit }, options)).items; },
+  async getFeaturedProducts(limit = 8, options) { return (await getCatalog({ sort: 'price_desc', pageSize: limit }, options)).items; },
 };

@@ -37,7 +37,7 @@ export function filterProducts(products: readonly Product[], filter: CatalogFilt
       default: return true;
     }
   });
-  switch (filter.sort) {
+  switch (filter.sort ?? 'price_desc') {
     case 'price_asc': result.sort((a, b) => a.basePrice - b.basePrice); break;
     case 'price_desc': result.sort((a, b) => b.basePrice - a.basePrice); break;
     case 'newest': result.sort((a, b) => Number(b.badge === 'Mới') - Number(a.badge === 'Mới')); break;
@@ -67,7 +67,7 @@ export function parseCatalogParams(params: URLSearchParams): CatalogFilter {
     searchQuery: params.get('q')?.trim() || undefined,
     subCategory: params.get('subCategory') || undefined,
     priceRange: PRICE_OPTIONS.find((option) => option.id === range)?.id,
-    sort: sort === 'price_asc' || sort === 'price_desc' || sort === 'newest' ? sort : 'featured',
+    sort: sort === 'price_asc' || sort === 'price_desc' || sort === 'newest' || sort === 'featured' ? sort : 'price_desc',
     page: Number.isSafeInteger(page) && page > 0 ? page : 1,
   };
 }

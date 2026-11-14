@@ -6,7 +6,7 @@ import { createMockOrderService } from '../src/services/mock/orderService';
 import { MOCK_PRODUCTS } from '../src/data/mockProducts';
 import type { CreateOrderInput } from '../src/types/order';
 function memory() { const values = new Map<string, string>(); return { values, getItem: (k: string) => values.get(k) ?? null, setItem: (k: string, v: string) => { values.set(k, v); }, removeItem: (k: string) => { values.delete(k); } }; }
-const registration = { fullName: 'Khách mẫu', phone: '0901234567', email: 'sample@example.test', password: 'Sample-password-123' };
+const registration = { shippingAddress: {address:'123 Mẫu',province:'TP HCM',ward:'Phường mẫu'}, fullName: 'Khách mẫu', phone: '0901234567', email: 'sample@example.test', password: 'Sample-password-123' };
 test('committed password change succeeds even when stale session cleanup fails', async () => {
   const persistent = memory(), session = memory();
   const service = createCustomerService(() => persistent, () => ({ ...session, removeItem() { throw new Error('Storage denied'); } }));
@@ -26,7 +26,7 @@ const product = MOCK_PRODUCTS[0];
 function input(customerId?: string): CreateOrderInput { return { customerId, customer: { fullName: registration.fullName, email: registration.email, phone: registration.phone }, shippingAddress: { address: '12 đường mẫu', ward: 'Phường mẫu', province: 'Thành phố mẫu', district: '' }, shippingMethod: 'standard', paymentMethod: 'cod', items: [{ productId: product.id, variantId: product.variants[0].id, colorId: product.colors[0].id, quantity: 1 }] }; }
 test('registration validates identity, normalizes email and never stores plaintext password', async () => {
   const { service, persistent } = setup();
-  await assert.rejects(service.register({ ...registration, password: 'short' }), /12/);
+  await assert.rejects(service.register({ ...registration, password: 'short' }), /8/);
   await assert.rejects(service.register({ ...registration, phone: 'invalid' }), /chưa hợp lệ/);
   const profile = await service.register({ ...registration, email: ' SAMPLE@EXAMPLE.TEST ' });
   assert.equal(profile.email, registration.email); assert.equal(service.current(), null);
@@ -51,7 +51,7 @@ test('orders bind to session identity, never claim guest orders by email and pre
   const adapter = createMockOrderService(orders, MOCK_PRODUCTS, service.current);
   await assert.rejects(adapter.createOrder(input('forged')), /Phiên/);
   const mine = await adapter.createOrder(input(owner.id));
-  await createMockOrderService(orders, MOCK_PRODUCTS, () => null).createOrder(input());
+  await assert.rejects(createMockOrderService(orders, MOCK_PRODUCTS, () => null).createOrder(input()), /đăng nhập/);
   assert.equal((await service.listOrders()).total, 1);
   const other = await service.register({ ...registration, email: 'other@example.test' }); await service.login(other.email, registration.password);
   assert.equal(await service.getOrder(mine.id), null); assert.equal(await adapter.getOrder(mine.id), null);

@@ -1,3 +1,7 @@
+> Cập nhật 12/11/2026: mật khẩu mới dài 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt; dấu cách không tính là ký tự đặc biệt. Áp dụng đăng ký, đổi/đặt lại mật khẩu và tạo quản trị. Đăng nhập vẫn chấp nhận mật khẩu cũ hợp lệ đã lưu.
+
+> Cập nhật 11/11/2026: **đặt hàng bắt buộc đăng nhập khách hàng**; đăng ký cần họ tên, SĐT, email và địa chỉ. Email đơn lấy từ tài khoản. Các mục đặt hàng vãng lai/email tùy chọn bên dưới chỉ còn là lịch sử, không dùng để nghiệm thu mới. Xem [quy trình và kiểm thử hiện hành](MEMBER_CHECKOUT.md).
+
 # Hướng dẫn tự kiểm thử từng chức năng Aura local
 
 Ngày 10/11/2026. Đối chiếu bản ứng dụng local có reset mật khẩu admin ở commit `dfb5593`. Đây là hướng dẫn để người dùng tự thao tác, **không phải biên bản đã test tay đạt**. Các chức năng R1–R6 chưa xây được liệt kê cuối tài liệu.
@@ -280,3 +284,21 @@ Nếu thử đăng nhập/đăng ký liên tục gặp429, dừng một phút r�
 Theo [kế hoạch R1–R6](REMAINING_WORK_PLAN.md): trang đội ngũ/liên hệ, profile đầy đủ hoặc sửa profile, sửa/khóa khách hàng, CRUD role động, hard-delete sản phẩm/admin, Google OAuth, email, thanh toán online/Premium, hosting HTTPS thực tế chưa được coi là đã triển khai. Không ghi chúng là PASS; đánh dấu CHƯA TRIỂN KHAI/CẦN CHỐT. Local HTTP không có Secure cookie như staging HTTPS; không dùng tiêu chí cookie Secure của hosting để kết luận local sai.
 
 Lần đầu nên đi theo thứ tự **1 → 2 → 3 → 4 → 5 → 6 → CK01 → 8 → 11**, rồi quay lại các ca lỗi, tài khoản và quyền ở7/9/10/12. Như vậy bro thấy trước một vòng mua hàng hoàn chỉnh và có số tiền/tồn cụ thể để so sánh.
+
+## Chọn sản phẩm trong giỏ (13/11/2026)
+
+Bản API/Docker cho phép tích chọn từng dòng hoặc Chọn tất cả. Báo giá, phí giao hàng và checkout chỉ tính các dòng đã chọn. Bỏ chọn hết sẽ khóa nút đặt hàng. Lựa chọn được giữ trong cùng tab khi reload hoặc qua đăng nhập. Đặt hàng thành công chỉ trừ số lượng SKU đã mua; sản phẩm chưa chọn vẫn trong giỏ. Mua ngay chọn riêng cấu hình vừa thêm.
+
+Kiểm tra: thêm hai cấu hình, bỏ chọn một, reload, đăng nhập và đặt hàng. Đơn chỉ chứa một SKU; quay lại giỏ vẫn còn cấu hình chưa chọn. Thử bỏ chọn tất cả, chọn lại tất cả và đổi số lượng để xác nhận tổng tiền cập nhật.
+
+### Giao diện giỏ hàng có ảnh
+
+Ảnh ưu tiên màu đã chọn, dự phòng ảnh chính sản phẩm. Tên/ảnh dẫn về chi tiết sản phẩm. Nút +/- điều chỉnh số lượng từ 1 đến 999; vẫn có thể nhập trực tiếp. Nút thùng rác xóa dòng. Bố cục danh sách và tóm tắt đơn hàng cạnh nhau trên desktop, xếp dọc trên mobile. Giá dòng chưa có báo giá mới được ghi chú để người dùng biết cần chọn mua xác nhận giá.
+
+### Giao diện thanh toán
+
+Trang checkout đồng bộ với giỏ hàng: ba khối thông tin người nhận, địa chỉ và giao hàng/thanh toán; thẻ chọn giao tiêu chuẩn/giao nhanh; tóm tắt có ảnh theo màu sản phẩm và số lượng. Email tài khoản chỉ đọc. Tổng tiền vẫn lấy từ API báo giá, không tính lại từ giá trong ảnh sản phẩm. Các trạng thái đang gửi/chờ kết quả/lỗi vẫn giữ cơ chế chống gửi trùng và phục hồi yêu cầu.
+
+Luồng COD, xác nhận nhận hàng và tự xác nhận 7 ngày: xem [COD_RECEIPT_FLOW.md](COD_RECEIPT_FLOW.md).
+
+Ví MoMo/ZaloPay và QR sandbox: xem [WALLET_PAYMENTS.md](WALLET_PAYMENTS.md). Chưa có merchant thì hai lựa chọn ví bị vô hiệu hóa; không xem đó là đã tích hợp giao dịch sandbox thật.

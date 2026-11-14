@@ -52,7 +52,7 @@ test('editor can upload; customer, disabled admin and revoked session cannot', a
   await fixture.db.query("UPDATE admin_users SET role='editor' WHERE email='media@example.test'");
   assert.equal((await upload(png)).status, 201);
   const auth = createAuthService(fixture.db);
-  await auth.register({ fullName: 'Customer', email: 'customer@example.test', phone: '0901234567', password: 'Test-customer-password-123' });
+  await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, fullName: 'Customer', email: 'customer@example.test', phone: '0901234567', password: 'Test-customer-password-123' });
   const customer = await auth.login('customer', 'customer@example.test', 'Test-customer-password-123');
   assert.equal((await upload(png, 'image/png', `aura_customer=${customer.token}`)).status, 401);
   await fixture.db.query('UPDATE admin_users SET active=0');

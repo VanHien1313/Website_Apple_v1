@@ -4,6 +4,10 @@ import { Layout } from '../components/layout/Layout';
 import { AsyncState } from '../components/common/AsyncState';
 
 const Account = lazy(() => import('../pages/ApiAccountPage'));
+const AdminHome = lazy(() => import('../pages/ApiAdminHome'));
+const CustomerLayout = lazy(() => import('../pages/ApiCustomerLayout'));
+const CustomerProfile = lazy(() => import('../pages/ApiCustomerProfile'));
+const CustomerSecurity = lazy(() => import('../pages/ApiCustomerSecurity'));
 const Home = lazy(() => import('../pages/ApiHomePage'));
 const Cart = lazy(() => import('../pages/ApiCartPage'));
 const Checkout = lazy(() => import('../pages/ApiCheckoutPage'));
@@ -30,7 +34,9 @@ export function AppRoutes() {
   return <Routes>
     <Route path="/admin/login" element={<Suspense fallback={<AsyncState />}><Account /></Suspense>} />
     <Route element={<Suspense fallback={<AsyncState />}><AdminLayout /></Suspense>}>
-    <Route path="/admin" element={<Account />} />
+    <Route path="/admin" element={<AdminHome />} />
+    <Route path="/admin/media" element={<AdminHome />} />
+    <Route path="/admin/security" element={<CustomerSecurity admin />} />
     <Route path="/admin/customers" element={<Suspense fallback={<AsyncState />}><Customers /></Suspense>} />
     <Route path="/admin/customers/:id" element={<Suspense fallback={<AsyncState />}><Customers /></Suspense>} />
     <Route path="/admin/users" element={<Suspense fallback={<AsyncState />}><AdminUsers /></Suspense>} />
@@ -47,12 +53,15 @@ export function AppRoutes() {
     </Route>
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      {['login', 'register', 'account'].map((path) => <Route key={path} path={path} element={<Account />} />)}
-      <Route path="account/security" element={<Navigate to="/account#security" replace />} />
+      {['login', 'register'].map((path) => <Route key={path} path={path} element={<Account />} />)}
+      <Route path="account" element={<CustomerLayout />}>
+        <Route index element={<CustomerProfile />} />
+        <Route path="security" element={<CustomerSecurity />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="orders/:id" element={<Orders />} />
+      </Route>
       <Route path="about" element={<Information />} />
       <Route path="contact" element={<Information contact />} />
-      <Route path="account/orders" element={<Orders />} />
-      <Route path="account/orders/:id" element={<Orders />} />
       {categories.map(([id, name]) => <Route key={id} path={id} element={<Category category={id} title={name} description={`Khám phá ${name} theo cấu hình và ngân sách của bạn.`} />} />)}
       <Route path="search" element={<Category title="Kết quả tìm kiếm" description="Tìm sản phẩm trên toàn bộ danh mục Aura." />} />
       <Route path="product/:slug" element={<Product />} />

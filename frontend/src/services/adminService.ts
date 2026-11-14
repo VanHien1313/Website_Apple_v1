@@ -1,3 +1,4 @@
+import { PASSWORD_HINT, validNewPassword } from '../domain/password';
 import { catalogRepository, createCatalogSeed, type AdminUser, type CatalogDatabase, type Category } from './mock/catalogRepository';
 import type { Product } from '../types/product';
 import type { AdminService } from './contracts';
@@ -80,7 +81,7 @@ export function createAdminService(repository = catalogRepository, session = get
     async deleteUser(id: string) { const actor = authorize(true); if (actor.id === id) throw new Error('Không thể xóa tài khoản đang dùng.'); const db = repository.read(); db.users = db.users.filter((u) => u.id !== id); repository.write(db); },
     async simulatePasswordChange(id: string, password: string) {
       authorize(true); if (!repository.read().users.some((u) => u.id === id)) throw new Error('Tài khoản không tồn tại.');
-      if (password.length < 12) throw new Error('Mật khẩu mẫu cần ít nhất 12 ký tự.');
+      if (!validNewPassword(password)) throw new Error(PASSWORD_HINT);
       // UI rehearsal only. Never persist or log passwords in the browser demo.
     },
   };

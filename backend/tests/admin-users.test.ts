@@ -21,7 +21,7 @@ test('owner creates hashed admin; responses never contain credentials; duplicate
   assert.notEqual(stored.password_hash, password);
   await assert.rejects(create('first@example.test'), /đã được sử dụng/);
   await assert.rejects(create('bad-address'), /Email hợp lệ/);
-  await assert.rejects(service().create(token, { name: 'X', email: 'x@example.test', role: 'owner', active: true, password: 'short' }), /12–128/);
+  await assert.rejects(service().create(token, { name: 'X', email: 'x@example.test', role: 'owner', active: true, password: 'short' }), /8–128/);
 });
 test('editor, customer, anonymous and revoked callers cannot administer accounts', async () => {
   const auth = createAuthService(fixture.db);
@@ -30,7 +30,7 @@ test('editor, customer, anonymous and revoked callers cannot administer accounts
   await assert.rejects(service().create(editor.token, {}), /Chỉ chủ cửa hàng/);
   const self = (await service().list(token, {})).items.find((r) => r.email === 'first@example.test')!;
   await assert.rejects(service().update(editor.token, self.id, { ...self, role: 'owner' }), /Chỉ chủ cửa hàng/);
-  await auth.register({ email: 'customer@example.test', fullName: 'Khách', phone: '0901234567', password });
+  await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email: 'customer@example.test', fullName: 'Khách', phone: '0901234567', password });
   const customer = await auth.login('customer', 'customer@example.test', password);
   await assert.rejects(service().list(customer.token, {}), /Phiên quản trị/);
   await assert.rejects(service().list(undefined, {}), /đăng nhập/);

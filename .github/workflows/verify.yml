@@ -42,6 +42,7 @@ jobs:
           npm run test:boundary --prefix frontend
           npm run test:deployment
           npm run test:demo
+          npm run test:catalog
         env:
           TEST_STAGING_COMPOSE: 'true'
       - name: Build and start disposable Docker stack

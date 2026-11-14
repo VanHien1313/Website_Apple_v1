@@ -1,3 +1,4 @@
+import { PASSWORD_HINT, validNewPassword } from '../domain/password';
 import type { CustomerProfile, CustomerRegistration } from '../types/customer';
 import { createOrderRepository } from './mock/orderRepository';
 import { changeOrder, queryOrders, type OrderQuery } from '../domain/orders';
@@ -24,16 +25,17 @@ export function createCustomerService(persistent: () => StorageLike = () => loca
     catch { throw new Error('Phiên khách hàng không đọc được. Hãy đăng xuất rồi đăng nhập lại.'); }
   }
   function requireCustomer() { const profile = current(); if (!profile) throw new Error('Phiên đã hết hạn. Vui lòng đăng nhập lại.'); return profile; }
-  const passwordRule = (p: string) => { if (p.length < 12 || p.length > 128) throw new Error('Mật khẩu mẫu cần từ 12 đến 128 ký tự.'); };
+  const passwordRule = (p: string) => { if (!validNewPassword(p)) throw new Error(PASSWORD_HINT); };
   return {
     current,
     logout() { session().removeItem(CUSTOMER_SESSION_KEY); },
     async register(input: CustomerRegistration) {
       passwordRule(input.password); const email = input.email.trim().toLowerCase(); const fullName = input.fullName.trim(); const phone = input.phone.replace(/\s/g, '');
       if (!fullName || fullName.length > 120 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^(0|\+84)\d{9}$/.test(phone)) throw new Error('Họ tên, email hoặc số điện thoại chưa hợp lệ.');
+      if (!input.shippingAddress || Object.entries({address:300,province:100,ward:100}).some(([key,max]) => { const value=input.shippingAddress[key as keyof typeof input.shippingAddress]; return typeof value !== 'string' || !value.trim() || value.trim().length>max; })) throw new Error('Địa chỉ chưa hợp lệ.');
       const salt = toHex(crypto.getRandomValues(new Uint8Array(16))); const hash = await verifier(input.password, salt);
       const entries = read(); if (entries.some((e) => e.profile.email === email)) throw new Error('Email đã được đăng ký trong demo.');
-      const profile = { id: crypto.randomUUID(), fullName, email, phone, createdAt: new Date().toISOString(), credentialVersion: 1 };
+      const profile = { id: crypto.randomUUID(), fullName, email, phone, shippingAddress: input.shippingAddress, createdAt: new Date().toISOString(), credentialVersion: 1 };
       write([...entries, { profile, salt, verifier: hash }]); return profile;
     },
     async login(email: string, password: string) {

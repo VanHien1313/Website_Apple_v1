@@ -1,3 +1,7 @@
+> Cập nhật 12/11/2026: mật khẩu mới dài 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt; dấu cách không tính là ký tự đặc biệt. Áp dụng đăng ký, đổi/đặt lại mật khẩu và tạo quản trị. Đăng nhập vẫn chấp nhận mật khẩu cũ hợp lệ đã lưu.
+
+> Cập nhật 11/11/2026: **đặt hàng bắt buộc đăng nhập khách hàng**; đăng ký cần họ tên, SĐT, email và địa chỉ. Email đơn lấy từ tài khoản. Các mục đặt hàng vãng lai/email tùy chọn bên dưới chỉ còn là lịch sử, không dùng để nghiệm thu mới. Xem [quy trình và kiểm thử hiện hành](MEMBER_CHECKOUT.md).
+
 > Cập nhật 10/11/2026: đã bổ sung POST /api/v1/admin/users/:id/password cho owner đặt lại mật khẩu tài khoản khác; [nghiệp vụ và kiểm thử](ADMIN_PASSWORD_RESET.md). Người dùng chọn tiếp tục chạy local, chưa có VPS/tên miền.
 
 > Cập nhật 02/11/2026: query sort/filter cho danh sách products/categories/customers/users/orders tại [B5.2](BACKEND_B5_LISTS.md). API owner-only GET/POST/PUT /admin/users tại [B4.4.1](BACKEND_B4_ADMIN_USERS.md); GET /admin/customers và /admin/customers/:id dành cho owner/editor tại [B4.4.2](BACKEND_B4_CUSTOMERS.md).
@@ -108,3 +112,15 @@ GET `/admin/reports/revenue?from=YYYY-MM-DD&to=YYYY-MM-DD&period=day|week|month`
 CustomerProfile hiện `{id,fullName,email,phone,createdAt,credentialVersion}`. credentialVersion nội bộ có thể bỏ khỏi DTO public khi có server. Không gửi hash/verifier/salt hoặc token trong dữ liệu danh sách. Mật khẩu demo khách 12–128 ký tự, email chuẩn hóa, SĐT dạng 0/+84 +9 số; backend cần validation độc lập. Các quy tắc demo không thay thế chính sách auth production.
 
 Owner quản lý admin; owner/editor quản lý catalog, đơn, báo cáo và xem khách. Không tự xóa/khóa/hạ quyền hồ sơ đang dùng. Kiểm tra quyền mọi request, không dựa route guard. Reset catalog là tiện ích demo, không tạo endpoint reset production.
+
+## Wallet sandbox additions (2026-11-13)
+
+- GET /payments/methods: enabled methods and mode, no secrets.
+- GET /orders/:id/payment: authenticated owner only; payment state, native gateway QR as PNG data URL, safe gateway link and expiry.
+- POST /orders/:id/payment/start: same-origin authenticated owner; creates at most one gateway session per order.
+- POST /orders/:id/payment/refresh: same-origin authenticated owner; signed gateway query, throttled per order.
+- POST /payments/momo/callback and /payments/zalopay/callback: gateway-authenticated HMAC callbacks, no browser CSRF header required; merchant, identifiers, amount checked before atomic settlement.
+- orders.payment_method accepts cod/momo/zalopay. Disabled wallets fail before order insertion. No return URL/query parameter is trusted as payment evidence.
+- Sandbox transactions are excluded from real revenue aggregation. Late paid cancelled orders remain cancelled and show REVIEW. Refund integration is not implemented.
+
+Setup and verification limits: [WALLET_PAYMENTS.md](WALLET_PAYMENTS.md).

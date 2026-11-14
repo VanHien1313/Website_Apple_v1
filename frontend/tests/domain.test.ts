@@ -4,13 +4,21 @@ import { MOCK_PRODUCTS } from '../src/data/mockProducts';
 import { filterProducts, queryCatalog, parseCatalogParams } from '../src/domain/catalog';
 import { calculateTotals, createCartItem, cartReducer, MAX_QUANTITY } from '../src/domain/cart';
 import { decodeCart, loadCart, saveCart, CART_STORAGE_KEY } from '../src/store/cartStorage';
-import { mockOrderService } from '../src/services/mock/orderService';
+import { createMockOrderService } from '../src/services/mock/orderService';
 import { mockProductService } from '../src/services/mock/productService';
 import type { CreateOrderInput } from '../src/types/order';
 
+const buyer = { id: 'buyer', fullName: 'Test', email: 'test@example.com', phone: '0988776655', createdAt: new Date().toISOString(), credentialVersion: 1 };
+const mockOrderService = createMockOrderService(undefined, undefined, () => buyer);
 const product = MOCK_PRODUCTS[0];
 const item = createCartItem(product, product.variants[0], product.colors[0]);
-const input: CreateOrderInput = {
+test('partial checkout removes only purchased SKUs and preserves additional quantities', () => {
+  const other = { ...item, id: 'other', variant: { ...item.variant, id: 'another-sku' }, quantity: 2 };
+  assert.deepEqual(cartReducer([item, other], { type: 'PURCHASED_ITEMS', payload: [{ skuId: item.variant.id, quantity: 1 }] }), [other]);
+  assert.deepEqual(cartReducer([{ ...item, quantity: 3 }, other], { type: 'PURCHASED_ITEMS', payload: [{ skuId: item.variant.id, quantity: 1 }] }), [{ ...item, quantity: 2 }, other]);
+  assert.deepEqual(cartReducer([other], { type: 'PURCHASED_ITEMS', payload: [{ skuId: item.variant.id, quantity: 1 }] }), [other]);
+});
+const input: CreateOrderInput = { customerId: buyer.id,
   customer: { fullName: 'Test User', email: 'test@example.com', phone: '0988776655' },
   shippingAddress: { address: '123 Test', province: 'Hà Nội', district: 'Cầu Giấy', ward: 'Test' },
   shippingMethod: 'express', paymentMethod: 'cod',
@@ -41,7 +49,7 @@ test('pagination clamps invalid pages and returns category facets independently 
   assert.ok(result.categoryTotal >= result.total);
   assert.ok(result.subCategories.length > 1);
   assert.equal(queryCatalog([], { page: -1, pageSize: 0 }).page, 1);
-  assert.deepEqual(parseCatalogParams(new URLSearchParams('page=NaN&sort=bad&priceRange=bad')).sort, 'featured');
+  assert.deepEqual(parseCatalogParams(new URLSearchParams('page=NaN&sort=bad&priceRange=bad')).sort, 'price_desc');
   assert.equal(parseCatalogParams(new URLSearchParams('category=mac&q=Mac')).category, 'mac');
   assert.equal(parseCatalogParams(new URLSearchParams('category=invalid!')).category, undefined);
   assert.equal(parseCatalogParams(new URLSearchParams('category=accessories')).category, 'accessories');

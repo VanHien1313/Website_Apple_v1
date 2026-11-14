@@ -34,7 +34,7 @@ export function catalogRouter(db: Database) {
     try {
       page=integer('page',1,1000000);pageSize=integer('pageSize',12,100);
       for(const key of ['q','category','subCategory','storage','sort']) if(req.query[key]!==undefined&&(typeof req.query[key]!=='string'||(req.query[key] as string).length>200))throw Error('query');
-      const key=String(req.query.sort??'featured');if(!Object.hasOwn(sorts,key))throw Error('query');sort=sorts[key]!;
+      const key=String(req.query.sort??'price_desc');if(!Object.hasOwn(sorts,key))throw Error('query');sort=sorts[key]!;
       if(req.query.q)where.push(`CHARINDEX(LOWER(${bind(String(req.query.q).trim())}),LOWER(p.name+' '+p.tagline))>0`);
       if(req.query.category)where.push(`p.category_id=${bind(req.query.category)}`);
       if(req.query.subCategory)where.push(`p.sub_category=${bind(req.query.subCategory)}`);

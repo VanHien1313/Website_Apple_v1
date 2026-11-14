@@ -1,4 +1,7 @@
+import {walletRouter,walletCallbackRouter} from './payments/service.ts';
+import {disabledPayments,type PaymentConfig} from './payments/config.ts';
 import express from 'express';
+import { avatarRouter } from './auth/avatar.ts';
 import { randomUUID } from 'node:crypto';
 import type { Database } from './db/database.ts';
 import { assertSchemaReady } from './db/migrate.ts';
@@ -16,7 +19,7 @@ import { adminUsersRouter } from './admin-users.ts';
 import { customersAdminRouter } from './customers-admin.ts';
 import { frontendRouter } from './frontend.ts';
 
-export function createApp(db: Database, log: (entry: Record<string, unknown>) => void = (entry) => console.log(JSON.stringify(entry)), auth: AuthOptions = { origin: 'http://127.0.0.1:3000', secure: false }, frontendDirectory?: string, trustedProxyIps: string[] = []) {
+export function createApp(db: Database, log: (entry: Record<string, unknown>) => void = (entry) => console.log(JSON.stringify(entry)), auth: AuthOptions = { origin: 'http://127.0.0.1:3000', secure: false }, frontendDirectory?: string, trustedProxyIps: string[] = [], payments:PaymentConfig=disabledPayments) {
   const app = express();
   app.disable('x-powered-by');
   app.set('trust proxy', trustedProxyIps.length ? trustedProxyIps : false);
@@ -34,10 +37,13 @@ export function createApp(db: Database, log: (entry: Record<string, unknown>) =>
   });
   app.use('/api/v1', catalogRouter(db));
   app.use('/api/v1', mediaRouter(db, auth));
+  app.use('/api/v1', avatarRouter(db, auth));
   app.use('/api/v1', productsAdminRouter(db, auth));
+  app.use('/api/v1',walletCallbackRouter(db,payments));
   app.use(express.json({ limit: '16kb' }));
   app.use('/api/v1', quoteRouter(db, auth));
-  app.use('/api/v1', ordersRouter(db, auth));
+  app.use('/api/v1', ordersRouter(db, auth,payments));
+  app.use('/api/v1',walletRouter(db,payments,auth));
   app.use('/api/v1', orderManagementRouter(db, auth));
   app.use('/api/v1', reportsRouter(db, auth));
   app.use('/api/v1', categoriesAdminRouter(db, auth));

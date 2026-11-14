@@ -41,7 +41,7 @@ try {
     await bootstrapOwner(db,'owner@aura.example.test','Chủ cửa hàng Demo',secret.ownerPassword);
     const auth=createAuthService(db), owner=await auth.login('admin','owner@aura.example.test',secret.ownerPassword);
     await adminManagement(db).create(owner.token,{email:'editor@aura.example.test',name:'Biên tập viên Demo',password:secret.editorPassword,role:'editor',active:true});
-    await auth.register({email:'customer@aura.example.test',fullName:'Khách hàng Demo',phone:'0900000001',password:secret.customerPassword});
+    await auth.register({shippingAddress:{address:'Địa chỉ minh họa đồ án',province:'Thành phố Hồ Chí Minh',ward:'Phường minh họa'},email:'customer@aura.example.test',fullName:'Khách hàng Demo',phone:'0900000001',password:secret.customerPassword});
     const customer=await auth.login('customer','customer@aura.example.test',secret.customerPassword);
     stage='catalog';
     for(const category of categories) await categoryManagement(db).write(owner.token,'create',category.id,category);

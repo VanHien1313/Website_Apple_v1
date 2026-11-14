@@ -20,7 +20,7 @@ before(async () => {
   const auth = createAuthService(fixture.db); owner = (await auth.login('admin', 'owner@example.test', password)).token;
   await adminManagement(fixture.db).create(owner, { email: 'editor@example.test', name: 'Editor', password, role: 'editor', active: true });
   editor = (await auth.login('admin', 'editor@example.test', password)).token;
-  for (const email of ['one@example.test', 'two@example.test']) await auth.register({ email, fullName: 'Khách hàng', phone: '0901234567', password });
+  for (const email of ['one@example.test', 'two@example.test']) await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email, fullName: 'Khách hàng', phone: '0901234567', password });
   const login = await auth.login('customer', 'one@example.test', password); customer = login.token; customerId = String(login.profile.id);
   other = (await auth.login('customer', 'two@example.test', password)).token;
 });
@@ -39,7 +39,7 @@ test('customer detail includes only account-owned orders, excludes guest with sa
   const sku = '00000000-0000-4000-8000-000000000004';
   const input = () => ({ requestId: randomUUID(), receiptToken: randomBytes(32).toString('hex'), items: [{ skuId: sku, quantity: 1 }], expectedPrices: [{ skuId: sku, price: 10000000 }], expectedTotal: 10050000, shippingMethod: 'standard', paymentMethod: 'cod', customer: { fullName: 'Người nhận khác', phone: '0901234567', email: 'one@example.test' }, shippingAddress: { address: '123 Đường mẫu', province: 'TP HCM', ward: 'Phường mẫu' } });
   const orders = createOrderService(fixture.db);
-  const own = await orders.create(input(), customer); await orders.create(input()); await orders.create(input(), other);
+  const own = await orders.create(input(), customer); const legacy = await orders.create(input(), customer); await fixture.db.query('UPDATE orders SET customer_id=NULL WHERE id=@arg1',[legacy.order.id]); await orders.create(input(), other);
   const detail = await service().get(editor, customerId, { page: 999 });
   assert.equal(detail.orders.total, 1); assert.equal(detail.orders.page, 1); assert.equal(detail.orders.items[0]!.id, own.order.id);
   assert.equal(detail.orders.items[0]!.total, 10050000); assert.equal(detail.customer.fullName, 'Khách hàng');

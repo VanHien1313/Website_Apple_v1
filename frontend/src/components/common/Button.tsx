@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
   }[size];
 
   const variantClasses = {
-    primary: 'bg-accent text-on-accent hover:bg-accent-hover shadow-sm',
+    primary: 'bg-accent text-on-accent hover:bg-accent-hover shadow-[0_5px_14px_-5px_rgba(40,84,217,0.35)]',
     secondary: 'bg-surface-subtle text-primary hover:bg-accent-light',
     outline: 'bg-transparent text-primary border border-border-hover hover:bg-surface-subtle',
     ghost: 'bg-transparent text-accent hover:text-accent-hover hover:bg-accent-light',

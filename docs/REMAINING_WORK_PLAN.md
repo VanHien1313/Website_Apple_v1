@@ -1,3 +1,7 @@
+> Cập nhật 11/11/2026: **đặt hàng bắt buộc đăng nhập khách hàng**; đăng ký cần họ tên, SĐT, email và địa chỉ. Email đơn lấy từ tài khoản. Các mục đặt hàng vãng lai/email tùy chọn bên dưới chỉ còn là lịch sử, không dùng để nghiệm thu mới. Xem [quy trình và kiểm thử hiện hành](MEMBER_CHECKOUT.md).
+
+> R3 cập nhật 11/11: catalog main có 36 sản phẩm/104 SKU, thông số chi tiết và nguồn cho 12 mẫu mới. Còn rà chính xác ảnh/màu/thông số của catalog cũ và cập nhật hồ sơ trước nộp. [Chi tiết](CATALOG_EXPANSION.md).
+
 > R3 cập nhật: đã đưa catalog frontend cũ vào main (24 sản phẩm/92 SKU) và thay ảnh demo, không đổi đơn/tài khoản. [Kiểm chứng và giới hạn dữ liệu](CATALOG_IMPORT.md). Báo cáo/slide trước đó là snapshot cũ, cần cập nhật trước nộp.
 
 # Kế hoạch phần còn lại của Aura theo đề tài và lưu ý giảng viên

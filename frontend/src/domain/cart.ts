@@ -26,12 +26,18 @@ export type CartAction =
   | { type: 'ADD_ITEM'; payload: CartItem }
   | { type: 'REMOVE_ITEM'; payload: { itemId: string } }
   | { type: 'UPDATE_QUANTITY'; payload: { itemId: string; quantity: number } }
+  | { type: 'PURCHASED_ITEMS'; payload: { skuId: string; quantity: number }[] }
   | { type: 'CLEAR_CART' };
 
 export function cartReducer(items: CartItem[], action: CartAction): CartItem[] {
   switch (action.type) {
     case 'REFRESH_ITEMS': return action.payload.filter((item) => validQuantity(item.quantity));
     case 'CLEAR_CART': return [];
+    case 'PURCHASED_ITEMS': return items.flatMap(item => {
+      const purchased = action.payload.find(line => line.skuId.toLowerCase() === item.variant.id.toLowerCase());
+      if (!purchased || !validQuantity(purchased.quantity)) return [item];
+      return item.quantity > purchased.quantity ? [{ ...item, quantity: item.quantity - purchased.quantity }] : [];
+    });
     case 'REMOVE_ITEM': return items.filter((item) => item.id !== action.payload.itemId);
     case 'UPDATE_QUANTITY': {
       const { itemId, quantity } = action.payload;

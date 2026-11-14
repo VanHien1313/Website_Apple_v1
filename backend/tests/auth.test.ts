@@ -7,11 +7,12 @@ import { migrate } from '../src/db/migrate.ts';
 import { createApp } from '../src/app.ts';
 import { bootstrapOwner } from '../src/auth/bootstrap.ts';
 import { createAuthService } from '../src/auth/service.ts';
+import { hashPassword } from '../src/auth/password.ts';
 
 let db: Database;
 let cleanup: () => Promise<void>;
 const password = 'Sample-password-only-123';
-const input = { email: 'sample-auth@example.test', fullName: 'Sample customer', phone: '0901234567', password };
+const input = { shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email: 'sample-auth@example.test', fullName: 'Sample customer', phone: '0901234567', password };
 const origin = 'http://127.0.0.1:3000';
 before(async () => { const isolated = await isolatedDatabase(); db = isolated.db; cleanup = isolated.cleanup; await migrate(db); });
 after(async () => { await cleanup?.(); });
@@ -24,10 +25,31 @@ async function http(work: (base: string) => Promise<void>, secure = false) {
 const send = (base: string, path: string, body: unknown, cookie = '', method = 'POST') => fetch(base + path, { method, headers: { origin, 'x-aura-request': '1', 'content-type': 'application/json', cookie }, body: JSON.stringify(body) });
 const cookieOf = (response: Response) => response.headers.get('set-cookie')!.split(';')[0]!;
 
+test('eight-character passwords register and change; legacy credentials can still log in and rotate', async () => {
+  const service = createAuthService(db), email = 'password-policy@example.test';
+  for (const password of ['Aura!12', 'aura!123', 'Aura1234']) await assert.rejects(service.register({ ...input, email, password }));
+  const profile = await service.register({ ...input, email, password: 'Aura!123' });
+  const session = await service.login('customer', email, 'Aura!123');
+  await service.changePassword('customer', session.token, 'Aura!123', 'Next!123');
+  await assert.rejects(service.me('customer', session.token));
+  await service.login('customer', email, 'Next!123');
+  await db.query('UPDATE customers SET password_hash=@arg1 WHERE id=@arg2', [await hashPassword('legacy-password'), profile.id]);
+  const legacy = await service.login('customer', email, 'legacy-password');
+  await service.changePassword('customer', legacy.token, 'legacy-password', 'Fresh!12');
+  await service.login('customer', email, 'Fresh!12');
+});
+
 test('customer registration, duplicate email, cookie login and logout use database sessions', async () => {
   await http(async (base) => {
+    for (const missing of ['fullName', 'email', 'phone', 'shippingAddress']) {
+      assert.equal((await send(base, '/auth/register', { ...input, [missing]: undefined })).status, 422);
+    }
+    for (const field of ['address', 'province', 'ward']) {
+      assert.equal((await send(base, '/auth/register', { ...input, shippingAddress: { ...input.shippingAddress, [field]: '' } })).status, 422);
+    }
     const registered = await send(base,'/auth/register',input); assert.equal(registered.status,201);
     const publicProfile = await registered.json(); assert.equal(publicProfile.fullName,input.fullName); assert.ok(!('password_hash' in publicProfile));
+    assert.deepEqual(publicProfile.shippingAddress, input.shippingAddress);
     const stored = (await db.query('SELECT password_hash FROM customers WHERE email=@arg1',[input.email])).rows[0]!;
     assert.ok(String(stored.password_hash).startsWith('scrypt-v1$')); assert.ok(!String(stored.password_hash).includes(password));
     assert.equal((await send(base,'/auth/register',{ ...input, email: input.email.toUpperCase() })).status,409);

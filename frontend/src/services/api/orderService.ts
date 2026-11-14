@@ -3,13 +3,13 @@ import { request } from './http';
 export interface OrderRequest {
   requestId: string; receiptToken: string;
   items: { skuId: string; quantity: number }[];
-  shippingMethod: 'standard' | 'express'; paymentMethod: 'cod';
+  shippingMethod: 'standard' | 'express'; paymentMethod: 'cod'|'momo'|'zalopay';
   expectedTotal: number; expectedPrices: { skuId: string; price: number }[];
   customer: { fullName: string; phone: string; email: string };
   shippingAddress: { address: string; province: string; ward: string; notes: string };
 }
 export interface ApiOrder {
-  id: string; orderCode: string; status: string; paymentStatus: string; createdAt: string;
+  id: string; paymentMethod:'cod'|'momo'|'zalopay'; orderCode: string; status: string; paymentStatus: string; createdAt: string;
   customer: OrderRequest['customer']; shippingAddress: OrderRequest['shippingAddress'];
   shippingMethod: string; subtotal: number; shippingFee: number; total: number;
   items: { skuId: string; productName: string; colorName: string; storage: string | null; quantity: number; unitPrice: number; totalPrice: number }[];

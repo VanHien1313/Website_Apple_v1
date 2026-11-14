@@ -28,7 +28,7 @@ export function adminManagement(db: Database) {
       await db.transaction((tx) => owner(tx, token));
       guid(id);
       const value = raw as Record<string, unknown> | null;
-      if (!value || Array.isArray(value) || value.confirmed !== true || !validPassword(value.password)) throw new ApiError(422, 'INVALID_PASSWORD', 'Xác nhận đặt lại mật khẩu và nhập mật khẩu mới dài 12–128 ký tự.');
+      if (!value || Array.isArray(value) || value.confirmed !== true || !validPassword(value.password)) throw new ApiError(422, 'INVALID_PASSWORD', 'Xác nhận đặt lại mật khẩu và nhập mật khẩu mới dài 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt.');
       if (typeof value.revision !== 'string' || !/^[a-f0-9]{16}$/i.test(value.revision)) throw new ApiError(422, 'INVALID_REVISION', 'Thiếu phiên bản tài khoản.');
       const hash = await hashPassword(value.password);
       return db.transaction(async (tx) => {
@@ -62,7 +62,7 @@ export function adminManagement(db: Database) {
       // Reject unauthorized callers before the intentionally expensive password hash.
       await db.transaction((tx) => owner(tx, token));
       const value = input(raw), email = typeof value.email === 'string' ? value.email.trim().toLowerCase() : '';
-      if (!validPassword(value.password) || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new ApiError(422, 'INVALID_ACCOUNT', 'Email hợp lệ và mật khẩu 12–128 ký tự là bắt buộc.');
+      if (!validPassword(value.password) || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new ApiError(422, 'INVALID_ACCOUNT', 'Email hợp lệ và mật khẩu 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt là bắt buộc.');
       const hash = await hashPassword(value.password), id = randomUUID();
       return db.transaction(async (tx) => {
         await lockTransaction(tx, 'admin:accounts'); await owner(tx, token);

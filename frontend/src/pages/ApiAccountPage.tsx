@@ -1,3 +1,4 @@
+import { PASSWORD_HINT, PASSWORD_PATTERN } from '../domain/password';
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { request, HttpError } from '../services/api/http';
@@ -7,7 +8,7 @@ import { Input } from '../components/common/FormControls';
 import { Button } from '../components/common/Button';
 import { ApiImageUpload } from '../components/admin/ApiImageUpload';
 
-interface Profile { id: string; email: string; fullName?: string; name?: string; role?: string; phone?: string; createdAt?: string }
+interface Profile { id: string; email: string; fullName?: string; name?: string; role?: string; phone?: string; createdAt?: string; shippingAddress?: { address: string; province: string; ward: string } }
 
 /** Every protected entry checks the server session. Browser demo identities are never consulted. */
 export default function ApiAccountPage() {
@@ -17,6 +18,9 @@ export default function ApiAccountPage() {
   const signingIn = registering || location.pathname.endsWith('/login');
   const loginPath = admin ? '/admin/login' : '/login';
   const accountPath = admin ? '/admin' : '/account';
+  const requestedNext = new URLSearchParams(location.search).get('next') ?? '';
+  const next = /^\/checkout(?:\?|$)/.test(requestedNext) ? requestedNext : '';
+  const nextQuery = next ? `?next=${encodeURIComponent(next)}` : '';
   const base = admin ? '/admin/auth' : '/auth';
   const [busy, setBusy] = useState(false), [error, setError] = useState('');
   const [notice, setNotice] = useState('');
@@ -47,11 +51,11 @@ export default function ApiAccountPage() {
     try {
       if (registering) {
         if (value('password') !== value('confirm')) throw new Error('Mật khẩu xác nhận chưa khớp.');
-        await request('/auth/register', { method: 'POST', body: { fullName: value('fullName'), phone: value('phone'), email: value('email'), password: value('password') } });
-        form.reset(); setNotice('Đã tạo tài khoản. Bạn có thể đăng nhập.'); navigate('/login', { replace: true });
+        await request('/auth/register', { method: 'POST', body: { fullName: value('fullName'), phone: value('phone'), email: value('email'), password: value('password'), shippingAddress: { address: value('address'), province: value('province'), ward: value('ward') } } });
+        form.reset(); setNotice('Đã tạo tài khoản. Bạn có thể đăng nhập.'); navigate(`/login${nextQuery}`, { replace: true });
       } else if (signingIn) {
         await request(`${base}/login`, { method: 'POST', body: { email: value('email'), password: value('password') } });
-        form.reset(); navigate(accountPath, { replace: true });
+        form.reset(); navigate(!admin && next ? next : accountPath, { replace: true });
       } else {
         if (value('newPassword') !== value('confirm')) throw new Error('Mật khẩu xác nhận chưa khớp.');
         await request(`${base}/password`, { method: 'PUT', body: { oldPassword: value('oldPassword'), newPassword: value('newPassword') } });
@@ -74,6 +78,7 @@ export default function ApiAccountPage() {
   return <section className="ui-container py-12"><div className="mx-auto max-w-lg space-y-6">
     <Link to="/" className="text-sm font-semibold text-accent">← Về cửa hàng</Link>
     <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
+    {signingIn && new URLSearchParams(location.search).get('passwordChanged') === '1' && <p role="status" className="text-sm text-success">Đã đổi mật khẩu. Vui lòng đăng nhập lại bằng mật khẩu mới.</p>}
     {signingIn && <div className="space-y-4">
       <div role="group" aria-label="Chọn loại tài khoản" className="grid grid-cols-2 gap-1 rounded-2xl border border-border-subtle bg-surface-subtle p-1">
         {[{ isAdmin: false, label: 'Khách hàng', to: '/login' }, { isAdmin: true, label: 'Quản trị viên', to: '/admin/login' }].map((choice) => <button
@@ -82,12 +87,13 @@ export default function ApiAccountPage() {
           className={`min-h-12 rounded-xl px-3 py-3 text-sm font-semibold transition-colors disabled:opacity-60 ${admin === choice.isAdmin ? 'bg-background text-accent shadow-sm' : 'text-secondary hover:text-primary'}`}
         >{choice.label}</button>)}
       </div>
-      <p className="text-sm leading-6 text-secondary">{admin ? 'Dành cho đội ngũ vận hành Aura. Sử dụng tài khoản quản trị được cấp để tiếp tục.' : 'Đăng nhập hoặc tạo tài khoản để theo dõi đơn hàng và quản lý thông tin của bạn.'}</p>
+      <p className="text-sm leading-6 text-secondary">{admin ? 'Dành cho đội ngũ vận hành Aura. Sử dụng tài khoản quản trị được cấp để tiếp tục.' : 'Bạn cần đăng nhập hoặc tạo tài khoản trước khi đặt hàng. Giỏ hàng được giữ lại khi đăng nhập.'}</p>
     </div>}
     {notice && <p role="status" className="text-sm text-success">{notice}</p>}
     {error && <p role="alert" className="text-sm text-danger">{error}</p>}
     {!signingIn && <div className="ui-panel space-y-3 p-6"><p className="font-semibold">{session.data?.fullName ?? session.data?.name}</p><p className="text-sm text-secondary">{session.data?.email}</p>{session.data?.role && <p className="text-sm">Vai trò: {session.data.role}</p>}<Button variant="outline" disabled={busy} onClick={logout}>Đăng xuất</Button></div>}
     {!signingIn && !admin && <dl className="ui-panel grid gap-5 p-6 sm:grid-cols-2"><div><dt className="text-sm text-secondary">Số điện thoại</dt><dd className="mt-2 font-semibold">{session.data?.phone || 'Chưa có thông tin'}</dd></div><div><dt className="text-sm text-secondary">Ngày tham gia</dt><dd className="mt-2 font-semibold">{session.data?.createdAt ? new Intl.DateTimeFormat('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date(session.data.createdAt)) : 'Chưa có thông tin'}</dd></div></dl>}
+    {!signingIn && !admin && <div className="ui-panel p-6"><h2 className="font-semibold">Địa chỉ mặc định</h2><p className="mt-2 text-sm text-secondary">{session.data?.shippingAddress ? [session.data.shippingAddress.address, session.data.shippingAddress.ward, session.data.shippingAddress.province].join(', ') : 'Chưa có địa chỉ. Vui lòng điền đầy đủ tại bước đặt hàng.'}</p></div>}
     {!signingIn && <Link to={admin ? '/admin/orders' : '/account/orders'} className="block rounded-xl border border-border p-5 font-semibold text-accent">{admin ? 'Quản lý đơn hàng →' : 'Đơn hàng của bạn →'}</Link>}
     {!signingIn && admin && <Link to="/admin/reports" className="block rounded-xl border border-border p-5 font-semibold text-accent">Báo cáo doanh thu →</Link>}
     {!signingIn && admin && <Link to="/admin/categories" className="block rounded-xl border border-border p-5 font-semibold text-accent">Quản lý danh mục →</Link>}
@@ -98,12 +104,12 @@ export default function ApiAccountPage() {
     <form id={!signingIn ? 'security' : undefined} key={location.pathname} onSubmit={submit} className="ui-panel scroll-mt-40 space-y-5 p-6 sm:p-8" aria-busy={busy}>
       {!signingIn && <h2 className="text-xl font-bold">Đổi mật khẩu</h2>}
       <fieldset disabled={busy} className="space-y-5">
-        {registering && <><Input label="Họ và tên" name="fullName" required maxLength={120} autoComplete="name" /><Input label="Số điện thoại" name="phone" type="tel" required autoComplete="tel" /></>}
-        {signingIn ? <><Input label="Email" name="email" type="email" autoComplete="username" required maxLength={254} /><Input label="Mật khẩu" name="password" type="password" required minLength={12} maxLength={128} autoComplete={registering ? 'new-password' : 'current-password'} hint="Từ 12 đến 128 ký tự." /></> : <><Input label="Mật khẩu hiện tại" name="oldPassword" type="password" required autoComplete="current-password" /><Input label="Mật khẩu mới" name="newPassword" type="password" required minLength={12} maxLength={128} autoComplete="new-password" /></>}
-        {(registering || !signingIn) && <Input label="Xác nhận mật khẩu" name="confirm" type="password" required minLength={12} maxLength={128} autoComplete="new-password" />}
+        {registering && <><Input label="Họ và tên" name="fullName" required maxLength={120} autoComplete="name" /><Input label="Số điện thoại" name="phone" type="tel" required autoComplete="tel" maxLength={24} /><Input label="Tỉnh / thành phố" name="province" required maxLength={100} autoComplete="address-level1" /><Input label="Phường / xã" name="ward" required maxLength={100} autoComplete="address-level2" /><Input label="Số nhà, đường và địa chỉ chi tiết" name="address" required maxLength={300} autoComplete="street-address" /></>}
+        {signingIn ? <><Input label="Email" name="email" type="email" autoComplete="username" required maxLength={254} /><Input label="Mật khẩu" name="password" type="password" required minLength={registering ? 8 : undefined} pattern={registering ? PASSWORD_PATTERN : undefined} title={registering ? PASSWORD_HINT : undefined} maxLength={128} autoComplete={registering ? 'new-password' : 'current-password'} hint={registering ? PASSWORD_HINT : undefined} /></> : <><Input label="Mật khẩu hiện tại" name="oldPassword" type="password" required autoComplete="current-password" /><Input label="Mật khẩu mới" name="newPassword" hint={PASSWORD_HINT} type="password" required minLength={8} pattern={PASSWORD_PATTERN} title={PASSWORD_HINT} maxLength={128} autoComplete="new-password" /></>}
+        {(registering || !signingIn) && <Input label="Xác nhận mật khẩu" name="confirm" type="password" required minLength={8} pattern={PASSWORD_PATTERN} title={PASSWORD_HINT} maxLength={128} autoComplete="new-password" />}
         <Button type="submit" disabled={busy} className="w-full">{busy ? 'Đang xử lý…' : registering ? 'Tạo tài khoản' : signingIn ? 'Đăng nhập' : 'Lưu mật khẩu mới'}</Button>
       </fieldset>
     </form>
-    {signingIn && !admin && <Link to={registering ? '/login' : '/register'} className="block text-center text-sm font-semibold text-accent">{registering ? 'Đã có tài khoản? Đăng nhập' : 'Chưa có tài khoản? Đăng ký'}</Link>}
+    {signingIn && !admin && <Link to={`${registering ? '/login' : '/register'}${nextQuery}`} className="block text-center text-sm font-semibold text-accent">{registering ? 'Đã có tài khoản? Đăng nhập' : 'Chưa có tài khoản? Đăng ký'}</Link>}
   </div></section>;
 }

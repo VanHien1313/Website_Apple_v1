@@ -4,7 +4,8 @@ import { randomBytes, scrypt, timingSafeEqual } from 'node:crypto';
 const derive = (password: string, salt: string): Promise<Buffer> => new Promise((resolve, reject) => {
   scrypt(password, salt, 64, { N: 32768, r: 8, p: 3, maxmem: 64 * 1024 * 1024 }, (error, key) => error ? reject(error) : resolve(key));
 });
-export const validPassword = (value: unknown): value is string => typeof value === 'string' && value.length >= 12 && value.length <= 128;
+export const validPasswordInput = (value: unknown): value is string => typeof value === 'string' && value.length > 0 && value.length <= 128;
+export const validPassword = (value: unknown): value is string => validPasswordInput(value) && value.length >= 8 && /\p{Lu}/u.test(value) && /[^\p{L}\p{N}\s]/u.test(value);
 export async function hashPassword(password: string) {
   const salt = randomBytes(16).toString('hex');
   return `scrypt-v1$${salt}$${(await derive(password, salt)).toString('hex')}`;

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "categories": [
     {
       "id": "iphone",
@@ -338,6 +338,102 @@
       "width": 650,
       "height": 650,
       "sha256": "ecc1ae92bfc98971c9f18231ee5daab9839bb48849b010557d3dd70b255763a3"
+    },
+    {
+      "id": "a915c2dd-c5dd-444d-aa01-47c059d0b878",
+      "source": "https://cdn.topzone.vn/Products/Images/42/342667/s16/iphone-17-xanh-la-thumb-650x650.png",
+      "file": "images/a915c2dd-c5dd-444d-aa01-47c059d0b878.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "04a487a2fc462304855b45f721fd59263223f3c4a9a4140d9c8417e611675924"
+    },
+    {
+      "id": "d3540a1f-00c8-4162-a572-28fb0053ccce",
+      "source": "https://cdn.topzone.vn/Products/Images/42/342676/s16/iphone-17-pro-cam-thumb-650x650.png",
+      "file": "images/d3540a1f-00c8-4162-a572-28fb0053ccce.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "d5b4064f784afeda6cbc4ad795e4a65664da14184c57a0ebee694466fe65eabb"
+    },
+    {
+      "id": "145846e0-da33-4967-a5a9-734c227e07bc",
+      "source": "https://cdn.topzone.vn/Products/Images/42/342679/s16/iphone-17-pro-max-cam-thumb-650x650.png",
+      "file": "images/145846e0-da33-4967-a5a9-734c227e07bc.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "53186fff8638ae7d3e74c8db4234ed7842abc091ba21d4de5652f0aa7405a16c"
+    },
+    {
+      "id": "7c123d71-32db-453d-ac2a-c4a63d7f4cd6",
+      "source": "https://cdn.topzone.vn/Products/Images/42/342670/s16/iphone-air-xanh-thumb_0-650x650.png",
+      "file": "images/7c123d71-32db-453d-ac2a-c4a63d7f4cd6.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "817ce755fefd5226279c62ca72734984acd5e81e3793a03fb6e6409953826b69"
+    },
+    {
+      "id": "09b01162-b052-4579-a801-3dce20327135",
+      "source": "https://cdn.topzone.vn/Products/Images/42/334864/s16/iphone-16e-white-thumbtz-650x650.png",
+      "file": "images/09b01162-b052-4579-a801-3dce20327135.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "8eb4308ce9a21c294669a232914736ec3883bd581354b629c001af3090d081ba"
+    },
+    {
+      "id": "3913d829-59b8-478a-a90c-c48061cd92ca",
+      "source": "https://cdn.topzone.vn/Products/Images/522/335308/s16/ipad-11-wifi-yellow-thumb-650x650.png",
+      "file": "images/3913d829-59b8-478a-a90c-c48061cd92ca.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "32a798b3e40d8dd1be84f2f33492f5e2b807a6905a57c864de01313a79046cb6"
+    },
+    {
+      "id": "c084c5b2-b176-4ec2-a887-b178033852be",
+      "source": "https://cdn.topzone.vn/Products/Images/522/335267/s16/ipad-air-m3-11-inch-wifi-starlight-thumb-650x650.png",
+      "file": "images/c084c5b2-b176-4ec2-a887-b178033852be.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "7796e4fee9ddb6d9565744df3953ac9872a0903772344f7b16fc21614bbb1c13"
+    },
+    {
+      "id": "a82f2f81-d39d-4bc1-a447-709b609a2f38",
+      "source": "https://cdn.topzone.vn/Products/Images/522/335276/s16/ipad-air-m3-13-inch-wifi-purple-thumb-650x650.png",
+      "file": "images/a82f2f81-d39d-4bc1-a447-709b609a2f38.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "330862528e680b75c1eebef9041e60adef3c9de159468be40876cda4f7418be9"
+    },
+    {
+      "id": "c159ed07-57f7-4062-a00d-5984661fb014",
+      "source": "https://cdn.topzone.vn/Products/Images/44/335362/s16/macbook-air-13-inch-m4-thumb-xanh-den-650x650.png",
+      "file": "images/c159ed07-57f7-4062-a00d-5984661fb014.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "6bc49b6a5b1072d3052380f8e857585347ccf446a4b30cf067616c9930409bfe"
+    },
+    {
+      "id": "27d394ca-3431-4786-a8b7-0bdd7fab4b62",
+      "source": "https://cdn.topzone.vn/Products/Images/44/335372/s16/macbook-air-15-inch-m4-thumb-xanh-da-troi-1-650x650.png",
+      "file": "images/27d394ca-3431-4786-a8b7-0bdd7fab4b62.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "21681c2ce0fb6c4ab3e6db2a77abdd30d79e217d30a39da17face42a8cb8044b"
+    },
+    {
+      "id": "e633a18a-6500-489a-a1a0-d47b3f1d71ff",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344750/s16/apple-watch-series-11-42mm-vien-nhom-day-the-thao-den-thumb-650x650.png",
+      "file": "images/e633a18a-6500-489a-a1a0-d47b3f1d71ff.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "087094e033fa3942e9abf61f3786bab7a65175291701212640719937e332eb52"
+    },
+    {
+      "id": "e3da9690-bcec-4abc-a849-e2a431791bab",
+      "source": "https://cdn.topzone.vn/Products/Images/7077/344767/s16/apple-watch-se-3-40mm-vien-nhom-day-the-thao-starlight-thumb-650x650.png",
+      "file": "images/e3da9690-bcec-4abc-a849-e2a431791bab.webp",
+      "width": 650,
+      "height": 650,
+      "sha256": "b6ceeb5b410f1f54907ab50ff764b148cea033b4bc654f10161edf9c48391745"
     }
   ],
   "products": [
@@ -394,7 +490,84 @@
           "value": "Khung Titan Cấp 5 • Kháng nước IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A18 Pro 6 nhân (3nm thế hệ 2)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.9\" Super Retina XDR OLED, 120Hz ProMotion"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 256GB / 512GB / 1TB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP & Phụ 48MP, 12MP (Tele 5x quang học)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth, quay 4K 120 fps"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 33 giờ • Sạc MagSafe 25W"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "Type-C chuẩn USB 3 (tốc độ đến 10Gb/s)"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung Titan Cấp 5 • Kháng nước IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB · A18 Pro"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB · A18 Pro"
+            },
+            {
+              "label": "Cấu hình 3",
+              "value": "1TB · A18 Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Titan Sa Mạc, Titan Tự Nhiên, Titan Trắng, Titan Đen"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -601,7 +774,84 @@
           "value": "Khung Titan Cấp 5 • IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A18 Pro 6 nhân (3nm thế hệ 2)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.3\" Super Retina XDR OLED, 120Hz ProMotion"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 128GB / 256GB / 512GB / 1TB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP & Phụ 48MP, 12MP (Tele 5x quang học)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth, Face ID"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 27 giờ • Sạc nhanh 50% trong 30 phút"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "Type-C chuẩn USB 3 (10Gb/s)"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung Titan Cấp 5 • IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A18 Pro"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · A18 Pro"
+            },
+            {
+              "label": "Cấu hình 3",
+              "value": "512GB · A18 Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Titan Sa Mạc, Titan Tự Nhiên, Titan Đen"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -775,7 +1025,80 @@
           "value": "Khung nhôm hàng không vũ trụ • IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A18 6 nhân"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.7\" Super Retina XDR OLED, 2000 nits"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 128GB / 256GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP Fusion & Phụ 12MP Ultra Wide"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 27 giờ • Sạc MagSafe 25W"
+            },
+            {
+              "label": "Tính năng mới",
+              "value": "Nút Điều khiển Camera & Nút Tác Vụ"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung nhôm hàng không vũ trụ • IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A18"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · A18"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xanh Lưu Ly, Xanh Mòng Két"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -894,7 +1217,80 @@
           "value": "Kính Ceramic Shield thế hệ mới • IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A18 6 nhân (Hỗ trợ Apple Intelligence)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.1\" Super Retina XDR OLED, 2000 nits"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 128GB / 256GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP Fusion & Phụ 12MP Ultra Wide"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 22 giờ • Sạc Type-C & MagSafe"
+            },
+            {
+              "label": "Tính năng mới",
+              "value": "Nút Camera Control & Action Button"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Kính Ceramic Shield thế hệ mới • IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A18"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · A18"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xanh Lưu Ly, Xanh Mòng Két, Hồng Phấn"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1038,7 +1434,80 @@
           "value": "Khung Titan Cấp 5 siêu bền • IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A17 Pro 6 nhân (3nm)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.7\" Super Retina XDR OLED, 120Hz ProMotion"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 256GB / 512GB / 1TB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP & Phụ 12MP, 12MP (Tele 5x tiềm vọng)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 29 giờ • Sạc Type-C chuẩn USB 3"
+            },
+            {
+              "label": "Tiện ích",
+              "value": "Action Button thay thế gạt rung • Face ID"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung Titan Cấp 5 siêu bền • IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB · A17 Pro"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB · A17 Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Titan Tự Nhiên, Titan Xanh, Titan Đen, Titan Trắng"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1206,7 +1675,80 @@
           "value": "Khung Titan Cấp 5 • IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A17 Pro 6 nhân (3nm)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.1\" Super Retina XDR OLED, 120Hz ProMotion"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB • 128GB / 256GB / 512GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP & Phụ 12MP, 12MP (Tele 3x)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 23 giờ • Sạc nhanh Type-C"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "187 gram siêu nhẹ"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung Titan Cấp 5 • IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A17 Pro"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · A17 Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Titan Tự Nhiên, Titan Xanh, Titan Đen, Titan Trắng"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1374,7 +1916,80 @@
           "value": "Chuẩn IP68 (chịu nước sâu 6m)"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A16 Bionic 6 nhân"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.1\" Super Retina XDR OLED, Dynamic Island"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "6 GB • 128GB / 256GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính 48MP & Phụ 12MP (Zoom 2x quang học)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 20 giờ • Cổng sạc Type-C"
+            },
+            {
+              "label": "Thiết kế",
+              "value": "Mặt lưng kính pha màu mờ sang trọng"
+            },
+            {
+              "label": "Kháng nước",
+              "value": "Chuẩn IP68 (chịu nước sâu 6m)"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A16 Bionic"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · A16 Bionic"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Hồng Phấn, Xanh Lam, Đen, Xanh Lá"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1539,7 +2154,76 @@
           "value": "Kính Ceramic Shield • Chuẩn IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A15 Bionic (5 nhân GPU đồ họa)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.1\" Super Retina XDR OLED sắc nét"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "6 GB • 128GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Kép 12MP • Chế độ Action Mode chống rung"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth tự động lấy nét"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 20 giờ • Sạc MagSafe"
+            },
+            {
+              "label": "An toàn",
+              "value": "Phát hiện va chạm xe Crash Detection"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Kính Ceramic Shield • Chuẩn IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A15 Bionic"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Ánh Sao"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1618,7 +2302,76 @@
           "value": "Khung nhôm cao cấp • Kháng nước IP68"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A15 Bionic 6 nhân mạnh mẽ"
+            },
+            {
+              "label": "Màn hình",
+              "value": "6.1\" Super Retina XDR OLED rực rỡ"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "4 GB • 128GB"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Kép 12MP đặt chéo • Chế độ Điện ảnh (Cinematic)"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12 MP TrueDepth"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Xem video đến 19 giờ • Sạc nhanh 20W"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Nhận diện khuôn mặt Face ID"
+            },
+            {
+              "label": "Chất liệu & Kháng nước",
+              "value": "Khung nhôm cao cấp • Kháng nước IP68"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · A15 Bionic"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đen Midnight"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1699,7 +2452,84 @@
           "value": "Hệ thống 4 loa studio • 4 micro phòng thu"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4 (Lên đến 10 nhân CPU, 10 nhân GPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "Ultra Retina XDR Tandem OLED, 120Hz ProMotion"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8GB / 16GB RAM • 256GB / 512GB / 1TB / 2TB"
+            },
+            {
+              "label": "Độ mỏng & Trọng lượng",
+              "value": "5.1 mm (Mỏng nhất lịch sử Apple) • 444 g"
+            },
+            {
+              "label": "Camera & LiDAR",
+              "value": "12MP Sau • Máy quét LiDAR • 12MP Trước ngang"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "Thunderbolt / USB 4 (Băng thông đến 40Gb/s)"
+            },
+            {
+              "label": "Phụ kiện tương thích",
+              "value": "Apple Pencil Pro • Magic Keyboard M4"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Hệ thống 4 loa studio • 4 micro phòng thu"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB · 11 inch · Wi-Fi · M4"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB · 11 inch · Wi-Fi · M4"
+            },
+            {
+              "label": "Cấu hình 3",
+              "value": "256GB · 13 inch · Wi-Fi · M4"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đen Không Gian, Bạc"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1845,7 +2675,80 @@
           "value": "Cảm biến vân tay Touch ID tích hợp nút nguồn"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M2 (8 nhân CPU, 9 nhân GPU, Neural Engine 16 lõi)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "11\" / 13\" Liquid Retina, dải màu P3, True Tone"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB RAM • 128GB / 256GB / 512GB"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP Wide • Trước 12MP Ultra Wide đặt ở cạnh ngang"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C tốc độ cao (10Gb/s)"
+            },
+            {
+              "label": "Phụ kiện tương thích",
+              "value": "Apple Pencil Pro • Magic Keyboard"
+            },
+            {
+              "label": "Pin & Sử dụng",
+              "value": "Lướt web Wi-Fi lên đến 10 giờ liên tục"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Cảm biến vân tay Touch ID tích hợp nút nguồn"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · 11 inch · Wi-Fi · M2"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · 11 inch · Wi-Fi · M2"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xanh Dương"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -1942,7 +2845,80 @@
           "value": "Loa âm thanh nổi ngang (Stereo speakers)"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A14 Bionic 6 nhân"
+            },
+            {
+              "label": "Màn hình",
+              "value": "10.9\" Liquid Retina tràn viền (2360 x 1640 Pixels)"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "4 GB RAM • 64GB / 256GB"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP Wide • Trước 12MP Ultra Wide ngang (Center Stage)"
+            },
+            {
+              "label": "Cổng sạc & Kết nối",
+              "value": "USB-C đa năng • Wi-Fi 6 siêu tốc"
+            },
+            {
+              "label": "Phụ kiện hỗ trợ",
+              "value": "Apple Pencil (USB-C), Magic Keyboard Folio"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Cảm biến Touch ID ở nút nguồn"
+            },
+            {
+              "label": "Loa & Âm thanh",
+              "value": "Loa âm thanh nổi ngang (Stereo speakers)"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "64GB · 10.9 inch · Wi-Fi · A14 Bionic"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · 10.9 inch · Wi-Fi · A14 Bionic"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xanh Lam"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2039,7 +3015,80 @@
           "value": "Touch ID trên nút nguồn"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple A17 Pro (Hỗ trợ Apple Intelligence)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "8.3\" Liquid Retina phủ lớp chống phản chiếu"
+            },
+            {
+              "label": "RAM & Lưu trữ",
+              "value": "8 GB RAM • 128GB / 256GB / 512GB"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP Smart HDR 4 • Trước 12MP Ultra Wide"
+            },
+            {
+              "label": "Bút cảm ứng",
+              "value": "Hỗ trợ Apple Pencil Pro & Apple Pencil USB-C"
+            },
+            {
+              "label": "Kết nối",
+              "value": "Wi-Fi 6E (802.11ax) • Type-C chuẩn USB 3 (10Gb/s)"
+            },
+            {
+              "label": "Trọng lượng & Kích thước",
+              "value": "Chỉ 293 g • Độ mỏng 6.3 mm"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Touch ID trên nút nguồn"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "128GB · 8.3 inch · Wi-Fi · A17 Pro"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "256GB · 8.3 inch · Wi-Fi · A17 Pro"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xám Không Gian"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2137,7 +3186,80 @@
           "value": "1.24 kg • Dày chỉ 11.3 mm"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M3 (8-core CPU, 8-10 core GPU, 16-core NPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "13.6\" Liquid Retina (2560 x 1664), 500 nits, 1 tỷ màu"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "16 GB Unified Memory (Băng thông 100GB/s)"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "256GB / 512GB PCIe siêu tốc"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "Lên đến 18 giờ xem video Apple TV • Sạc MagSafe 3"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "2x Thunderbolt / USB 4 • Giắc tai nghe 3.5mm"
+            },
+            {
+              "label": "Xuất màn hình ngoài",
+              "value": "Hỗ trợ xuất đến 2 màn hình ngoài khi gập máy"
+            },
+            {
+              "label": "Trọng lượng & Độ dày",
+              "value": "1.24 kg • Dày chỉ 11.3 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB SSD · M3 (8-core CPU / 8-core GPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB SSD · M3 (8-core CPU / 10-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đêm Xanh Thẳm"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2230,7 +3352,80 @@
           "value": "1.51 kg • Dày chỉ 11.5 mm"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M3 (8-core CPU, 10-core GPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "15.3\" Liquid Retina (2880 x 1864), 500 nits"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "16 GB Unified Memory (Băng thông 100GB/s)"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "256GB / 512GB PCIe"
+            },
+            {
+              "label": "Hệ thống âm thanh",
+              "value": "6 loa với loa trầm khử lực và Spatial Audio"
+            },
+            {
+              "label": "Pin & Sạc",
+              "value": "Lên đến 18 giờ • Sạc nhanh qua cổng MagSafe 3"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "2x Thunderbolt / USB 4 • MagSafe 3 • Giắc 3.5mm"
+            },
+            {
+              "label": "Trọng lượng & Độ dày",
+              "value": "1.51 kg • Dày chỉ 11.5 mm"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB SSD · M3 (8-core CPU / 10-core GPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB SSD · M3 (8-core CPU / 10-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đêm Xanh Thẳm"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2324,7 +3519,80 @@
           "value": "Magic Keyboard có đèn nền • Touch ID"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4 / M4 Pro (Lên đến 14 CPU, 20 GPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "14.2\" Liquid Retina XDR (3024 x 1964), 120Hz ProMotion, 1600 nits"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "16 GB / 24 GB Unified Memory"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "512GB / 1TB SSD tốc độ cao"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "Kỷ lục lên đến 24 giờ sử dụng liên tục"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "3x Thunderbolt 4/5 • HDMI 8K • Khe thẻ SDXC • MagSafe 3"
+            },
+            {
+              "label": "Camera & Âm thanh",
+              "value": "12MP Center Stage Desk View • 6 loa chất lượng phòng thu"
+            },
+            {
+              "label": "Bàn phím & Bảo mật",
+              "value": "Magic Keyboard có đèn nền • Touch ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "512GB SSD · M4 (10-core CPU / 10-core GPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB SSD · M4 Pro (12-core CPU / 16-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đen Không Gian"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2417,7 +3685,80 @@
           "value": "2.14 kg (khung nhôm nguyên khối vững chắc)"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4 Pro / M4 Max (Lên đến 16 CPU, 40 GPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "16.2\" Liquid Retina XDR (3456 x 2234), 120Hz ProMotion"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "24 GB / 36 GB / 48 GB Unified Memory"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "512GB / 1TB / 2TB SSD"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "Lên đến 24 giờ • Củ sạc nhanh USB-C 140W MagSafe 3"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "3x Thunderbolt 5 (120Gb/s) • HDMI • SDXC"
+            },
+            {
+              "label": "Tản nhiệt & Hiệu năng",
+              "value": "Hệ thống tản nhiệt tiên tiến duy trì hiệu năng cực đại"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "2.14 kg (khung nhôm nguyên khối vững chắc)"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "512GB SSD · M4 Pro (14-core CPU / 20-core GPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "1TB SSD · M4 Max (14-core CPU / 32-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đen Không Gian"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2510,7 +3851,80 @@
           "value": "Magic Keyboard có Touch ID & Magic Mouse (Type-C)"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4 (Lên đến 10 nhân CPU, 10 nhân GPU)"
+            },
+            {
+              "label": "Màn hình",
+              "value": "24\" 4.5K Retina (4480 x 2520), 500 nits, Dải màu P3"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "16 GB Unified Memory (Nâng cấp tối đa 32GB)"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "256GB / 512GB SSD"
+            },
+            {
+              "label": "Camera & Mic",
+              "value": "12MP Center Stage với Desk View • 3 mic chuẩn studio"
+            },
+            {
+              "label": "Loa & Âm thanh",
+              "value": "6 loa với loa trầm triệt tiêu lực, Dolby Atmos"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "4x Thunderbolt 4 / USB-C • Gigabit Ethernet • Giắc 3.5mm"
+            },
+            {
+              "label": "Phụ kiện đi kèm",
+              "value": "Magic Keyboard có Touch ID & Magic Mouse (Type-C)"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB SSD · M4 (8-core CPU / 8-core GPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB SSD · M4 (10-core CPU / 10-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Xanh Lam"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2603,7 +4017,80 @@
           "value": "Wi-Fi 6E (802.11ax) • Bluetooth 5.3"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4 / M4 Pro (10-14 nhân CPU, 10-20 nhân GPU)"
+            },
+            {
+              "label": "Kích thước thiết kế",
+              "value": "12.7 x 12.7 x 5.0 cm • Trọng lượng chỉ 0.67 kg"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "16 GB / 24 GB Unified Memory tiêu chuẩn"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "256GB / 512GB SSD"
+            },
+            {
+              "label": "Cổng mặt trước",
+              "value": "2x USB-C (chuẩn USB 3 10Gb/s) • Giắc tai nghe 3.5mm"
+            },
+            {
+              "label": "Cổng mặt sau",
+              "value": "3x Thunderbolt 4 / 5 • HDMI • Gigabit Ethernet"
+            },
+            {
+              "label": "Xuất màn hình",
+              "value": "Hỗ trợ xuất đồng thời lên đến 3 màn hình"
+            },
+            {
+              "label": "Mạng & Không dây",
+              "value": "Wi-Fi 6E (802.11ax) • Bluetooth 5.3"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "256GB SSD · M4 (10-core CPU)"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "512GB SSD · M4 (10-core CPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Bạc"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2696,7 +4183,76 @@
           "value": "19.7 x 19.7 x 9.5 cm • Khung nhôm nguyên khối 2.7 kg"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M2 Max (12 nhân CPU, 30 hoặc 38 nhân GPU)"
+            },
+            {
+              "label": "Bộ nhớ RAM",
+              "value": "32 GB Unified Memory (Băng thông khủng 400GB/s)"
+            },
+            {
+              "label": "Ổ cứng SSD",
+              "value": "512GB / 1TB SSD tốc độ đọc 7.4GB/s"
+            },
+            {
+              "label": "Cổng kết nối",
+              "value": "4x Thunderbolt 4 • 2x USB-A • HDMI • 10Gb Ethernet • SDXC"
+            },
+            {
+              "label": "Xuất màn hình",
+              "value": "Hỗ trợ xuất đồng thời đến 5 màn hình hiển thị"
+            },
+            {
+              "label": "Tản nhiệt",
+              "value": "Quạt hút tản nhiệt đôi độc lập, vận hành siêu tĩnh lặng"
+            },
+            {
+              "label": "Mạng & Kết nối",
+              "value": "Wi-Fi 6E • Bluetooth 5.3 • Ethernet 10Gb"
+            },
+            {
+              "label": "Kích thước",
+              "value": "19.7 x 19.7 x 9.5 cm • Khung nhôm nguyên khối 2.7 kg"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "512GB SSD · M2 Max (12-core CPU / 30-core GPU)"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Bạc"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2776,7 +4332,80 @@
           "value": "Hỗ trợ eSIM LTE độc lập • Wi-Fi • Bluetooth 5.3"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Vỏ máy & Thiết kế",
+              "value": "Titanium 49mm chống ăn mòn • Kính Sapphire phẳng"
+            },
+            {
+              "label": "Màn hình",
+              "value": "Always-On Retina OLED độ sáng cực đại 3000 nits"
+            },
+            {
+              "label": "Chip",
+              "value": "Apple S9 SiP (Hỗ trợ chạm đúp Double Tap)"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "36 giờ sử dụng bình thường • 72 giờ chế độ tiết kiệm"
+            },
+            {
+              "label": "Kháng nước & Lặn",
+              "value": "Chống nước 100m • Đạt chuẩn lặn giải trí EN13319 (40m)"
+            },
+            {
+              "label": "Cảm biến sức khỏe",
+              "value": "Điện tâm đồ ECG, SpO2, Đo nhiệt độ cơ thể, Cảnh báo nhịp tim"
+            },
+            {
+              "label": "Tính năng an toàn",
+              "value": "GPS tần số kép L1 & L5 chuẩn xác, Còi báo động 86dB"
+            },
+            {
+              "label": "Kết nối",
+              "value": "Hỗ trợ eSIM LTE độc lập • Wi-Fi • Bluetooth 5.3"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "49mm · GPS + Cellular · S9 SiP"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "49mm · GPS + Cellular · S9 SiP"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Titan Đen, Titan Tự Nhiên"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2895,7 +4524,80 @@
           "value": "Phát nhạc và podcast trực tiếp qua loa đồng hồ"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Kích thước & Thiết kế",
+              "value": "42mm hoặc 46mm • Độ mỏng chỉ 9.7 mm (mỏng hơn 10%)"
+            },
+            {
+              "label": "Công nghệ màn hình",
+              "value": "Màn hình OLED góc nhìn rộng (Wide-Angle OLED) sáng hơn 40%"
+            },
+            {
+              "label": "Chip",
+              "value": "Apple S10 SiP 64-bit 2 lõi"
+            },
+            {
+              "label": "Thời lượng pin & Sạc",
+              "value": "Pin 18 giờ • Sạc nhanh 80% trong 30 phút"
+            },
+            {
+              "label": "Cảm biến sức khỏe mới",
+              "value": "Thông báo ngưng thở khi ngủ, Đo nhiệt độ nước, Đo độ sâu 6m"
+            },
+            {
+              "label": "Tính năng an toàn",
+              "value": "Phát hiện ngã, Phát hiện va chạm xe, SOS khẩn cấp"
+            },
+            {
+              "label": "Chống nước",
+              "value": "Chuẩn chống nước 50m khi bơi lội (WR50)"
+            },
+            {
+              "label": "Tiện ích âm thanh",
+              "value": "Phát nhạc và podcast trực tiếp qua loa đồng hồ"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "42mm · GPS · S10 SiP"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "46mm · GPS · S10 SiP"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đen Bóng Jet Black"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -2990,7 +4692,80 @@
           "value": "GPS chuẩn xác, La bàn số, Đo độ cao luôn bật"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Kích thước vỏ máy",
+              "value": "41mm hoặc 45mm • Khung nhôm cao cấp"
+            },
+            {
+              "label": "Màn hình hiển thị",
+              "value": "Retina Always-On OLED độ sáng lên đến 2000 nits"
+            },
+            {
+              "label": "Chip",
+              "value": "Apple S9 SiP với Neural Engine 4 lõi"
+            },
+            {
+              "label": "Thao tác cử chỉ",
+              "value": "Chạm hai lần (Double Tap) điều khiển bằng một tay"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "Lên đến 18 giờ • 36 giờ ở chế độ Tiết kiệm pin"
+            },
+            {
+              "label": "Theo dõi sức khỏe",
+              "value": "Đo điện tâm đồ ECG, nồng độ oxy trong máu SpO2, giấc ngủ sâu"
+            },
+            {
+              "label": "Kháng nước",
+              "value": "Độ sâu 50m (WR50 theo chuẩn ISO 22810:2010)"
+            },
+            {
+              "label": "Định vị & Kết nối",
+              "value": "GPS chuẩn xác, La bàn số, Đo độ cao luôn bật"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "41mm · GPS · S9 SiP"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "45mm · GPS · S9 SiP"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đêm Xanh Thẳm"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -3086,7 +4861,80 @@
           "value": "Hỗ trợ Family Setup cho trẻ nhỏ và người lớn tuổi"
         }
       ],
-      "detailedSpecs": [],
+      "detailedSpecs": [
+        {
+          "groupName": "Thông số sản phẩm",
+          "items": [
+            {
+              "label": "Kích thước mặt",
+              "value": "40mm hoặc 44mm • Vỏ nhôm tái chế thân thiện môi trường"
+            },
+            {
+              "label": "Màn hình",
+              "value": "Retina LTPO OLED độ sáng lên đến 1000 nits"
+            },
+            {
+              "label": "Chip",
+              "value": "Apple S8 SiP (Nhanh hơn 20% so với thế hệ trước)"
+            },
+            {
+              "label": "Thời lượng pin",
+              "value": "18 giờ sử dụng cả ngày • Chế độ Tiết kiệm pin"
+            },
+            {
+              "label": "Theo dõi sức khỏe",
+              "value": "Cảm biến nhịp tim quang học thế hệ 2, Giai đoạn giấc ngủ"
+            },
+            {
+              "label": "Tính năng an toàn",
+              "value": "Phát hiện va chạm xe (Crash Detection), Phát hiện té ngã"
+            },
+            {
+              "label": "Chống nước",
+              "value": "Kháng nước ở độ sâu 50 mét khi bơi lội (WR50)"
+            },
+            {
+              "label": "Thiết lập gia đình",
+              "value": "Hỗ trợ Family Setup cho trẻ nhỏ và người lớn tuổi"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình trong cửa hàng",
+          "items": [
+            {
+              "label": "Cấu hình 1",
+              "value": "40mm · GPS · S8 SiP"
+            },
+            {
+              "label": "Cấu hình 2",
+              "value": "44mm · GPS · S8 SiP"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc và bảo hành",
+          "items": [
+            {
+              "label": "Màu sắc",
+              "value": "Đêm Xanh Thẳm"
+            },
+            {
+              "label": "Bảo hành",
+              "value": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc."
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Nguồn dữ liệu",
+              "value": "Catalog frontend ban đầu; giá và tồn là dữ liệu phục vụ đồ án, chưa đối chiếu lại từng thông số."
+            }
+          ]
+        }
+      ],
       "warrantyInfo": "Bảo hành chính hãng 12 tháng tại các Trung tâm Ủy quyền Apple trên toàn quốc.",
       "configurations": [
         {
@@ -3127,6 +4975,1926 @@
           "sku": "SE-44-GPS-C1",
           "price": 6890000,
           "originalPrice": 7590000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "781ea063-8b99-426f-a06d-60e261353c36",
+      "slug": "iphone-17",
+      "name": "iPhone 17",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Màn hình 120Hz và camera kép 48MP trong thiết kế 6,3 inch.",
+      "subCategory": "Standard",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/a915c2dd-c5dd-444d-aa01-47c059d0b878",
+      "gallery": [
+        "/api/v1/media/a915c2dd-c5dd-444d-aa01-47c059d0b878"
+      ],
+      "description": [
+        "iPhone 17 phù hợp khi cần điện thoại gọn để liên lạc, chụp ảnh và giải trí. Màn hình ProMotion điều chỉnh tần số quét đến 120Hz để cuộn nội dung mượt hơn.",
+        "Camera góc siêu rộng 48MP hỗ trợ chụp không gian rộng và ảnh macro. Phiên bản trong catalog có dung lượng 256GB; hãy cân nhắc lượng video và ảnh trước khi chọn."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "OLED 6,3 inch, 2622 × 1206, ProMotion đến 120Hz"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "177g"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Face ID"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "A19; CPU 6 lõi, GPU 5 lõi"
+        },
+        {
+          "label": "Camera sau",
+          "value": "48MP chính + 48MP góc siêu rộng"
+        },
+        {
+          "label": "Camera trước",
+          "value": "18MP Center Stage"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C, USB 2"
+        },
+        {
+          "label": "Mạng di động",
+          "value": "5G; khả dụng tùy nhà mạng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "OLED 6,3 inch, 2622 × 1206, ProMotion đến 120Hz"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "177g"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Face ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "A19; CPU 6 lõi, GPU 5 lõi"
+            },
+            {
+              "label": "Camera sau",
+              "value": "48MP chính + 48MP góc siêu rộng"
+            },
+            {
+              "label": "Camera trước",
+              "value": "18MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C, USB 2"
+            },
+            {
+              "label": "Mạng di động",
+              "value": "5G; khả dụng tùy nhà mạng"
+            },
+            {
+              "label": "Lưu ý",
+              "value": "Khả năng kháng nước suy giảm theo thời gian; không phải thiết bị chống nước tuyệt đối."
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "256GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Xanh Lá Xô Thơm"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125089"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "3a58a7ba-e5d1-4ece-abb7-f4bc4c581d7e",
+          "storage": "256GB",
+          "chip": "A19",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "a47ce9bc-2f69-4dd7-a651-78343c671585",
+          "name": "Xanh Lá Xô Thơm",
+          "hex": "#a7b59a",
+          "image": "/api/v1/media/a915c2dd-c5dd-444d-aa01-47c059d0b878"
+        }
+      ],
+      "skus": [
+        {
+          "id": "f0324944-8de7-4186-a06e-10c64b3c24b5",
+          "configurationId": "3a58a7ba-e5d1-4ece-abb7-f4bc4c581d7e",
+          "colorId": "a47ce9bc-2f69-4dd7-a651-78343c671585",
+          "sku": "AURA-NEW-IPHONE-17",
+          "price": 28490000,
+          "originalPrice": 28490000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "46ff3daa-b2bc-4cfd-ada6-4fa3c54f001b",
+      "slug": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Ba camera 48MP, chip A19 Pro và màn hình ProMotion.",
+      "subCategory": "Pro Series",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/d3540a1f-00c8-4162-a572-28fb0053ccce",
+      "gallery": [
+        "/api/v1/media/d3540a1f-00c8-4162-a572-28fb0053ccce"
+      ],
+      "description": [
+        "iPhone 17 Pro hướng đến người thường xuyên chụp ảnh, quay video và xử lý nội dung trên điện thoại. Ba tiêu cự giúp chuyển giữa khung cảnh rộng và chủ thể ở xa.",
+        "Thân nhôm nguyên khối kết hợp màn hình luôn bật. Quay ProRes ở cấu hình cao có thể cần bộ nhớ ngoài và phụ kiện phù hợp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "OLED 6,3 inch, 2622 × 1206, đến 120Hz"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "204g"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Face ID"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "A19 Pro; CPU 6 lõi, GPU 6 lõi"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính, siêu rộng và tele đều 48MP; tele 4x"
+        },
+        {
+          "label": "Camera trước",
+          "value": "18MP Center Stage"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C, USB 3 đến 10Gb/s"
+        },
+        {
+          "label": "Mạng di động",
+          "value": "5G; khả dụng tùy nhà mạng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "OLED 6,3 inch, 2622 × 1206, đến 120Hz"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "204g"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Face ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "A19 Pro; CPU 6 lõi, GPU 6 lõi"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính, siêu rộng và tele đều 48MP; tele 4x"
+            },
+            {
+              "label": "Camera trước",
+              "value": "18MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C, USB 3 đến 10Gb/s"
+            },
+            {
+              "label": "Mạng di động",
+              "value": "5G; khả dụng tùy nhà mạng"
+            },
+            {
+              "label": "Lưu ý",
+              "value": "Khả năng kháng nước suy giảm theo thời gian; không phải thiết bị chống nước tuyệt đối."
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "256GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Cam Vũ Trụ"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125090"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "fcdfd4a1-f9aa-4af8-a2e6-c05d1d07fb63",
+          "storage": "256GB",
+          "chip": "A19 Pro",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "b0e7038b-d6ba-4c2c-aacf-e3f23d794a57",
+          "name": "Cam Vũ Trụ",
+          "hex": "#d87943",
+          "image": "/api/v1/media/d3540a1f-00c8-4162-a572-28fb0053ccce"
+        }
+      ],
+      "skus": [
+        {
+          "id": "0ddffae6-382a-4096-a53d-734c582b3456",
+          "configurationId": "fcdfd4a1-f9aa-4af8-a2e6-c05d1d07fb63",
+          "colorId": "b0e7038b-d6ba-4c2c-aacf-e3f23d794a57",
+          "sku": "AURA-NEW-IPHONE-17-PRO",
+          "price": 31990000,
+          "originalPrice": 31990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "5ceef51a-aaa5-4bf4-a73b-2392e46e5b10",
+      "slug": "iphone-17-pro-max",
+      "name": "iPhone 17 Pro Max",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Không gian hiển thị 6,9 inch cho ảnh, video và công việc.",
+      "subCategory": "Pro Series",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/145846e0-da33-4967-a5a9-734c227e07bc",
+      "gallery": [
+        "/api/v1/media/145846e0-da33-4967-a5a9-734c227e07bc"
+      ],
+      "description": [
+        "iPhone 17 Pro Max có màn hình lớn để xem bản đồ, chỉnh ảnh và đọc tài liệu. Kích thước này phù hợp người ưu tiên không gian hiển thị hơn sự gọn nhẹ.",
+        "Hệ thống camera Pro Fusion và chip A19 Pro phục vụ nhu cầu sáng tạo nội dung. Catalog đang cung cấp cấu hình 256GB; các dung lượng khác chưa được nhập giá."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "OLED 6,9 inch, 2868 × 1320, đến 120Hz"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "231g"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Face ID"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "A19 Pro; CPU 6 lõi, GPU 6 lõi"
+        },
+        {
+          "label": "Camera sau",
+          "value": "Chính, siêu rộng và tele đều 48MP; tele 4x"
+        },
+        {
+          "label": "Camera trước",
+          "value": "18MP Center Stage"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C, USB 3 đến 10Gb/s"
+        },
+        {
+          "label": "Mạng di động",
+          "value": "5G; khả dụng tùy nhà mạng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "OLED 6,9 inch, 2868 × 1320, đến 120Hz"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "231g"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Face ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "A19 Pro; CPU 6 lõi, GPU 6 lõi"
+            },
+            {
+              "label": "Camera sau",
+              "value": "Chính, siêu rộng và tele đều 48MP; tele 4x"
+            },
+            {
+              "label": "Camera trước",
+              "value": "18MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C, USB 3 đến 10Gb/s"
+            },
+            {
+              "label": "Mạng di động",
+              "value": "5G; khả dụng tùy nhà mạng"
+            },
+            {
+              "label": "Lưu ý",
+              "value": "Khả năng kháng nước suy giảm theo thời gian; không phải thiết bị chống nước tuyệt đối."
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "256GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Cam Vũ Trụ"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125091"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "c49ec64e-3ca0-4bf7-a63b-c0e1c49ad284",
+          "storage": "256GB",
+          "chip": "A19 Pro",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "9854d885-93f1-40b4-a555-0479eece099c",
+          "name": "Cam Vũ Trụ",
+          "hex": "#d87943",
+          "image": "/api/v1/media/145846e0-da33-4967-a5a9-734c227e07bc"
+        }
+      ],
+      "skus": [
+        {
+          "id": "45a31664-926d-4442-ad3c-a29bc5e1a925",
+          "configurationId": "c49ec64e-3ca0-4bf7-a63b-c0e1c49ad284",
+          "colorId": "9854d885-93f1-40b4-a555-0479eece099c",
+          "sku": "AURA-NEW-IPHONE-17-PRO-MAX",
+          "price": 34990000,
+          "originalPrice": 34990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "d573d37f-f508-4991-a2a7-f0f6b05b42d1",
+      "slug": "iphone-air",
+      "name": "iPhone Air",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Thiết kế mỏng 5,64mm, nhẹ 165g và màn hình 6,5 inch.",
+      "subCategory": "Standard",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/7c123d71-32db-453d-ac2a-c4a63d7f4cd6",
+      "gallery": [
+        "/api/v1/media/7c123d71-32db-453d-ac2a-c4a63d7f4cd6"
+      ],
+      "description": [
+        "iPhone Air ưu tiên thân máy mỏng và nhẹ nhưng vẫn có màn hình lớn. Đây là lựa chọn cho người thường mang máy theo khi di chuyển.",
+        "Máy dùng eSIM, không có khay SIM vật lý. Cần kiểm tra nhà mạng hỗ trợ trước khi sử dụng; hệ thống camera sau không có camera góc siêu rộng riêng."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "OLED 6,5 inch, 2736 × 1260, đến 120Hz"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "165g"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Face ID"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "A19 Pro; CPU 6 lõi, GPU 5 lõi"
+        },
+        {
+          "label": "Camera sau",
+          "value": "48MP Fusion; hỗ trợ khung hình tele 2x"
+        },
+        {
+          "label": "Camera trước",
+          "value": "18MP Center Stage"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C, USB 2"
+        },
+        {
+          "label": "Mạng di động",
+          "value": "5G; khả dụng tùy nhà mạng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "OLED 6,5 inch, 2736 × 1260, đến 120Hz"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "165g"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Face ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "A19 Pro; CPU 6 lõi, GPU 5 lõi"
+            },
+            {
+              "label": "Camera sau",
+              "value": "48MP Fusion; hỗ trợ khung hình tele 2x"
+            },
+            {
+              "label": "Camera trước",
+              "value": "18MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C, USB 2"
+            },
+            {
+              "label": "Mạng di động",
+              "value": "5G; khả dụng tùy nhà mạng"
+            },
+            {
+              "label": "Lưu ý",
+              "value": "Khả năng kháng nước suy giảm theo thời gian; không phải thiết bị chống nước tuyệt đối."
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "256GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Xanh Da Trời"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125092"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "9bd184c1-9bf0-4408-a6ac-22b001170e41",
+          "storage": "256GB",
+          "chip": "A19 Pro",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "273c7af8-d027-4119-ac1f-78d01db467ba",
+          "name": "Xanh Da Trời",
+          "hex": "#c6dce9",
+          "image": "/api/v1/media/7c123d71-32db-453d-ac2a-c4a63d7f4cd6"
+        }
+      ],
+      "skus": [
+        {
+          "id": "5d201a0f-a846-4d33-a0ca-f8f9c34bd240",
+          "configurationId": "9bd184c1-9bf0-4408-a6ac-22b001170e41",
+          "colorId": "273c7af8-d027-4119-ac1f-78d01db467ba",
+          "sku": "AURA-NEW-IPHONE-AIR",
+          "price": 22990000,
+          "originalPrice": 22990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "2897f99e-5aff-4312-afdf-e3da89e1db80",
+      "slug": "iphone-16e",
+      "name": "iPhone 16e",
+      "categoryId": "iphone",
+      "active": true,
+      "tagline": "Chip A18 và camera Fusion 48MP cho nhu cầu hằng ngày.",
+      "subCategory": "Standard",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/09b01162-b052-4579-a801-3dce20327135",
+      "gallery": [
+        "/api/v1/media/09b01162-b052-4579-a801-3dce20327135"
+      ],
+      "description": [
+        "iPhone 16e tập trung vào các tác vụ quen thuộc như gọi điện, nhắn tin, xem video và chụp ảnh. Màn hình OLED và Face ID giúp trải nghiệm sử dụng nhất quán với hệ sinh thái iPhone.",
+        "Máy có camera sau đơn 48MP và nút Tác Vụ. Sạc không dây theo chuẩn Qi, không tích hợp MagSafe; cần chọn phụ kiện phù hợp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "OLED 6,1 inch, 2532 × 1170"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "167g"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Face ID"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "A18; CPU 6 lõi, GPU 4 lõi"
+        },
+        {
+          "label": "Camera sau",
+          "value": "48MP Fusion; hỗ trợ tele 2x"
+        },
+        {
+          "label": "Camera trước",
+          "value": "12MP TrueDepth"
+        },
+        {
+          "label": "Cổng kết nối",
+          "value": "USB-C, USB 2"
+        },
+        {
+          "label": "Mạng di động",
+          "value": "5G; khả dụng tùy nhà mạng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "OLED 6,1 inch, 2532 × 1170"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "167g"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Face ID"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "A18; CPU 6 lõi, GPU 4 lõi"
+            },
+            {
+              "label": "Camera sau",
+              "value": "48MP Fusion; hỗ trợ tele 2x"
+            },
+            {
+              "label": "Camera trước",
+              "value": "12MP TrueDepth"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Cổng kết nối",
+              "value": "USB-C, USB 2"
+            },
+            {
+              "label": "Mạng di động",
+              "value": "5G; khả dụng tùy nhà mạng"
+            },
+            {
+              "label": "Lưu ý",
+              "value": "Khả năng kháng nước suy giảm theo thời gian; không phải thiết bị chống nước tuyệt đối."
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "128GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Trắng"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122208"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "1ce0f806-e3d1-4595-a52c-5bc615fe5079",
+          "storage": "128GB",
+          "chip": "A18",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "e3cac06b-54f9-4c67-ad4a-7a3d89e2cf23",
+          "name": "Trắng",
+          "hex": "#f2f2f2",
+          "image": "/api/v1/media/09b01162-b052-4579-a801-3dce20327135"
+        }
+      ],
+      "skus": [
+        {
+          "id": "f7a2e357-09c5-4084-a26e-5f569a31f09a",
+          "configurationId": "1ce0f806-e3d1-4595-a52c-5bc615fe5079",
+          "colorId": "e3cac06b-54f9-4c67-ad4a-7a3d89e2cf23",
+          "sku": "AURA-NEW-IPHONE-16E",
+          "price": 16990000,
+          "originalPrice": 16990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "bb2108e1-1c7d-4d16-a5a7-84bbce1dc5cc",
+      "slug": "ipad-a16",
+      "name": "iPad A16 11 inch Wi-Fi",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Màn hình rộng, bộ nhớ 128GB và Touch ID cho học tập.",
+      "subCategory": "Standard",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/3913d829-59b8-478a-a90c-c48061cd92ca",
+      "gallery": [
+        "/api/v1/media/3913d829-59b8-478a-a90c-c48061cd92ca"
+      ],
+      "description": [
+        "iPad A16 phù hợp đọc sách, học trực tuyến và ghi chú. Camera trước đặt ở cạnh ngang thuận tiện khi gọi video cùng bàn phím hoặc giá đỡ.",
+        "Phiên bản Wi-Fi dùng mạng không dây, không kết nối dữ liệu di động độc lập. Apple Pencil và bàn phím là phụ kiện mua riêng."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "Liquid Retina IPS 11 inch (đường chéo thực 10,86 inch)"
+        },
+        {
+          "label": "Độ phân giải",
+          "value": "2360 × 1640; 500 nit"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "477g bản Wi-Fi"
+        },
+        {
+          "label": "Chip",
+          "value": "A16; CPU 5 lõi, GPU 4 lõi"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+        },
+        {
+          "label": "Kết nối",
+          "value": "Wi-Fi 6, Bluetooth 5.3, USB-C"
+        },
+        {
+          "label": "Bảo mật",
+          "value": "Touch ID"
+        },
+        {
+          "label": "Bút tương thích",
+          "value": "Apple Pencil USB-C hoặc thế hệ 1 qua bộ tiếp hợp; bán riêng"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thiết kế",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "Liquid Retina IPS 11 inch (đường chéo thực 10,86 inch)"
+            },
+            {
+              "label": "Độ phân giải",
+              "value": "2360 × 1640; 500 nit"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "477g bản Wi-Fi"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "A16; CPU 5 lõi, GPU 4 lõi"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và phụ kiện",
+          "items": [
+            {
+              "label": "Kết nối",
+              "value": "Wi-Fi 6, Bluetooth 5.3, USB-C"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Touch ID"
+            },
+            {
+              "label": "Bút tương thích",
+              "value": "Apple Pencil USB-C hoặc thế hệ 1 qua bộ tiếp hợp; bán riêng"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "128GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Vàng"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122240"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "a9a7c0ce-b70a-4216-ad19-65aa396f78c2",
+          "storage": "128GB",
+          "chip": "A16",
+          "connectivity": "Wi-Fi"
+        }
+      ],
+      "colors": [
+        {
+          "id": "d40dbd46-ad31-4c61-a646-25544f616750",
+          "name": "Vàng",
+          "hex": "#f1d44e",
+          "image": "/api/v1/media/3913d829-59b8-478a-a90c-c48061cd92ca"
+        }
+      ],
+      "skus": [
+        {
+          "id": "8d36b68a-5f7d-4ae7-a154-e955992e29f8",
+          "configurationId": "a9a7c0ce-b70a-4216-ad19-65aa396f78c2",
+          "colorId": "d40dbd46-ad31-4c61-a646-25544f616750",
+          "sku": "AURA-NEW-IPAD-A16",
+          "price": 12090000,
+          "originalPrice": 12090000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "4cf322ac-c67a-419f-a26f-78121b4dc1c7",
+      "slug": "ipad-air-11-m3",
+      "name": "iPad Air 11 inch M3 Wi-Fi",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Chip M3, màn hình ép kín và hỗ trợ Apple Pencil Pro.",
+      "subCategory": "Air",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/c084c5b2-b176-4ec2-a887-b178033852be",
+      "gallery": [
+        "/api/v1/media/c084c5b2-b176-4ec2-a887-b178033852be"
+      ],
+      "description": [
+        "iPad Air 11 inch M3 kết hợp hiệu năng chip M3 với kích thước dễ mang theo. RAM 8GB và GPU 9 lõi hỗ trợ làm việc với nhiều ứng dụng, chỉnh ảnh và thiết kế.",
+        "Màn hình ép kín có lớp chống phản chiếu và hỗ trợ thao tác với Apple Pencil Pro. Bản Wi-Fi trong catalog không có kết nối mạng di động."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kích thước",
+          "value": "11 inch"
+        },
+        {
+          "label": "Tấm nền",
+          "value": "Liquid Retina IPS, True Tone"
+        },
+        {
+          "label": "Độ phân giải",
+          "value": "2360 × 1640"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "500 nit"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "Apple M3, CPU 8 lõi, GPU 9 lõi"
+        },
+        {
+          "label": "RAM",
+          "value": "8GB"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+        },
+        {
+          "label": "Không dây",
+          "value": "Wi-Fi 6E, Bluetooth 5.3"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình",
+          "items": [
+            {
+              "label": "Kích thước",
+              "value": "11 inch"
+            },
+            {
+              "label": "Tấm nền",
+              "value": "Liquid Retina IPS, True Tone"
+            },
+            {
+              "label": "Độ phân giải",
+              "value": "2360 × 1640"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "500 nit"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "Apple M3, CPU 8 lõi, GPU 9 lõi"
+            },
+            {
+              "label": "RAM",
+              "value": "8GB"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và phụ kiện",
+          "items": [
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 6E, Bluetooth 5.3"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Touch ID trên nút nguồn"
+            },
+            {
+              "label": "Bút tương thích",
+              "value": "Apple Pencil Pro và Apple Pencil USB-C; bán riêng"
+            },
+            {
+              "label": "Cổng",
+              "value": "USB-C"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "128GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Ánh Sao"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122241"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "c0e1c5ff-3867-4cce-ae2c-6edf0c462145",
+          "storage": "128GB",
+          "chip": "M3",
+          "connectivity": "Wi-Fi"
+        }
+      ],
+      "colors": [
+        {
+          "id": "7af31c65-31f5-44ed-a1cb-e8b0b5508427",
+          "name": "Ánh Sao",
+          "hex": "#e5ddce",
+          "image": "/api/v1/media/c084c5b2-b176-4ec2-a887-b178033852be"
+        }
+      ],
+      "skus": [
+        {
+          "id": "45fce1fa-fff6-4b88-a0f4-4f6d71108db8",
+          "configurationId": "c0e1c5ff-3867-4cce-ae2c-6edf0c462145",
+          "colorId": "7af31c65-31f5-44ed-a1cb-e8b0b5508427",
+          "sku": "AURA-NEW-IPAD-AIR-11-M3",
+          "price": 16690000,
+          "originalPrice": 16690000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "a3c31e1d-2720-4123-ae75-608a78967df8",
+      "slug": "ipad-air-13-m3",
+      "name": "iPad Air 13 inch M3 Wi-Fi",
+      "categoryId": "ipad",
+      "active": true,
+      "tagline": "Màn hình 13 inch cho ghi chú, tài liệu và sáng tạo.",
+      "subCategory": "Air",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/a82f2f81-d39d-4bc1-a447-709b609a2f38",
+      "gallery": [
+        "/api/v1/media/a82f2f81-d39d-4bc1-a447-709b609a2f38"
+      ],
+      "description": [
+        "iPad Air 13 inch M3 cung cấp diện tích hiển thị rộng để chia cửa sổ, xem bản vẽ và ghi chú bên cạnh tài liệu. Chip M3 có CPU 8 lõi và GPU 9 lõi.",
+        "Cấu hình tham khảo là Wi-Fi 256GB. Nguồn giá hiện báo hết hàng nên SKU này được nhập với tồn bằng 0; thông tin giá chỉ dùng để tham khảo."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kích thước",
+          "value": "13 inch"
+        },
+        {
+          "label": "Tấm nền",
+          "value": "Liquid Retina IPS, True Tone"
+        },
+        {
+          "label": "Độ phân giải",
+          "value": "2732 × 2048"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "600 nit"
+        },
+        {
+          "label": "Bộ xử lý",
+          "value": "Apple M3, CPU 8 lõi, GPU 9 lõi"
+        },
+        {
+          "label": "RAM",
+          "value": "8GB"
+        },
+        {
+          "label": "Camera",
+          "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+        },
+        {
+          "label": "Không dây",
+          "value": "Wi-Fi 6E, Bluetooth 5.3"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình",
+          "items": [
+            {
+              "label": "Kích thước",
+              "value": "13 inch"
+            },
+            {
+              "label": "Tấm nền",
+              "value": "Liquid Retina IPS, True Tone"
+            },
+            {
+              "label": "Độ phân giải",
+              "value": "2732 × 2048"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "600 nit"
+            }
+          ]
+        },
+        {
+          "groupName": "Hiệu năng và camera",
+          "items": [
+            {
+              "label": "Bộ xử lý",
+              "value": "Apple M3, CPU 8 lõi, GPU 9 lõi"
+            },
+            {
+              "label": "RAM",
+              "value": "8GB"
+            },
+            {
+              "label": "Camera",
+              "value": "Sau 12MP; trước 12MP Center Stage trên cạnh ngang"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và phụ kiện",
+          "items": [
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 6E, Bluetooth 5.3"
+            },
+            {
+              "label": "Bảo mật",
+              "value": "Touch ID trên nút nguồn"
+            },
+            {
+              "label": "Bút tương thích",
+              "value": "Apple Pencil Pro và Apple Pencil USB-C; bán riêng"
+            },
+            {
+              "label": "Cổng",
+              "value": "USB-C"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "256GB"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Tím"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122242"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "CellphoneS · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "99d9379f-c5ba-48d2-a91e-dcf18e38ab2a",
+          "storage": "256GB",
+          "chip": "M3",
+          "connectivity": "Wi-Fi"
+        }
+      ],
+      "colors": [
+        {
+          "id": "c604a139-691f-4d17-a42b-d1f61bf1f99d",
+          "name": "Tím",
+          "hex": "#b6afc5",
+          "image": "/api/v1/media/a82f2f81-d39d-4bc1-a447-709b609a2f38"
+        }
+      ],
+      "skus": [
+        {
+          "id": "9af0d633-8929-4b65-a26b-fe6623cf0f4f",
+          "configurationId": "99d9379f-c5ba-48d2-a91e-dcf18e38ab2a",
+          "colorId": "c604a139-691f-4d17-a42b-d1f61bf1f99d",
+          "sku": "AURA-NEW-IPAD-AIR-13-M3",
+          "price": 24490000,
+          "originalPrice": 24490000,
+          "onHand": 0
+        }
+      ]
+    },
+    {
+      "id": "0a2c3736-75da-48f6-a7c1-4db408c6de3d",
+      "slug": "macbook-air-13-m4",
+      "name": "MacBook Air 13 inch M4",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Laptop 1,24kg, RAM 16GB và hai cổng Thunderbolt 4.",
+      "subCategory": "MacBook Air",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/c159ed07-57f7-4062-a00d-5984661fb014",
+      "gallery": [
+        "/api/v1/media/c159ed07-57f7-4062-a00d-5984661fb014"
+      ],
+      "description": [
+        "MacBook Air 13 inch M4 phù hợp học tập, làm tài liệu và mang theo hằng ngày. Thiết kế không quạt giúp máy hoạt động yên tĩnh.",
+        "Cấu hình này dùng RAM thống nhất 16GB và SSD 256GB. Bộ nhớ không thể nâng cấp như laptop có khe RAM/SSD rời; nên chọn dung lượng theo nhu cầu lâu dài."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "13,6 inch Liquid Retina IPS"
+        },
+        {
+          "label": "Độ phân giải",
+          "value": "2560 × 1664"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "500 nit; dải màu P3, True Tone"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "1,24kg"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple M4, CPU 10 lõi, GPU 8 lõi"
+        },
+        {
+          "label": "Bộ nhớ",
+          "value": "RAM thống nhất 16GB; SSD 256GB"
+        },
+        {
+          "label": "Camera",
+          "value": "12MP Center Stage"
+        },
+        {
+          "label": "Cổng",
+          "value": "2 Thunderbolt 4, MagSafe 3, tai nghe 3,5mm"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thân máy",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "13,6 inch Liquid Retina IPS"
+            },
+            {
+              "label": "Độ phân giải",
+              "value": "2560 × 1664"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "500 nit; dải màu P3, True Tone"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "1,24kg"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4, CPU 10 lõi, GPU 8 lõi"
+            },
+            {
+              "label": "Bộ nhớ",
+              "value": "RAM thống nhất 16GB; SSD 256GB"
+            },
+            {
+              "label": "Camera",
+              "value": "12MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và pin",
+          "items": [
+            {
+              "label": "Cổng",
+              "value": "2 Thunderbolt 4, MagSafe 3, tai nghe 3,5mm"
+            },
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 6E, Bluetooth 5.3"
+            },
+            {
+              "label": "Pin",
+              "value": "Xem video trực tuyến đến 18 giờ theo thử nghiệm Apple; tùy cách dùng"
+            },
+            {
+              "label": "Màn hình ngoài",
+              "value": "Hỗ trợ tối đa 2 màn hình ngoài 6K 60Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "16GB RAM / 256GB SSD"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Đêm Xanh Thẳm"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122209"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "fd4295d2-575c-41b1-aead-ec1c016c259c",
+          "storage": "16GB RAM / 256GB SSD",
+          "chip": "M4 · GPU 8 lõi",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "5e67f92f-3135-461e-ab3d-e69049d862b4",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#2e3641",
+          "image": "/api/v1/media/c159ed07-57f7-4062-a00d-5984661fb014"
+        }
+      ],
+      "skus": [
+        {
+          "id": "308a23c6-5a8a-48ce-a204-09346f673b53",
+          "configurationId": "fd4295d2-575c-41b1-aead-ec1c016c259c",
+          "colorId": "5e67f92f-3135-461e-ab3d-e69049d862b4",
+          "sku": "AURA-NEW-MACBOOK-AIR-13-M4",
+          "price": 26490000,
+          "originalPrice": 26490000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "21ccdb67-c4c5-44c1-aec7-0a78da035527",
+      "slug": "macbook-air-15-m4",
+      "name": "MacBook Air 15 inch M4",
+      "categoryId": "mac",
+      "active": true,
+      "tagline": "Màn hình 15,3 inch và GPU 10 lõi trong thiết kế mỏng.",
+      "subCategory": "MacBook Air",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/27d394ca-3431-4786-a8b7-0bdd7fab4b62",
+      "gallery": [
+        "/api/v1/media/27d394ca-3431-4786-a8b7-0bdd7fab4b62"
+      ],
+      "description": [
+        "MacBook Air 15 inch M4 dành cho người muốn màn hình rộng để làm bảng tính, đọc tài liệu và xem nhiều cửa sổ. Máy vẫn giữ thiết kế không quạt.",
+        "Cấu hình RAM 16GB và SSD 256GB phù hợp công việc văn phòng; người lưu nhiều video nên cân nhắc thêm lưu trữ ngoài. Hệ thống sáu loa hỗ trợ giải trí và gọi video."
+      ],
+      "keySpecs": [
+        {
+          "label": "Màn hình",
+          "value": "15,3 inch Liquid Retina IPS"
+        },
+        {
+          "label": "Độ phân giải",
+          "value": "2880 × 1864"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "500 nit; dải màu P3, True Tone"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "1,51kg"
+        },
+        {
+          "label": "Chip",
+          "value": "Apple M4, CPU 10 lõi, GPU 10 lõi"
+        },
+        {
+          "label": "Bộ nhớ",
+          "value": "RAM thống nhất 16GB; SSD 256GB"
+        },
+        {
+          "label": "Camera",
+          "value": "12MP Center Stage"
+        },
+        {
+          "label": "Cổng",
+          "value": "2 Thunderbolt 4, MagSafe 3, tai nghe 3,5mm"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Màn hình và thân máy",
+          "items": [
+            {
+              "label": "Màn hình",
+              "value": "15,3 inch Liquid Retina IPS"
+            },
+            {
+              "label": "Độ phân giải",
+              "value": "2880 × 1864"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "500 nit; dải màu P3, True Tone"
+            },
+            {
+              "label": "Trọng lượng",
+              "value": "1,51kg"
+            }
+          ]
+        },
+        {
+          "groupName": "Cấu hình",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "Apple M4, CPU 10 lõi, GPU 10 lõi"
+            },
+            {
+              "label": "Bộ nhớ",
+              "value": "RAM thống nhất 16GB; SSD 256GB"
+            },
+            {
+              "label": "Camera",
+              "value": "12MP Center Stage"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và pin",
+          "items": [
+            {
+              "label": "Cổng",
+              "value": "2 Thunderbolt 4, MagSafe 3, tai nghe 3,5mm"
+            },
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 6E, Bluetooth 5.3"
+            },
+            {
+              "label": "Pin",
+              "value": "Xem video trực tuyến đến 18 giờ theo thử nghiệm Apple; tùy cách dùng"
+            },
+            {
+              "label": "Màn hình ngoài",
+              "value": "Hỗ trợ tối đa 2 màn hình ngoài 6K 60Hz"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "16GB RAM / 256GB SSD"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Xanh Da Trời"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 122210"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "14a5f00c-ff66-49cd-ad54-631c8f14da5f",
+          "storage": "16GB RAM / 256GB SSD",
+          "chip": "M4 · GPU 10 lõi",
+          "connectivity": ""
+        }
+      ],
+      "colors": [
+        {
+          "id": "c5814818-001e-4b69-a7e8-bc8543d264b1",
+          "name": "Xanh Da Trời",
+          "hex": "#b8cfdf",
+          "image": "/api/v1/media/27d394ca-3431-4786-a8b7-0bdd7fab4b62"
+        }
+      ],
+      "skus": [
+        {
+          "id": "d94fc5d9-8702-4488-add0-3780518d6e10",
+          "configurationId": "14a5f00c-ff66-49cd-ad54-631c8f14da5f",
+          "colorId": "c5814818-001e-4b69-a7e8-bc8543d264b1",
+          "sku": "AURA-NEW-MACBOOK-AIR-15-M4",
+          "price": 31390000,
+          "originalPrice": 31390000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "139c058e-8937-4890-afc3-e110b0657e14",
+      "slug": "apple-watch-series-11",
+      "name": "Apple Watch Series 11 GPS 42mm",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Màn hình luôn bật và theo dõi vận động trên cổ tay.",
+      "subCategory": "SE",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/e633a18a-6500-489a-a1a0-d47b3f1d71ff",
+      "gallery": [
+        "/api/v1/media/e633a18a-6500-489a-a1a0-d47b3f1d71ff"
+      ],
+      "description": [
+        "Apple Watch Series 11 hiển thị thông báo, ghi lại hoạt động và hỗ trợ theo dõi giấc ngủ. Màn hình luôn bật giúp xem giờ mà không cần nâng cổ tay mỗi lần.",
+        "Bản GPS 42mm không có dịch vụ di động độc lập. Các chỉ số sức khỏe hỗ trợ theo dõi cá nhân, không thay thế chẩn đoán hoặc tư vấn y tế."
+      ],
+      "keySpecs": [
+        {
+          "label": "Vỏ",
+          "value": "Nhôm 42mm, dày 9,7mm"
+        },
+        {
+          "label": "Màn hình",
+          "value": "Retina OLED LTPO3 luôn bật; 374 × 446"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "Đỉnh đến 2000 nit"
+        },
+        {
+          "label": "Chip",
+          "value": "S10, CPU 2 lõi; dung lượng 64GB"
+        },
+        {
+          "label": "Cảm biến",
+          "value": "Nhịp tim quang học, điện tim, nhiệt độ, la bàn"
+        },
+        {
+          "label": "Không dây",
+          "value": "Wi-Fi 4, Bluetooth 5.3, GPS"
+        },
+        {
+          "label": "Kháng nước",
+          "value": "50m theo tiêu chuẩn thử nghiệm; không dùng lặn sâu"
+        },
+        {
+          "label": "Tương thích",
+          "value": "Cần iPhone tương thích; tính năng sức khỏe tùy khu vực và phần mềm"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Thiết kế và hiển thị",
+          "items": [
+            {
+              "label": "Vỏ",
+              "value": "Nhôm 42mm, dày 9,7mm"
+            },
+            {
+              "label": "Màn hình",
+              "value": "Retina OLED LTPO3 luôn bật; 374 × 446"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "Đỉnh đến 2000 nit"
+            }
+          ]
+        },
+        {
+          "groupName": "Phần cứng",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "S10, CPU 2 lõi; dung lượng 64GB"
+            },
+            {
+              "label": "Cảm biến",
+              "value": "Nhịp tim quang học, điện tim, nhiệt độ, la bàn"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và sử dụng",
+          "items": [
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 4, Bluetooth 5.3, GPS"
+            },
+            {
+              "label": "Kháng nước",
+              "value": "50m theo tiêu chuẩn thử nghiệm; không dùng lặn sâu"
+            },
+            {
+              "label": "Tương thích",
+              "value": "Cần iPhone tương thích; tính năng sức khỏe tùy khu vực và phần mềm"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "42mm · GPS"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Đen Bóng"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125093"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "e089fbcc-78dc-478b-a75b-5dbcf961b597",
+          "storage": "42mm · GPS",
+          "chip": "S10",
+          "connectivity": "GPS"
+        }
+      ],
+      "colors": [
+        {
+          "id": "cdaff10f-72a3-4603-ae61-e5cc46d56630",
+          "name": "Đen Bóng",
+          "hex": "#242424",
+          "image": "/api/v1/media/e633a18a-6500-489a-a1a0-d47b3f1d71ff"
+        }
+      ],
+      "skus": [
+        {
+          "id": "475fc4fd-da8b-4e33-af22-9702dedc397a",
+          "configurationId": "e089fbcc-78dc-478b-a75b-5dbcf961b597",
+          "colorId": "cdaff10f-72a3-4603-ae61-e5cc46d56630",
+          "sku": "AURA-NEW-APPLE-WATCH-SERIES-11",
+          "price": 8990000,
+          "originalPrice": 8990000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "5516d7ec-2be9-4af8-a6f7-eb5d902b4d7d",
+      "slug": "apple-watch-se-3",
+      "name": "Apple Watch SE 3 GPS 40mm",
+      "categoryId": "watch",
+      "active": true,
+      "tagline": "Chip S10, màn hình luôn bật và thiết kế 40mm gọn nhẹ.",
+      "subCategory": "SE",
+      "badge": "Mới",
+      "thumbnail": "/api/v1/media/e3da9690-bcec-4abc-a849-e2a431791bab",
+      "gallery": [
+        "/api/v1/media/e3da9690-bcec-4abc-a849-e2a431791bab"
+      ],
+      "description": [
+        "Apple Watch SE 3 phù hợp người bắt đầu sử dụng đồng hồ Apple để theo dõi vận động và nhận thông báo. Màn hình luôn bật giúp nhìn nhanh giờ và thông tin tập luyện.",
+        "Bản GPS 40mm cần kết nối với iPhone cho nhiều chức năng liên lạc. Thời lượng pin thực tế thay đổi theo mức sử dụng, kết nối và cài đặt."
+      ],
+      "keySpecs": [
+        {
+          "label": "Vỏ",
+          "value": "Nhôm 40mm, dày 10,7mm"
+        },
+        {
+          "label": "Màn hình",
+          "value": "Retina OLED LTPO luôn bật; 324 × 394"
+        },
+        {
+          "label": "Độ sáng",
+          "value": "Đỉnh đến 1000 nit"
+        },
+        {
+          "label": "Chip",
+          "value": "S10, CPU 2 lõi; dung lượng 64GB"
+        },
+        {
+          "label": "Cảm biến",
+          "value": "Nhịp tim quang học, nhiệt độ, la bàn"
+        },
+        {
+          "label": "Không dây",
+          "value": "Wi-Fi 4, Bluetooth 5.3, GPS"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 18 giờ dùng thường hoặc 32 giờ nguồn điện thấp theo Apple"
+        },
+        {
+          "label": "Kháng nước",
+          "value": "50m theo tiêu chuẩn thử nghiệm; không dùng lặn sâu"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Thiết kế và hiển thị",
+          "items": [
+            {
+              "label": "Vỏ",
+              "value": "Nhôm 40mm, dày 10,7mm"
+            },
+            {
+              "label": "Màn hình",
+              "value": "Retina OLED LTPO luôn bật; 324 × 394"
+            },
+            {
+              "label": "Độ sáng",
+              "value": "Đỉnh đến 1000 nit"
+            }
+          ]
+        },
+        {
+          "groupName": "Phần cứng",
+          "items": [
+            {
+              "label": "Chip",
+              "value": "S10, CPU 2 lõi; dung lượng 64GB"
+            },
+            {
+              "label": "Cảm biến",
+              "value": "Nhịp tim quang học, nhiệt độ, la bàn"
+            }
+          ]
+        },
+        {
+          "groupName": "Kết nối và pin",
+          "items": [
+            {
+              "label": "Không dây",
+              "value": "Wi-Fi 4, Bluetooth 5.3, GPS"
+            },
+            {
+              "label": "Pin",
+              "value": "Đến 18 giờ dùng thường hoặc 32 giờ nguồn điện thấp theo Apple"
+            },
+            {
+              "label": "Kháng nước",
+              "value": "50m theo tiêu chuẩn thử nghiệm; không dùng lặn sâu"
+            },
+            {
+              "label": "Tương thích",
+              "value": "Cần iPhone tương thích; không phải đồng hồ Android"
+            }
+          ]
+        },
+        {
+          "groupName": "Phiên bản và nguồn tham khảo",
+          "items": [
+            {
+              "label": "Cấu hình bán",
+              "value": "40mm · GPS"
+            },
+            {
+              "label": "Màu trong catalog",
+              "value": "Ánh Sao"
+            },
+            {
+              "label": "Thông số",
+              "value": "Apple Support 125094"
+            },
+            {
+              "label": "Giá tham khảo",
+              "value": "TopZone · ghi nhận 2026-11-11; giá có thể thay đổi"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu mô phỏng phục vụ đồ án, không phải tồn kho của nhà bán lẻ."
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Tham khảo bảo hành giới hạn một năm của Apple theo điều kiện và chứng từ hợp lệ. Website đồ án không thực hiện bán hàng hoặc bảo hành thực tế.",
+      "configurations": [
+        {
+          "id": "d6cdb925-3b7d-4587-a100-87218cdf1059",
+          "storage": "40mm · GPS",
+          "chip": "S10",
+          "connectivity": "GPS"
+        }
+      ],
+      "colors": [
+        {
+          "id": "b29327a0-af7b-4a4e-ab20-050bfbc7b54b",
+          "name": "Ánh Sao",
+          "hex": "#e5ddce",
+          "image": "/api/v1/media/e3da9690-bcec-4abc-a849-e2a431791bab"
+        }
+      ],
+      "skus": [
+        {
+          "id": "650b06bc-927d-4082-a6a2-48a935adbd6f",
+          "configurationId": "d6cdb925-3b7d-4587-a100-87218cdf1059",
+          "colorId": "b29327a0-af7b-4a4e-ab20-050bfbc7b54b",
+          "sku": "AURA-NEW-APPLE-WATCH-SE-3",
+          "price": 6790000,
+          "originalPrice": 6790000,
           "onHand": 10
         }
       ]

@@ -1,3 +1,7 @@
+> Cập nhật 11/11/2026: **đặt hàng bắt buộc đăng nhập khách hàng**; đăng ký cần họ tên, SĐT, email và địa chỉ. Email đơn lấy từ tài khoản. Các mục đặt hàng vãng lai/email tùy chọn bên dưới chỉ còn là lịch sử, không dùng để nghiệm thu mới. Xem [quy trình và kiểm thử hiện hành](MEMBER_CHECKOUT.md).
+
+> Catalog hiện hành 11/11: 36 sản phẩm, 104 SKU; đã thêm 12 mẫu và điền thông số chi tiết còn trống của 24 mẫu. Main giữ nguyên tài khoản/đơn/giá/tồn SKU cũ. [Nguồn và vận hành](CATALOG_EXPANSION.md).
+
 > Catalog mới nhất: main có 24 sản phẩm/92 SKU, 40 ảnh WebP nội bộ; demo đã thay ảnh cho 8 sản phẩm, giữ tồn/đơn/tài khoản. [Bàn giao](CATALOG_IMPORT.md). Các mốc 0 sản phẩm và ảnh hình học phía dưới là lịch sử.
 
 > Hồ sơ R5 mới nhất: [Word 13 trang và PowerPoint 12 slide](submission/README.md) đã tạo và kiểm tra trực quan. Còn mẫu lớp, test tay, video và luyện bảo vệ. Không thay đổi app/database trong phiên hồ sơ.

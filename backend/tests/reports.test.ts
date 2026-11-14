@@ -58,7 +58,7 @@ test('aggregated VND never silently rounds beyond safe integer range', async () 
 test('reports require active owner/editor sessions and reject customer/revoked sessions; HTTP no-store', async () => {
   const query = { from: '2026-10-26', to: '2026-10-26' }, auth = createAuthService(fixture.db);
   await assert.rejects(revenueReport(fixture.db, undefined, query), /đăng nhập/);
-  await auth.register({ fullName: 'Khách', email: 'customer@example.test', phone: '0901234567', password: 'Customer-test-password-123' });
+  await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, fullName: 'Khách', email: 'customer@example.test', phone: '0901234567', password: 'Customer-test-password-123' });
   const customer = await auth.login('customer', 'customer@example.test', 'Customer-test-password-123');
   await assert.rejects(revenueReport(fixture.db, customer.token, query), /Phiên quản trị/);
   await fixture.db.query("UPDATE admin_users SET role='editor'");

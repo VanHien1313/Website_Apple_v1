@@ -61,7 +61,7 @@ test('admin list filters literal search, paginates and validates bounds', async 
 });
 test('HTTP category mutations enforce admin session, origin, revision and expose successful names publicly', async () => {
   const auth = createAuthService(fixture.db);
-  await auth.register({ email: 'customer@example.test', fullName: 'Khách', phone: '0901234567', password: 'Customer-password-12345' });
+  await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email: 'customer@example.test', fullName: 'Khách', phone: '0901234567', password: 'Customer-password-12345' });
   const customer = await auth.login('customer', 'customer@example.test', 'Customer-password-12345');
   await assert.rejects(service().list(customer.token, {}), /Phiên quản trị/);
   const server = createApp(fixture.db, () => {}).listen(0, '127.0.0.1'); await once(server, 'listening');

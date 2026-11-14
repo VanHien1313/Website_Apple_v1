@@ -1,3 +1,4 @@
+import {disabledPayments,walletEnabled,type PaymentConfig} from '../payments/config.ts';
 import { createHash, randomUUID, timingSafeEqual } from 'node:crypto';
 import { Router } from 'express';
 import { lockTransaction, type Database, type SqlClient } from '../db/database.ts';
@@ -20,7 +21,7 @@ function field(value: unknown, max: number, optional = false) {
 }
 export function parseOrder(value: unknown) {
   const input = record(value), quote = parseQuote(input);
-  if (!quote.items.length || input.paymentMethod !== 'cod') throw fail('Cần giỏ hàng có sản phẩm và thanh toán COD.');
+  if (!quote.items.length || !['cod','momo','zalopay'].includes(String(input.paymentMethod))) throw fail('Cần giỏ hàng có sản phẩm và phương thức thanh toán hợp lệ.');
   if (typeof input.requestId !== 'string' || !uuid.test(input.requestId) || typeof input.receiptToken !== 'string' || !secret.test(input.receiptToken)) throw fail();
   if (!Number.isSafeInteger(input.expectedTotal) || (input.expectedTotal as number) < 0 || !Array.isArray(input.expectedPrices)) throw fail();
   const prices = new Map<string, number>();
@@ -31,11 +32,11 @@ export function parseOrder(value: unknown) {
   }
   if (prices.size !== quote.items.length || quote.items.some((item) => !prices.has(item.skuId))) throw fail();
   const c = record(input.customer), address = record(input.shippingAddress);
-  const customer = { fullName: field(c.fullName, 120), phone: field(c.phone, 24).replace(/[\s.-]/g, ''), email: field(c.email, 254, true).toLowerCase() };
+  const customer = { fullName: field(c.fullName, 120), phone: field(c.phone, 24).replace(/[\s.-]/g, ''), email: field(c.email, 254).toLowerCase() };
   if (!/^(0|\+84)\d{9}$/.test(customer.phone) || (customer.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email))) throw fail();
   const shippingAddress = { address: field(address.address, 300), province: field(address.province, 100), district: field(address.district, 100, true), ward: field(address.ward, 100), notes: field(address.notes, 1000, true) };
   return { items: quote.items.sort((a, b) => a.skuId.localeCompare(b.skuId)), shippingMethod: quote.shippingMethod,
-    paymentMethod: 'cod' as const, customer, shippingAddress, requestId: input.requestId.toLowerCase(), receiptToken: input.receiptToken,
+    paymentMethod: input.paymentMethod as 'cod'|'momo'|'zalopay', customer, shippingAddress, requestId: input.requestId.toLowerCase(), receiptToken: input.receiptToken,
     expectedTotal: input.expectedTotal as number, expectedPrices: [...prices].sort(([a], [b]) => a.localeCompare(b)) };
 }
 export type OrderInput = ReturnType<typeof parseOrder>;
@@ -60,12 +61,17 @@ export async function readOrder(tx: SqlClient, id: string) {
     customer: JSON.parse(String(order.customer)), shippingAddress: JSON.parse(String(order.shippingAddress)),
     items: items.map((item) => ({ ...item, unitPrice: Number(item.unitPrice), totalPrice: Number(item.totalPrice) })) };
 }
-export function createOrderService(db: Database) {
+export function createOrderService(db: Database, payments:PaymentConfig=disabledPayments) {
   return {
     async create(value: unknown, sessionToken?: string) {
+      if (!sessionToken) throw new ApiError(401, 'UNAUTHENTICATED', 'Vui lòng đăng nhập tài khoản khách hàng để đặt hàng.');
       const input = parseOrder(value);
       return db.transaction(async (tx) => {
         const owner = await customerId(tx, sessionToken);
+        if (!owner) throw new ApiError(401, 'UNAUTHENTICATED', 'Vui lòng đăng nhập để đặt hàng.');
+        const account = (await tx.query<{ email: string }>('SELECT email FROM customers WHERE id=@arg1', [owner])).rows[0];
+        if (!account) throw new ApiError(401, 'UNAUTHENTICATED', 'Tài khoản không còn tồn tại.');
+        input.customer.email = account.email.toLowerCase();
         const scope = owner ? `customer:${owner}` : `guest:${hash(input.receiptToken)}`;
         const { receiptToken, requestId, ...content } = input;
         const fingerprint = hash(JSON.stringify(content));
@@ -78,6 +84,8 @@ export function createOrderService(db: Database) {
           if (previous.fingerprint !== fingerprint) throw new ApiError(409, 'IDEMPOTENCY_CONFLICT', 'Mã yêu cầu đã được dùng cho nội dung khác.');
           return { replayed: true, order: await readOrder(tx, previous.order_id) };
         }
+        if(input.paymentMethod!=='cod'&&!walletEnabled(payments,input.paymentMethod))throw new ApiError(503,'PAYMENT_UNAVAILABLE','Ví điện tử chưa được cấu hình. Chọn COD hoặc thử lại sau.');
+        if(input.paymentMethod==='momo'&&(input.expectedTotal<1000||input.expectedTotal>50000000))throw new ApiError(422,'INVALID_ORDER','MoMo hỗ trợ đơn từ 1.000 đến 50.000.000 đồng.');
         // A stable SKU lock order serializes competing checkouts without a store-wide lock.
         for (const item of input.items) await lockTransaction(tx, `inventory:${item.skuId}`);
         const quote = await quoteCart(tx, input);
@@ -85,9 +93,9 @@ export function createOrderService(db: Database) {
         const prices = new Map(input.expectedPrices);
         if (input.expectedTotal !== quote.grandTotal || quote.lines.some((line) => prices.get(line.skuId) !== line.price)) throw new ApiError(409, 'PRICE_CHANGED', 'Giá đã thay đổi. Hãy xem lại báo giá trước khi đặt hàng.');
         const id = randomUUID(), code = `AURA-${id.toUpperCase()}`;
-        await tx.query(`INSERT INTO orders(id,order_code,customer_id,customer_snapshot,shipping_address,shipping_method,subtotal,discount,shipping_fee,total,guest_receipt_hash)
-          VALUES (@arg1,@arg2,@arg3,@arg4,@arg5,@arg6,@arg7,@arg8,@arg9,@arg10,@arg11)`,
-        [id, code, owner, JSON.stringify(input.customer), JSON.stringify(input.shippingAddress), input.shippingMethod, quote.subtotal, quote.totalDiscount, quote.shippingFee, quote.grandTotal, owner ? null : hash(receiptToken)]);
+        await tx.query(`INSERT INTO orders(id,order_code,customer_id,customer_snapshot,shipping_address,shipping_method,subtotal,discount,shipping_fee,total,guest_receipt_hash,payment_method)
+          VALUES (@arg1,@arg2,@arg3,@arg4,@arg5,@arg6,@arg7,@arg8,@arg9,@arg10,@arg11,@arg12)`,
+        [id, code, owner, JSON.stringify(input.customer), JSON.stringify(input.shippingAddress), input.shippingMethod, quote.subtotal, quote.totalDiscount, quote.shippingFee, quote.grandTotal, owner ? null : hash(receiptToken),input.paymentMethod]);
         for (const line of quote.lines) {
           const reserved = await tx.query(`UPDATE inventory_skus SET reserved=reserved+@arg1,revision=revision+1 OUTPUT INSERTED.id WHERE id=@arg2 AND on_hand-reserved>=@arg1`, [line.quantity, line.skuId]);
           if (!reserved.rows.length) throw new ApiError(409, 'STOCK_CHANGED', 'Số lượng tồn kho không còn đủ.');
@@ -96,9 +104,9 @@ export function createOrderService(db: Database) {
           [randomUUID(), id, line.skuId, line.productId, line.configurationId, line.name, line.productImage, line.colorName, line.storage, line.quantity, line.price, line.lineTotal]);
           await tx.query(`INSERT INTO reservations(id,order_id,sku_id,quantity,expires_at,status) VALUES (@arg1,@arg2,@arg3,@arg4,DATEADD(hour,24,SYSUTCDATETIME()),'HELD')`, [randomUUID(), id, line.skuId, line.quantity]);
         }
-        await tx.query("INSERT INTO payments(id,order_id,method,status,amount) VALUES (@arg1,@arg2,'cod','PENDING',@arg3)", [randomUUID(), id, quote.grandTotal]);
+        await tx.query("INSERT INTO payments(id,order_id,method,status,amount) VALUES (@arg1,@arg2,@arg4,'PENDING',@arg3)", [randomUUID(), id, quote.grandTotal,input.paymentMethod]);
         await tx.query(`INSERT INTO order_events(id,order_id,actor_type,customer_id,actor_name,kind,from_state,to_state,note)
-          VALUES (@arg1,@arg2,@arg3,@arg4,@arg5,'status','','PENDING',N'Tạo đơn COD')`, [randomUUID(), id, owner ? 'customer' : 'system', owner, owner ? input.customer.fullName : 'Guest checkout']);
+          VALUES (@arg1,@arg2,@arg3,@arg4,@arg5,'status','','PENDING',@arg6)`, [randomUUID(), id, owner ? 'customer' : 'system', owner, owner ? input.customer.fullName : 'Guest checkout',input.paymentMethod==='cod'?'Tạo đơn COD':'Tạo đơn thanh toán '+input.paymentMethod+' (sandbox)']);
         await tx.query(`INSERT INTO idempotency_requests(scope,request_id,fingerprint,order_id,expires_at) VALUES (@arg1,@arg2,@arg3,@arg4,DATEADD(day,30,SYSUTCDATETIME()))`, [scope, requestId, fingerprint, id]);
         return { replayed: false, order: await readOrder(tx, id) };
       });
@@ -142,8 +150,8 @@ export async function expirePendingOrders(db: Database) {
   return expired;
 }
 
-export function ordersRouter(db: Database, options: AuthOptions) {
-  const router = Router(), service = createOrderService(db), attempts = new Map<string, { count: number; until: number }>();
+export function ordersRouter(db: Database, options: AuthOptions, payments:PaymentConfig=disabledPayments) {
+  const router = Router(), service = createOrderService(db,payments), attempts = new Map<string, { count: number; until: number }>();
   const cookieName = `${options.secure ? '__Host-' : ''}aura_customer`;
   const token = (cookie?: string) => cookie?.split(';').map((item) => item.trim()).find((item) => item.startsWith(`${cookieName}=`))?.slice(cookieName.length + 1);
   router.post('/orders', async (req, res) => {

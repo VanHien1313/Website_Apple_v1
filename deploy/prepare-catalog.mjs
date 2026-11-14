@@ -43,5 +43,7 @@ else {
     skus:p.variants.flatMap(v=>p.colors.map((c,i)=>({id:catalogId(p.id+':'+v.id+':'+c.id),configurationId:catalogId(p.id+':'+v.id),colorId:catalogId(p.id+':'+c.id),sku:v.sku+'-C'+(i+1),price:v.price,originalPrice:v.originalPrice,onHand:v.inStock?10:0}))) }));
   await fs.writeFile(path.join(dir,'catalog.json'),JSON.stringify({version:1,categories:[{id:'iphone',name:'iPhone'},{id:'ipad',name:'iPad'},{id:'mac',name:'Mac'},{id:'watch',name:'Apple Watch'}],media,products},null,2));
   console.log(JSON.stringify({products:products.length,skus:products.reduce((n,p)=>n+p.skus.length,0),images:media.length}));
+  // Preserve the researched expansion when regenerating the original dataset.
+  await import('./build-expanded-catalog.mjs');
 }
 

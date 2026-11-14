@@ -18,14 +18,14 @@ before(async () => {
   fixture = await isolatedDatabase(); await migrate(fixture.db); await seedDemo(fixture.db, { ALLOW_DEMO_SEED: 'true' });
   await bootstrapOwner(fixture.db, 'owner@example.test', 'Owner', password);
   const auth = createAuthService(fixture.db); token = (await auth.login('admin', 'owner@example.test', password)).token;
-  for (const [email, fullName] of [['alice@example.test', 'Filter Alice'], ['zulu@example.test', 'Filter Zulu']]) await auth.register({ email, fullName, phone: '0901234567', password });
+  for (const [email, fullName] of [['alice@example.test', 'Filter Alice'], ['zulu@example.test', 'Filter Zulu']]) await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email, fullName, phone: '0901234567', password });
   customer = (await auth.login('customer', 'alice@example.test', password)).token;
   for (const [id, name] of [['filter-alpha', 'Filter Alpha'], ['filter-zulu', 'Filter Zulu']]) await categoryManagement(fixture.db).write(token, 'create', id!, { name });
   for (const [slug, name, active] of [['filter-alpha', 'Filter Alpha', true], ['filter-zulu', 'Filter Zulu', false]] as const) await fixture.db.query("INSERT INTO products(id,category_id,slug,name,thumbnail,active) VALUES(@arg1,'filter-zulu',@arg2,@arg3,'/images/placeholder.svg',@arg4)", [randomUUID(), slug, name, active]);
   for (const [email, name, active] of [['filter-alpha@example.test', 'Filter Alpha', true], ['filter-zulu@example.test', 'Filter Zulu', false]] as const) await fixture.db.query("INSERT INTO admin_users(id,email,name,password_hash,role,active) VALUES(@arg1,@arg2,@arg3,'not-a-login-hash','editor',@arg4)", [randomUUID(), email, name, active]);
   const sku = '00000000-0000-4000-8000-000000000004';
   const input = (quantity: number) => ({ requestId: randomUUID(), receiptToken: randomBytes(32).toString('hex'), items: [{ skuId: sku, quantity }], expectedPrices: [{ skuId: sku, price: 10000000 }], expectedTotal: quantity === 1 ? 10050000 : 20000000, shippingMethod: 'standard', paymentMethod: 'cod', customer: { fullName: 'Người nhận', phone: '0901234567', email: 'zulu@example.test' }, shippingAddress: { address: '123 Đường mẫu', province: 'TP HCM', ward: 'Phường mẫu' } });
-  await createOrderService(fixture.db).create(input(1), customer); await createOrderService(fixture.db).create(input(2));
+  await createOrderService(fixture.db).create(input(1), customer); const legacy = await createOrderService(fixture.db).create(input(2), customer); await fixture.db.query('UPDATE orders SET customer_id=NULL WHERE id=@arg1',[legacy.order.id]);
 });
 after(async () => { await fixture?.cleanup(); });
 test('catalog category and account filters match counts and whitelisted name sort', async () => {

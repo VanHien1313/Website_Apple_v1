@@ -35,6 +35,7 @@ export async function revenueReport(db: Database, token: string | undefined, que
     const daily = (await tx.query<{ day: string; count: string | number; amount: string | number }>(`SELECT CONVERT(char(10),DATEADD(hour,7,completed_at),23) AS day,
       COUNT_BIG(*) AS count,CONVERT(varchar(40),SUM(CAST(total AS decimal(38,0)))) AS amount
       FROM orders WHERE status='COMPLETED' AND payment_status='PAID'
+      AND NOT EXISTS (SELECT 1 FROM wallet_attempts w WHERE w.order_id=orders.id AND w.environment='sandbox')
       AND completed_at>=CONVERT(datetime2,@arg1,127) AND completed_at<CONVERT(datetime2,@arg2,127)
       GROUP BY CONVERT(char(10),DATEADD(hour,7,completed_at),23) ORDER BY day`, [start, end])).rows;
     const bins = new Map<string, { label: string; count: bigint; amount: bigint }>();

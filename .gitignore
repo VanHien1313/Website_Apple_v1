@@ -68,3 +68,7 @@ desktop.ini
 .stylelintcache
 *.tsbuildinfo
 .tempmediaStorage/
+
+# Local development scratch files and generated browser QA captures
+/tmp/
+/docs/qa/

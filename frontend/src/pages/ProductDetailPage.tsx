@@ -32,7 +32,7 @@ function ProductDetails({ product }: { product: Product }) {
   const [variantId, setVariantId] = useState(selectColorVariant(product, initialColor?.id, initialVariant)?.id);
   const [image, setImage] = useState(initialColor?.image || product.thumbnail);
   const [dialog, setDialog] = useState<'gallery' | 'specs' | null>(null);
-  const { addItem, items } = useCart();
+  const { addItem, items, selectItems } = useCart();
   const navigate = useNavigate();
   const notify = useToast();
   const variant = product.variants.find((item) => item.id === variantId);
@@ -50,8 +50,8 @@ function ProductDetails({ product }: { product: Product }) {
       notify('Đã đạt giới hạn số lượng cho cấu hình này.'); return;
     }
     addItem(product, variant, color);
-    if (buyNow) navigate('/checkout');
-    else notify(`Đã thêm ${product.name} vào giỏ hàng.`);
+    if (buyNow) { if (isApiMode) selectItems([cartItemId(product.id, variant.id, color.id)]); navigate('/checkout'); }
+    else notify(`Đã thêm ${product.name} vào giỏ hàng.`, { label: 'Xem giỏ hàng', to: '/cart' });
   }
   return <div className="ui-container space-y-12 py-6 sm:py-10">
     <nav aria-label="Đường dẫn sản phẩm" className="flex flex-wrap items-center gap-2 text-sm text-secondary"><Link to={`/search?category=${encodeURIComponent(product.category)}`} className="flex min-h-11 items-center gap-2 hover:text-accent"><ArrowLeft size={16} />Danh mục {product.category === 'watch' ? 'Apple Watch' : product.category}</Link><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>

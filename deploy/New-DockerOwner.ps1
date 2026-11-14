@@ -5,7 +5,7 @@ $dockerCommand = Get-Command docker -ErrorAction SilentlyContinue
 $dockerPath = if ($dockerCommand) { $dockerCommand.Source } else { Join-Path $env:ProgramFiles 'Docker\Docker\resources\bin\docker.exe' }
 if (-not (Test-Path -LiteralPath $dockerPath)) { throw 'Docker CLI not found. Open a new terminal after installing Docker Desktop.' }
 $name = Read-Host 'Owner name'
-$securePassword = Read-Host 'Owner password (12-128 characters)' -AsSecureString
+$securePassword = Read-Host 'Owner password (8-128 characters, uppercase + special character)' -AsSecureString
 $password = [System.Net.NetworkCredential]::new('', $securePassword).Password
 $payload = @{ email = $Email; name = $name; password = $password } | ConvertTo-Json -Compress
 Push-Location (Split-Path $PSScriptRoot -Parent)

@@ -19,7 +19,7 @@ export default function AdminLayout() {
   return <div className="min-h-screen bg-surface-subtle">
     <a href="#admin-content" className="ui-skip-link">Đến nội dung quản trị</a>
     <aside className="fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-border-subtle bg-background p-6 lg:flex">
-      <Link to="/admin" className="mb-12 px-4 text-3xl font-bold tracking-[-0.07em]">aura<span className="text-accent">.</span><span className="ml-3 text-xs font-medium tracking-normal text-secondary">Quản trị</span></Link>
+      <Link to="/admin" className="mb-12 px-4 text-3xl font-bold tracking-[-0.07em]">Aura<span className="text-accent">.</span><span className="ml-3 text-xs font-medium tracking-normal text-secondary">Quản trị</span></Link>
       <AdminNavigation /><div className="mt-auto border-t border-border-subtle pt-5"><p className="px-4 text-xs leading-relaxed text-secondary">Không gian demo<br />Chưa kết nối dữ liệu thực.</p><Link to="/" className="mt-3 flex items-center gap-2 px-4 py-3 text-sm font-semibold text-accent">Xem cửa hàng<ArrowUpRight size={16} /></Link></div>
     </aside>
     <div className="lg:pl-64"><header className="flex min-h-20 items-center justify-between gap-4 border-b border-border-subtle bg-background px-4 sm:px-8"><div className="flex items-center gap-3"><button type="button" className="ui-icon-button lg:hidden" onClick={() => setMenuOpen(true)} aria-label="Mở menu quản trị" aria-haspopup="dialog"><Menu size={20} /></button><nav aria-label="Đường dẫn" className="text-sm text-secondary"><Link to="/admin" className="hover:text-accent">Quản trị</Link><span aria-hidden="true" className="mx-3">/</span><span aria-current="page" className="font-semibold text-primary">{title}</span></nav></div><ThemeToggle /></header>

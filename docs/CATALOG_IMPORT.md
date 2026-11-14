@@ -1,3 +1,5 @@
+> Cập nhật 11/11: catalog main đã mở rộng lên 36 sản phẩm/104 SKU/52 ảnh. Số liệu 24 sản phẩm bên dưới là mốc nhập ban đầu. [Phần mở rộng](CATALOG_EXPANSION.md).
+
 # Catalog SQL và ảnh sản phẩm
 
 Cập nhật 10/11/2026 sau phản hồi cửa hàng trống và ảnh demo hình học.

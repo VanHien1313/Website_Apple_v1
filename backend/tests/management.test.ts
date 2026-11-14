@@ -1,3 +1,5 @@
+import { confirmOverdueReceipts } from '../src/checkout/receipt.ts';
+import { revenueReport } from '../src/checkout/reports.ts';
 import { before, after, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { randomBytes, randomUUID } from 'node:crypto';
@@ -15,8 +17,8 @@ let fixture: Awaited<ReturnType<typeof isolatedDatabase>>, admin: string, custom
 const sku = '00000000-0000-4000-8000-000000000004';
 const input = () => ({ requestId: randomUUID(), receiptToken: randomBytes(32).toString('hex'), items: [{ skuId: sku, quantity: 1 }],
   shippingMethod: 'standard', paymentMethod: 'cod', expectedTotal: 10050000, expectedPrices: [{ skuId: sku, price: 10000000 }],
-  customer: { fullName: 'Khách vận hành', phone: '0901234567' }, shippingAddress: { province: 'TP HCM', ward: 'Phường mẫu', address: '123 Mẫu' } });
-const create = async (token?: string) => (await createOrderService(fixture.db).create(input(), token)).order;
+  customer: { fullName: 'Khách vận hành', phone: '0901234567', email: 'customer@example.test' }, shippingAddress: { province: 'TP HCM', ward: 'Phường mẫu', address: '123 Mẫu' } });
+const create = async (token: string = customer) => (await createOrderService(fixture.db).create(input(), token)).order;
 const change = (id: string, revision: number, target: string, token = admin, isAdmin = true, kind = 'status') => orderManagement(fixture.db).update(isAdmin, token, id, { revision, kind, target, note: 'Kiểm thử vận hành' });
 const stock = async () => (await fixture.db.query<{ on_hand: number; reserved: number }>('SELECT on_hand,reserved FROM inventory_skus WHERE id=@arg1', [sku])).rows[0]!;
 before(async () => {
@@ -25,7 +27,7 @@ before(async () => {
   await bootstrapOwner(fixture.db, 'owner@example.test', 'Owner', 'Owner-test-password-123');
   const auth = createAuthService(fixture.db);
   admin = (await auth.login('admin', 'owner@example.test', 'Owner-test-password-123')).token;
-  for (const email of ['customer@example.test', 'other@example.test']) await auth.register({ email, fullName: 'Khách', phone: '0901234567', password: 'Customer-test-password-123' });
+  for (const email of ['customer@example.test', 'other@example.test']) await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, email, fullName: 'Khách', phone: '0901234567', password: 'Customer-test-password-123' });
   customer = (await auth.login('customer', 'customer@example.test', 'Customer-test-password-123')).token;
   other = (await auth.login('customer', 'other@example.test', 'Customer-test-password-123')).token;
 });
@@ -33,6 +35,7 @@ after(async () => { await fixture?.cleanup(); });
 
 test('order history is scoped to authenticated customer; guest and other account cannot read or cancel', async () => {
   const service = orderManagement(fixture.db), own = await create(customer), guest = await create();
+  await fixture.db.query('UPDATE orders SET customer_id=NULL WHERE id=@arg1',[guest.id]);
   assert.equal((await service.list(false, customer, {})).total, 1);
   assert.equal((await service.list(false, other, {})).total, 0);
   assert.equal((await service.get(false, customer, own.id)).actions[0]?.target, 'CANCELLED');
@@ -61,8 +64,9 @@ test('COD fulfillment consumes stock exactly once, pays after delivery, complete
   await change(order.id, 2, 'DELIVERED');
   await assert.rejects(change(order.id, 3, 'COMPLETED'), /Không thể/);
   await change(order.id, 3, 'PAID', admin, true, 'payment');
-  const result = await change(order.id, 4, 'COMPLETED');
-  assert.equal(result.status, 'COMPLETED'); assert.equal(result.paymentStatus, 'PAID'); assert.equal(result.history.length, 6);
+  await assert.rejects(change(order.id, 4, 'COMPLETED'), /Không thể/);
+  const result = await change(order.id, 4, 'CONFIRMED', customer, false, 'receipt');
+  assert.equal(result.status, 'COMPLETED'); assert.equal(result.paymentStatus, 'PAID'); assert.equal(result.history.length, 7);
   assert.ok((await fixture.db.query('SELECT completed_at FROM orders WHERE id=@arg1', [order.id])).rows[0]!.completed_at);
   assert.equal((await fixture.db.query('SELECT status FROM reservations WHERE order_id=@arg1', [order.id])).rows[0]!.status, 'CONSUMED');
   assert.equal((await fixture.db.query('SELECT status FROM payments WHERE order_id=@arg1', [order.id])).rows[0]!.status, 'PAID');
@@ -125,4 +129,32 @@ test('management HTTP rejects cross-origin writes and guest access, accepts auth
     const response = await send('http://127.0.0.1:3000'); assert.equal(response.status, 200); assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.equal((await response.json()).status, 'PROCESSING');
   } finally { server.closeAllConnections(); await new Promise<void>((resolve) => server.close(() => resolve())); }
+});
+
+async function deliveredOrder() {
+ const order=await create(); await change(order.id,0,'PROCESSING');await change(order.id,1,'SHIPPED');return change(order.id,2,'DELIVERED');
+}
+test('receipt ownership, no premature actions, payment after receipt completes and counts revenue once',async()=>{
+ const pending=await create();await assert.rejects(change(pending.id,0,'CONFIRMED',customer,false,'receipt'),/Không thể/);
+ const order=await deliveredOrder();
+ await assert.rejects(change(order.id,3,'CONFIRMED',other,false,'receipt'),/Không tìm/);
+ await assert.rejects(change(order.id,3,'CONFIRMED',admin,true,'receipt'),/Không thể/);
+ const confirmed=await change(order.id,3,'CONFIRMED',customer,false,'receipt');assert.equal(confirmed.status,'DELIVERED');assert.equal(confirmed.paymentStatus,'PENDING');
+ const day=new Date(Date.now()+7*3600000).toISOString().slice(0,10);const query={from:day,to:day};const before=await revenueReport(fixture.db,admin,query);
+ const completed=await change(order.id,4,'PAID',admin,true,'payment');assert.equal(completed.status,'COMPLETED');
+ const after=await revenueReport(fixture.db,admin,query);assert.equal(after.total-before.total,order.total);assert.equal(after.count-before.count,1);
+ await assert.rejects(change(order.id,4,'PAID',admin,true,'payment'),/đã được cập nhật/);
+ assert.equal((await revenueReport(fixture.db,admin,query)).total,after.total);
+});
+test('seven-day worker is idempotent, never pays COD, and stops for customer feedback',async()=>{
+ const fresh=await deliveredOrder();await confirmOverdueReceipts(fixture.db);assert.equal((await orderManagement(fixture.db).get(true,admin,fresh.id)).receipt.status,'WAITING');
+ const unpaid=await deliveredOrder(),paid=await deliveredOrder(),reported=await deliveredOrder();
+ await change(paid.id,3,'PAID',admin,true,'payment');await change(reported.id,3,'REPORTED',customer,false,'receipt');
+ for(const id of [unpaid.id,paid.id,reported.id])await fixture.db.query('UPDATE orders SET delivered_at=DATEADD(day,-8,SYSUTCDATETIME()) WHERE id=@arg1',[id]);
+ await Promise.all([confirmOverdueReceipts(fixture.db),confirmOverdueReceipts(fixture.db)]);
+ const a=await orderManagement(fixture.db).get(true,admin,unpaid.id),b=await orderManagement(fixture.db).get(true,admin,paid.id),c=await orderManagement(fixture.db).get(true,admin,reported.id);
+ assert.equal(a.receipt.status,'AUTO');assert.equal(a.status,'DELIVERED');assert.equal(a.paymentStatus,'PENDING');assert.equal(b.status,'COMPLETED');assert.equal(c.receipt.status,'REPORTED');assert.equal(c.status,'DELIVERED');
+ assert.equal(a.history.filter(e=>String(e.note).includes('Tự xác nhận')).length,1);
+ assert.equal(await confirmOverdueReceipts(fixture.db),0);
+ const resolved=await change(reported.id,c.revision,'CONFIRMED',customer,false,'receipt');assert.equal(resolved.receipt.status,'CONFIRMED');
 });

@@ -12,7 +12,7 @@ import { parseProduct } from '../src/products-input.ts';
 import { createOrderService } from '../src/checkout/orders.ts';
 import { createApp } from '../src/app.ts';
 
-let fixture: Awaited<ReturnType<typeof isolatedDatabase>>, token: string;
+let fixture: Awaited<ReturnType<typeof isolatedDatabase>>, token: string, customerToken: string;
 const service = () => productManagement(fixture.db);
 function product() {
   const id = randomUUID(), configurationId = randomUUID(), colorId = randomUUID();
@@ -20,9 +20,10 @@ function product() {
     configurations: [{ id: configurationId, storage: '256GB' }], colors: [{ id: colorId, name: 'Đen', hex: '#000000', image: '/images/placeholder.svg' }],
     skus: [{ id: randomUUID(), configurationId, colorId, sku: `TEST-${id}`, price: 10000000, originalPrice: 11000000, onHand: 5 }] };
 }
-const createOrder = (skuId: string) => createOrderService(fixture.db).create({ requestId: randomUUID(), receiptToken: randomBytes(32).toString('hex'), items: [{ skuId, quantity: 1 }], shippingMethod: 'standard', paymentMethod: 'cod', expectedTotal: 10050000, expectedPrices: [{ skuId, price: 10000000 }], customer: { fullName: 'Khách', phone: '0901234567' }, shippingAddress: { province: 'HCM', ward: 'Phường mẫu', address: '123 Mẫu' } });
+const createOrder = (skuId: string) => createOrderService(fixture.db).create({ requestId: randomUUID(), receiptToken: randomBytes(32).toString('hex'), items: [{ skuId, quantity: 1 }], shippingMethod: 'standard', paymentMethod: 'cod', expectedTotal: 10050000, expectedPrices: [{ skuId, price: 10000000 }], customer: { fullName: 'Khách', phone: '0901234567', email: 'buyer@example.test' }, shippingAddress: { province: 'HCM', ward: 'Phường mẫu', address: '123 Mẫu' } }, customerToken);
 before(async () => {
   fixture = await isolatedDatabase(); await migrate(fixture.db); await seedDemo(fixture.db, { ALLOW_DEMO_SEED: 'true' });
+  const auth = createAuthService(fixture.db); await auth.register({ shippingAddress: { address: '123 Mẫu', province: 'TP HCM', ward: 'Phường mẫu' }, fullName: 'Buyer', email:'buyer@example.test',phone:'0901234567',password:'Customer-password-12345' }); customerToken=(await auth.login('customer','buyer@example.test','Customer-password-12345')).token;
   await bootstrapOwner(fixture.db, 'products@example.test', 'Product owner', 'Product-password-12345');
   token = (await createAuthService(fixture.db).login('admin', 'products@example.test', 'Product-password-12345')).token;
 });

@@ -35,6 +35,7 @@ export function createMockOrderService(repository = createOrderRepository(), pro
     },
     async createOrder(input, options) {
       const customer = currentCustomer();
+      if (!customer) throw new Error('Vui lòng đăng nhập tài khoản khách hàng để đặt hàng.');
       if (input.customerId !== customer?.id) throw new Error('Phiên khách hàng đã thay đổi. Hãy tải lại trang đặt hàng.');
       const currentProducts = products ?? catalogRepository.read().products;
       options?.signal?.throwIfAborted();

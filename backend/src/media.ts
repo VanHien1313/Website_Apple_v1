@@ -54,7 +54,7 @@ export function mediaRouter(db: Database, options: AuthOptions) {
   return router;
 }
 
-async function normalizeImage(body: unknown, mime?: string) {
+export async function normalizeImage(body: unknown, mime?: string, size = 2400) {
   if (!Buffer.isBuffer(body) || !body.length || body.length > MAX_BYTES) throw new Error('size');
   // Reject active/vector formats before passing any input to the decoder.
   const format = body.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10])) ? 'png'
@@ -64,7 +64,7 @@ async function normalizeImage(body: unknown, mime?: string) {
   const image = sharp(body, { limitInputPixels: 16000000, failOn: 'warning' });
   const metadata = await image.metadata();
   if ((metadata.pages ?? 1) !== 1 || metadata.format !== format) throw new Error('animated');
-  const output = await image.rotate().resize({ width: 2400, height: 2400, fit: 'inside', withoutEnlargement: true }).webp({ quality: 85 }).timeout({ seconds: 10 }).toBuffer({ resolveWithObject: true });
+  const output = await image.rotate().resize({ width: size, height: size, fit: size === 512 ? 'cover' : 'inside', withoutEnlargement: true }).webp({ quality: 85 }).timeout({ seconds: 10 }).toBuffer({ resolveWithObject: true });
   if (output.data.length > MAX_BYTES) throw new Error('size');
   return output;
 }

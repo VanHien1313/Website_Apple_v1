@@ -3,13 +3,15 @@ import assert from 'node:assert/strict';
 import { MOCK_PRODUCTS } from '../src/data/mockProducts';
 import { createCartItem, calculateTotals } from '../src/domain/cart';
 import { validateCheckout } from '../src/domain/checkout';
-import { createMockOrderService } from '../src/services/mock/orderService';
+import { createMockOrderService as createService } from '../src/services/mock/orderService';
 import { createOrderRepository, ORDER_STORAGE_KEY } from '../src/services/mock/orderRepository';
 import type { CreateOrderInput } from '../src/types/order';
+const buyer = { id: 'buyer', fullName: 'Test', email: 'test@example.test', phone: '0901234567', createdAt: new Date().toISOString(), credentialVersion: 1 };
+const createMockOrderService = (repo: Parameters<typeof createService>[0], products?: Parameters<typeof createService>[1]) => createService(repo, products, () => buyer);
 const product = MOCK_PRODUCTS[0];
 const line = createCartItem(product, product.variants[0], product.colors[0]);
 const input: CreateOrderInput = {
-  customer: { fullName: 'Khách thử nghiệm', phone: '0901234567' },
+  customerId: buyer.id, customer: { fullName: 'Khách thử nghiệm', phone: '0901234567', email: buyer.email },
   shippingAddress: { address: '12 đường mẫu', province: 'Thành phố mẫu', ward: 'Phường mẫu', district: '' },
   shippingMethod: 'standard', paymentMethod: 'cod',
   items: [{ productId: product.id, variantId: line.variant.id, colorId: line.color.id, quantity: 1 }],
@@ -19,9 +21,9 @@ function setup() {
   const storage = { getItem: (key: string) => data.get(key) ?? null, setItem: (key: string, value: string) => { data.set(key, value); } };
   return { data, storage, service: createMockOrderService(createOrderRepository(() => storage)) };
 }
-test('guest checkout accepts omitted/empty email, rejects malformed email and missing address fields', () => {
+test('checkout requires email and address fields', () => {
   assert.deepEqual(validateCheckout(input), {});
-  assert.deepEqual(validateCheckout({ ...input, customer: { ...input.customer, email: '  ' } }), {});
+  assert.ok(validateCheckout({ ...input, customer: { ...input.customer, email: '  ' } }).email);
   assert.ok(validateCheckout({ ...input, customer: { ...input.customer, email: 'invalid' } }).email);
   assert.ok(validateCheckout({ ...input, shippingAddress: { ...input.shippingAddress, ward: '' } }).ward);
   assert.ok(validateCheckout({ ...input, shippingAddress: { ...input.shippingAddress, province: '' } }).province);
@@ -47,7 +49,7 @@ test('saved order survives a fresh service instance and retains unpaid state', a
   const restored = await createMockOrderService(createOrderRepository(() => storage)).getOrder(order.id);
   assert.deepEqual(restored, order);
   assert.equal(restored?.paymentStatus, 'PENDING');
-  assert.equal(restored?.customer.email, undefined);
+  assert.equal(restored?.customer.email, buyer.email);
   assert.equal(await service.getOrder('not-found'), null);
 });
 test('same request is idempotent, altered request rejected, stale expected total rejected', async () => {

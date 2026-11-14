@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "catalog:prepare": "node deploy/prepare-catalog.mjs",
+    "catalog:expand": "node deploy/build-expanded-catalog.mjs",
     "catalog:import": "node deploy/catalog-local.mjs",
     "test:catalog": "node --experimental-strip-types --test deploy/catalog.test.mjs",
     "demo:start": "node deploy/demo-local.mjs start",

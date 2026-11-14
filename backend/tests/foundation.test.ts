@@ -35,7 +35,7 @@ test('readiness is unavailable before migrations and live endpoint remains avail
   } finally { await new Promise<void>((resolve) => server.close(() => resolve())); }
 });
 test('migrations apply once, report ready, reject changed history and roll back partial DDL', async () => {
-  assert.deepEqual(await migrate(db), ['001_initial.sql', '002_media.sql', '003_order_receipts.sql', '004_order_request_lookup.sql', '005_category_version.sql', '006_product_version.sql', '007_admin_version.sql']); assert.deepEqual(await migrate(db), []);
+  assert.deepEqual(await migrate(db), ['001_initial.sql', '002_media.sql', '003_order_receipts.sql', '004_order_request_lookup.sql', '005_category_version.sql', '006_product_version.sql', '007_admin_version.sql', '008_customer_address.sql', '009_customer_avatars.sql', '010_order_receipt.sql', '011_wallet_payments.sql']); assert.deepEqual(await migrate(db), []);
   await assertSchemaReady(db);
   const migrations = await loadMigrations();
   await assert.rejects(migrate(db, [{ ...migrations[0]!, checksum: 'changed' }]), /history mismatch/);

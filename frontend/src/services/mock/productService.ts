@@ -26,6 +26,6 @@ export const mockProductService: ProductService = {
   },
   async getFeaturedProducts(limit = 4, options) {
     options?.signal?.throwIfAborted();
-    return catalogRepository.read().products.filter((product) => product.badge === 'Mới' || product.badge === 'Bán chạy').slice(0, limit);
+    return filterProducts(catalogRepository.read().products).slice(0, limit);
   },
 };

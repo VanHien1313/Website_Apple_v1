@@ -1,3 +1,5 @@
+**Catalog 11/11:** bản chính có 36 sản phẩm/104 SKU, thêm 12 mẫu có nguồn giá và thông số; 24 mẫu cũ được bổ sung bảng chi tiết. [Danh sách và nguồn](docs/CATALOG_EXPANSION.md).
+
 **Catalog đã khôi phục 10/11:** cổng 4000 có 24 sản phẩm/92 SKU cùng ảnh frontend gốc lưu SQL; cổng 4001 dùng ảnh sản phẩm, giữ giá/tồn/đơn demo. [Chi tiết và cách nhập lại](docs/CATALOG_IMPORT.md).
 
 > Cập nhật24/10: đã chuyển nền backend sang **SQL Server** theo quyết định của người dùng. [Trạng thái và hướng dẫn hiện hành](docs/SQL_SERVER_MIGRATION.md). Các mô tả PostgreSQL trong lịch sử B1 đã được thay thế.

@@ -1,0 +1,6 @@
+# Optional: docker compose -f compose.yaml -f compose.demo.yaml -f compose.payment-sandbox.yaml up -d --no-deps app
+# Secrets are supplied only to the main app; never commit the referenced file.
+services:
+  app:
+    env_file:
+      - ./deploy/secrets/payment-sandbox.env
