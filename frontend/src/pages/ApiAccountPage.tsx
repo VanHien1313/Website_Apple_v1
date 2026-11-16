@@ -10,6 +10,35 @@ import { ApiImageUpload } from '../components/admin/ApiImageUpload';
 
 interface Profile { id: string; email: string; fullName?: string; name?: string; role?: string; phone?: string; createdAt?: string; shippingAddress?: { address: string; province: string; ward: string } }
 
+function SocialLogin({ next }: { next: string }) {
+  const load = useCallback((signal: AbortSignal) => request<string[]>('/auth/social/providers', { signal }), []);
+  const providers = useAsyncResource(load);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState('');
+  async function start(provider: 'google' | 'zalo') {
+    setPending(true);
+    setError('');
+    try {
+      const { url } = await request<{ url: string }>(`/auth/social/${provider}/start`, { method: 'POST', body: { next } });
+      window.location.assign(url);
+    } catch {
+      setError('Chưa mở được trang đăng nhập. Vui lòng thử lại.');
+      setPending(false);
+    }
+  }
+  return <div className="space-y-3">
+    <div className="grid gap-3 sm:grid-cols-2">
+      {(['google', 'zalo'] as const).map(provider => (
+        <Button key={provider} variant="outline" disabled={pending || !providers.data?.includes(provider)} onClick={() => void start(provider)}>
+          Đăng nhập bằng {provider === 'google' ? 'Google' : 'Zalo'}
+        </Button>
+      ))}
+    </div>
+    {!providers.loading && !providers.data?.length && <p className="text-sm text-secondary">{providers.error ? 'Chưa tải được phương thức đăng nhập.' : 'Google và Zalo chưa được cấu hình.'}</p>}
+    {error && <p role="alert" className="text-sm text-danger">{error}</p>}
+  </div>;
+}
+
 /** Every protected entry checks the server session. Browser demo identities are never consulted. */
 export default function ApiAccountPage() {
   const location = useLocation(), navigate = useNavigate();
@@ -18,7 +47,9 @@ export default function ApiAccountPage() {
   const signingIn = registering || location.pathname.endsWith('/login');
   const loginPath = admin ? '/admin/login' : '/login';
   const accountPath = admin ? '/admin' : '/account';
-  const requestedNext = new URLSearchParams(location.search).get('next') ?? '';
+  const params = new URLSearchParams(location.search);
+  const requestedNext = params.get('next') ?? '';
+  const socialError = params.get('socialError');
   const next = /^\/checkout(?:\?|$)/.test(requestedNext) ? requestedNext : '';
   const nextQuery = next ? `?next=${encodeURIComponent(next)}` : '';
   const base = admin ? '/admin/auth' : '/auth';
@@ -89,6 +120,7 @@ export default function ApiAccountPage() {
       </div>
       <p className="text-sm leading-6 text-secondary">{admin ? 'Dành cho đội ngũ vận hành Aura. Sử dụng tài khoản quản trị được cấp để tiếp tục.' : 'Bạn cần đăng nhập hoặc tạo tài khoản trước khi đặt hàng. Giỏ hàng được giữ lại khi đăng nhập.'}</p>
     </div>}
+    {signingIn && !admin && !registering && socialError && <p role="alert" className="text-sm text-danger">{socialError === 'email_exists' ? 'Email đã có tài khoản. Vui lòng đăng nhập bằng phương thức ban đầu.' : 'Đăng nhập qua Google hoặc Zalo chưa thành công. Vui lòng thử lại.'}</p>}
     {notice && <p role="status" className="text-sm text-success">{notice}</p>}
     {error && <p role="alert" className="text-sm text-danger">{error}</p>}
     {!signingIn && <div className="ui-panel space-y-3 p-6"><p className="font-semibold">{session.data?.fullName ?? session.data?.name}</p><p className="text-sm text-secondary">{session.data?.email}</p>{session.data?.role && <p className="text-sm">Vai trò: {session.data.role}</p>}<Button variant="outline" disabled={busy} onClick={logout}>Đăng xuất</Button></div>}
@@ -110,6 +142,7 @@ export default function ApiAccountPage() {
         <Button type="submit" disabled={busy} className="w-full">{busy ? 'Đang xử lý…' : registering ? 'Tạo tài khoản' : signingIn ? 'Đăng nhập' : 'Lưu mật khẩu mới'}</Button>
       </fieldset>
     </form>
+    {signingIn && !admin && !registering && <SocialLogin next={next} />}
     {signingIn && !admin && <Link to={`${registering ? '/login' : '/register'}${nextQuery}`} className="block text-center text-sm font-semibold text-accent">{registering ? 'Đã có tài khoản? Đăng nhập' : 'Chưa có tài khoản? Đăng ký'}</Link>}
   </div></section>;
 }

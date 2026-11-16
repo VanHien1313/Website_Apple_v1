@@ -36,7 +36,7 @@ Callback:
 1. Đăng nhập khách, chọn sản phẩm và vào checkout. Chọn ví đã bật; thấy nhãn Sandbox.
 2. Tạo đơn, bấm Tạo phiên thanh toán / QR. QR chỉ xuất hiện khi cổng thực sự trả payload QR. Nếu merchant chưa được cấp quyền QR, dùng nút mở cổng; không tạo QR thay thế từ link.
 3. Thực hiện thanh toán bằng ứng dụng/tài khoản TEST do nhà cung cấp hướng dẫn. Không dùng tiền thật.
-4. Website nhận callback hoặc worker truy vấn và hiển thị đã xác minh thanh toán. Nút Kiểm tra thanh toán truy vấn lại (tối đa một lần/30 giây/đơn); trang tải trạng thái mỗi 10 giây.
+4. Website nhận callback hoặc worker truy vấn và hiển thị đã xác minh thanh toán. Nút Kiểm tra thanh toán truy vấn lại (tối đa một lần/30 giây/đơn); trang tải trạng thái mỗi 10 giây và tự tải lại chi tiết đơn khi phát hiện thanh toán thành công.
 5. Quản trị chỉ được xử lý giao hàng sau khi ví đã PAID; không có thao tác ghi nhận thu COD cho đơn ví.
 6. Xác nhận nhận hàng giữ nguyên quy trình 7 ngày. Giao dịch sandbox KHÔNG cộng vào doanh thu thực.
 7. Thử hủy/thất bại, mất callback, tải lại trang, callback trùng, sai chữ ký/số tiền. Không dựa vào tham số URL quay về để đánh dấu đã trả tiền.

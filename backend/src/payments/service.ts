@@ -32,7 +32,12 @@ export function walletService(db:Database,config:PaymentConfig,client:GatewayCli
  }
  async function view(id:string,token?:string){const order=await owned(id,token);const row=(await db.query<Attempt>('SELECT * FROM wallet_attempts WHERE order_id=@arg1',[id])).rows[0];
   const active=row?.state==='READY'&&new Date(row.expires_at).getTime()>Date.now()&&order.status!=='CANCELLED'&&order.payment_status==='PENDING';
-  return {paymentStatus:order.payment_status,orderStatus:order.status,provider:order.payment_method,mode:row?.environment??config.mode,state:row?.state??'NOT_STARTED',expiresAt:row?.expires_at??null,payUrl:active&&row.pay_url?safePayUrl(row.provider,row.pay_url):null,qrImage:active&&row.qr_payload?await QRCode.toDataURL(row.qr_payload,{width:280,margin:4,errorCorrectionLevel:'M'}):null};
+  let qrImage: string | null = null;
+  if (active && row.qr_payload) {
+   // Some provider payloads exceed the encoder capacity. The hosted payment page still works.
+   qrImage = await QRCode.toDataURL(row.qr_payload,{width:280,margin:4,errorCorrectionLevel:'M'}).catch(() => null);
+  }
+  return {paymentStatus:order.payment_status,orderStatus:order.status,provider:order.payment_method,mode:row?.environment??config.mode,state:row?.state??'NOT_STARTED',expiresAt:row?.expires_at??null,payUrl:active&&row.pay_url?safePayUrl(row.provider,row.pay_url):null,qrImage};
  }
  async function check(id:string){
   const row=await db.transaction(async tx=>{await lockTransaction(tx,`order:${id.toLowerCase()}`);return (await tx.query<Attempt>(`UPDATE wallet_attempts SET checked_at=SYSUTCDATETIME() OUTPUT INSERTED.* WHERE order_id=@arg1 AND state IN ('CREATING','READY') AND (checked_at IS NULL OR checked_at<DATEADD(second,-30,SYSUTCDATETIME()))`,[id])).rows[0];});

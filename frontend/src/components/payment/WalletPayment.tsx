@@ -1,13 +1,112 @@
-import {useEffect,useState} from 'react';
-import {request} from '../../services/api/http';
-import {Button} from '../common/Button';
-export const paymentNames:Record<string,string>={cod:'Thanh toán khi nhận hàng (COD)',momo:'Ví MoMo',zalopay:'Ví ZaloPay / QR'};
-interface PaymentView {paymentStatus:string;orderStatus:string;provider:string;mode:string;state:string;expiresAt:string|null;payUrl:string|null;qrImage:string|null}
-export function WalletPayment({orderId,method,onPaid}:{orderId:string;method:string;onPaid?:()=>void}){
- const [data,setData]=useState<PaymentView|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState('');
- useEffect(()=>{if(method==='cod')return;const controller=new AbortController();let timer:ReturnType<typeof setTimeout>;const load=async()=>{try{const next=await request<PaymentView>(`/orders/${orderId}/payment`,{signal:controller.signal});setData(next);if(next.paymentStatus==='PAID')return;}catch(e){if(!controller.signal.aborted)setError((e as Error).message);}if(!controller.signal.aborted)timer=setTimeout(load,10000);};void load();return()=>{controller.abort();clearTimeout(timer);};},[orderId,method]);
- async function act(action:'start'|'refresh'){if(busy)return;setBusy(true);setError('');try{const next=await request<PaymentView>(`/orders/${orderId}/payment/${action}`,{method:'POST',body:{},signal:AbortSignal.timeout(45000)});setData(next);if(next.paymentStatus==='PAID')onPaid?.();}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
- if(method==='cod')return null;
- return <section className="wallet-payment ui-panel p-5 space-y-4"><div><p className="text-xs font-semibold tracking-widest text-accent">THANH TOÁN TRỰC TUYẾN</p><h2 className="mt-2 text-lg font-semibold">{paymentNames[method]}</h2></div>{data?.mode==='sandbox'&&<p className="rounded-lg bg-accent-light p-3 text-sm text-accent">Sandbox — giao dịch thử nghiệm, không tính vào doanh thu thực.</p>}
- {data?.state==='REVIEW'?<p role="alert" className="text-danger text-sm">Cổng thanh toán xác nhận tiền đến sau khi đơn đã hủy. Vui lòng liên hệ cửa hàng để đối soát/hoàn tiền; không thanh toán lại.</p>:data?.paymentStatus==='PAID'?<div><p role="status" className="font-semibold text-accent">Đã xác minh thanh toán từ cổng.</p><Button variant="outline" className="mt-3" onClick={()=>onPaid?.()}>Cập nhật đơn hàng</Button></div>:data?.orderStatus==='CANCELLED'?<p>Đơn đã hủy. Không tiếp tục thanh toán.</p>:<><p className="text-sm text-secondary">Chỉ thanh toán một lần. Trạng thái được cập nhật sau khi Aura nhận xác nhận hợp lệ từ cổng thanh toán.</p>{data?.qrImage&&<img src={data.qrImage} alt={`Mã QR thanh toán ${paymentNames[method]} cho đơn hàng này`} width={280} height={280} className="mx-auto max-w-full rounded-xl bg-white"/>}{data?.payUrl&&<a className="ui-button inline-flex items-center justify-center min-h-11 w-full rounded-xl bg-accent px-4 py-3 text-white font-semibold" href={data.payUrl} rel="noreferrer">Mở cổng thanh toán {method==='momo'?'MoMo':'ZaloPay'}</a>}{data?.expiresAt&&<p className="text-xs text-secondary">Phiên QR trên website đến {new Date(data.expiresAt).toLocaleString('vi-VN')}. Nếu đã trả tiền, kiểm tra trạng thái trước khi thao tác tiếp.</p>}{data?.state==='CREATING'&&<p className="text-sm text-secondary">Phiên đang được kiểm tra. Nếu kết nối bị gián đoạn, dùng Kiểm tra thanh toán; không tạo đơn mới khi chưa rõ kết quả.</p>}<div className="flex flex-wrap gap-3">{data?.state==='NOT_STARTED'&&<Button onClick={()=>act('start')} loading={busy}>Tạo phiên thanh toán / QR</Button>}<Button variant="outline" onClick={()=>act('refresh')} disabled={busy}>Kiểm tra thanh toán</Button></div></>}{error&&<p role="alert" className="text-sm text-danger">{error}</p>}</section>;
+import { useEffect, useRef, useState } from 'react';
+import { request } from '../../services/api/http';
+import { Button } from '../common/Button';
+
+export const paymentNames: Record<string, string> = {
+  cod: 'Thanh toán khi nhận hàng (COD)',
+  momo: 'Ví MoMo / QR',
+  zalopay: 'Ví ZaloPay / QR',
+};
+
+interface PaymentView {
+  paymentStatus: string;
+  orderStatus: string;
+  mode: string;
+  state: string;
+  expiresAt: string | null;
+  payUrl: string | null;
+  qrImage: string | null;
+}
+
+export function WalletPayment({ orderId, method, onPaid }: { orderId: string; method: string; onPaid?: () => void }) {
+  if (method !== 'momo' && method !== 'zalopay') return null;
+  return <WalletSession key={orderId + ':' + method} orderId={orderId} method={method} onPaid={onPaid} />;
+}
+
+function WalletSession({ orderId, method, onPaid }: { orderId: string; method: 'momo' | 'zalopay'; onPaid?: () => void }) {
+  const [data, setData] = useState<PaymentView | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const paid = useRef(false);
+  const action = useRef<AbortController | null>(null);
+  const poll = useRef<AbortController | null>(null);
+  const onPaidRef = useRef(onPaid);
+  useEffect(() => { onPaidRef.current = onPaid; }, [onPaid]);
+  useEffect(() => () => action.current?.abort(), []);
+
+  useEffect(() => {
+    if (busy || paid.current) return;
+    const controller = new AbortController();
+    poll.current = controller;
+    let timer: ReturnType<typeof setTimeout>;
+    async function load(initial: boolean) {
+      try {
+        const next = await request<PaymentView>(`/orders/${orderId}/payment`, {
+          signal: AbortSignal.any([controller.signal, AbortSignal.timeout(10000)]),
+        });
+        if (controller.signal.aborted) return;
+        setData(next);
+        setError('');
+        if (next.paymentStatus === 'PAID') {
+          paid.current = true;
+          if (!initial) onPaidRef.current?.();
+          return;
+        }
+      } catch (cause) {
+        if (!controller.signal.aborted) setError((cause as Error).message);
+      }
+      if (!controller.signal.aborted) timer = setTimeout(() => void load(false), 10000);
+    }
+    void load(true);
+    return () => { controller.abort(); clearTimeout(timer); };
+  }, [orderId, busy]);
+
+  async function act(operation: 'start' | 'refresh') {
+    if (action.current) return;
+    const controller = new AbortController();
+    action.current = controller;
+    poll.current?.abort();
+    setBusy(true);
+    setError('');
+    try {
+      const next = await request<PaymentView>(`/orders/${orderId}/payment/${operation}`, {
+        method: 'POST', signal: AbortSignal.any([controller.signal, AbortSignal.timeout(45000)]),
+      });
+      if (controller.signal.aborted) return;
+      setData(next);
+      if (next.paymentStatus === 'PAID') {
+        paid.current = true;
+        onPaid?.();
+      }
+    } catch (cause) {
+      if (!controller.signal.aborted) setError((cause as Error).message);
+    } finally {
+      action.current = null;
+      if (!controller.signal.aborted) setBusy(false);
+    }
+  }
+
+  const unavailable = data?.mode === 'off';
+  const expired = data?.state === 'READY' && !data.payUrl && !data.qrImage;
+  return <section className="wallet-payment ui-panel p-5 space-y-4">
+    <h2 className="text-lg font-semibold">{paymentNames[method]}</h2>
+    {data?.mode === 'sandbox' && <p className="rounded-lg bg-accent-light p-3 text-sm text-accent">Giao dịch thử nghiệm. Không tính vào doanh thu thực.</p>}
+    {data?.state === 'REVIEW' ? <p role="alert" className="text-sm text-danger">Tiền đến sau khi đơn đã hủy. Vui lòng liên hệ cửa hàng để đối soát hoặc hoàn tiền.</p>
+      : data?.paymentStatus === 'PAID' ? <p role="status" className="font-semibold text-accent">Đã xác minh thanh toán từ cổng.</p>
+      : data?.orderStatus === 'CANCELLED' ? <p>Đơn đã hủy.</p>
+      : unavailable ? <p>Phương thức này đang tạm ngừng. Vui lòng liên hệ cửa hàng nếu bạn đã thanh toán.</p>
+      : !data ? <p role="status">Đang tải trạng thái thanh toán…</p>
+      : <>
+        {data.qrImage && <img src={data.qrImage} alt={`Mã QR ${paymentNames[method]} cho đơn hàng này`} width={280} height={280} className="mx-auto max-w-full rounded-xl bg-white" />}
+        {data.payUrl && <a className="ui-button inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-accent px-4 py-3 font-semibold text-white" href={data.payUrl} rel="noreferrer">Mở cổng thanh toán {method === 'momo' ? 'MoMo' : 'ZaloPay'}</a>}
+        {data.expiresAt && !expired && (data.qrImage || data.payUrl) && <p className="text-xs text-secondary">Hiển thị đến {new Date(data.expiresAt).toLocaleString('vi-VN')}.</p>}
+        {expired && <p role="status">Mã QR đã hết hạn hiển thị. Nếu bạn đã trả tiền, hãy kiểm tra giao dịch trước khi đặt đơn khác.</p>}
+        {data.state === 'CREATING' && <p role="status">Đang kiểm tra phiên thanh toán. Nếu kết nối bị gián đoạn, hãy kiểm tra giao dịch trước khi đặt đơn khác.</p>}
+        <div className="flex flex-wrap gap-3">
+          {data.state === 'NOT_STARTED' && <Button onClick={() => void act('start')} loading={busy}>Tạo mã QR / mở ví</Button>}
+          {data.state !== 'NOT_STARTED' && <Button variant="outline" onClick={() => void act('refresh')} loading={busy}>Kiểm tra thanh toán</Button>}
+        </div>
+      </>}
+    {error && <p role="alert" className="text-sm text-danger">{error}</p>}
+  </section>;
 }

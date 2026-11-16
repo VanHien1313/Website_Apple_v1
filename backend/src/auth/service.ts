@@ -1,5 +1,6 @@
 import { createHash, randomBytes, randomUUID } from 'node:crypto';
-import type { Database } from '../db/database.ts';
+import { lockTransaction, type Database, type SqlClient } from '../db/database.ts';
+import type { SocialIdentity, SocialProvider } from './social-provider.ts';
 import { hashPassword, validPassword, validPasswordInput, verifyPassword } from './password.ts';
 
 export class ApiError extends Error {
@@ -15,6 +16,17 @@ const profile = (account: Account, kind: Principal) => kind === 'customer'
   ? { id: account.id, email: account.email, fullName: account.full_name, phone: account.phone, createdAt: account.created_at, shippingAddress: account.shipping_address ? JSON.parse(String(account.shipping_address)) : null }
   : { id: account.id, email: account.email, name: account.name, role: account.role, active: account.active };
 const unauthorized = () => new ApiError(401, 'UNAUTHENTICATED', 'Phiên không hợp lệ hoặc đã hết hạn.');
+export const internalSocialEmailSuffix = '@zalo.aura.invalid';
+
+async function issueSession(tx: SqlClient, kind: Principal, account: Account, previousToken?: string) {
+  const token = randomBytes(32).toString('hex');
+  if (previousToken && /^[a-f0-9]{64}$/.test(previousToken)) {
+    await tx.query(`UPDATE sessions SET revoked_at=SYSUTCDATETIME() WHERE token_hash=@arg1 AND ${column(kind)} IS NOT NULL`, [digest(previousToken)]);
+  }
+  await tx.query(`INSERT INTO sessions(token_hash,${column(kind)},credential_version,expires_at) VALUES (@arg1,@arg2,@arg3,DATEADD(hour,1,SYSUTCDATETIME()))`, [digest(token), account.id, account.credential_version]);
+  return { token, profile: profile(account, kind) };
+}
+
 export function createAuthService(db: Database) {
   async function current(kind: Principal, token?: string) {
     if (!token || !/^[a-f0-9]{64}$/.test(token)) throw unauthorized();
@@ -36,7 +48,7 @@ export function createAuthService(db: Database) {
         if (typeof value !== 'string' || !value.trim() || value.trim().length > max) throw new ApiError(422, 'INVALID_INPUT', 'Vui lòng điền đầy đủ địa chỉ, tỉnh/thành phố và phường/xã.');
         shippingAddress[key] = value.trim();
       }
-      if (!validPassword(input.password) || !fullName || fullName.length > 120 || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^(0|\+84)\d{9}$/.test(phone)) throw new ApiError(422, 'INVALID_INPUT', 'Kiểm tra họ tên, email, số điện thoại và mật khẩu 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt.');
+      if (!validPassword(input.password) || !fullName || fullName.length > 120 || email.length > 254 || email.endsWith(internalSocialEmailSuffix) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^(0|\+84)\d{9}$/.test(phone)) throw new ApiError(422, 'INVALID_INPUT', 'Kiểm tra họ tên, email, số điện thoại và mật khẩu 8–128 ký tự, có ít nhất 1 chữ in hoa và 1 ký tự đặc biệt.');
       const hash = await hashPassword(input.password);
       try {
         const account = (await db.query<Account>('INSERT INTO customers(id,email,full_name,phone,password_hash,shipping_address) OUTPUT INSERTED.* VALUES (@arg1,@arg2,@arg3,@arg4,@arg5,@arg6)', [randomUUID(),email,fullName,phone,hash,JSON.stringify(shippingAddress)])).rows[0]!;
@@ -48,13 +60,30 @@ export function createAuthService(db: Database) {
       const account = (await db.query<Account>(`SELECT * FROM ${table(kind)} WHERE email=@arg1`, [emailInput.trim().toLowerCase()])).rows[0];
       const valid = await verifyPassword(password, account?.password_hash ?? '');
       if (!account || !valid || (kind === 'admin' && !account.active)) throw new ApiError(401, 'INVALID_CREDENTIALS', 'Email hoặc mật khẩu không đúng.');
-      const token = randomBytes(32).toString('hex');
       return db.transaction(async (tx) => {
         const latest = (await tx.query<Account>(`SELECT * FROM ${table(kind)} WITH (UPDLOCK,HOLDLOCK) WHERE id=@arg1`, [account.id])).rows[0];
         if (!latest || latest.password_hash !== account.password_hash || (kind === 'admin' && !latest.active)) throw unauthorized();
-        if (previousToken && /^[a-f0-9]{64}$/.test(previousToken)) await tx.query(`UPDATE sessions SET revoked_at=SYSUTCDATETIME() WHERE token_hash=@arg1 AND ${column(kind)} IS NOT NULL`, [digest(previousToken)]);
-        await tx.query(`INSERT INTO sessions(token_hash,${column(kind)},credential_version,expires_at) VALUES (@arg1,@arg2,@arg3,DATEADD(hour,1,SYSUTCDATETIME()))`, [digest(token),account.id,latest.credential_version]);
-        return { token, profile: profile(latest, kind) };
+        return issueSession(tx, kind, latest, previousToken);
+      });
+    },
+    async socialLogin(provider: SocialProvider, identity: SocialIdentity, previousToken?: string) {
+      return db.transaction(async (tx) => {
+        await lockTransaction(tx, `social:${provider}:${digest(identity.subject)}`);
+        const existing = (await tx.query<Account>(`SELECT c.* FROM customer_social_identities i
+          JOIN customers c WITH (UPDLOCK,HOLDLOCK) ON c.id=i.customer_id WHERE i.provider=@arg1 AND i.subject=@arg2`,
+          [provider, identity.subject])).rows[0];
+        if (existing) return issueSession(tx, 'customer', existing, previousToken);
+
+        const id = randomUUID();
+        const email = identity.email ?? `${id}${internalSocialEmailSuffix}`;
+        const collision = (await tx.query('SELECT id FROM customers WITH (UPDLOCK,HOLDLOCK) WHERE email=@arg1', [email])).rows[0];
+        if (collision || (identity.email && email.endsWith(internalSocialEmailSuffix))) {
+          throw new ApiError(409, 'SOCIAL_EMAIL_EXISTS', 'Email đã có tài khoản. Vui lòng đăng nhập bằng phương thức ban đầu.');
+        }
+        const account = (await tx.query<Account>(`INSERT INTO customers(id,email,full_name,phone,password_hash)
+          OUTPUT INSERTED.* VALUES (@arg1,@arg2,@arg3,'','!social-only')`, [id, email, identity.name])).rows[0]!;
+        await tx.query('INSERT INTO customer_social_identities(provider,subject,customer_id) VALUES (@arg1,@arg2,@arg3)', [provider, identity.subject, id]);
+        return issueSession(tx, 'customer', account, previousToken);
       });
     },
     async logout(kind: Principal, token?: string) {

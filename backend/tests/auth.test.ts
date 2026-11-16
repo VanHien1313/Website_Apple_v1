@@ -100,3 +100,26 @@ test('owner bootstrap refuses existing admins; disabled admin and expired sessio
   await db.query("UPDATE sessions SET created_at=DATEADD(hour,-2,SYSUTCDATETIME()),expires_at=DATEADD(hour,-1,SYSUTCDATETIME())");
   await assert.rejects(service.me('customer',session.token),/Phiên/);
 });
+
+test('social sessions reuse the provider identity and never claim a password account by email', async () => {
+  const service = createAuthService(db);
+  const email = 'social-existing@example.test';
+  await service.register({ ...input, email });
+  await assert.rejects(
+    service.socialLogin('google', { subject: 'different-google-user', email, name: 'Google customer' }),
+    { code: 'SOCIAL_EMAIL_EXISTS' },
+  );
+
+  const identity = { subject: 'google-test-subject', email: 'social-google@example.test', name: 'Google customer' };
+  const first = await service.socialLogin('google', identity);
+  const second = await service.socialLogin('google', identity, first.token);
+  assert.equal(first.profile.id, second.profile.id);
+  assert.equal((await service.me('customer', second.token)).email, identity.email);
+  await assert.rejects(service.me('customer', first.token));
+  await assert.rejects(service.login('customer', identity.email, password));
+
+  const zalo = await service.socialLogin('zalo', { subject: identity.subject, name: 'Zalo customer' });
+  assert.notEqual(zalo.profile.id, first.profile.id);
+  assert.match(zalo.profile.email, /@zalo\.aura\.invalid$/);
+  await assert.rejects(service.register({ ...input, email: 'reserved@zalo.aura.invalid' }), { code: 'INVALID_INPUT' });
+});

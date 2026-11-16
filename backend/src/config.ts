@@ -1,3 +1,4 @@
+import { readSocialConfig } from './auth/social-provider.ts';
 import {readPaymentConfig} from './payments/config.ts';
 import type { DatabaseConfig } from './db/database.ts';
 import { readFileSync } from 'node:fs';
@@ -29,5 +30,5 @@ export function readConfig(env: NodeJS.ProcessEnv = process.env) {
   let appUrl: URL; try { appUrl = new URL(origin); } catch { throw new Error('Invalid APP_ORIGIN'); }
   if (appUrl.origin !== origin || !['http:','https:'].includes(appUrl.protocol) || (mode === 'production' && appUrl.protocol !== 'https:')) throw new Error('Invalid APP_ORIGIN');
   const database: DatabaseConfig = { server: env.DB_SERVER, database: env.DB_DATABASE, authentication, user: env.DB_USER, password, port: dbPort, encrypt, trustServerCertificate };
-  return { payments:readPaymentConfig(env), mode, trustedProxyIps, serveFrontend: env.SERVE_FRONTEND === 'true', host: env.HOST ?? '127.0.0.1', port, database, auth: { origin, secure: appUrl.protocol === 'https:' } };
+  return { payments:readPaymentConfig(env), mode, trustedProxyIps, serveFrontend: env.SERVE_FRONTEND === 'true', host: env.HOST ?? '127.0.0.1', port, database, auth: { origin, social: readSocialConfig(env), secure: appUrl.protocol === 'https:' } };
 }
