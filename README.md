@@ -10,12 +10,14 @@ Dự án đồ án môn học gồm cửa hàng Apple, tài khoản khách hàng
 | --- | --- |
 | Website | [https://aura-store-vn.netlify.app](https://aura-store-vn.netlify.app) |
 | Frontend | Build chế độ API, triển khai lên Netlify |
-| Backend | Express trong Docker trên Mac, cổng `4000`; Netlify chuyển tiếp API qua ngrok |
-| Database chính | `AuraStoreTeam` trong SQL Server Docker trên máy đang vận hành |
+| Backend | Express/Docker trên Azure VM `aura-web-01`; Netlify proxy API qua HTTPS |
+| Database chính | `AuraStoreTeam` trong SQL Server Docker trên Azure, giữ dữ liệu sau chuyển hosting |
 | Đăng nhập khách hàng | Email/mật khẩu, Google và Zalo; OAuth cần cấu hình khóa backend |
 | Thanh toán trên giao diện | COD và ZaloPay / QR sandbox; đã bỏ lựa chọn MoMo |
 
-**Hosting hiện chưa độc lập với máy cá nhân.** Netlify giữ frontend, còn đăng nhập, danh mục, ảnh SQL, đặt hàng và thanh toán cần backend, SQL Server và ngrok hoạt động. Tắt Mac/Docker/ngrok thì các chức năng gọi API không hoạt động. Backend và database chưa được chuyển lên máy chủ chạy thường trực.
+**Website đã chạy độc lập với Mac/ngrok.** Frontend ở Netlify; backend, SQL Server và HTTPS proxy ở Azure. Đã kiểm tra qua link công khai khi backend Mac tắt. Các thao tác quản trị/đặt hàng trên website hiện ghi vào database Azure; bản local cũ không tự đồng bộ.
+
+Azure dùng tín dụng **Azure for Students**, spending limit đang bật. VM 2 CPU / 4 GB tiêu thụ khoảng 31 USD tín dụng/tháng cho compute tại thời điểm triển khai, cộng ổ đĩa/IP. Đây không phải hosting miễn phí vô thời hạn; cần theo dõi tín dụng và sao lưu database đang chạy trước khi hết hạn/hết credit. [Vận hành Azure và kết quả chuyển hosting](docs/AZURE_HOSTING.md).
 
 Repository không chứa database `AuraStoreTeam`, tài khoản/mật khẩu đã tạo trên máy, khóa Google/Zalo/ZaloPay hay các file cấu hình riêng. Clone mã nguồn không tự khôi phục những dữ liệu và quyền truy cập này.
 
@@ -65,30 +67,17 @@ git pull --ff-only
 
 Các lệnh tiếp theo chạy từ thư mục gốc repository, trừ khi có ghi khác.
 
-## Chạy tiếp bản hiện có dùng AuraStoreTeam
+## Dùng bản hosting hiện tại
 
-Phần này dành cho **máy đang có AuraStoreTeam và các secrets đã cấu hình**, không phải quy trình cài mới. `compose.team.yaml` chỉ đổi database của service `app`; không tạo, restore hoặc migrate `AuraStoreTeam`.
+Mở [website Aura](https://aura-store-vn.netlify.app) hoặc [quản trị](https://aura-store-vn.netlify.app/admin/login) từ trình duyệt trên máy khác. Không cần clone project, cài Docker hay bật ngrok trên máy người xem. Tài khoản/mật khẩu quản trị được bàn giao riêng; không tự tạo tài khoản mặc định khi clone.
 
-Khởi động SQL Server đang có rồi build/chạy lại app với đủ override dùng cho website Netlify:
+- Backend HTTPS: `https://aura-store-vn-api-8c89.indonesiacentral.cloudapp.azure.com`.
+- Healthcheck qua Netlify: [health/ready](https://aura-store-vn.netlify.app/health/ready).
+- Database chính là `AuraStoreTeam` trên Azure. Bản sao cũ trên Mac được giữ lại và backend Mac đang dừng; khởi động bản local không cập nhật dữ liệu trên hosting.
+- Callback Google/Zalo/ZaloPay vẫn dùng domain Netlify ở bảng bên dưới. Việc chuyển máy chạy backend không đổi các callback này.
+- Docker Compose, secret và backup trên máy chủ nằm ngoài Git. Xem [bàn giao Azure](docs/AZURE_HOSTING.md) để biết cách kiểm tra và cập nhật.
 
-```sh
-docker compose up -d db
-docker compose -f compose.yaml -f compose.team.yaml -f deploy/secrets/compose.social-local.yaml -f deploy/secrets/compose.netlify.yaml up -d --build --no-deps app
-docker compose ps -a
-docker compose logs --tail=80 app
-```
-
-Hai file `compose.social-local.yaml` và `compose.netlify.yaml`, cùng các file `.env` mà chúng nạp, chỉ nằm trên máy vận hành trong `deploy/secrets/` và không có trên GitHub. Cấu hình hiện tại nạp khóa Google, Zalo, ZaloPay và đặt cả `APP_ORIGIN` / `PAYMENT_PUBLIC_ORIGIN` thành `https://aura-store-vn.netlify.app`.
-
-Trong terminal khác, chạy ngrok với tài khoản đã được cấu hình:
-
-```sh
-ngrok http http://127.0.0.1:4000 --url https://majesty-facility-marmalade.ngrok-free.dev
-```
-
-Mở website Netlify để đăng nhập, đặt hàng và quản trị. Healthcheck local: [http://127.0.0.1:4000/health/ready](http://127.0.0.1:4000/health/ready). Khi `APP_ORIGIN` là Netlify, thao tác đăng nhập/đặt hàng từ địa chỉ local hoặc ngrok trực tiếp có thể bị từ chối vì khác origin.
-
-Giữ nguyên volume và secret SQL hiện có. Không chạy `docker compose down -v`, thay mật khẩu SQL bằng cách ghi đè file, hoặc restore dữ liệu mẫu lên database chính. Nếu phiên bản mới thêm migration, sao lưu và thực hiện migration riêng đúng target `AuraStoreTeam`; initializer mặc định chỉ dành cho `AuraStoreDocker`.
+`compose.team.yaml` trong repo chỉ chọn `AuraStoreTeam` **local đã có sẵn**; không tạo/restore database và không phải cấu hình Azure. Để test trên máy mới, dùng database riêng theo phần tiếp theo. Không restore dữ liệu mẫu hoặc chạy initializer `AuraStoreDocker` vào database Azure.
 
 ## Cài mới trên máy khác với database riêng
 
@@ -221,7 +210,7 @@ Google dùng email đã xác minh; Zalo dùng ID/tên và email nội bộ khôn
 - Build: `npm --prefix frontend ci && npm --prefix frontend run build:api`.
 - Publish directory: `frontend/dist-api`.
 - Node.js: `24`.
-- Proxy `/api/*` và `/health/*` sang URL ngrok đang vận hành, kèm header bỏ trang cảnh báo ngrok.
+- Proxy `/api/*` và `/health/*` sang backend HTTPS Azure; không còn phụ thuộc ngrok.
 - Fallback các đường dẫn frontend về `index.html`.
 
 Build API rồi liên kết **site hiện có** trong tài khoản Netlify trước khi deploy thủ công:
@@ -238,7 +227,7 @@ Chọn site `aura-store-vn` khi link; `.netlify/` đã được Git ignore. Bả
 
 **Không dùng `npm run build` để deploy bản API:** lệnh đó build chế độ demo vào `frontend/dist`. Dùng `build:api` hoặc `build:release` cho ứng dụng nối backend.
 
-Nếu đổi endpoint backend/ngrok, sửa proxy trong `netlify.toml`, build/deploy lại và kiểm tra `/health/ready`, đăng nhập, catalog, checkout. Để website chạy khi tắt Mac, cần triển khai backend cùng SQL Server lên hạ tầng chạy thường trực và cập nhật proxy; deploy frontend lên Netlify chưa thực hiện bước này.
+Nếu đổi endpoint backend Azure, sửa proxy trong `netlify.toml`, build/deploy lại và kiểm tra `/health/ready`, đăng nhập, ảnh và checkout. Backend hiện đã chạy trên Azure; chỉ deploy Netlify sẽ không cập nhật image backend. Quy trình cập nhật backend nằm trong [bàn giao Azure](docs/AZURE_HOSTING.md).
 
 ## Kiểm tra và build
 

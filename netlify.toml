@@ -9,17 +9,15 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://majesty-facility-marmalade.ngrok-free.dev/api/:splat"
+  to = "https://aura-store-vn-api-8c89.indonesiacentral.cloudapp.azure.com/api/:splat"
   status = 200
   force = true
-  headers = { ngrok-skip-browser-warning = "1" }
 
 [[redirects]]
   from = "/health/*"
-  to = "https://majesty-facility-marmalade.ngrok-free.dev/health/:splat"
+  to = "https://aura-store-vn-api-8c89.indonesiacentral.cloudapp.azure.com/health/:splat"
   status = 200
   force = true
-  headers = { ngrok-skip-browser-warning = "1" }
 
 [[redirects]]
   from = "/assets/*"
