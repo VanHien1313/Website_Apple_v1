@@ -16,6 +16,10 @@
     {
       "id": "watch",
       "name": "Apple Watch"
+    },
+    {
+      "id": "airpods",
+      "name": "AirPods"
     }
   ],
   "media": [
@@ -434,6 +438,174 @@
       "width": 650,
       "height": 650,
       "sha256": "b6ceeb5b410f1f54907ab50ff764b148cea033b4bc654f10161edf9c48391745"
+    },
+    {
+      "id": "aa0bff79-8759-45bd-8fb3-cd59d09509c9",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-hero-select-202609?wid=976&hei=916&fmt=jpeg&qlt=90&.v=RVU2SGpGc09oYXdoRmpNcmQ5OG9tR3VtVXdjeDQ5eHAyck91MG5EMElJTGkyVU55U21PWTMyajVGNTlWWnhwak14MXJScFRZN3Y5OWZsRXVrN1k4cFltcWM3RC92MW1IaTRiYkh6SThoUGc",
+      "file": "images/aa0bff79-8759-45bd-8fb3-cd59d09509c9.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "564cb4aef24742429983346962c0f51ffc9bb36210ea1edd904a78c777392f9e"
+    },
+    {
+      "id": "764152f1-be5f-40de-825b-af9be54249d0",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=aFZUWmUrUDM2bFVzejhMU3AxSHJHendJQVRIbmUrVkgvaHR4ajlmK3pJN0hJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVWRsZXJCWXk5YjBoSm5GZDdURmRwclorYWpGdS9XeFgvbS9ITnNYOEhYaG4",
+      "file": "images/764152f1-be5f-40de-825b-af9be54249d0.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "564cb4aef24742429983346962c0f51ffc9bb36210ea1edd904a78c777392f9e"
+    },
+    {
+      "id": "08dd44bd-3233-480a-8acf-c30ae86a555c",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1758077264484",
+      "file": "images/08dd44bd-3233-480a-8acf-c30ae86a555c.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "2d62d76e8b936d8f933185493e474674c51bcfff785bfc88a6530020dde62daf"
+    },
+    {
+      "id": "51ac1749-a6de-492c-8777-81dd285d769d",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmaVZsckZUTTZZd1pFb3lRTGNlYkF0Yy9BSXRGSWdwVEs0NXdLd3JPRVQ3TGROL2hTdHRlcnVBMFhCNlFSVHgrS01jL2RQeWJYZ1FmWXUzRFBMSzJrTlJTZy9JeUNjV2pzbzd6anYzTldHVWw",
+      "file": "images/51ac1749-a6de-492c-8777-81dd285d769d.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "d5789f2e5dfd49f21357b87c7b2370c108352653eb38440dbd01f7bc83989c2c"
+    },
+    {
+      "id": "337216bd-0491-408b-8c1f-c5825f596b60",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdEFZMGtjOXNTYXJEaHFYa1lFVzIyUnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnhzQVNZV1grZHBseDduSWhqSlA3QUE",
+      "file": "images/337216bd-0491-408b-8c1f-c5825f596b60.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "97ca686fbf39b281cde00393d931b53f66da154f806b16b89606c29fbbf83b31"
+    },
+    {
+      "id": "0a29c0fb-b0cd-48b4-8e23-4718e1d1710c",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdmVWNWdHYnp5cHkwMldsSElEOHpyd0cyWGRFNFZ5QTk3bFlteis2Q2NNaWpENFdPQTN0TWQ4ejhtTWxrUHVDeElGZGV2eWhZaEljUzNSeDlxcDVuWGszbTFldUtUQzN0ellEWHZ3UUFYSS8",
+      "file": "images/0a29c0fb-b0cd-48b4-8e23-4718e1d1710c.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "4ec72a887359bc73edac2ec3482141bdfc822ee9663ab47c15f588c215f6bbd2"
+    },
+    {
+      "id": "b4dc9b61-8d04-409f-8f17-85aadfa04335",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdWd1NjlYUXFPTDZEK2xySGJScW1PS1Rpbjg5MjlaRWkwN0JTZEtNR2p3b2dmcFJCOTlLWlREUEJzL3lTN2VnL0cvVnNUQWxFNHNrME94a1pxdUNOU29FM01jakdGSHhMVXhHQ21YeXBIKzU",
+      "file": "images/b4dc9b61-8d04-409f-8f17-85aadfa04335.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "dc3c1298a1a396f5c74a59b5d363b803d613446221ff4e0199087fa583dd8190"
+    },
+    {
+      "id": "e0899b88-994a-47aa-8c99-ec199c134461",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmbVl3dU4zNmtlQ1czYnJUSEJUcWowRnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnk3Zm5tZm5FR0tlWnFHbkRhQU5lZmc",
+      "file": "images/e0899b88-994a-47aa-8c99-ec199c134461.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "81a366de286deadf15e918b6ff998ed26c23693cd5c6c00118cec637f9e8807c"
+    },
+    {
+      "id": "900469c9-60e1-4e19-82b2-2ab4de94f86e",
+      "source": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111855_SP750-airpods.jpeg",
+      "file": "images/900469c9-60e1-4e19-82b2-2ab4de94f86e.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "dec6af17eff9de1d295714d05eadd4fc96667ffd0fbf4ef966aa4730613fcda5"
+    },
+    {
+      "id": "bbf0d66d-a78d-46b5-8365-217841214e02",
+      "source": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111856_airpods-2gen-wireless-case.png",
+      "file": "images/bbf0d66d-a78d-46b5-8365-217841214e02.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "803819e8a547bb0f3c030f079bed9d152d7f284733873c17ce6222c3f271b85b"
+    },
+    {
+      "id": "f98e4076-113a-4dbb-824e-4e56c5fe0832",
+      "source": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111863_airpods-3rdgen-2.png",
+      "file": "images/f98e4076-113a-4dbb-824e-4e56c5fe0832.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "2a25e41d527edc792fd06db7c671e75b8ab7198e2488622fa2e8609f0bcf9cbe"
+    },
+    {
+      "id": "b6c5cc9e-5e1a-4760-8052-2e49ca5e8b2e",
+      "source": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121203-airpods-4.png",
+      "file": "images/b6c5cc9e-5e1a-4760-8052-2e49ca5e8b2e.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "acccd431a098b22e56eb2acbaec50c6657dae776bdc8728a6962e2d034333205"
+    },
+    {
+      "id": "1424120f-24b4-45eb-8a72-2da4b8fde3fe",
+      "source": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121204-airpods-4-anc.png",
+      "file": "images/1424120f-24b4-45eb-8a72-2da4b8fde3fe.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "2290db797781403caf2323f6b5807a35431810304ea4f3262b5c5cbe6e825384"
+    },
+    {
+      "id": "02e5b130-3358-45bf-88d6-a29694babd67",
+      "source": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111861_airpods_pro_case__eqmrrx2cfpkm_large.png",
+      "file": "images/02e5b130-3358-45bf-88d6-a29694babd67.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "b2ac6be074a0a47adb99db029a55d1a150648f1f1055aeabd50b7ed3d7616458"
+    },
+    {
+      "id": "f92f0f49-f369-4154-80e0-bd8af03b8142",
+      "source": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
+      "file": "images/f92f0f49-f369-4154-80e0-bd8af03b8142.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "8e0a42cd5a80bb24ababd7473b9cf5739e7377206d21894100900ebddfd6ee5b"
+    },
+    {
+      "id": "b77c31c0-28fb-47ef-831e-67a20137f612",
+      "source": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/airpods-pro-2.png",
+      "file": "images/b77c31c0-28fb-47ef-831e-67a20137f612.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "5cd5df2f7b715914857f2c6360cb1464f36b91b1697ee66aa3b22779b0142a58"
+    },
+    {
+      "id": "c3ed491a-4ab4-453b-8e69-cd8dc7bd1221",
+      "source": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-white_12082020_carousel.jpg.large.jpg",
+      "file": "images/c3ed491a-4ab4-453b-8e69-cd8dc7bd1221.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "4f118e868911ac8ce592fe42f596acd070cd0bdc8a8caee08e16d54c20b2d646"
+    },
+    {
+      "id": "bc7cd8b0-c09b-489b-84b6-e12bdfba806c",
+      "source": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-black_12082020_carousel.jpg.large.jpg",
+      "file": "images/bc7cd8b0-c09b-489b-84b6-e12bdfba806c.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "8fe5ed8610ddd68e691c715efdbd5a93babf414369c7902d2bada3de9fcd0a73"
+    },
+    {
+      "id": "a9588d3d-e2f6-445f-8b42-fb34a16b453d",
+      "source": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-blue_12082020_carousel.jpg.large.jpg",
+      "file": "images/a9588d3d-e2f6-445f-8b42-fb34a16b453d.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "5e0dacf0d995ce417fe4c167aaabbb03958282a8584c3e0a90f76d0b020f7df5"
+    },
+    {
+      "id": "7d14cf95-125d-44de-831b-0481a656e0c4",
+      "source": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-red_12082020_carousel.jpg.large.jpg",
+      "file": "images/7d14cf95-125d-44de-831b-0481a656e0c4.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "eb5fb0bc340fdd40d07a897767058e8ff245cb0700b1db8b213909649932d724"
+    },
+    {
+      "id": "bf973317-b934-48c3-8935-24d0bfbfb83d",
+      "source": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-green_12082020_carousel.jpg.large.jpg",
+      "file": "images/bf973317-b934-48c3-8935-24d0bfbfb83d.webp",
+      "width": 900,
+      "height": 900,
+      "sha256": "cab56d5807292c58c5811f4728caec030787096cfa856b22e2e4e4f5e7d7a214"
     }
   ],
   "products": [
@@ -6895,6 +7067,1792 @@
           "sku": "AURA-NEW-APPLE-WATCH-SE-3",
           "price": 6790000,
           "originalPrice": 6790000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "82832b24-dfce-449b-8718-2f9dd1bdddf2",
+      "slug": "airpods-5",
+      "name": "AirPods 5",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Tai nghe mở với khử tiếng ồn chủ động.",
+      "thumbnail": "/api/v1/media/aa0bff79-8759-45bd-8fb3-cd59d09509c9",
+      "gallery": [
+        "/api/v1/media/aa0bff79-8759-45bd-8fb3-cd59d09509c9"
+      ],
+      "description": [
+        "Khử tiếng ồn chủ động, âm thanh thích ứng và xuyên âm.",
+        "Sạc hộp bằng USB-C; cảm biến lực điều khiển nhạc và cuộc gọi."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 4 giờ khi bật khử tiếng ồn; 20 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc USB-C"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 4 giờ khi bật khử tiếng ồn; 20 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc USB-C"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Apple Store Việt Nam, kiểm tra ngày 25/11/2026"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Sản phẩm phục vụ đồ án Aura. Thông số và giá tham khảo Apple Store Việt Nam ngày 25/11/2026; thời lượng pin tùy cách sử dụng. Tồn kho là dữ liệu thử nghiệm, không phải tồn kho Apple.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "5f89a992-c704-498c-832f-8e3d813c2700",
+          "storage": "Hộp sạc USB-C",
+          "screenSize": "",
+          "connectivity": "Bluetooth",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "712c6ef4-7fc2-4f97-8b59-d0be1c280c26",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/aa0bff79-8759-45bd-8fb3-cd59d09509c9"
+        }
+      ],
+      "skus": [
+        {
+          "id": "9a5838c7-cd5d-4d62-8b6c-b1a84751200a",
+          "configurationId": "5f89a992-c704-498c-832f-8e3d813c2700",
+          "colorId": "712c6ef4-7fc2-4f97-8b59-d0be1c280c26",
+          "sku": "AURA-AIRPODS-5-WHITE",
+          "price": 3799000,
+          "originalPrice": 3799000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "44bb8a7e-3d3d-4ddc-8680-3e7cfecbd879",
+      "slug": "airpods-5-wireless",
+      "name": "AirPods 5 — Hộp Sạc Không Dây",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Sạc không dây, vuốt chỉnh âm lượng.",
+      "thumbnail": "/api/v1/media/764152f1-be5f-40de-825b-af9be54249d0",
+      "gallery": [
+        "/api/v1/media/764152f1-be5f-40de-825b-af9be54249d0"
+      ],
+      "description": [
+        "Khử tiếng ồn chủ động, xuyên âm và âm thanh thích ứng.",
+        "Vuốt để chỉnh âm lượng; hộp sạc có loa hỗ trợ tìm vị trí."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 5 giờ khi bật khử tiếng ồn; 22 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc không dây USB-C, Qi, Apple Watch"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 5 giờ khi bật khử tiếng ồn; 22 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc không dây USB-C, Qi, Apple Watch"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Apple Store Việt Nam, kiểm tra ngày 25/11/2026"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Sản phẩm phục vụ đồ án Aura. Thông số và giá tham khảo Apple Store Việt Nam ngày 25/11/2026; thời lượng pin tùy cách sử dụng. Tồn kho là dữ liệu thử nghiệm, không phải tồn kho Apple.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "85a19f9e-4a04-4de1-8e53-ad7933643e62",
+          "storage": "Hộp sạc không dây USB-C, Qi, Apple Watch",
+          "screenSize": "",
+          "connectivity": "Bluetooth",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "8039cbc7-c4d4-484a-86d4-f63d57cf5c91",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/764152f1-be5f-40de-825b-af9be54249d0"
+        }
+      ],
+      "skus": [
+        {
+          "id": "d6c60b3d-de35-4ffa-857c-34b7ab0a39bb",
+          "configurationId": "85a19f9e-4a04-4de1-8e53-ad7933643e62",
+          "colorId": "8039cbc7-c4d4-484a-86d4-f63d57cf5c91",
+          "sku": "AURA-AIRPODS-5-WIRELESS-WHITE",
+          "price": 4299000,
+          "originalPrice": 4299000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "242df0a5-4eb5-4cdf-891a-b545a5554560",
+      "slug": "airpods-pro-3",
+      "name": "AirPods Pro 3",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Khử tiếng ồn và cảm biến nhịp tim.",
+      "thumbnail": "/api/v1/media/08dd44bd-3233-480a-8acf-c30ae86a555c",
+      "gallery": [
+        "/api/v1/media/08dd44bd-3233-480a-8acf-c30ae86a555c"
+      ],
+      "description": [
+        "Tai nghe có nút silicon, khử tiếng ồn chủ động và cảm biến nhịp tim khi luyện tập.",
+        "Có các tính năng sức khỏe thính giác; khả dụng tùy khu vực và thiết bị."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "In-ear với nút silicon"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 8 giờ khi bật khử tiếng ồn; 24 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc MagSafe USB-C, Qi, Apple Watch"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "In-ear với nút silicon"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 8 giờ khi bật khử tiếng ồn; 24 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc MagSafe USB-C, Qi, Apple Watch"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Apple Store Việt Nam, kiểm tra ngày 25/11/2026"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Sản phẩm phục vụ đồ án Aura. Thông số và giá tham khảo Apple Store Việt Nam ngày 25/11/2026; thời lượng pin tùy cách sử dụng. Tồn kho là dữ liệu thử nghiệm, không phải tồn kho Apple.",
+      "subCategory": "Pro",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "365e4bfa-c9b5-42af-8279-0ed70629285e",
+          "storage": "Hộp sạc MagSafe USB-C, Qi, Apple Watch",
+          "screenSize": "",
+          "connectivity": "Bluetooth",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "ea026d50-2bd6-4812-83c7-3eedc4dcc9af",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/08dd44bd-3233-480a-8acf-c30ae86a555c"
+        }
+      ],
+      "skus": [
+        {
+          "id": "56f3c63e-a2f7-42f6-8ef3-df1d89827982",
+          "configurationId": "365e4bfa-c9b5-42af-8279-0ed70629285e",
+          "colorId": "ea026d50-2bd6-4812-83c7-3eedc4dcc9af",
+          "sku": "AURA-AIRPODS-PRO-3-WHITE",
+          "price": 6799000,
+          "originalPrice": 6799000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "020c5f43-dc2b-4699-8d81-efda1bfb1c78",
+      "slug": "airpods-max-2",
+      "name": "AirPods Max 2",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Tai nghe chụp tai với âm thanh lossless qua USB-C.",
+      "thumbnail": "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d",
+      "gallery": [
+        "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d",
+        "/api/v1/media/337216bd-0491-408b-8c1f-c5825f596b60",
+        "/api/v1/media/0a29c0fb-b0cd-48b4-8e23-4718e1d1710c",
+        "/api/v1/media/b4dc9b61-8d04-409f-8f17-85aadfa04335",
+        "/api/v1/media/e0899b88-994a-47aa-8c99-ec199c134461"
+      ],
+      "description": [
+        "Khử tiếng ồn chủ động, âm thanh thích ứng và xuyên âm.",
+        "Điều khiển bằng Digital Crown; nghe lossless khi kết nối USB-C."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Chụp tai"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 20 giờ khi bật khử tiếng ồn"
+        },
+        {
+          "label": "Sạc",
+          "value": "USB-C; kèm Smart Case"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Chụp tai"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Khử tiếng ồn chủ động, âm thanh thích ứng, xuyên âm"
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 20 giờ khi bật khử tiếng ồn"
+            },
+            {
+              "label": "Sạc",
+              "value": "USB-C; kèm Smart Case"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Xanh Dương, Tím, Đêm Xanh Thẳm, Ánh Sao, Cam"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Apple Store Việt Nam, kiểm tra ngày 25/11/2026"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Sản phẩm phục vụ đồ án Aura. Thông số và giá tham khảo Apple Store Việt Nam ngày 25/11/2026; thời lượng pin tùy cách sử dụng. Tồn kho là dữ liệu thử nghiệm, không phải tồn kho Apple.",
+      "subCategory": "Max",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "storage": "USB-C; kèm Smart Case",
+          "screenSize": "",
+          "connectivity": "Bluetooth",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "62ba0590-6006-4cf3-82e8-a8bb2ca24830",
+          "name": "Xanh Dương",
+          "hex": "#a6bdcf",
+          "image": "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d"
+        },
+        {
+          "id": "c748c31d-d315-4fe5-81e9-2d8e4f2833b8",
+          "name": "Tím",
+          "hex": "#b8a5cc",
+          "image": "/api/v1/media/337216bd-0491-408b-8c1f-c5825f596b60"
+        },
+        {
+          "id": "5ac6a06d-3c6e-4d6e-88d6-ed1beb46d3ee",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#303944",
+          "image": "/api/v1/media/0a29c0fb-b0cd-48b4-8e23-4718e1d1710c"
+        },
+        {
+          "id": "1dd75575-930e-408f-8d06-2eef152c2c24",
+          "name": "Ánh Sao",
+          "hex": "#e7dfcf",
+          "image": "/api/v1/media/b4dc9b61-8d04-409f-8f17-85aadfa04335"
+        },
+        {
+          "id": "c2c9a62a-c7b7-4028-8f2b-3f5e53ea2c2b",
+          "name": "Cam",
+          "hex": "#e8a37f",
+          "image": "/api/v1/media/e0899b88-994a-47aa-8c99-ec199c134461"
+        }
+      ],
+      "skus": [
+        {
+          "id": "a25695ca-f78d-4012-883c-a5e629ad9d2e",
+          "configurationId": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "colorId": "62ba0590-6006-4cf3-82e8-a8bb2ca24830",
+          "sku": "AURA-AIRPODS-MAX-2-BLUE",
+          "price": 14999000,
+          "originalPrice": 14999000,
+          "onHand": 10
+        },
+        {
+          "id": "646ccc9c-2b10-45b0-8da4-faa047ebe5e6",
+          "configurationId": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "colorId": "c748c31d-d315-4fe5-81e9-2d8e4f2833b8",
+          "sku": "AURA-AIRPODS-MAX-2-PURPLE",
+          "price": 14999000,
+          "originalPrice": 14999000,
+          "onHand": 10
+        },
+        {
+          "id": "b1236367-690d-4fbd-88d5-8b5959cd217f",
+          "configurationId": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "colorId": "5ac6a06d-3c6e-4d6e-88d6-ed1beb46d3ee",
+          "sku": "AURA-AIRPODS-MAX-2-MIDNIGHT",
+          "price": 14999000,
+          "originalPrice": 14999000,
+          "onHand": 10
+        },
+        {
+          "id": "950c9fd6-6d6f-4750-8471-15a169b48cbc",
+          "configurationId": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "colorId": "1dd75575-930e-408f-8d06-2eef152c2c24",
+          "sku": "AURA-AIRPODS-MAX-2-STARLIGHT",
+          "price": 14999000,
+          "originalPrice": 14999000,
+          "onHand": 10
+        },
+        {
+          "id": "75d67b27-6f0a-4a06-8c06-362f83e7e8bb",
+          "configurationId": "595ad576-86a4-49ed-80e8-7b5717491af8",
+          "colorId": "c2c9a62a-c7b7-4028-8f2b-3f5e53ea2c2b",
+          "sku": "AURA-AIRPODS-MAX-2-ORANGE",
+          "price": 14999000,
+          "originalPrice": 14999000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "210981e1-0a51-426b-8b2b-d62a048dfa44",
+      "slug": "airpods-1",
+      "name": "AirPods 1",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Thế hệ đầu tiên · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/900469c9-60e1-4e19-82b2-2ab4de94f86e",
+      "gallery": [
+        "/api/v1/media/900469c9-60e1-4e19-82b2-2ab4de94f86e"
+      ],
+      "description": [
+        "Tai nghe mở thế hệ đầu, chip W1 và cảm biến quang học nhận biết khi đeo.",
+        "Hộp không dây Qi đời 2019 tương thích khi mua riêng; không phải hộp đi kèm bộ AirPods 1 gốc."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Không có chống ồn chủ động; chạm hai lần để gọi Siri."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 5 giờ nghe; hơn 24 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc Lightning (2016)"
+        },
+        {
+          "label": "Chip",
+          "value": "W1"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2016"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Không có chống ồn chủ động; chạm hai lần để gọi Siri."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 5 giờ nghe; hơn 24 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc Lightning (2016)"
+            },
+            {
+              "label": "Chip",
+              "value": "W1"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2016"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111855"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "8787a6b4-ee80-47c7-8d84-2ab7ccb8cbbb",
+          "storage": "Hộp sạc Lightning (2016)",
+          "screenSize": "",
+          "connectivity": "Bluetooth",
+          "chip": "W1"
+        }
+      ],
+      "colors": [
+        {
+          "id": "927f65e8-c579-4fe4-8778-25665aaa5171",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/900469c9-60e1-4e19-82b2-2ab4de94f86e"
+        }
+      ],
+      "skus": [
+        {
+          "id": "b34718e6-4a33-42e1-808c-c8fe2cb93306",
+          "configurationId": "8787a6b4-ee80-47c7-8d84-2ab7ccb8cbbb",
+          "colorId": "927f65e8-c579-4fe4-8778-25665aaa5171",
+          "sku": "AURA-AIRPODS-1-LIGHTNING-WHITE",
+          "price": 1499000,
+          "originalPrice": 1499000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "66a80205-b7fb-4f09-8ba6-d88703004b74",
+      "slug": "airpods-2",
+      "name": "AirPods 2",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "H1 và Hey Siri · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/bbf0d66d-a78d-46b5-8365-217841214e02",
+      "gallery": [
+        "/api/v1/media/bbf0d66d-a78d-46b5-8365-217841214e02"
+      ],
+      "description": [
+        "Tai nghe mở với chip H1 và kích hoạt Siri bằng giọng nói.",
+        "Hai cấu hình khác hộp sạc; cả hai vẫn có cổng Lightning, bản không dây hỗ trợ thêm Qi."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Không có chống ồn chủ động; chạm hai lần, gọi Hey Siri."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 5 giờ nghe; hơn 24 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc Lightning / Hộp sạc không dây Qi + Lightning"
+        },
+        {
+          "label": "Chip",
+          "value": "H1"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2019"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Không có chống ồn chủ động; chạm hai lần, gọi Hey Siri."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 5 giờ nghe; hơn 24 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc Lightning / Hộp sạc không dây Qi + Lightning"
+            },
+            {
+              "label": "Chip",
+              "value": "H1"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2019"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111856"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "facd6e4b-6fac-44e6-83c5-117f423bb1bd",
+          "storage": "Hộp sạc Lightning",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        },
+        {
+          "id": "100a2770-843d-4289-886d-7c7a8056f8aa",
+          "storage": "Hộp sạc không dây Qi + Lightning",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        }
+      ],
+      "colors": [
+        {
+          "id": "d01bed53-4c58-4139-8eb7-fa8bf92b1804",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/bbf0d66d-a78d-46b5-8365-217841214e02"
+        }
+      ],
+      "skus": [
+        {
+          "id": "fcf3d07e-da0c-4f07-8ddf-f10725a1f6cf",
+          "configurationId": "facd6e4b-6fac-44e6-83c5-117f423bb1bd",
+          "colorId": "d01bed53-4c58-4139-8eb7-fa8bf92b1804",
+          "sku": "AURA-AIRPODS-2-LIGHTNING-WHITE",
+          "price": 1999000,
+          "originalPrice": 1999000,
+          "onHand": 10
+        },
+        {
+          "id": "f289ed11-6151-4f27-82f7-4da80d2e5c62",
+          "configurationId": "100a2770-843d-4289-886d-7c7a8056f8aa",
+          "colorId": "d01bed53-4c58-4139-8eb7-fa8bf92b1804",
+          "sku": "AURA-AIRPODS-2-WIRELESS-WHITE",
+          "price": 2499000,
+          "originalPrice": 2499000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "a83a1f08-7504-40a9-87b5-286bef1a84c2",
+      "slug": "airpods-3",
+      "name": "AirPods 3",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Hai lựa chọn hộp sạc · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/f98e4076-113a-4dbb-824e-4e56c5fe0832",
+      "gallery": [
+        "/api/v1/media/f98e4076-113a-4dbb-824e-4e56c5fe0832"
+      ],
+      "description": [
+        "Tai nghe mở, cảm biến lực và âm thanh không gian theo chuyển động đầu trên thiết bị tương thích.",
+        "Tai nghe và hộp sạc đạt IPX4; thời lượng pin phụ thuộc chế độ sử dụng."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Âm thanh không gian, EQ thích ứng; không có chống ồn chủ động."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 6 giờ nghe; 30 giờ cùng hộp sạc"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc Lightning (2022) / Hộp sạc MagSafe + Qi + Lightning (2021)"
+        },
+        {
+          "label": "Chip",
+          "value": "H1"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2021 / 2022"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Âm thanh không gian, EQ thích ứng; không có chống ồn chủ động."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 6 giờ nghe; 30 giờ cùng hộp sạc"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc Lightning (2022) / Hộp sạc MagSafe + Qi + Lightning (2021)"
+            },
+            {
+              "label": "Chip",
+              "value": "H1"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2021 / 2022"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111863"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "efcb694d-3ea9-4ab0-891c-4bac2bf5c511",
+          "storage": "Hộp sạc Lightning (2022)",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        },
+        {
+          "id": "51a47477-2ac2-4e99-8d0a-a857df61e8e1",
+          "storage": "Hộp sạc MagSafe + Qi + Lightning (2021)",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        }
+      ],
+      "colors": [
+        {
+          "id": "15350957-a0c7-43f7-8306-17a1d12553db",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/f98e4076-113a-4dbb-824e-4e56c5fe0832"
+        }
+      ],
+      "skus": [
+        {
+          "id": "c0a65956-1c87-405e-8268-b46960b59bf7",
+          "configurationId": "efcb694d-3ea9-4ab0-891c-4bac2bf5c511",
+          "colorId": "15350957-a0c7-43f7-8306-17a1d12553db",
+          "sku": "AURA-AIRPODS-3-LIGHTNING-WHITE",
+          "price": 3299000,
+          "originalPrice": 3299000,
+          "onHand": 10
+        },
+        {
+          "id": "0c099c6b-f2a0-4f77-8bf1-7b0377519881",
+          "configurationId": "51a47477-2ac2-4e99-8d0a-a857df61e8e1",
+          "colorId": "15350957-a0c7-43f7-8306-17a1d12553db",
+          "sku": "AURA-AIRPODS-3-MAGSAFE-WHITE",
+          "price": 3799000,
+          "originalPrice": 3799000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "39ba187d-f511-4639-8561-54f27737a7dc",
+      "slug": "airpods-4",
+      "name": "AirPods 4",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Bản thường hoặc ANC · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/b6c5cc9e-5e1a-4760-8052-2e49ca5e8b2e",
+      "gallery": [
+        "/api/v1/media/b6c5cc9e-5e1a-4760-8052-2e49ca5e8b2e",
+        "/api/v1/media/1424120f-24b4-45eb-8a72-2da4b8fde3fe"
+      ],
+      "description": [
+        "Hai phiên bản phần cứng khác nhau: có hoặc không có chống ồn chủ động.",
+        "Đều dùng H2, cảm biến lực và đạt IP54; bản ANC có thêm sạc không dây và loa trên hộp."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Tai nghe mở"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Bản thường không có ANC; bản ANC có chống ồn, xuyên âm và âm thanh thích ứng."
+        },
+        {
+          "label": "Pin",
+          "value": "Không ANC: tối đa 5 giờ / 30 giờ cùng hộp. Bật ANC: tối đa 4 giờ / 20 giờ cùng hộp."
+        },
+        {
+          "label": "Sạc",
+          "value": "Không ANC — hộp sạc USB-C / Có ANC — hộp USB-C + Qi + Apple Watch, có loa Tìm"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2024"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Tai nghe mở"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Bản thường không có ANC; bản ANC có chống ồn, xuyên âm và âm thanh thích ứng."
+            },
+            {
+              "label": "Pin",
+              "value": "Không ANC: tối đa 5 giờ / 30 giờ cùng hộp. Bật ANC: tối đa 4 giờ / 20 giờ cùng hộp."
+            },
+            {
+              "label": "Sạc",
+              "value": "Không ANC — hộp sạc USB-C / Có ANC — hộp USB-C + Qi + Apple Watch, có loa Tìm"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2024"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/121203"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "AirPods",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "51fdb8d2-3bd3-4846-80a1-0ec3e909f48c",
+          "storage": "Không ANC — hộp sạc USB-C",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.3",
+          "chip": "H2"
+        },
+        {
+          "id": "70c31083-d545-47a5-85dc-666aaa2d4e90",
+          "storage": "Có ANC — hộp USB-C + Qi + Apple Watch, có loa Tìm",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.3",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "a25fb685-667e-49d9-86b0-e42222f161aa",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/b6c5cc9e-5e1a-4760-8052-2e49ca5e8b2e"
+        }
+      ],
+      "skus": [
+        {
+          "id": "035ece47-cd80-402d-8199-0cd9c51152f0",
+          "configurationId": "51fdb8d2-3bd3-4846-80a1-0ec3e909f48c",
+          "colorId": "a25fb685-667e-49d9-86b0-e42222f161aa",
+          "sku": "AURA-AIRPODS-4-STANDARD-WHITE",
+          "price": 3299000,
+          "originalPrice": 3299000,
+          "onHand": 10
+        },
+        {
+          "id": "af935c77-7cd4-4e74-8b0a-2bfbce879a83",
+          "configurationId": "70c31083-d545-47a5-85dc-666aaa2d4e90",
+          "colorId": "a25fb685-667e-49d9-86b0-e42222f161aa",
+          "sku": "AURA-AIRPODS-4-ANC-WHITE",
+          "price": 4799000,
+          "originalPrice": 4799000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "9f8be523-0581-408c-8bfb-bb45cff6a4d1",
+      "slug": "airpods-pro-1",
+      "name": "AirPods Pro 1",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Pro thế hệ đầu · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/02e5b130-3358-45bf-88d6-a29694babd67",
+      "gallery": [
+        "/api/v1/media/02e5b130-3358-45bf-88d6-a29694babd67"
+      ],
+      "description": [
+        "Tai nghe in-ear với nút silicon, chip H1 và IPX4 cho tai nghe.",
+        "Phiên bản MagSafe cập nhật năm 2021; cả hai cấu hình đều dùng cổng Lightning."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "In-ear với nút silicon"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Chống ồn chủ động, xuyên âm, EQ thích ứng và cảm biến lực."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 4,5 giờ khi bật chống ồn; hơn 24 giờ cùng hộp"
+        },
+        {
+          "label": "Sạc",
+          "value": "Hộp sạc không dây Qi + Lightning (2019) / Hộp sạc MagSafe + Qi + Lightning (2021)"
+        },
+        {
+          "label": "Chip",
+          "value": "H1"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2019 / 2021"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "In-ear với nút silicon"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Chống ồn chủ động, xuyên âm, EQ thích ứng và cảm biến lực."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 4,5 giờ khi bật chống ồn; hơn 24 giờ cùng hộp"
+            },
+            {
+              "label": "Sạc",
+              "value": "Hộp sạc không dây Qi + Lightning (2019) / Hộp sạc MagSafe + Qi + Lightning (2021)"
+            },
+            {
+              "label": "Chip",
+              "value": "H1"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2019 / 2021"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111861"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "Pro",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "e55bd232-c0bd-480c-8e22-d4480a23406a",
+          "storage": "Hộp sạc không dây Qi + Lightning (2019)",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        },
+        {
+          "id": "90fab5ab-9a76-416e-86c3-b4c93eb200a4",
+          "storage": "Hộp sạc MagSafe + Qi + Lightning (2021)",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1"
+        }
+      ],
+      "colors": [
+        {
+          "id": "ece9d578-bad4-4833-82e9-32dbdeda7496",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/02e5b130-3358-45bf-88d6-a29694babd67"
+        }
+      ],
+      "skus": [
+        {
+          "id": "4ff6194a-cd69-4a2a-86be-cf9690eb17b1",
+          "configurationId": "e55bd232-c0bd-480c-8e22-d4480a23406a",
+          "colorId": "ece9d578-bad4-4833-82e9-32dbdeda7496",
+          "sku": "AURA-AIRPODS-PRO-1-WIRELESS-WHITE",
+          "price": 3499000,
+          "originalPrice": 3499000,
+          "onHand": 10
+        },
+        {
+          "id": "9cc604d4-87b7-4878-87e3-9d7eec9b5291",
+          "configurationId": "90fab5ab-9a76-416e-86c3-b4c93eb200a4",
+          "colorId": "ece9d578-bad4-4833-82e9-32dbdeda7496",
+          "sku": "AURA-AIRPODS-PRO-1-MAGSAFE-WHITE",
+          "price": 3999000,
+          "originalPrice": 3999000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "bfc7f6c8-842c-446c-8539-b0af14497f07",
+      "slug": "airpods-pro-2",
+      "name": "AirPods Pro 2",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Lightning hoặc USB-C · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/b77c31c0-28fb-47ef-831e-67a20137f612",
+      "gallery": [
+        "/api/v1/media/b77c31c0-28fb-47ef-831e-67a20137f612",
+        "/api/v1/media/f92f0f49-f369-4154-80e0-bd8af03b8142"
+      ],
+      "description": [
+        "Chip H2 ở tai nghe, U1 trong hộp; hộp có loa và khoen dây đeo.",
+        "Cả hai hộp hỗ trợ MagSafe, Qi và sạc Apple Watch. Chống bụi/nước và cổng sạc phụ thuộc phiên bản đã chọn."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "In-ear với nút silicon"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Chống ồn chủ động, xuyên âm, âm thanh thích ứng; vuốt chỉnh âm lượng."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 6 giờ khi bật chống ồn; 30 giờ cùng hộp"
+        },
+        {
+          "label": "Sạc",
+          "value": "MagSafe Lightning (2022) — IPX4 / MagSafe USB-C (2023) — IP54"
+        },
+        {
+          "label": "Chip",
+          "value": "H2"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2022 / 2023"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "In-ear với nút silicon"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Chống ồn chủ động, xuyên âm, âm thanh thích ứng; vuốt chỉnh âm lượng."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 6 giờ khi bật chống ồn; 30 giờ cùng hộp"
+            },
+            {
+              "label": "Sạc",
+              "value": "MagSafe Lightning (2022) — IPX4 / MagSafe USB-C (2023) — IP54"
+            },
+            {
+              "label": "Chip",
+              "value": "H2"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2022 / 2023"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Trắng"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111834"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "Pro",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "12190cec-7bb4-49a9-8d38-dc7c94debcae",
+          "storage": "MagSafe Lightning (2022) — IPX4",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.3",
+          "chip": "H2"
+        },
+        {
+          "id": "4cea4abc-78d3-4263-826d-92455e612453",
+          "storage": "MagSafe USB-C (2023) — IP54",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.3",
+          "chip": "H2"
+        }
+      ],
+      "colors": [
+        {
+          "id": "b25fff9b-ebf1-49fb-8847-f2fccaeb33d6",
+          "name": "Trắng",
+          "hex": "#ffffff",
+          "image": "/api/v1/media/b77c31c0-28fb-47ef-831e-67a20137f612"
+        }
+      ],
+      "skus": [
+        {
+          "id": "31e911a0-b4db-4a41-8cc4-157d075da6b4",
+          "configurationId": "12190cec-7bb4-49a9-8d38-dc7c94debcae",
+          "colorId": "b25fff9b-ebf1-49fb-8847-f2fccaeb33d6",
+          "sku": "AURA-AIRPODS-PRO-2-LIGHTNING-WHITE",
+          "price": 4999000,
+          "originalPrice": 4999000,
+          "onHand": 10
+        },
+        {
+          "id": "0663eb4d-4f5f-4d8f-8ecb-0051df0b3132",
+          "configurationId": "4cea4abc-78d3-4263-826d-92455e612453",
+          "colorId": "b25fff9b-ebf1-49fb-8847-f2fccaeb33d6",
+          "sku": "AURA-AIRPODS-PRO-2-USBC-WHITE",
+          "price": 5499000,
+          "originalPrice": 5499000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "e18f6704-6998-4ad5-857d-fcbe37659e8c",
+      "slug": "airpods-max-1-lightning",
+      "name": "AirPods Max 1 — Lightning",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Max bản Lightning · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/c3ed491a-4ab4-453b-8e69-cd8dc7bd1221",
+      "gallery": [
+        "/api/v1/media/c3ed491a-4ab4-453b-8e69-cd8dc7bd1221",
+        "/api/v1/media/bc7cd8b0-c09b-489b-84b6-e12bdfba806c",
+        "/api/v1/media/a9588d3d-e2f6-445f-8b42-fb34a16b453d",
+        "/api/v1/media/7d14cf95-125d-44de-831b-0481a656e0c4",
+        "/api/v1/media/bf973317-b934-48c3-8935-24d0bfbfb83d"
+      ],
+      "description": [
+        "Tai nghe chụp tai đời 2020, hai chip H1 và năm màu gốc.",
+        "Sạc qua Lightning; không nhầm với màu và cổng USB-C của bản 2024 hoặc chip H2 của Max 2."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Chụp tai"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Chống ồn chủ động, xuyên âm, âm thanh không gian và Digital Crown."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 20 giờ khi bật chống ồn hoặc xuyên âm"
+        },
+        {
+          "label": "Sạc",
+          "value": "Lightning — kèm Smart Case"
+        },
+        {
+          "label": "Chip",
+          "value": "H1 (mỗi bên tai)"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2020"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Chụp tai"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Chống ồn chủ động, xuyên âm, âm thanh không gian và Digital Crown."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 20 giờ khi bật chống ồn hoặc xuyên âm"
+            },
+            {
+              "label": "Sạc",
+              "value": "Lightning — kèm Smart Case"
+            },
+            {
+              "label": "Chip",
+              "value": "H1 (mỗi bên tai)"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2020"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Bạc, Xám Không Gian, Xanh Da Trời, Hồng, Xanh Lá"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/111858"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "Max",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "storage": "Lightning — kèm Smart Case",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1 (mỗi bên tai)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "1b1130d1-0a9a-4e75-82e4-9ac1307f32c0",
+          "name": "Bạc",
+          "hex": "#d9dadb",
+          "image": "/api/v1/media/c3ed491a-4ab4-453b-8e69-cd8dc7bd1221"
+        },
+        {
+          "id": "bf848ee0-c9d0-4e26-890b-546b1390d22f",
+          "name": "Xám Không Gian",
+          "hex": "#535559",
+          "image": "/api/v1/media/bc7cd8b0-c09b-489b-84b6-e12bdfba806c"
+        },
+        {
+          "id": "fa1bd89d-b34b-46bf-8879-943c3d35f34e",
+          "name": "Xanh Da Trời",
+          "hex": "#a8bacb",
+          "image": "/api/v1/media/a9588d3d-e2f6-445f-8b42-fb34a16b453d"
+        },
+        {
+          "id": "110bd9fb-23e2-4ca3-86d0-2e3283e5e8bb",
+          "name": "Hồng",
+          "hex": "#e6acaa",
+          "image": "/api/v1/media/7d14cf95-125d-44de-831b-0481a656e0c4"
+        },
+        {
+          "id": "18f2c7bc-f442-4892-8a70-e6734a05a1b3",
+          "name": "Xanh Lá",
+          "hex": "#b4c7b5",
+          "image": "/api/v1/media/bf973317-b934-48c3-8935-24d0bfbfb83d"
+        }
+      ],
+      "skus": [
+        {
+          "id": "3245d7fc-5395-48dd-821c-b05c26abcc4c",
+          "configurationId": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "colorId": "1b1130d1-0a9a-4e75-82e4-9ac1307f32c0",
+          "sku": "AURA-AIRPODS-MAX-1-LIGHTNING-LIGHTNING-SILVER",
+          "price": 9999000,
+          "originalPrice": 9999000,
+          "onHand": 10
+        },
+        {
+          "id": "faa33544-619e-4745-8a4f-21ea48dfb5fd",
+          "configurationId": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "colorId": "bf848ee0-c9d0-4e26-890b-546b1390d22f",
+          "sku": "AURA-AIRPODS-MAX-1-LIGHTNING-LIGHTNING-SPACE-GRAY",
+          "price": 9999000,
+          "originalPrice": 9999000,
+          "onHand": 10
+        },
+        {
+          "id": "ea0c25a6-632b-4255-8274-fa6bec152fca",
+          "configurationId": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "colorId": "fa1bd89d-b34b-46bf-8879-943c3d35f34e",
+          "sku": "AURA-AIRPODS-MAX-1-LIGHTNING-LIGHTNING-SKY-BLUE",
+          "price": 9999000,
+          "originalPrice": 9999000,
+          "onHand": 10
+        },
+        {
+          "id": "5b1612a7-359c-4903-891f-9b882b23181a",
+          "configurationId": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "colorId": "110bd9fb-23e2-4ca3-86d0-2e3283e5e8bb",
+          "sku": "AURA-AIRPODS-MAX-1-LIGHTNING-LIGHTNING-PINK",
+          "price": 9999000,
+          "originalPrice": 9999000,
+          "onHand": 10
+        },
+        {
+          "id": "2a1928ec-499a-47f7-883e-47ef3cc79922",
+          "configurationId": "edb94d7a-8f38-4cc0-89a7-f6db4ff21c48",
+          "colorId": "18f2c7bc-f442-4892-8a70-e6734a05a1b3",
+          "sku": "AURA-AIRPODS-MAX-1-LIGHTNING-LIGHTNING-GREEN",
+          "price": 9999000,
+          "originalPrice": 9999000,
+          "onHand": 10
+        }
+      ]
+    },
+    {
+      "id": "aa0e636d-67e0-4eeb-89e6-25eae2281c49",
+      "slug": "airpods-max-1-usbc",
+      "name": "AirPods Max 1 — USB-C",
+      "categoryId": "airpods",
+      "active": true,
+      "tagline": "Max USB-C năm 2024 · Giá thử nghiệm Aura.",
+      "thumbnail": "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d",
+      "gallery": [
+        "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d",
+        "/api/v1/media/337216bd-0491-408b-8c1f-c5825f596b60",
+        "/api/v1/media/0a29c0fb-b0cd-48b4-8e23-4718e1d1710c",
+        "/api/v1/media/b4dc9b61-8d04-409f-8f17-85aadfa04335",
+        "/api/v1/media/e0899b88-994a-47aa-8c99-ec199c134461"
+      ],
+      "description": [
+        "Phiên bản USB-C năm 2024 với năm màu mới, vẫn thuộc thế hệ Max 1 dùng chip H1.",
+        "Âm thanh qua USB-C phụ thuộc phần mềm tương thích; cổng sạc và đời chip được ghi riêng theo SKU."
+      ],
+      "keySpecs": [
+        {
+          "label": "Kiểu tai nghe",
+          "value": "Chụp tai"
+        },
+        {
+          "label": "Âm thanh",
+          "value": "Chống ồn chủ động, xuyên âm, âm thanh không gian và Digital Crown."
+        },
+        {
+          "label": "Pin",
+          "value": "Tối đa 20 giờ khi bật chống ồn"
+        },
+        {
+          "label": "Sạc",
+          "value": "USB-C — kèm Smart Case"
+        },
+        {
+          "label": "Chip",
+          "value": "H1 (mỗi bên tai)"
+        },
+        {
+          "label": "Năm ra mắt",
+          "value": "2024"
+        }
+      ],
+      "detailedSpecs": [
+        {
+          "groupName": "Âm thanh và sử dụng",
+          "items": [
+            {
+              "label": "Kiểu tai nghe",
+              "value": "Chụp tai"
+            },
+            {
+              "label": "Âm thanh",
+              "value": "Chống ồn chủ động, xuyên âm, âm thanh không gian và Digital Crown."
+            },
+            {
+              "label": "Pin",
+              "value": "Tối đa 20 giờ khi bật chống ồn"
+            },
+            {
+              "label": "Sạc",
+              "value": "USB-C — kèm Smart Case"
+            },
+            {
+              "label": "Chip",
+              "value": "H1 (mỗi bên tai)"
+            },
+            {
+              "label": "Năm ra mắt",
+              "value": "2024"
+            }
+          ]
+        },
+        {
+          "groupName": "Màu sắc",
+          "items": [
+            {
+              "label": "Lựa chọn",
+              "value": "Xanh Dương, Tím, Đêm Xanh Thẳm, Ánh Sao, Cam"
+            }
+          ]
+        },
+        {
+          "groupName": "Thông tin tham khảo",
+          "items": [
+            {
+              "label": "Giá",
+              "value": "Giá thử nghiệm do Aura cấu hình; không phải giá Apple niêm yết hiện hành"
+            },
+            {
+              "label": "Tài liệu kỹ thuật Apple",
+              "value": "https://support.apple.com/en-us/121205"
+            },
+            {
+              "label": "Tồn kho",
+              "value": "Dữ liệu thử nghiệm của Aura; không phải tồn kho Apple"
+            }
+          ]
+        }
+      ],
+      "warrantyInfo": "Đời cũ bổ sung theo yêu cầu. Giá và tồn kho là dữ liệu thử nghiệm Aura, không phải giá bán hay tồn kho hiện tại của Apple. Ảnh Apple minh họa dòng sản phẩm; xem đúng loại hộp sạc và tính năng theo cấu hình đã chọn. Bảo hành thực tế chưa được thiết lập.",
+      "subCategory": "Max",
+      "badge": null,
+      "configurations": [
+        {
+          "id": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "storage": "USB-C — kèm Smart Case",
+          "screenSize": "",
+          "connectivity": "Bluetooth 5.0",
+          "chip": "H1 (mỗi bên tai)"
+        }
+      ],
+      "colors": [
+        {
+          "id": "2c726e50-df72-4958-858d-06382f6802e3",
+          "name": "Xanh Dương",
+          "hex": "#a6bdcf",
+          "image": "/api/v1/media/51ac1749-a6de-492c-8777-81dd285d769d"
+        },
+        {
+          "id": "6fad3362-9378-4e5d-83ed-1ef3e823d89d",
+          "name": "Tím",
+          "hex": "#b8a5cc",
+          "image": "/api/v1/media/337216bd-0491-408b-8c1f-c5825f596b60"
+        },
+        {
+          "id": "d67e8b9c-617e-4fd9-8f58-c6ddc5fad119",
+          "name": "Đêm Xanh Thẳm",
+          "hex": "#303944",
+          "image": "/api/v1/media/0a29c0fb-b0cd-48b4-8e23-4718e1d1710c"
+        },
+        {
+          "id": "bc3f524b-9070-48f8-8948-9cbfb694b71a",
+          "name": "Ánh Sao",
+          "hex": "#e7dfcf",
+          "image": "/api/v1/media/b4dc9b61-8d04-409f-8f17-85aadfa04335"
+        },
+        {
+          "id": "778d0a92-e548-4c6c-8b4b-71bed5360d0f",
+          "name": "Cam",
+          "hex": "#e8a37f",
+          "image": "/api/v1/media/e0899b88-994a-47aa-8c99-ec199c134461"
+        }
+      ],
+      "skus": [
+        {
+          "id": "a6a1724e-8e8e-4fda-80f3-e6cd3f90475d",
+          "configurationId": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "colorId": "2c726e50-df72-4958-858d-06382f6802e3",
+          "sku": "AURA-AIRPODS-MAX-1-USBC-USBC-BLUE",
+          "price": 11999000,
+          "originalPrice": 11999000,
+          "onHand": 10
+        },
+        {
+          "id": "84db736e-5dd4-4e72-8ea1-ba3a1dd68806",
+          "configurationId": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "colorId": "6fad3362-9378-4e5d-83ed-1ef3e823d89d",
+          "sku": "AURA-AIRPODS-MAX-1-USBC-USBC-PURPLE",
+          "price": 11999000,
+          "originalPrice": 11999000,
+          "onHand": 10
+        },
+        {
+          "id": "5ed6d0d0-208a-4765-885f-31f589d6a371",
+          "configurationId": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "colorId": "d67e8b9c-617e-4fd9-8f58-c6ddc5fad119",
+          "sku": "AURA-AIRPODS-MAX-1-USBC-USBC-MIDNIGHT",
+          "price": 11999000,
+          "originalPrice": 11999000,
+          "onHand": 10
+        },
+        {
+          "id": "9868d467-37a4-4fe2-8a06-88c7eb7fb9af",
+          "configurationId": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "colorId": "bc3f524b-9070-48f8-8948-9cbfb694b71a",
+          "sku": "AURA-AIRPODS-MAX-1-USBC-USBC-STARLIGHT",
+          "price": 11999000,
+          "originalPrice": 11999000,
+          "onHand": 10
+        },
+        {
+          "id": "26b97100-5863-436e-849f-da0d5543dcdc",
+          "configurationId": "ce97a7a3-43ac-48d9-8553-a2fa3d31efc9",
+          "colorId": "778d0a92-e548-4c6c-8b4b-71bed5360d0f",
+          "sku": "AURA-AIRPODS-MAX-1-USBC-USBC-ORANGE",
+          "price": 11999000,
+          "originalPrice": 11999000,
           "onHand": 10
         }
       ]

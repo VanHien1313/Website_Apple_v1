@@ -25,8 +25,8 @@ function success(id:unknown,transaction:unknown,amount:unknown):PaymentSuccess {
  if(typeof id!=='string'||id.length>64||!/^\d+$/.test(String(transaction))||String(transaction)==='0'||String(transaction).length>64||!Number.isSafeInteger(amount)||Number(amount)<=0)throw invalid();
  return {providerOrderId:id,transactionId:String(transaction),amount:Number(amount)};
 }
-async function post(url:string,body:Data){
- const response=await fetch(url,{method:'POST',redirect:'error',headers:{'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(35000)});
+async function post(url:string,body:Data,timeoutMs=35000){
+ const response=await fetch(url,{method:'POST',redirect:'error',headers:{'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(timeoutMs)});
  if(!response.ok)throw new ApiError(502,'GATEWAY_UNAVAILABLE','Cổng thanh toán chưa phản hồi. Hãy kiểm tra trạng thái giao dịch trước khi thử lại.');
  const raw=await response.text();if(raw.length>100000)throw invalid();return parseGatewayJSON(raw);
 }
@@ -45,7 +45,7 @@ export function gatewayClient(config:PaymentConfig){return {
    data=await post('https://test-payment.momo.vn/v2/gateway/api/create',{...body,signature});
    if(data.resultCode!==0||data.orderId!==id||Number(data.amount)!==amount)throw new ApiError(502,'GATEWAY_CREATE_FAILED','Chưa lấy được phiên thanh toán MoMo. Kiểm tra trạng thái đơn trước khi đặt lại.');
   }else{
-   const c=config.zalopay!,embed_data=JSON.stringify({redirecturl:redirectUrl,preferred_payment_method:['zalopay_wallet','vietqr']}),item='[]';
+   const c=config.zalopay!,embed_data=JSON.stringify({redirecturl:redirectUrl}),item='[]';
    const body={app_id:c.appId,app_trans_id:id,app_user:'Aura',app_time:Date.now(),amount,description:'Aura '+orderId,embed_data,item,bank_code:'',expire_duration_seconds:900,callback_url:config.publicOrigin+'/api/v1/payments/zalopay/callback'};
    data=await post('https://sb-openapi.zalopay.vn/v2/create',{...body,mac:hmac(c.key1,[body.app_id,id,body.app_user,amount,body.app_time,embed_data,item].join('|'))});
    if(data.return_code!==1)throw new ApiError(502,'GATEWAY_CREATE_FAILED','Chưa lấy được phiên thanh toán ZaloPay. Kiểm tra trạng thái đơn trước khi đặt lại.');
@@ -55,10 +55,10 @@ export function gatewayClient(config:PaymentConfig){return {
  },
  async query(provider:Wallet,id:string):Promise<PaymentSuccess|null>{
   if(provider==='momo'){
-   const c=config.momo!,data=await post('https://test-payment.momo.vn/v2/gateway/api/query',{partnerCode:c.partnerCode,requestId:randomUUID(),orderId:id,lang:'vi',signature:hmac(c.secretKey,`accessKey=${c.accessKey}&orderId=${id}&partnerCode=${c.partnerCode}`)});
+   const c=config.momo!,data=await post('https://test-payment.momo.vn/v2/gateway/api/query',{partnerCode:c.partnerCode,requestId:randomUUID(),orderId:id,lang:'vi',signature:hmac(c.secretKey,`accessKey=${c.accessKey}&orderId=${id}&partnerCode=${c.partnerCode}`)},10000);
    if(data.resultCode!==0)return null;if(data.orderId!==id||data.partnerCode!==c.partnerCode)throw invalid();return success(id,data.transId,data.amount);
   }
-  const c=config.zalopay!,data=await post('https://sb-openapi.zalopay.vn/v2/query',{app_id:c.appId,app_trans_id:id,mac:hmac(c.key1,`${c.appId}|${id}|${c.key1}`)});
+  const c=config.zalopay!,data=await post('https://sb-openapi.zalopay.vn/v2/query',{app_id:c.appId,app_trans_id:id,mac:hmac(c.key1,`${c.appId}|${id}|${c.key1}`)},10000);
   return data.return_code===1?success(id,data.zp_trans_id,data.amount):null;
  }
 };}

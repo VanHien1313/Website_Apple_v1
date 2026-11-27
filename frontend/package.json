@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode api",
     "dev:api": "vite --mode api",
     "build:api": "tsc -b && vite build --mode api",
     "build": "tsc -b && vite build",
@@ -12,7 +12,8 @@
     "preview:api": "vite preview --mode api",
     "typecheck": "tsc -b",
     "test:boundary": "node scripts/check-runtime-boundary.mjs",
-    "test": "tsc --project tsconfig.test.json && node scripts/test.mjs"
+    "test": "tsc --project tsconfig.test.json && node scripts/test.mjs",
+    "dev:demo": "vite"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -8,7 +8,7 @@ test('original catalog maps to valid unique SQL products, variants, colors and S
  const ids=[],skus=[];
  for(const value of data.products){const p=parseProduct(value);ids.push(p.id,...p.configurations.map(v=>v.id),...p.colors.map(c=>c.id),...p.skus.map(k=>k.id));skus.push(...p.skus.map(k=>k.sku));assert.ok(data.categories.some(c=>c.id===p.categoryId));
  for(const url of [p.thumbnail,...p.gallery,...p.colors.map(c=>c.image)])assert.ok(data.media.some(m=>url==='/api/v1/media/'+m.id));}
- assert.equal(data.products.length,36);assert.equal(new Set(ids).size,ids.length);assert.equal(new Set(skus).size,104);
+ assert.equal(data.products.length,48);assert.equal(new Set(ids).size,ids.length);assert.equal(new Set(skus).size,133);
  for(const p of data.products)assert.ok(p.detailedSpecs.length>=3,p.slug+' needs detailed specifications');
 });
 test('researched additions have matching source prices, own photos and complete descriptions',async()=>{

@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
 import { authorizationUrl, exchangeIdentity, socialProviders, type SocialConfig } from './social-provider.ts';
-import { Router } from 'express';
+import { Router, type Response } from 'express';
 import type { Database } from '../db/database.ts';
 import { ApiError, createAuthService, type Principal } from './service.ts';
 
@@ -30,13 +30,33 @@ export function authRouter(db: Database, kind: Principal, options: AuthOptions) 
       const callback = options.origin + callbackPath;
       const flowCookie = `${options.secure ? '__Host-' : ''}aura_oauth_${provider}`;
 
-      router.post(`/social/${provider}/start`, (req, res) => {
+      const beginSocialLogin = (res: Response, next: unknown) => {
         const config = options.social?.[provider];
         if (!config) throw new ApiError(503, 'SOCIAL_UNAVAILABLE', 'Phương thức đăng nhập chưa được cấu hình.');
         const state = randomBytes(32).toString('base64url');
         const verifier = randomBytes(32).toString('base64url');
-        res.cookie(flowCookie, JSON.stringify({ state, verifier, next: checkoutPath(req.body?.next), expires: Date.now() + 600000 }), { ...cookie, maxAge: 600000 });
-        res.json({ url: authorizationUrl(provider, config.clientId, callback, state, verifier) });
+        res.set('Cache-Control', 'no-store');
+        res.cookie(flowCookie, JSON.stringify({ state, verifier, next: checkoutPath(next), expires: Date.now() + 600000 }), { ...cookie, maxAge: 600000 });
+        return authorizationUrl(provider, config.clientId, callback, state, verifier);
+      };
+
+      // Navigate to the configured site before setting OAuth cookies. The Vite
+      // proxy and the public HTTPS site must not start a flow on different hosts.
+      router.get(`/social/${provider}/enter`, (req, res) => {
+        res.set('Cache-Control', 'no-store');
+        res.set('Referrer-Policy', 'no-referrer');
+        const entry = new URL(`/api/v1/auth/social/${provider}/enter`, options.origin);
+        const next = checkoutPath(req.query.next);
+        if (next) entry.searchParams.set('next', next);
+        if (req.get('host') !== entry.host) {
+          res.redirect(303, entry.href);
+          return;
+        }
+        res.redirect(303, beginSocialLogin(res, next));
+      });
+
+      router.post(`/social/${provider}/start`, (req, res) => {
+        res.json({ url: beginSocialLogin(res, req.body?.next) });
       });
 
       router.get(`/social/${provider}/callback`, async (req, res) => {

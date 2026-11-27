@@ -90,7 +90,7 @@ function WalletSession({ orderId, method, onPaid }: { orderId: string; method: '
   const expired = data?.state === 'READY' && !data.payUrl && !data.qrImage;
   return <section className="wallet-payment ui-panel p-5 space-y-4">
     <h2 className="text-lg font-semibold">{paymentNames[method]}</h2>
-    {data?.mode === 'sandbox' && <p className="rounded-lg bg-accent-light p-3 text-sm text-accent">Giao dịch thử nghiệm. Không tính vào doanh thu thực.</p>}
+    {data?.mode === 'sandbox' && <p className="rounded-lg bg-accent-light p-3 text-sm text-accent">Thanh toán sandbox · Chỉ dùng ứng dụng và số dư thử nghiệm, không dùng tiền thật. Không tính vào doanh thu thực.</p>}
     {data?.state === 'REVIEW' ? <p role="alert" className="text-sm text-danger">Tiền đến sau khi đơn đã hủy. Vui lòng liên hệ cửa hàng để đối soát hoặc hoàn tiền.</p>
       : data?.paymentStatus === 'PAID' ? <p role="status" className="font-semibold text-accent">Đã xác minh thanh toán từ cổng.</p>
       : data?.orderStatus === 'CANCELLED' ? <p>Đơn đã hủy.</p>

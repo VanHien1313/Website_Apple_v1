@@ -246,6 +246,7 @@ aside.ui-panel { border-top: 3px solid var(--color-accent); }
 .runway-device-label { display: flex; align-items: center; gap: 10px; padding: 10px 4px 2px; color: #17263E; font-size: 11px; font-weight: 600; }
 .runway-device-label > span { color: #49699D; font-size: 10px; }
 .runway-device-label > svg { margin-left: auto; }
+.runway-depth-4 { opacity: 0; visibility: hidden; pointer-events: none; }
 .runway-depth-0 { z-index: 4; transform: translateX(5%) rotate(-5deg); }
 .runway-depth-1 { z-index: 3; transform: translate(76%, -22px) scale(.74) rotate(-2deg); opacity: .85; }
 .runway-depth-2 { z-index: 2; transform: translate(137%, -40px) scale(.53) rotate(1deg); opacity: .65; }

@@ -2,9 +2,9 @@
 
 ## Trạng thái
 
-Đã triển khai luồng kỹ thuật, lựa chọn checkout, trang phiên thanh toán, QR do cổng trả về, callback có kiểm tra chữ ký và truy vấn đối soát. Chưa có tài khoản merchant của nhóm nên chưa kiểm thử giao dịch trên hệ thống sandbox thật của nhà cung cấp. Mặc định PAYMENT_MODE=off; COD vẫn hoạt động, hai ví hiển thị chưa kích hoạt.
+Đã triển khai luồng kỹ thuật, lựa chọn checkout, trang phiên thanh toán, QR do cổng trả về, callback có kiểm tra chữ ký và truy vấn đối soát. Mặc định PAYMENT_MODE=off; COD vẫn hoạt động. Local đã thử API và trang QR ZaloPay bằng bộ demo AppID 2554 do hỗ trợ gửi (xem cuối tài liệu); chưa xác nhận thanh toán PAID/callback thực tế và chưa có merchant riêng của nhóm.
 
-Không sử dụng tài khoản ví cá nhân hoặc khóa mẫu công khai làm thông tin merchant. Không hỗ trợ production trong phiên bản này; chỉ chấp nhận off/sandbox. Không có nút giả lập đã thanh toán trên website. Kiểm thử nội bộ sử dụng gateway giả trong database tạm, không gọi ví thật.
+Không sử dụng tài khoản ví cá nhân hoặc khóa demo làm thông tin merchant production. Bộ demo do hỗ trợ gửi chỉ dùng để thử sandbox; không coi là tài khoản merchant riêng của Aura. Không hỗ trợ production trong phiên bản này; chỉ chấp nhận off/sandbox. Không có nút giả lập đã thanh toán trên website. Kiểm thử nội bộ sử dụng gateway giả trong database tạm, không gọi ví thật.
 
 ## Chuẩn bị tài khoản
 
@@ -46,7 +46,7 @@ Callback:
 - Một phiên cổng/đơn, chống tạo trùng. Nếu gọi tạo phiên mất phản hồi, kiểm tra giao dịch; không tự tạo lần thứ hai. Có thể cần hỗ trợ merchant để phục hồi link phiên.
 - MoMo giới hạn 1.000–50.000.000 VND theo tài liệu hiện tại; đơn vượt giới hạn bị từ chối trước khi tạo đơn MoMo.
 - Phiên QR hiển thị tối đa 15 phút. Đơn giữ hàng theo chính sách 24 giờ hiện có. Cổng có thời hạn riêng; khi QR ẩn vẫn phải đối soát trước khi thanh toán lại.
-- Worker kiểm tra mỗi phút, theo lô 10, với phiên chưa đối soát trong 7 ngày; nếu Docker tắt, kiểm tra tiếp khi chạy lại. Quá 7 ngày cần kiểm tra chủ động/merchant portal. Callback hợp lệ vẫn được tiếp nhận.
+- Worker kiểm tra mỗi 30 giây, theo lô tối đa 10 phiên song song (truy vấn cổng giới hạn 10 giây), với phiên chưa đối soát trong 7 ngày; nếu Docker tắt, kiểm tra tiếp khi chạy lại. Quá 7 ngày cần kiểm tra chủ động/merchant portal. Callback hợp lệ vẫn được tiếp nhận.
 - Tiền đến sau khi hủy: lưu PAID, đánh dấu REVIEW, giữ đơn CANCELLED, không tự giao hàng/khôi phục tồn kho/cộng doanh thu. Quản trị cần đối soát và hoàn tiền qua merchant portal; chưa có API hoàn tiền trong website.
 - Chưa có tích hợp production/UAT nhà cung cấp; không coi kiểm thử nội bộ là chứng nhận thanh toán thật.
 
@@ -61,3 +61,26 @@ Callback:
 ## Kết quả kiểm tra local
 
 92/92 backend tests, 43/43 frontend tests, typecheck và Docker build thành công. Chrome kiểm tra hai lựa chọn ví bị khóa khi chưa cấu hình, COD đặt thành công, mobile không tràn ngang. Migration 011 đã áp dụng cho main/demo sau backup COPY_ONLY + CHECKSUM và RESTORE VERIFYONLY; số lượng sản phẩm/khách/đơn giữ nguyên. Chưa thực hiện giao dịch sandbox với MoMo/ZaloPay thật.
+
+## Thử nghiệm bộ demo AppID 2554 (21/11/2026)
+
+Đã bật sandbox local bằng bộ khóa demo do hỗ trợ ZaloPay gửi; khóa chỉ nằm trong `deploy/secrets/payment-sandbox.env` (Git ignore). Đây là tài khoản demo dùng chung, không phải merchant riêng của Aura và không dùng cho production.
+
+Đã kiểm tra API tạo phiên 10.000 VND và truy vấn chưa thanh toán trên sandbox thật. AppID 2554 không hiển thị phương thức khi ép `preferred_payment_method` sang ví/VietQR; để cổng tự trả phương thức được hỗ trợ đã hiện lựa chọn ví và trang QR. API không trả `qr_code` cho bộ demo này, nên dùng nút mở cổng thanh toán để xem QR. Chưa xác nhận giao dịch PAID và callback thực tế; cần dùng ví sandbox đã đăng ký để hoàn tất.
+
+URL callback hiện tại: `https://majesty-facility-marmalade.ngrok-free.dev/api/v1/payments/zalopay/callback`.
+
+Chạy lại đúng cấu hình để giữ cả đăng nhập và thanh toán (override social local có nạp payment-sandbox.env):
+
+```sh
+docker compose -f compose.yaml -f compose.team.yaml -f deploy/secrets/compose.social-local.yaml up -d --build --no-deps app
+```
+
+## Callback và cập nhật tự động (24/11/2026)
+
+- Đơn thử `AURA-SANDBOX-10000-20261124` thanh toán sandbox 10.000 VND thành công, giao dịch `261124000000064`. Chưa có bằng chứng ZaloPay thực sự gửi callback tới ngrok trong lần thanh toán này; không coi request thử tự gửi là callback thật của nhà cung cấp.
+- Callback xác minh HMAC/số tiền/phương thức, chống ghi nhận trùng. Lỗi xử lý tạm thời trả JSON `return_code: 0` để ZaloPay gửi lại; dữ liệu/chữ ký sai không được ACK thành công.
+- Log `payment_callback_accepted`, `payment_callback_rejected`, `payment_callback_failed` giúp phân biệt callback đến, bị từ chối hoặc lỗi xử lý. Không log khóa, chữ ký hay toàn bộ payload. Log HTTP thêm path nhưng không thêm query string.
+- Worker tự đối soát mỗi 30 giây, tối đa 10 phiên song song; truy vấn chậm của một phiên không chặn tất cả các phiên khác. Website vẫn tự đọc trạng thái mỗi 10 giây. Tải lớn hoặc lỗi cổng có thể làm trễ hơn chu kỳ này.
+- Lịch sử thanh toán ghi rõ nguồn callback hoặc truy vấn tự động. Không dùng tham số redirect để đánh dấu PAID.
+- Đã đạt 10 kiểm thử thanh toán trên database tạm, gồm callback lỗi tạm thời/gửi lại và worker cập nhật sau lượt truy vấn chưa thanh toán. Đã dùng API ZaloPay thật truy vấn giao dịch thành công trên một database tạm và xác nhận chỉ worker tự chuyển PENDING sang PAID.

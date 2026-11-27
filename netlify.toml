@@ -1,0 +1,32 @@
+"$schema" = "https://open-api.netlify.com/netlify.schema.json"
+
+[build]
+  command = "npm --prefix frontend ci && npm --prefix frontend run build:api"
+  publish = "frontend/dist-api"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://majesty-facility-marmalade.ngrok-free.dev/api/:splat"
+  status = 200
+  force = true
+  headers = { ngrok-skip-browser-warning = "1" }
+
+[[redirects]]
+  from = "/health/*"
+  to = "https://majesty-facility-marmalade.ngrok-free.dev/health/:splat"
+  status = 200
+  force = true
+  headers = { ngrok-skip-browser-warning = "1" }
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -9,7 +9,8 @@ import {bootstrapOwner} from '../src/auth/bootstrap.ts';
 import {createOrderService} from '../src/checkout/orders.ts';
 import {orderManagement} from '../src/checkout/management.ts';
 import {revenueReport} from '../src/checkout/reports.ts';
-import {walletService} from '../src/payments/service.ts';
+import {walletService,startWalletWorker} from '../src/payments/service.ts';
+import {setTimeout as delay} from 'node:timers/promises';
 import {readPaymentConfig,type PaymentConfig} from '../src/payments/config.ts';
 import {gatewayClient,hmac,parseGatewayJSON,safePayUrl,verifyNotification,type GatewayClient} from '../src/payments/gateway.ts';
 import {createApp} from '../src/app.ts';
@@ -80,4 +81,48 @@ test('gateway adapters sign sandbox create/query requests and use only provider 
   assert.equal((await g.create('zalopay','261113_id','order',1000)).qrPayload,'native-zalo-qr');const z=sent[2]!.body;assert.equal(z.mac,hmac('key1',`123|261113_id|Aura|1000|${z.app_time}|${z.embed_data}|[]`));
   assert.equal((await g.query('zalopay','261113_id'))?.transactionId,'102');assert.equal(sent[3]!.body.mac,hmac('key1','123|261113_id|key1'));
  }finally{globalThis.fetch=original;}
+});
+
+
+test('ZaloPay transient callback processing failure asks for retry and later delivery settles once',async()=>{
+ const order=await create('zalopay');await walletService(f.db,config,client).start(order.id,customer);const a=await attempt(order.id);
+ let fail=true;
+ const flaky={...f.db,query:async<T extends Record<string,unknown>>(statement:string,values?:unknown[])=>{
+  if(fail&&statement.startsWith('SELECT * FROM wallet_attempts WHERE provider=')){fail=false;throw Error('Temporary database outage');}
+  return f.db.query<T>(statement,values);
+ }};
+ const server=createApp(flaky,()=>{}, {origin:'http://127.0.0.1:3000',secure:false},undefined,[],config).listen(0,'127.0.0.1');await once(server,'listening');const address=server.address();assert.ok(address&&typeof address!=='string');
+ const data=JSON.stringify({app_id:123,app_trans_id:a.provider_order_id,zp_trans_id:'50005',amount:Number(a.amount)});
+ const send=()=>fetch(`http://127.0.0.1:${address.port}/api/v1/payments/zalopay/callback`,{method:'POST',headers:{'content-type':'application/json; charset=utf-8'},body:JSON.stringify({type:1,data,mac:hmac('key2',data)})});
+ try{
+  const retry=await send();assert.equal(retry.status,200);assert.equal((await retry.json()).return_code,0);
+  assert.equal((await walletService(f.db,config,client).view(order.id,customer)).paymentStatus,'PENDING');
+  for(let n=0;n<2;n++)assert.equal((await(await send()).json()).return_code,1);
+  const events=(await f.db.query("SELECT note FROM order_events WHERE order_id=@arg1 AND kind='payment'",[order.id])).rows;
+  assert.equal(events.length,1);assert.match(String(events[0]!.note),/callback/);
+ }finally{server.closeAllConnections();await new Promise<void>(resolve=>server.close(()=>resolve()));}
+});
+
+test('background worker settles a later successful query without callback or manual refresh',async()=>{
+ const order=await create('zalopay');await walletService(f.db,config,client).start(order.id,customer);const a=await attempt(order.id);
+ let calls=0;
+ const stop=startWalletWorker(f.db,config,{intervalMs:25,client:{...client,query:async(_provider,id)=>{
+  if(id!==a.provider_order_id)return null;
+  calls++;return calls===1?null:{providerOrderId:id,transactionId:'60006',amount:Number(a.amount)};
+ }}});
+ try{
+  const deadline=Date.now()+5000;
+  while(calls===0&&Date.now()<deadline)await delay(10);
+  assert.equal(calls,1);
+  // Advance the per-order query lease without making the test wait 30 seconds.
+  await f.db.query('UPDATE wallet_attempts SET checked_at=DATEADD(second,-31,SYSUTCDATETIME()) WHERE order_id=@arg1',[order.id]);
+  let paid=false;
+  while(Date.now()<deadline){
+   const row=(await f.db.query('SELECT payment_status FROM orders WHERE id=@arg1',[order.id])).rows[0];
+   if(row?.payment_status==='PAID'){paid=true;break;}await delay(10);
+  }
+  assert.ok(paid,'timer must query and settle automatically');assert.equal(calls,2);
+  const events=(await f.db.query("SELECT note FROM order_events WHERE order_id=@arg1 AND kind='payment'",[order.id])).rows;
+  assert.equal(events.length,1);assert.match(String(events[0]!.note),/truy vấn tự động/);
+ }finally{await stop();}
 });

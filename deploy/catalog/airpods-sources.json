@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-11-25",
+  "store": "Apple Store Việt Nam",
+  "pages": [
+    "https://www.apple.com/vn/shop/buy-airpods/airpods-5",
+    "https://www.apple.com/vn/shop/buy-airpods/airpods-pro-3",
+    "https://www.apple.com/vn/shop/buy-airpods/airpods-max-2",
+    "https://support.apple.com/en-us/111855",
+    "https://support.apple.com/en-us/111856",
+    "https://support.apple.com/en-us/111863",
+    "https://support.apple.com/en-us/121203",
+    "https://support.apple.com/en-us/121204",
+    "https://support.apple.com/en-us/111861",
+    "https://support.apple.com/en-us/111859",
+    "https://support.apple.com/en-us/111851",
+    "https://support.apple.com/en-us/111834",
+    "https://support.apple.com/en-us/111858",
+    "https://support.apple.com/en-us/121205",
+    "https://support.apple.com/vi-vn/109525"
+  ],
+  "assets": {
+    "airpods-5": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-hero-select-202609?wid=976&hei=916&fmt=jpeg&qlt=90&.v=RVU2SGpGc09oYXdoRmpNcmQ5OG9tR3VtVXdjeDQ5eHAyck91MG5EMElJTGkyVU55U21PWTMyajVGNTlWWnhwak14MXJScFRZN3Y5OWZsRXVrN1k4cFltcWM3RC92MW1IaTRiYkh6SThoUGc",
+    "airpods-5-wireless": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=aFZUWmUrUDM2bFVzejhMU3AxSHJHendJQVRIbmUrVkgvaHR4ajlmK3pJN0hJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVWRsZXJCWXk5YjBoSm5GZDdURmRwclorYWpGdS9XeFgvbS9ITnNYOEhYaG4",
+    "airpods-pro-3": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1758077264484",
+    "airpods-max-2-blue": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmaVZsckZUTTZZd1pFb3lRTGNlYkF0Yy9BSXRGSWdwVEs0NXdLd3JPRVQ3TGROL2hTdHRlcnVBMFhCNlFSVHgrS01jL2RQeWJYZ1FmWXUzRFBMSzJrTlJTZy9JeUNjV2pzbzd6anYzTldHVWw",
+    "airpods-max-2-purple": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdEFZMGtjOXNTYXJEaHFYa1lFVzIyUnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnhzQVNZV1grZHBseDduSWhqSlA3QUE",
+    "airpods-max-2-midnight": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdmVWNWdHYnp5cHkwMldsSElEOHpyd0cyWGRFNFZ5QTk3bFlteis2Q2NNaWpENFdPQTN0TWQ4ejhtTWxrUHVDeElGZGV2eWhZaEljUzNSeDlxcDVuWGszbTFldUtUQzN0ellEWHZ3UUFYSS8",
+    "airpods-max-2-starlight": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdWd1NjlYUXFPTDZEK2xySGJScW1PS1Rpbjg5MjlaRWkwN0JTZEtNR2p3b2dmcFJCOTlLWlREUEJzL3lTN2VnL0cvVnNUQWxFNHNrME94a1pxdUNOU29FM01jakdGSHhMVXhHQ21YeXBIKzU",
+    "airpods-max-2-orange": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmbVl3dU4zNmtlQ1czYnJUSEJUcWowRnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnk3Zm5tZm5FR0tlWnFHbkRhQU5lZmc",
+    "airpods-1": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111855_SP750-airpods.jpeg",
+    "airpods-2": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111856_airpods-2gen-wireless-case.png",
+    "airpods-3": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111863_airpods-3rdgen-2.png",
+    "airpods-4": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121203-airpods-4.png",
+    "airpods-4-anc": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121204-airpods-4-anc.png",
+    "airpods-pro-1": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111861_airpods_pro_case__eqmrrx2cfpkm_large.png",
+    "airpods-pro-2-lightning": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
+    "airpods-pro-2-usbc": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/airpods-pro-2.png",
+    "airpods-max-1-lightning-silver": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-white_12082020_carousel.jpg.large.jpg",
+    "airpods-max-1-lightning-space-gray": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-black_12082020_carousel.jpg.large.jpg",
+    "airpods-max-1-lightning-sky-blue": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-blue_12082020_carousel.jpg.large.jpg",
+    "airpods-max-1-lightning-pink": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-red_12082020_carousel.jpg.large.jpg",
+    "airpods-max-1-lightning-green": "https://www.apple.com/newsroom/images/product/airpods/standard/apple_airpods-max_color-green_12082020_carousel.jpg.large.jpg"
+  },
+  "pricingPolicy": {
+    "current": "Giá niêm yết Apple Store VN lúc đối chiếu",
+    "historical": "Giá thử nghiệm do Aura cấu hình, không phải giá Apple hiện hành"
+  }
+}

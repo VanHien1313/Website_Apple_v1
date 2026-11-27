@@ -1,17 +1,18 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { categoryName } from '../layout/navigation';
 import type { Product } from '../../types/product';
 import { ProductImage } from './ProductImage';
 import { formatCurrency } from '../../utils/formatters';
 
-const categoryLabel = (product: Product) => ({ iphone: 'iPhone', ipad: 'iPad', mac: 'Mac', watch: 'Apple Watch' }[product.category] ?? product.category);
+const categoryLabel = (product: Product) => categoryName(product.category);
 
 /** Manual product showcase: no timers, scroll interception or third-party animation runtime. */
 export function ProductRunway({ products }: { products: Product[] }) {
   const [selected, setSelected] = useState(0);
   const touchX = useRef<number | null>(null);
-  const items = products.slice(0, 4);
+  const items = products.slice(0, 5);
   const active = selected % Math.max(items.length, 1);
   const product = items[active];
   const move = (step: number) => setSelected((value) => (value + step + items.length) % items.length);
@@ -38,7 +39,7 @@ export function ProductRunway({ products }: { products: Product[] }) {
         </div>
         <div className="runway-controls">
           <button type="button" className="runway-arrow" aria-label="Thiết bị trước" onClick={() => move(-1)} disabled={items.length < 2}><ArrowLeft size={21} /></button>
-          <div className="runway-steps" role="group" aria-label="Danh sách thiết bị nổi bật">{items.map((item, index) => <button type="button" key={item.id} aria-label={`Chọn ${item.name}`} aria-pressed={index === active} onClick={() => setSelected(index)}><span>{String(index + 1).padStart(2, '0')}</span><span>{categoryLabel(item)}</span></button>)}</div>
+          <div className="runway-steps" style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }} role="group" aria-label="Danh sách thiết bị nổi bật">{items.map((item, index) => <button type="button" key={item.id} aria-label={`Chọn ${item.name}`} aria-pressed={index === active} onClick={() => setSelected(index)}><span>{String(index + 1).padStart(2, '0')}</span><span>{categoryLabel(item)}</span></button>)}</div>
           <button type="button" className="runway-arrow" aria-label="Thiết bị tiếp theo" onClick={() => move(1)} disabled={items.length < 2}><ArrowRight size={21} /></button>
         </div>
       </div>

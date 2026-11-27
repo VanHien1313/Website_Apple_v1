@@ -27,7 +27,7 @@ export function createApp(db: Database, log: (entry: Record<string, unknown>) =>
     const id = randomUUID(), start = performance.now();
     res.locals.requestId = id;
     res.set({ 'X-Request-Id': id, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store' });
-    res.on('finish', () => log({ event: 'http_request', requestId: id, method: req.method, status: res.statusCode, durationMs: Math.round(performance.now() - start) }));
+    res.on('finish', () => log({ event: 'http_request', requestId: id, method: req.method, path: req.path, status: res.statusCode, durationMs: Math.round(performance.now() - start) }));
     next();
   });
   app.get('/health/live', (_req, res) => { res.json({ status: 'ok' }); });

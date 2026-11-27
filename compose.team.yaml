@@ -1,0 +1,6 @@
+# Local database imported from AuraStoreTeam.sql.
+# Start/restart: docker compose -f compose.yaml -f compose.team.yaml up -d --no-deps app
+services:
+  app:
+    environment:
+      DB_DATABASE: AuraStoreTeam

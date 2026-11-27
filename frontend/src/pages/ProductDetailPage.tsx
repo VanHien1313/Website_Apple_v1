@@ -1,3 +1,4 @@
+import { categoryName } from '../components/layout/navigation';
 import { useCallback, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ShoppingBag, Maximize2 } from 'lucide-react';
@@ -16,7 +17,7 @@ import { ProductCard } from '../components/product/ProductCard';
 import { ProductGalleryDialog, ProductSpecsDialog } from '../components/product/ProductDialogs';
 import { formatCurrency } from '../utils/formatters';
 import { isApiMode } from '../config/dataSource';
-import { selectColorVariant, variantsForColor } from '../domain/productSelection';
+import { selectInitialVariant, selectColorVariant, variantsForColor } from '../domain/productSelection';
 export function ProductDetailPage() {
   const { slug = '' } = useParams();
   const load = useCallback((signal: AbortSignal) => productService.getProductBySlug(slug, { signal }), [slug]);
@@ -26,7 +27,7 @@ export function ProductDetailPage() {
   return <ProductDetails key={data.id} product={data} />;
 }
 function ProductDetails({ product }: { product: Product }) {
-  const initialVariant = product.variants.find((variant) => variant.inStock) ?? product.variants[0];
+  const initialVariant = selectInitialVariant(product);
   const initialColor = product.colors.find((color) => color.id === initialVariant?.colorId) ?? product.colors[0];
   const [colorId, setColorId] = useState(initialColor?.id);
   const [variantId, setVariantId] = useState(selectColorVariant(product, initialColor?.id, initialVariant)?.id);
@@ -54,7 +55,7 @@ function ProductDetails({ product }: { product: Product }) {
     else notify(`Đã thêm ${product.name} vào giỏ hàng.`, { label: 'Xem giỏ hàng', to: '/cart' });
   }
   return <div className="ui-container space-y-12 py-6 sm:py-10">
-    <nav aria-label="Đường dẫn sản phẩm" className="flex flex-wrap items-center gap-2 text-sm text-secondary"><Link to={`/search?category=${encodeURIComponent(product.category)}`} className="flex min-h-11 items-center gap-2 hover:text-accent"><ArrowLeft size={16} />Danh mục {product.category === 'watch' ? 'Apple Watch' : product.category}</Link><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
+    <nav aria-label="Đường dẫn sản phẩm" className="flex flex-wrap items-center gap-2 text-sm text-secondary"><Link to={`/search?category=${encodeURIComponent(product.category)}`} className="flex min-h-11 items-center gap-2 hover:text-accent"><ArrowLeft size={16} />Danh mục {categoryName(product.category)}</Link><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
     <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
       <section aria-label="Ảnh sản phẩm" className="min-w-0"><div className="relative rounded-xl bg-surface-subtle p-3 sm:p-6"><ProductImage src={image} fallback={product.thumbnail} alt={product.name} eager className="aspect-square" /><button type="button" onClick={() => setDialog('gallery')} className="absolute bottom-6 right-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-border-subtle bg-surface-elevated px-4 text-xs font-semibold"><Maximize2 size={16} />Xem ảnh lớn</button></div><div className="mt-4 flex gap-3 overflow-x-auto p-1">{gallery.map((url, index) => <button key={url} type="button" onClick={() => setImage(url)} aria-label={`Ảnh sản phẩm ${index + 1}`} aria-pressed={image === url} className={`h-20 w-20 shrink-0 rounded-lg border-2 p-1 ${image === url ? 'border-accent' : 'border-border-subtle'}`}><ProductImage src={url} alt="" className="h-full w-full" /></button>)}</div></section>
       <section className="min-w-0"><p className="text-sm text-accent">{product.tagline}</p><h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{product.name}</h1><div className="my-6 border-b border-border-subtle pb-6" aria-live="polite"><p className="text-3xl font-bold tabular-nums">{formatCurrency(variant?.price ?? product.basePrice)}</p>{variant && variant.originalPrice > variant.price && <p className="mt-2 text-sm text-secondary"><del>{formatCurrency(variant.originalPrice)}</del><span className="ml-3 text-success">Tiết kiệm {formatCurrency(variant.originalPrice - variant.price)}</span></p>}</div>

@@ -19,7 +19,10 @@ function SocialLogin({ next }: { next: string }) {
     setPending(true);
     setError('');
     try {
-      const { url } = await request<{ url: string }>(`/auth/social/${provider}/start`, { method: 'POST', body: { next } });
+      const { url } = await request<{ url: string }>(`/auth/social/${provider}/start`, {
+        method: 'POST',
+        body: { next },
+      });
       window.location.assign(url);
     } catch {
       setError('Chưa mở được trang đăng nhập. Vui lòng thử lại.');
@@ -29,7 +32,14 @@ function SocialLogin({ next }: { next: string }) {
   return <div className="space-y-3">
     <div className="grid gap-3 sm:grid-cols-2">
       {(['google', 'zalo'] as const).map(provider => (
-        <Button key={provider} variant="outline" disabled={pending || !providers.data?.includes(provider)} onClick={() => void start(provider)}>
+        <Button
+          key={provider}
+          variant="outline"
+          className="gap-2.5 px-3"
+          icon={<img src={`/images/auth/${provider === 'google' ? 'google.png' : 'zalo.svg'}`} alt="" width={provider === 'google' ? 20 : 40} height={20} className="h-5 object-contain" />}
+          disabled={pending || !providers.data?.includes(provider)}
+          onClick={() => void start(provider)}
+        >
           Đăng nhập bằng {provider === 'google' ? 'Google' : 'Zalo'}
         </Button>
       ))}

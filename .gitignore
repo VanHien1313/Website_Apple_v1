@@ -72,3 +72,6 @@ desktop.ini
 # Local development scratch files and generated browser QA captures
 /tmp/
 /docs/qa/
+
+# Local Netlify project linkage
+.netlify/

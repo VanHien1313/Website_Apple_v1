@@ -9,6 +9,7 @@ try {
     '-v', `${fileURLToPath(new URL('../backend/tests/', import.meta.url))}:/app/backend/tests:ro`,
     '-v', `${fileURLToPath(new URL('../backend/src/', import.meta.url))}:/app/backend/src:ro`,
     '-v', `${fileURLToPath(new URL('../backend/migrations/', import.meta.url))}:/app/backend/migrations:ro`,
+    '-v', `${fileURLToPath(new URL('../deploy/catalog/', import.meta.url))}:/app/deploy/catalog:ro`,
     'init', 'node', '--experimental-strip-types', '--test', '--test-concurrency=2', 'backend/tests/*.test.ts']);
   console.log(output);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

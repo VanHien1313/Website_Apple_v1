@@ -106,6 +106,7 @@ export const AppRoutes: React.FC = () => {
           }
         />
 
+        <Route path="airpods" element={<CategoryPage category="airpods" title="AirPods" description="Khám phá AirPods trong danh mục Aura." />} />
         <Route path="search" element={<CategoryPage title="Kết quả tìm kiếm" description="Tìm sản phẩm trên toàn bộ danh mục Aura." />} />
 
         {/* Dynamic Product Detail Route */}

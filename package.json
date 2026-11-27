@@ -30,6 +30,9 @@
     "backend:test": "npm --prefix backend test",
     "backend:typecheck": "npm --prefix backend run typecheck",
     "db:migrate": "npm --prefix backend run db:migrate",
-    "db:seed": "npm --prefix backend run db:seed"
+    "db:seed": "npm --prefix backend run db:seed",
+    "dev:demo": "npm --prefix frontend run dev:demo",
+    "catalog:airpods:prepare": "node deploy/prepare-airpods.mjs",
+    "catalog:airpods": "node deploy/airpods-local.mjs"
   }
 }

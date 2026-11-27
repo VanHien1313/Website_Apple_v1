@@ -13,7 +13,7 @@ const notFound=()=>new ApiError(404,'NOT_FOUND','Không tìm thấy giao dịch.
 const idCheck=(id:string)=>{if(!/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/i.test(id))throw notFound();};
 export function walletService(db:Database,config:PaymentConfig,client:GatewayClient=gatewayClient(config)){
  async function owned(id:string,token?:string){idCheck(id);return db.transaction(async tx=>{const customer=await customerId(tx,token);if(!customer)throw new ApiError(401,'UNAUTHENTICATED','Vui lòng đăng nhập để thanh toán.');const order=(await tx.query<{id:string;payment_method:string;payment_status:string;status:string;total:number}>('SELECT id,payment_method,payment_status,status,total FROM orders WHERE id=@arg1 AND customer_id=@arg2',[id,customer])).rows[0];if(!order)throw notFound();return order;});}
- async function settle(provider:Wallet,result:PaymentSuccess){
+ async function settle(provider:Wallet,result:PaymentSuccess,source:'callback'|'query'='callback'){
   const row=(await db.query<Attempt>('SELECT * FROM wallet_attempts WHERE provider=@arg1 AND provider_order_id=@arg2',[provider,result.providerOrderId])).rows[0];if(!row||row.environment!==config.mode)throw notFound();
   await db.transaction(async tx=>{
    await lockTransaction(tx,`order:${row.order_id.toLowerCase()}`);
@@ -26,7 +26,7 @@ export function walletService(db:Database,config:PaymentConfig,client:GatewayCli
    await tx.query("UPDATE payments SET status='PAID',provider_ref=@arg1,paid_at=SYSUTCDATETIME() WHERE order_id=@arg2 AND method=@arg3",[ref,row.order_id,provider]);
    await tx.query("UPDATE orders SET payment_status='PAID',revision=revision+1 WHERE id=@arg1",[row.order_id]);
    await tx.query("UPDATE wallet_attempts SET state=@arg1,checked_at=SYSUTCDATETIME() WHERE order_id=@arg2",[order.status==='CANCELLED'?'REVIEW':'PAID',row.order_id]);
-   await tx.query(`INSERT INTO order_events(id,order_id,actor_type,actor_name,kind,from_state,to_state,note) VALUES (@arg1,@arg2,'system',N'Cổng thanh toán','payment','PENDING','PAID',@arg3)`,[randomUUID(),row.order_id,`Sandbox ${provider}: đã xác minh giao dịch ${result.transactionId}.`+(order.status==='CANCELLED'?' Tiền đến sau khi đơn đã hủy: cần đối soát/hoàn tiền, không giao hàng.':'')]);
+   await tx.query(`INSERT INTO order_events(id,order_id,actor_type,actor_name,kind,from_state,to_state,note) VALUES (@arg1,@arg2,'system',N'Cổng thanh toán','payment','PENDING','PAID',@arg3)`,[randomUUID(),row.order_id,`Sandbox ${provider}: đã xác minh giao dịch ${result.transactionId} qua ${source==='callback'?'callback':'truy vấn tự động'}.`+(order.status==='CANCELLED'?' Tiền đến sau khi đơn đã hủy: cần đối soát/hoàn tiền, không giao hàng.':'')]);
    await completeReceivedOrder(tx,row.order_id);
   });
  }
@@ -41,7 +41,7 @@ export function walletService(db:Database,config:PaymentConfig,client:GatewayCli
  }
  async function check(id:string){
   const row=await db.transaction(async tx=>{await lockTransaction(tx,`order:${id.toLowerCase()}`);return (await tx.query<Attempt>(`UPDATE wallet_attempts SET checked_at=SYSUTCDATETIME() OUTPUT INSERTED.* WHERE order_id=@arg1 AND state IN ('CREATING','READY') AND (checked_at IS NULL OR checked_at<DATEADD(second,-30,SYSUTCDATETIME()))`,[id])).rows[0];});
-  if(row&&walletEnabled(config,row.provider)&&row.environment===config.mode){const result=await client.query(row.provider,row.provider_order_id);if(result)await settle(row.provider,result);}
+  if(row&&walletEnabled(config,row.provider)&&row.environment===config.mode){const result=await client.query(row.provider,row.provider_order_id);if(result)await settle(row.provider,result,'query');}
  }
  return {settle,view,
   async start(id:string,token?:string){const order=await owned(id,token);if(!walletEnabled(config,order.payment_method))throw new ApiError(503,'PAYMENT_UNAVAILABLE','Phương thức này chưa được cấu hình.');
@@ -58,7 +58,7 @@ export function walletService(db:Database,config:PaymentConfig,client:GatewayCli
    return view(id,token);
   },
   async refresh(id:string,token?:string){await owned(id,token);await check(id);return view(id,token);},
-  async reconcile(){const rows=(await db.query<{order_id:string}>("SELECT TOP (10) order_id FROM wallet_attempts WHERE state IN ('CREATING','READY') AND created_at>DATEADD(day,-7,SYSUTCDATETIME()) AND (checked_at IS NULL OR checked_at<DATEADD(minute,-1,SYSUTCDATETIME())) ORDER BY checked_at,created_at")).rows;for(const row of rows){try{await check(row.order_id);}catch{console.error(JSON.stringify({event:'wallet_reconciliation_failed',orderId:row.order_id}));}}}
+  async reconcile(){const rows=(await db.query<{order_id:string}>("SELECT TOP (10) order_id FROM wallet_attempts WHERE state IN ('CREATING','READY') AND created_at>DATEADD(day,-7,SYSUTCDATETIME()) AND (checked_at IS NULL OR checked_at<=DATEADD(second,-30,SYSUTCDATETIME())) ORDER BY checked_at,created_at")).rows;await Promise.all(rows.map(async row=>{try{await check(row.order_id);}catch(error){console.error(JSON.stringify({event:'wallet_reconciliation_failed',orderId:row.order_id,code:error instanceof ApiError?error.code:'INTERNAL_ERROR'}));}}));}
  };
 }
 export function walletCallbackRouter(db:Database,config:PaymentConfig){
@@ -67,8 +67,20 @@ export function walletCallbackRouter(db:Database,config:PaymentConfig){
   const provider=req.params.provider;if(provider!=='momo'&&provider!=='zalopay')throw notFound();
   if(typeof req.body!=='string')throw new ApiError(400,'INVALID_BODY','Invalid callback');
   let body;try{body=parseGatewayJSON(req.body);}catch{throw new ApiError(400,'INVALID_BODY','Invalid callback');}
-  const result=verifyNotification(provider,config,body);if(result)await service.settle(provider,result);
-  if(provider==='momo')res.status(204).end();else res.json({return_code:1,return_message:'success'});
+  // Authenticate before processing or acknowledging a notification.
+  let result:PaymentSuccess|null;
+  try { result=verifyNotification(provider,config,body); }
+  catch(error){console.error(JSON.stringify({event:'payment_callback_rejected',provider,requestId:res.locals.requestId,code:error instanceof ApiError?error.code:'INVALID_NOTIFICATION'}));throw error;}
+  try {
+   if(result)await service.settle(provider,result,'callback');
+   console.log(JSON.stringify({event:'payment_callback_accepted',provider,providerOrderId:result?.providerOrderId,requestId:res.locals.requestId}));
+   if(provider==='momo')res.status(204).end();else res.json({return_code:1,return_message:'success'});
+  } catch(error) {
+   console.error(JSON.stringify({event:'payment_callback_failed',provider,providerOrderId:result?.providerOrderId,requestId:res.locals.requestId,code:error instanceof ApiError?error.code:'INTERNAL_ERROR'}));
+   // ZaloPay retries temporary failures when the response return_code is zero.
+   if(provider==='zalopay'&&!(error instanceof ApiError&&error.status<500))res.json({return_code:0,return_message:'Temporary processing failure; retry'});
+   else throw error;
+  }
  });return router;
 }
 export function walletRouter(db:Database,config:PaymentConfig,auth:AuthOptions){const router=Router(),service=walletService(db,config),name=`${auth.secure?'__Host-':''}aura_customer`;
@@ -78,4 +90,17 @@ export function walletRouter(db:Database,config:PaymentConfig,auth:AuthOptions){
  for(const action of ['start','refresh'] as const)router.post(`/orders/:id/payment/${action}`,async(req,res)=>{if(req.get('origin')!==auth.origin||req.get('x-aura-request')!=='1'||!req.is('application/json'))throw new ApiError(403,'REQUEST_REJECTED','Nguồn yêu cầu không hợp lệ.');res.json(await service[action](req.params.id,token(req.headers.cookie)));});
  return router;
 }
-export function startWalletWorker(db:Database,config:PaymentConfig){let running:Promise<void>|undefined;const service=walletService(db,config);const tick=()=>{if(!running&&config.mode!=='off')running=service.reconcile().catch(()=>console.error(JSON.stringify({event:'wallet_worker_failed'}))).finally(()=>{running=undefined;});};const timer=setInterval(tick,60000);timer.unref();tick();return async()=>{clearInterval(timer);await running;};}
+export function startWalletWorker(db:Database,config:PaymentConfig,options:{intervalMs?:number;client?:GatewayClient}={}) {
+ let running:Promise<void>|undefined;
+ const service=walletService(db,config,options.client);
+ const tick=()=>{
+  if(running||config.mode==='off')return;
+  running=service.reconcile()
+   .catch(()=>console.error(JSON.stringify({event:'wallet_worker_failed'})))
+   .finally(()=>{running=undefined;});
+ };
+ const timer=setInterval(tick,options.intervalMs??30000);
+ timer.unref();
+ tick();
+ return async()=>{clearInterval(timer);await running;};
+}

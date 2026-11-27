@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
+import { storeNavigation } from '../components/layout/navigation';
 import { Layout } from '../components/layout/Layout';
 import { AsyncState } from '../components/common/AsyncState';
 
@@ -24,9 +25,7 @@ const AdminLayout = lazy(() => import('../components/layout/ApiAdminLayout'));
 const Information = lazy(() => import('../pages/StoreInformationPage'));
 const Category = lazy(() => import('../pages/CategoryPage').then((module) => ({ default: module.CategoryPage })));
 const Product = lazy(() => import('../pages/ProductDetailPage').then((module) => ({ default: module.ProductDetailPage })));
-const categories = [
-  ['iphone', 'iPhone'], ['ipad', 'iPad'], ['mac', 'Mac'], ['watch', 'Apple Watch'],
-] as const;
+
 
 /** API-only route graph: never import demo screens or their browser repositories here. */
 function LegacyProductLink() { const { id } = useParams(); return <Navigate to={`/admin/products/${encodeURIComponent(id ?? '')}`} replace />; }
@@ -62,7 +61,7 @@ export function AppRoutes() {
       </Route>
       <Route path="about" element={<Information />} />
       <Route path="contact" element={<Information contact />} />
-      {categories.map(([id, name]) => <Route key={id} path={id} element={<Category category={id} title={name} description={`Khám phá ${name} theo cấu hình và ngân sách của bạn.`} />} />)}
+      {storeNavigation.map(({to,label}) => <Route key={to} path={to.slice(1)} element={<Category category={to.slice(1)} title={label} description={`Khám phá ${label} theo cấu hình và ngân sách của bạn.`} />} />)}
       <Route path="search" element={<Category title="Kết quả tìm kiếm" description="Tìm sản phẩm trên toàn bộ danh mục Aura." />} />
       <Route path="product/:slug" element={<Product />} />
       <Route path="cart" element={<Cart />} />

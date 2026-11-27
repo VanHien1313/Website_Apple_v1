@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { apiProductService, catalogParams } from '../src/services/api/productService';
 import { request, HttpError } from '../src/services/api/http';
-import { selectColorVariant, variantsForColor } from '../src/domain/productSelection';
+import { selectInitialVariant, selectColorVariant, variantsForColor } from '../src/domain/productSelection';
 import { MOCK_PRODUCTS } from '../src/data/mockProducts';
 import { quoteCart } from '../src/services/api/quoteService';
 import { createCartItem } from '../src/domain/cart';
@@ -68,4 +68,14 @@ test('API cart quote sends only SKU and quantity, never trusted client prices or
     return Response.json({ lines: [], issues: [], subtotal: 0, totalDiscount: 0, shippingFee: 0, grandTotal: 0, canCheckout: false });
   });
   assert.equal((await quoteCart([item], 'express', signal)).canCheckout, false);
+});
+
+
+test('initial configuration picks the lowest available price regardless of API SKU order',()=>{
+ const template=MOCK_PRODUCTS[0],sku=template.variants[0];
+ const product={...template,variants:[{...sku,id:'wireless',price:2499000,inStock:true},{...sku,id:'unavailable',price:1499000,inStock:false},{...sku,id:'lightning',price:1999000,inStock:true}]};
+ assert.equal(selectInitialVariant(product)?.id,'lightning');
+ assert.equal(selectInitialVariant({...product,variants:product.variants.map(v=>({...v,inStock:false}))})?.id,'unavailable');
+ assert.equal(selectInitialVariant({...product,variants:[]}),undefined);
+ assert.equal(product.variants[0].id,'wireless');
 });
