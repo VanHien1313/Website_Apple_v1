@@ -2,7 +2,7 @@
 
 Dự án đồ án môn học gồm cửa hàng Apple, tài khoản khách hàng, đặt hàng, thanh toán thử nghiệm và quản trị. Công nghệ: React 19, TypeScript, Vite, Tailwind CSS, Express, SQL Server 2022 và Docker.
 
-**Cập nhật: 27/11/2026.** Nhánh đang phát triển: `codex/google-zalo-login-wallet-qr`.
+**Cập nhật: 27/11/2026.** Nhánh đang phát triển: `feat/google-zalo-login-wallet-qr`.
 
 ## Trạng thái hiện tại
 
@@ -52,14 +52,14 @@ Repository không chứa database `AuraStoreTeam`, tài khoản/mật khẩu đ�
 Cần Git và **Node.js 24.x** cho các lệnh npm. Chạy toàn ứng dụng bằng Docker cần Docker Desktop/Engine đang hoạt động, hỗ trợ Linux containers và Docker Compose. SQL Server container dùng `linux/amd64`; máy Apple Silicon cần Docker hỗ trợ chạy image này.
 
 ```sh
-git clone --branch codex/google-zalo-login-wallet-qr https://github.com/VanHien1313/Website_Apple_v1.git
+git clone --branch feat/google-zalo-login-wallet-qr https://github.com/VanHien1313/Website_Apple_v1.git
 cd Website_Apple_v1
 ```
 
 Nếu đã clone và đã lưu/commit các thay đổi riêng:
 
 ```sh
-git switch codex/google-zalo-login-wallet-qr
+git switch feat/google-zalo-login-wallet-qr
 git pull --ff-only
 ```
 
