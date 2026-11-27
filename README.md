@@ -1,100 +1,287 @@
-**Catalog 11/11:** bản chính có 36 sản phẩm/104 SKU, thêm 12 mẫu có nguồn giá và thông số; 24 mẫu cũ được bổ sung bảng chi tiết. [Danh sách và nguồn](docs/CATALOG_EXPANSION.md).
-
-**Catalog đã khôi phục 10/11:** cổng 4000 có 24 sản phẩm/92 SKU cùng ảnh frontend gốc lưu SQL; cổng 4001 dùng ảnh sản phẩm, giữ giá/tồn/đơn demo. [Chi tiết và cách nhập lại](docs/CATALOG_IMPORT.md).
-
-> Cập nhật24/10: đã chuyển nền backend sang **SQL Server** theo quyết định của người dùng. [Trạng thái và hướng dẫn hiện hành](docs/SQL_SERVER_MIGRATION.md). Các mô tả PostgreSQL trong lịch sử B1 đã được thay thế.
-
 # Aura — website thương mại điện tử
 
-React 19 · TypeScript · Vite · Tailwind CSS · Express · SQL Server 2022 · Docker. Dự án học tập theo Đề tài số 3, gồm cửa hàng và quản trị trong một ứng dụng.
+Dự án đồ án môn học gồm cửa hàng Apple, tài khoản khách hàng, đặt hàng, thanh toán thử nghiệm và quản trị. Công nghệ: React 19, TypeScript, Vite, Tailwind CSS, Express, SQL Server 2022 và Docker.
 
-## Trạng thái
+**Cập nhật: 27/11/2026.** Nhánh đang phát triển: `codex/google-zalo-login-wallet-qr`.
 
-[Hướng dẫn tự test tay chức năng và nghiệp vụ local](docs/MANUAL_TEST_GUIDE.md) — dữ liệu mẫu, từng bước và kết quả mong đợi.
+## Trạng thái hiện tại
 
-[Kế hoạch còn lại theo yêu cầu giảng viên](docs/REMAINING_WORK_PLAN.md) · [Ma trận đối chiếu hai tài liệu yêu cầu](docs/LECTURER_REQUIREMENTS_MAPPING.md) — cập nhật 10/11/2026.
+| Thành phần | Cấu hình hiện tại |
+| --- | --- |
+| Website | [https://aura-store-vn.netlify.app](https://aura-store-vn.netlify.app) |
+| Frontend | Build chế độ API, triển khai lên Netlify |
+| Backend | Express trong Docker trên Mac, cổng `4000`; Netlify chuyển tiếp API qua ngrok |
+| Database chính | `AuraStoreTeam` trong SQL Server Docker trên máy đang vận hành |
+| Đăng nhập khách hàng | Email/mật khẩu, Google và Zalo; OAuth cần cấu hình khóa backend |
+| Thanh toán trên giao diện | COD và ZaloPay / QR sandbox; đã bỏ lựa chọn MoMo |
 
-**Bản demo có dữ liệu:** http://localhost:4001 — database riêng, 8 sản phẩm/24 SKU, 3 tài khoản và 6 đơn minh họa. `npm run demo:start`; xem tài khoản bằng `./deploy/Show-DemoAccounts.ps1`. [Hướng dẫn demo](docs/LOCAL_DEMO.md). Bản chính http://127.0.0.1:4000 giữ nguyên; dùng đúng hostname để tách cookie.
+**Hosting hiện chưa độc lập với máy cá nhân.** Netlify giữ frontend, còn đăng nhập, danh mục, ảnh SQL, đặt hàng và thanh toán cần backend, SQL Server và ngrok hoạt động. Tắt Mac/Docker/ngrok thì các chức năng gọi API không hoạt động. Backend và database chưa được chuyển lên máy chủ chạy thường trực.
 
-**Cập nhật mới nhất 10/11 — hạn hoàn tất 13/11:** đã triển khai local trang giới thiệu nhóm/liên hệ, profile khách, chọn loại đăng nhập, sidebar/drawer quản trị và sửa điều hướng/404. 41 frontend tests, kiểm tra ranh giới API/demo và **24 nhóm Docker E2E đạt**. [Phạm vi nghiệm thu](docs/ACCEPTANCE_SCOPE.md) · [Bản thảo báo cáo và sơ đồ](docs/REPORT_DRAFT.md) · [Kịch bản demo/bảo vệ](docs/DEMO_AND_DEFENSE.md). [Báo cáo Word 13 trang và PowerPoint 12 slide](docs/submission/README.md) đã có; mẫu lớp, video, test tay và hosting vẫn còn việc; chưa push/phát hành lại registry.
+Repository không chứa database `AuraStoreTeam`, tài khoản/mật khẩu đã tạo trên máy, khóa Google/Zalo/ZaloPay hay các file cấu hình riêng. Clone mã nguồn không tự khôi phục những dữ liệu và quyền truy cập này.
 
-**10/11/2026 — tiếp tục local:** đã thêm [owner đặt lại mật khẩu quản trị](docs/ADMIN_PASSWORD_RESET.md), cập nhật app Docker tại http://127.0.0.1:4000. 77 backend tests, 41 frontend tests và 22 nhóm Docker E2E đạt. GHCR vẫn là bản 09/11; chưa phát hành lại tính năng này.
+## Chức năng
 
-**Hiện hành 09/11/2026:** đã chạy frontend/API/SQL Server bằng Docker local, có owner thật và dữ liệu cửa hàng riêng. 74/74 test backend đạt trên Linux/SQL Server Docker; 21 nhóm E2E Docker và diễn tập restart/backup/restore đạt. Staging có cấu hình riêng và công cụ preflight. GitHub Actions đã đạt toàn bộ build/test/E2E/recovery trên Ubuntu tại commit `6c35852`; xem [lần CI đạt](https://github.com/VanHien1313/Website_Apple_v1/actions/runs/42620970687). Chưa triển khai hosting công khai.
+### Cửa hàng và khách hàng
 
-- [Bàn giao và việc còn lại](docs/BACKEND_HANDOFF.md)
-- [Chạy Docker local](docs/BACKEND_B5_DOCKER.md)
-- [Backup/restore](docs/BACKEND_B5_RECOVERY.md)
-- [Chuẩn bị staging](docs/BACKEND_B5_STAGING.md)
-- [Kiểm thử CI](docs/BACKEND_B5_CI.md)
-- [Image GHCR đã phát hành và digest staging](docs/BACKEND_B5_REGISTRY.md)
-- [Triển khai trên Linux host](docs/STAGING_HOST_RUNBOOK.md)
+- Danh mục iPhone, iPad, Mac, Apple Watch và AirPods; tìm kiếm, lọc giá/cấu hình, sắp xếp và phân trang bằng API SQL Server.
+- Chi tiết sản phẩm, ảnh, màu, cấu hình, SKU, giá và tồn kho. Catalog đi kèm mã nguồn hiện có **48 sản phẩm / 133 SKU**; dữ liệu đang vận hành có thể thay đổi qua quản trị.
+- Trang chủ đưa AirPods xuống sau bộ sưu tập và giới thiệu các mẫu mới được chọn trong catalog. Các đời cũ vẫn bán trong danh mục AirPods.
+- Giỏ hàng, chọn sản phẩm mua, báo giá phía backend và kiểm tra lại giá/tồn trước khi tạo đơn.
+- Đăng ký, đăng nhập bằng mật khẩu, đăng nhập Google/Zalo, đăng xuất, hồ sơ, địa chỉ, đổi mật khẩu và lịch sử đơn theo tài khoản.
+- Checkout yêu cầu đăng nhập, tính phí giao hàng, giữ hàng và chống tạo đơn trùng khi gửi lại cùng yêu cầu.
+- Theo dõi đơn, xem lịch sử và hủy đơn theo trạng thái được phép.
 
-Các cập nhật bên dưới là lịch sử; ưu tiên trạng thái hiện hành và tài liệu bàn giao khi triển khai.
+### Thanh toán
 
-Cập nhật 02/11 — [B5.3 cấu hình Docker](docs/BACKEND_B5_DOCKER.md): có Dockerfile nhiều stage, Compose db/init/app, secret file và hướng dẫn bootstrap. **Chưa build/chạy container vì máy chưa có Docker**; không coi Docker/hosting đã nghiệm thu. Xem tài liệu trước khi chạy để tách database Docker khỏi SQL Server Windows.
+- **COD:** tạo đơn chưa thanh toán; quản trị xử lý giao hàng và xác nhận thu tiền theo quy trình.
+- **ZaloPay sandbox:** tạo phiên thanh toán, mở cổng để xem QR/mở ví thử nghiệm, nhận callback có xác minh chữ ký và truy vấn đối soát tự động. Kết quả thanh toán không lấy từ tham số chuyển hướng của trình duyệt.
+- Worker đối soát chạy mỗi 30 giây; trang phiên thanh toán tự đọc trạng thái mỗi 10 giây. Thời gian thực tế phụ thuộc phản hồi của cổng.
+- Đã bỏ MoMo khỏi lựa chọn checkout. Mã tích hợp MoMo cũ vẫn còn trong backend để tương thích; không xóa lịch sử đơn.
+- Chỉ hỗ trợ `PAYMENT_MODE=off` hoặc `sandbox`, chưa triển khai thanh toán production. Sandbox dùng ứng dụng/số dư thử nghiệm; giao dịch có thể bị hạn mức tài khoản thử chặn. Kiểm thử tự động dùng gateway giả, không thay thế nghiệm thu merchant của nhà cung cấp.
 
-Cập nhật 02/11 — [B5.2 sắp xếp/lọc danh sách](docs/BACKEND_B5_LISTS.md): năm danh sách chính có lựa chọn sắp xếp, bộ lọc nghiệp vụ và URL lưu lựa chọn; truy vấn/đếm/phân trang tại SQL Server bằng allowlist. Tiếp theo Docker toàn ứng dụng; giới hạn các bảng phụ được ghi trong tài liệu.
+### Quản trị
 
-Cập nhật 02/11 — [B5.1 rà soát và bản đóng gói](docs/BACKEND_B5_RELEASE.md): Express có thể phục vụ frontend API đã build cùng địa chỉ bằng `SERVE_FRONTEND=true`. Có lệnh `npm run build:release` và `npm run start:release`; xem hướng dẫn APP_ORIGIN trước khi chạy. Chưa triển khai hosting; còn thiếu sorting/filter một số danh sách và Docker toàn ứng dụng.
+- Đăng nhập riêng tại `/admin/login`; phân quyền owner/editor, khóa tài khoản và thu hồi phiên.
+- Quản lý danh mục, sản phẩm, cấu hình, màu, SKU, giá/tồn và upload ảnh lưu SQL Server.
+- Quản lý đơn, chuyển trạng thái, ghi nhận COD, lịch sử thao tác và xử lý xung đột phiên bản dữ liệu.
+- Tra cứu khách hàng, quản lý tài khoản quản trị, owner đặt lại mật khẩu quản trị khác.
+- Báo cáo doanh thu theo ngày/tuần/tháng; chỉ tính đơn hoàn thành đã thanh toán theo quy tắc hệ thống, loại giao dịch sandbox khỏi doanh thu thực.
 
-Cập nhật 30/10 — [B4.4.2 tra cứu khách hàng](docs/BACKEND_B4_CUSTOMERS.md): danh sách tìm kiếm/phân trang, hồ sơ và đơn gắn đúng tài khoản đã nối SQL Server tại `/admin/customers`. 66 test backend,41 test frontend và20 nhóm browser đạt. Tiếp theo rà soát yêu cầu và chuẩn bị vận hành/triển khai.
+## Lấy mã nguồn
 
-Cập nhật 30/10 — [B4.4.1 tài khoản quản trị](docs/BACKEND_B4_ADMIN_USERS.md): owner tạo tài khoản, sửa tên/quyền, khóa/mở khóa; thu hồi phiên và bảo vệ tài khoản hiện tại. Đã nối UI `/admin/users`, migration007 và kiểm thử SQL/Chrome. Bước tiếp theo là quản trị khách hàng; các mốc phía dưới giữ lịch sử triển khai.
+Cần Git và **Node.js 24.x** cho các lệnh npm. Chạy toàn ứng dụng bằng Docker cần Docker Desktop/Engine đang hoạt động, hỗ trợ Linux containers và Docker Compose. SQL Server container dùng `linux/amd64`; máy Apple Silicon cần Docker hỗ trợ chạy image này.
 
-Cập nhật 29/10 — [B4.3.2 quản trị sản phẩm](docs/BACKEND_B4_PRODUCTS_UI.md): danh sách tìm/lọc/phân trang và form tạo/sửa sản phẩm, ảnh, thông số, cấu hình/màu/SKU đã nối SQL Server. Có kiểm tra bản máy chủ khi xung đột hoặc mất phản hồi. Nền API tại [B4.3.1](docs/BACKEND_B4_PRODUCTS_API.md). Tiếp theo là quản trị tài khoản/người dùng.
+```sh
+git clone --branch codex/google-zalo-login-wallet-qr https://github.com/VanHien1313/Website_Apple_v1.git
+cd Website_Apple_v1
+```
 
-Cập nhật29/10 — [B4.2 quản lý danh mục](docs/BACKEND_B4_CATEGORIES.md): tạo, đổi tên, xóa danh mục rỗng; kiểm tra trùng tên/mã, rowversion chống ghi đè và bảo vệ danh mục có sản phẩm. Bước tiếp theo là CRUD sản phẩm/SKU, sau đó tài khoản quản trị.
+Nếu đã clone và đã lưu/commit các thay đổi riêng:
 
-Cập nhật29/10 — [B4.1 báo cáo doanh thu](docs/BACKEND_B4_REPORTS.md): `/admin/reports` lấy số tổng hợp từ SQL Server, lọc ngày Việt Nam, nhóm ngày/tuần/tháng và chỉ tính đơn hoàn thành đã thu tiền. Phần B4 còn lại là CRUD quản trị.
+```sh
+git switch codex/google-zalo-login-wallet-qr
+git pull --ff-only
+```
 
-Cập nhật29/10: [B3.4 vận hành đơn](docs/BACKEND_B3_MANAGEMENT.md) đã nối SQL Server: lịch sử đơn tài khoản, khách hủy đơn chờ, quản trị xử lý COD, lịch sử thao tác và kiểm tra revision. Giao hàng tiêu thụ tồn giữ; hủy/expiry giải phóng đúng một lần. Bước tiếp theo là B4 báo cáo và CRUD quản trị.
+Các lệnh tiếp theo chạy từ thư mục gốc repository, trừ khi có ghi khác.
 
-Đã nối [checkout COD B3.3](docs/BACKEND_B3_CHECKOUT.md) với SQL Server: Mua ngay/giỏ hàng → form nhận hàng → tạo đơn → xác nhận. Có chống trùng khi retry, giữ tồn, phục hồi yêu cầu trong phiên tab và bảo vệ quyền đọc đơn guest/tài khoản.
+## Chạy tiếp bản hiện có dùng AuraStoreTeam
 
-Cập nhật28/10: chế độ API đã mở thêm/xóa/sửa giỏ hàng và báo giá theo giá/tồn SQL Server. Xem [B3.1](docs/BACKEND_B3_QUOTE.md) và [API tạo đơn B3.2](docs/BACKEND_B3_ORDERS.md).
+Phần này dành cho **máy đang có AuraStoreTeam và các secrets đã cấu hình**, không phải quy trình cài mới. `compose.team.yaml` chỉ đổi database của service `app`; không tạo, restore hoặc migrate `AuraStoreTeam`.
 
-Đã triển khai luồng frontend bằng dữ liệu demo trên trình duyệt: danh mục/tìm kiếm, chi tiết sản phẩm, giỏ hàng, đặt nhanh COD, quản trị sản phẩm/danh mục/tài khoản, vận hành đơn và báo cáo, tài khoản khách và lịch sử đơn. Xem [nghiệm thu giai đoạn 6](docs/FRONTEND_ACCEPTANCE.md).
+Khởi động SQL Server đang có rồi build/chạy lại app với đủ override dùng cho website Netlify:
 
-Backend hiện có Express, schema/migration SQL Server, seed, healthcheck, API catalog và xác thực bằng phiên server. Frontend có chế độ API cho catalog và xác thực khách/admin bằng cookie server: chạy `npm run dev:api`. Đã có upload ảnh admin lưu SQL Server và checkout COD; thanh toán online và email chưa triển khai. Xem [B2 media](docs/BACKEND_B2_MEDIA.md). Chế độ mặc định `npm run dev` vẫn dùng tài khoản/dữ liệu demo. Xem [mốc B2 frontend](docs/BACKEND_B2_FRONTEND.md). Không nhập thông tin thật. Đây không phải website đại lý Apple được xác nhận.
+```sh
+docker compose up -d db
+docker compose -f compose.yaml -f compose.team.yaml -f deploy/secrets/compose.social-local.yaml -f deploy/secrets/compose.netlify.yaml up -d --build --no-deps app
+docker compose ps -a
+docker compose logs --tail=80 app
+```
 
-Backend: xem [hướng dẫn chạy](backend/README.md) và [bàn giao SQL Server](docs/SQL_SERVER_MIGRATION.md). Từ gốc có `npm run backend:typecheck`, `npm run backend:test`, `npm run backend:build`, `npm run backend:dev`, `npm run db:migrate`. Lệnh frontend hiện có giữ nguyên.
+Hai file `compose.social-local.yaml` và `compose.netlify.yaml`, cùng các file `.env` mà chúng nạp, chỉ nằm trên máy vận hành trong `deploy/secrets/` và không có trên GitHub. Cấu hình hiện tại nạp khóa Google, Zalo, ZaloPay và đặt cả `APP_ORIGIN` / `PAYMENT_PUBLIC_ORIGIN` thành `https://aura-store-vn.netlify.app`.
 
-## Chạy project
+Trong terminal khác, chạy ngrok với tài khoản đã được cấu hình:
 
-Cài Node.js và npm, sau đó tại thư mục gốc:
+```sh
+ngrok http http://127.0.0.1:4000 --url https://majesty-facility-marmalade.ngrok-free.dev
+```
+
+Mở website Netlify để đăng nhập, đặt hàng và quản trị. Healthcheck local: [http://127.0.0.1:4000/health/ready](http://127.0.0.1:4000/health/ready). Khi `APP_ORIGIN` là Netlify, thao tác đăng nhập/đặt hàng từ địa chỉ local hoặc ngrok trực tiếp có thể bị từ chối vì khác origin.
+
+Giữ nguyên volume và secret SQL hiện có. Không chạy `docker compose down -v`, thay mật khẩu SQL bằng cách ghi đè file, hoặc restore dữ liệu mẫu lên database chính. Nếu phiên bản mới thêm migration, sao lưu và thực hiện migration riêng đúng target `AuraStoreTeam`; initializer mặc định chỉ dành cho `AuraStoreDocker`.
+
+## Cài mới trên máy khác với database riêng
+
+Quy trình này tạo **AuraStoreDocker**, độc lập với database chính `AuraStoreTeam`. Không cần khóa OAuth/thanh toán để chạy catalog, tài khoản mật khẩu, quản trị và COD. Google/Zalo sẽ bị khóa khi chưa cấu hình; ZaloPay checkout chưa được kích hoạt.
+
+### 1. Tạo secret SQL trên máy mới
+
+Windows PowerShell:
 
 ```powershell
+./deploy/New-LocalSecrets.ps1
+```
+
+macOS/Linux, hoặc máy có Node.js 24:
+
+```sh
+node -e "const fs = require('node:fs'), crypto = require('node:crypto'); fs.mkdirSync('deploy/secrets', {recursive:true}); for (const name of ['sql-sa-password.txt','sql-app-password.txt']) { const file = 'deploy/secrets/' + name; if (!fs.existsSync(file)) fs.writeFileSync(file, crypto.randomBytes(32).toString('base64') + 'Aa1!', {flag:'wx', mode:0o600}); }"
+```
+
+Các lệnh chỉ tạo file còn thiếu, không in mật khẩu và không ghi đè secret đã có. Hai file nằm trong `deploy/secrets/` đã được Git ignore.
+
+### 2. Build và khởi động
+
+```sh
+docker compose config --quiet
+docker compose up --build -d
+docker compose ps -a
+docker compose logs --tail=80 init app
+```
+
+Đợi SQL Server sẵn sàng, `init` kết thúc với mã `0` và `app` healthy. Lần đầu có thể mất vài phút. Initializer tạo database/login ứng dụng và áp dụng migration; không tự tạo owner hoặc nhập sản phẩm.
+
+### 3. Tạo owner cho database mới
+
+Windows PowerShell:
+
+```powershell
+./deploy/New-DockerOwner.ps1 -Email owner@aura.local
+```
+
+macOS/Linux có Python 3, nhập mật khẩu qua prompt ẩn:
+
+```sh
+python3 -c 'import getpass,json; print(json.dumps({"email":"owner@aura.local","name":"Owner","password":getpass.getpass("Owner password: ")}))' | docker compose run --rm --no-deps -T app node backend/dist/auth/bootstrap-cli.js
+```
+
+Bootstrap yêu cầu mật khẩu 8–128 ký tự, có chữ in hoa và ký tự đặc biệt. Chỉ thực hiện được khi chưa có quản trị viên; không đặt lại tài khoản sẵn có. Mật khẩu của môi trường đang vận hành không lưu trong README và không tự cấp cho bản clone.
+
+### 4. Nhập catalog có sẵn
+
+Chạy preview để kiểm tra target và số lượng; `--apply` mới ghi dữ liệu vào database riêng:
+
+```sh
+node deploy/catalog-local.mjs
+node deploy/catalog-local.mjs --apply
+```
+
+Không cần chạy lại công cụ chuẩn bị/tải ảnh: catalog JSON và ảnh đã được commit. Importer giữ giá/tồn của SKU đã có và không xóa khách hàng/đơn hàng. Xem [catalog](docs/CATALOG_IMPORT.md) và [AirPods](docs/AIRPODS_CATALOG.md) trước khi nhập vào database đã sử dụng.
+
+### 5. Mở website và dừng ứng dụng
+
+- Cửa hàng: [http://127.0.0.1:4000](http://127.0.0.1:4000).
+- Quản trị: [http://127.0.0.1:4000/admin/login](http://127.0.0.1:4000/admin/login), bằng owner vừa tạo.
+- API/database: [http://127.0.0.1:4000/health/ready](http://127.0.0.1:4000/health/ready).
+
+```sh
+docker compose stop app
+docker compose up -d app
+```
+
+`docker compose down` dừng stack và giữ volume. Không thêm `-v` nếu muốn giữ dữ liệu. Compose này phục vụ phát triển/đồ án local, chưa phải cấu hình hosting production.
+
+## Sửa frontend bằng VS Code / Vite
+
+Backend cổng `4000` và database cần chạy trước:
+
+```sh
 npm --prefix frontend ci
 npm run dev
 ```
 
-```powershell
-npm test
-npm run typecheck
-npm run build
-npm run preview
+Vite chạy tại [http://127.0.0.1:3000](http://127.0.0.1:3000), proxy `/api` về `http://127.0.0.1:4000`. **`npm run dev` hiện dùng API thật**, tương đương `npm run dev:api`.
+
+Đọc danh mục ở cổng 3000 vẫn dùng backend hiện có. Để đăng nhập, đổi dữ liệu hoặc đặt hàng qua Vite, backend phải có `APP_ORIGIN=http://127.0.0.1:3000`. Ví dụ cho stack cài mới `AuraStoreDocker`: tạo file riêng `deploy/secrets/compose.vite.yaml`:
+
+```yaml
+services:
+  app:
+    environment:
+      APP_ORIGIN: http://127.0.0.1:3000
 ```
 
-Vite hiển thị địa chỉ/port thực tế. Backend hosting sau này cần fallback SPA về `index.html` cho các route frontend và tách riêng `/api`.
+```sh
+docker compose -f compose.yaml -f deploy/secrets/compose.vite.yaml up -d --no-deps app
+```
 
-## Các màn hình
+Không áp dụng ví dụ này vào bản Netlify đang vận hành: đổi `APP_ORIGIN` sẽ ảnh hưởng đăng nhập/callback của bản đó. Sau khi test Vite trên stack riêng, dùng `docker compose up -d --no-deps app` để trở lại origin cổng 4000.
 
-- Cửa hàng: `/`, `/search`, `/iphone`, `/ipad`, `/mac`, `/watch`, `/product/:slug`, `/cart`, `/checkout`, `/order-confirmation/:id`.
-- Khách hàng: `/register`, `/login`, `/account/orders`, `/account/orders/:id`, `/account/security`.
-- Quản trị: `/admin/login`, `/admin`, `/admin/products`, `/admin/categories`, `/admin/admin-users`, `/admin/orders`, `/admin/reports`, `/admin/customers`.
-- Component mẫu: `/admin/design-system`, sau khi đăng nhập demo.
+Nếu chỉ muốn xem frontend với dữ liệu mô phỏng trong trình duyệt, dùng `npm run dev:demo`. Chế độ này không dùng tài khoản SQL Server, không đăng nhập OAuth và không thanh toán thật.
 
-Dữ liệu demo lưu tại trình duyệt/origin đang chạy. Port 3000 và 4173 có dữ liệu riêng. Reset catalog trên dashboard chỉ khôi phục sản phẩm, danh mục và hồ sơ admin; không xóa giỏ hàng, khách hàng hay đơn đã lưu. Không dùng dữ liệu mẫu làm migration production.
+## Cấu hình Google, Zalo và ZaloPay sandbox
 
-## Cấu trúc và bàn giao
+Khóa chỉ cấp cho **backend**, không nhúng vào mã React hoặc biến `VITE_*`. Với Docker, dùng `env_file` trong override riêng dưới `deploy/secrets/`; với backend Node chạy trực tiếp, dùng `backend/.env` theo [file mẫu](backend/.env.example). Không ghi đè `.env` đã có.
 
-- `frontend/src/pages`, `components`: màn hình, layout và thành phần UI.
-- `frontend/src/domain`: quy tắc giỏ hàng, tìm kiếm, checkout, đơn và doanh thu.
-- `frontend/src/services/contracts.ts`: interface hiện tại; `services/mock` chứa repository demo.
-- `frontend/tests`: test nghiệp vụ; `frontend/scripts/*-smoke.mjs`: kiểm thử trình duyệt cô lập.
-- [API contract](docs/API_CONTRACT.md): ánh xạ adapter hiện tại với HTTP dự kiến.
-- [Bàn giao backend/database](docs/BACKEND_HANDOFF.md): mô hình quan hệ, thứ tự triển khai và tiêu chí tích hợp.
-- [Kế hoạch frontend](docs/FRONTEND_COMPLETION_PLAN.md), [nghiệm thu](docs/FRONTEND_ACCEPTANCE.md), [design system](docs/DESIGN_SYSTEM.md).
+| Tính năng | Biến backend |
+| --- | --- |
+| Origin đăng nhập/API | `APP_ORIGIN` |
+| Google | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` hoặc `GOOGLE_CLIENT_SECRET_FILE` |
+| Zalo | `ZALO_APP_ID`, `ZALO_APP_SECRET` hoặc `ZALO_APP_SECRET_FILE` |
+| ZaloPay sandbox | `PAYMENT_MODE=sandbox`, `PAYMENT_PUBLIC_ORIGIN`, `ZALOPAY_APP_ID`, `ZALOPAY_KEY1`, `ZALOPAY_KEY2` |
 
-Ảnh và thông số đang là fixture; cần duyệt nguồn/quyền sử dụng và độ chính xác trước khi công khai. Các tài liệu khảo sát ngày 15/10 được giữ làm lịch sử, không thay thế bàn giao hiện tại.
+ZaloPay cũng hỗ trợ `ZALOPAY_KEY1_FILE` và `ZALOPAY_KEY2_FILE`; đường dẫn `_FILE` phải tồn tại bên trong container. Không đặt đồng thời giá trị trực tiếp và `_FILE` cho cùng một secret. Không có khóa ví nào thì giữ `PAYMENT_MODE=off`.
+
+Với bản Netlify hiện tại, đăng ký các URL:
+
+| Mục đích | URL |
+| --- | --- |
+| Google callback | `https://aura-store-vn.netlify.app/api/v1/auth/social/google/callback` |
+| Zalo callback | `https://aura-store-vn.netlify.app/api/v1/auth/social/zalo/callback` |
+| ZaloPay callback | `https://aura-store-vn.netlify.app/api/v1/payments/zalopay/callback` |
+
+`APP_ORIGIN` và `PAYMENT_PUBLIC_ORIGIN` phải là origin HTTPS công khai phù hợp; callback phải đến được backend qua proxy. Nếu đổi tên miền, cập nhật biến backend, callback trên nhà cung cấp và xác minh tên miền Zalo tương ứng. Meta/file xác minh Zalo hiện nằm trong `frontend/index.html` và `frontend/public/`; khi dùng ứng dụng/tên miền khác, dùng nội dung xác minh do Zalo cấp cho cấu hình đó.
+
+Google dùng email đã xác minh; Zalo dùng ID/tên và email nội bộ không nhận thư. Khách Zalo cần bổ sung thông tin giao hàng khi checkout. Xem [đăng nhập Google/Zalo](docs/SOCIAL_LOGIN.md), [thanh toán sandbox](docs/WALLET_PAYMENTS.md) và [file mẫu thanh toán](deploy/payment-sandbox.env.example). Các hướng dẫn MoMo trong tài liệu tích hợp là phần kỹ thuật còn lưu, không phải lựa chọn trên checkout hiện tại.
+
+## Build và cập nhật Netlify
+
+[`netlify.toml`](netlify.toml) đang đặt:
+
+- Build: `npm --prefix frontend ci && npm --prefix frontend run build:api`.
+- Publish directory: `frontend/dist-api`.
+- Node.js: `24`.
+- Proxy `/api/*` và `/health/*` sang URL ngrok đang vận hành, kèm header bỏ trang cảnh báo ngrok.
+- Fallback các đường dẫn frontend về `index.html`.
+
+Build API rồi liên kết **site hiện có** trong tài khoản Netlify trước khi deploy thủ công:
+
+```sh
+npm --prefix frontend ci
+npm run build:api
+npx netlify login
+npx netlify link
+npx netlify deploy --prod --no-build --dir frontend/dist-api
+```
+
+Chọn site `aura-store-vn` khi link; `.netlify/` đã được Git ignore. Bản hiện tại deploy thủ công; push GitHub chưa tự cập nhật Netlify nếu chưa cấu hình liên kết Git/continuous deployment.
+
+**Không dùng `npm run build` để deploy bản API:** lệnh đó build chế độ demo vào `frontend/dist`. Dùng `build:api` hoặc `build:release` cho ứng dụng nối backend.
+
+Nếu đổi endpoint backend/ngrok, sửa proxy trong `netlify.toml`, build/deploy lại và kiểm tra `/health/ready`, đăng nhập, catalog, checkout. Để website chạy khi tắt Mac, cần triển khai backend cùng SQL Server lên hạ tầng chạy thường trực và cập nhật proxy; deploy frontend lên Netlify chưa thực hiện bước này.
+
+## Kiểm tra và build
+
+Sau khi cài dependency frontend:
+
+```sh
+npm test
+npm run typecheck
+npm run test:catalog
+npm run test:deployment
+npm --prefix frontend run test:boundary
+```
+
+`test:catalog` cần cả dependency backend để đọc validator sản phẩm. Kiểm thử backend cần Docker stack local cùng các secret SQL đã sẵn sàng. Runner dùng database `AuraTest_*` tạm, không dùng database chính làm fixture:
+
+```sh
+npm run test:backend:docker
+```
+
+Build frontend/backend ngoài Docker cần cài dependency backend; với SQL authentication trên macOS/Linux có thể bỏ install scripts của driver Windows:
+
+```sh
+npm --prefix backend ci --ignore-scripts
+npm run build:release
+```
+
+Windows Authentication cần driver native/ODBC và thiết lập riêng; xem [backend](backend/README.md). Kết quả kiểm tra ngày 27/11/2026: **44/44 frontend**, **100/100 backend**, **3/3 catalog**, **10 deployment đạt / 1 bỏ qua**, backend build và kiểm tra ranh giới API/demo đạt. Đây là kết quả tại mốc cập nhật, không phải chứng nhận thanh toán production.
+
+## Đường dẫn và tài liệu
+
+| Khu vực | Đường dẫn chính |
+| --- | --- |
+| Cửa hàng | `/`, `/search`, `/iphone`, `/ipad`, `/mac`, `/watch`, `/airpods`, `/product/:slug` |
+| Mua hàng | `/cart`, `/checkout`, `/order-confirmation/:id` |
+| Khách hàng | `/register`, `/login`, `/account`, `/account/security`, `/account/orders`, `/account/orders/:id` |
+| Quản trị | `/admin/login`, `/admin`, `/admin/products`, `/admin/categories`, `/admin/users`, `/admin/customers`, `/admin/orders`, `/admin/reports`, `/admin/security` |
+
+- `frontend/src`: giao diện, routes, API adapter, giỏ hàng và chế độ demo riêng.
+- `backend/src`, `backend/migrations`: Express, xác thực, catalog, đơn hàng, thanh toán và schema SQL Server.
+- `deploy/`: Docker, dữ liệu catalog, công cụ nhập và kiểm thử triển khai.
+- [AirPods và nguồn catalog](docs/AIRPODS_CATALOG.md) · [nhập catalog](docs/CATALOG_IMPORT.md).
+- [Docker chi tiết](docs/BACKEND_B5_DOCKER.md) · [backup/restore](docs/BACKEND_B5_RECOVERY.md) · [triển khai Linux](docs/STAGING_HOST_RUNBOOK.md).
+- [Bản demo SQL riêng cổng 4001](docs/LOCAL_DEMO.md) · [hướng dẫn test tay](docs/MANUAL_TEST_GUIDE.md).
+- [Báo cáo và slide đồ án](docs/submission/README.md).
+
+Các tài liệu theo giai đoạn trong `docs/`, `backend/README.md` và `frontend/README.md` còn giữ lịch sử triển khai; ưu tiên trạng thái và cách chạy trong README gốc này khi có khác biệt. Aura là dự án học tập, không phải website đại lý Apple được xác nhận. Giá/tồn kho mẫu và sandbox dùng cho thử nghiệm.
